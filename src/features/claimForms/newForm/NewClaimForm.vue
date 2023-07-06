@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
-
+import newDropDown from "@/widgets/newDropDown/newDropDown.vue"
 const rules = {
   client: [{
     require: true,
@@ -36,6 +36,7 @@ const formRef = ref(null)
             </label>
           </div>
         </div>
+        <newDropDown/>
         <PlForm ref="formRef" :model="ncForm" style="max-width: 900px" :rules="rules" class="d-grid gap-6 w-100">
           <div class="d-flex gap-4">
             <PlInputPlus 
