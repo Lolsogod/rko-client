@@ -14,7 +14,7 @@ export const useModalrStore = defineStore('modal', () => {
         return("Заголовок")
     }
   })
-  //сюда надо как то компонент запихать
+  //сюда надо как то компонент запихать а хотя мб и ненадо
   const content = ref('')
 
   const isOpen = ref(false)
