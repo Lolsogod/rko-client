@@ -6,16 +6,16 @@ export const useMenuConfig = () =>{
    
     //хз мб херня но пусть так пока
     const items = new Map<string, IMenuItem[]>([
-      ['new', [{text: "Что то", action: () => modalStore.openModal("тест", "test2")},]],
-      ['wip', [{text: "Что то", action: () => modalStore.openModal('пока что плохо 1', 'из пропса клайм инфо будет браться')},]],
+      ['new', [{text: "Что то", action: () => modalStore.openModal("", "test2")},]],
+      ['wip', [{text: "Что то", action: () => modalStore.openModal('', 'из пропса клайм инфо будет браться')},]],
       ['queue', [
-            {text: "Взять в работу", action: () => modalStore.openModal('пока что плохо 2', 'но они уже уникальные')},
-            {text: "Посмотреть", action: () => modalStore.openModal('будте доделано', 'можно будет наверн както переорганиззовать мапу')},
-            {text: "Журнал состояний", action: () => modalStore.openModal('оно работает', 'чтоб тоже из пропсов бралась')}
+            {text: "Взять в работу", action: () => modalStore.openModal('', 'но они уже уникальные')},
+            {text: "Посмотреть", action: () => modalStore.openModal('info', 'можно будет наверн както переорганиззовать мапу')},
+            {text: "Журнал состояний", action: () => modalStore.openModal('journal', 'чтоб тоже из пропсов бралась')}
         ]],
       ['closed', [
-            {text: "Посмотреть", action: () => modalStore.openModal('вроде', 'хотя хз')},
-            {text: "Журнал состояний", action: () => modalStore.openModal('ну нужен бэк', 'пусть так будет')},
+            {text: "Посмотреть", action: () => modalStore.openModal('info', 'хотя хз')},
+            {text: "Журнал состояний", action: () => modalStore.openModal('journal', 'пусть так будет')},
         ]]
     ]);
 

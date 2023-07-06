@@ -17,12 +17,7 @@ const modalStore = useModalrStore()
       <PlButton size="medium" @click="router.push('/claim')">Добавить обращения</PlButton>
     </div>
     <Claims/>
-    <!-- тут временно будет онли инфа клейма, для теста (и всегда открыт)
     <Modal :is-open="modalStore.isOpen" @close="modalStore.closeModal" :title="modalStore.title">
-      
-      {{ modalStore.content }}
-    </Modal>}-->
-    <Modal :is-open="true" @close="modalStore.closeModal" title="Просмотр обращения">
-      <ClaimInfo/>
+      <ClaimInfo v-if="modalStore.type == 'info'"/>
     </Modal>
 </template>

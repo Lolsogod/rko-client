@@ -70,8 +70,7 @@ import {
     background-color: #ffffff; 
     transition-property: all; 
     text-align: left; 
-    vertical-align: middle; 
-    width: 50rem;  
+    vertical-align: middle;  
     border-radius: 1rem; 
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
 }
