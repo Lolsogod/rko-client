@@ -1,0 +1,95 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "short_name": "stas",
+      "global_company_id": "null",
+      "inn": "4335354",
+      "kpp": "43535",
+      "ogrn": "53tfd",
+      "full_name": "stanislav aristov"
+    },
+    {
+      "id": 2,
+      "short_name": "stas2",
+      "global_company_id": "null",
+      "inn": "4335354",
+      "kpp": "43535",
+      "ogrn": "53tfd",
+      "full_name": "stanislav2 aristov2"
+    },
+    {
+      "id": 3,
+      "short_name": "stas3",
+      "global_company_id": "null",
+      "inn": "4335354",
+      "kpp": "43535",
+      "ogrn": "53tfd",
+      "full_name": "stanislav3 aristov3"
+    }
+  ],
+  "references": {
+    "categories": [
+      { "code": "INCOMING", "text": "Входящее" },
+      { "code": "OUTGOING", "text": "Исходящее" }
+    ],
+    "channels": [
+      { "code": "CHAT", "text": "Чат" },
+      { "code": "PHONE", "text": "Телефон" },
+      { "code": "EMAIL", "text": "E-mail" }
+    ],
+    "initiatorTypes": [
+      { "code": "CLIENT", "text": "Клиент" },
+      { "code": "NOT_CLIENT", "text": "Не Клиент" },
+      { "code": "PRODUCT", "text": "Основной продукт" },
+      { "code": "DELIVERY", "text": "Доставка" },
+      { "code": "OTHER", "text": "Иное" }
+    ],
+    "priority": [
+      { "code": "HIGH", "text": "Высокий" },
+      { "code": "MEDIUM", "text": "Средний" },
+      { "code": "LOW", "text": "Низкий" }
+    ],
+    "claimTypes": [
+    ],
+    "claimThemes": [
+    ]
+  }
+,
+  "claim": [
+    {
+      "id": 1,
+      "category": "INCOMING",
+      "channel": "EMAIL",
+      "assignee": "cocktail",
+      "initiatorType": "CLIENT",
+      "isFirstLine": true,
+      "claimType": "null",
+      "claimTheme": "null",
+      "description": "Клиент просит предоставить платежный документ по платежу № 99999",
+      "serviceCount": 1,
+      "priority": "MEDIUM",
+      "client": {
+        "globalCompanyId": "null",
+        "inn": "1234567980",
+        "kpp": "123456798",
+        "ogrn": "1234567980123",
+        "fullName": "Общество с ограниченной ответственностью \"Ромашка\"",
+        "shortName": "ООО \"Ромашка\""
+      },
+      "documents": [
+        {
+          "id": "24db3c5a-b61c-4743-b953-a9d240b5478d",
+          "name": "Запрос от ООО Ромашка.msg",
+          "size": 24532
+        }
+      ]
+    }
+  ],
+  "documents": {
+    "id": 1,
+    "name": "СПРАВКА Т34",
+    "size": "32",
+    "claim_id": 1
+  }
+}

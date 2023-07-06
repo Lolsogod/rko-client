@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    background-color: #f6f6f4;
+}
+.main-content{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    flex: 1;
+    /*наверное это плохо, потом подумаю*/
+    overflow: hidden;
+    /*необходимо добавить самостоятельно и описать ширину блока для различных разрешений экрана*/
+}
+/*тоже както не так исправь*/
+.b-flex{
+    justify-content: space-between
+}
+.c-flex{
+    align-items: center
+}
+
+.secondary-text{
+    font-size: small;
+    color: #cccccc ;
+}
+.ns {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
