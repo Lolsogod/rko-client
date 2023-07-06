@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/claim',
       name: 'claim',
-      component: () => import('../components/ClaimView.vue')
+      component: () => import('../views/newClaim/ClaimView.vue')
     },
     {
       path:'/claim/:id',

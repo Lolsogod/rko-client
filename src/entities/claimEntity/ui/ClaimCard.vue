@@ -49,13 +49,7 @@ const tempClaim = {
     .date{
         font-size: smaller;
     }
-    .claim-id{
-        font-size: small;
-        padding: 5px;
-        width: 6rem;
-        border-radius: 5px;
-        border: 2px solid #e3e3e3;
-    }
+  
     .c-card{
         border-radius: 1.5rem;
         background-color: white;
