@@ -25,7 +25,6 @@ const tempClaim = {
             <div>{{ tempClaim.name }}</div>
             <div class="d-flex c-flex">
                 <div class="claim-id">{{ tempClaim.id }}</div>
-                <!--cюда менбшку-->
                 <Menu :items="menuConf.getItems(claimStatus)"></Menu>
             </div>
         </div>

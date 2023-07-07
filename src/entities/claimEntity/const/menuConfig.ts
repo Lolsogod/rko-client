@@ -1,21 +1,26 @@
 import type { IMenuItem } from '@/interfaces/IMenuItem';
 import {useModalrStore} from '@/stores/modal'
+import router from '@/router'
 
 export const useMenuConfig = () =>{
     const modalStore = useModalrStore()
    
     //хз мб херня но пусть так пока
     const items = new Map<string, IMenuItem[]>([
-      ['new', [{text: "Что то", action: () => modalStore.openModal("", "test2")},]],
-      ['wip', [{text: "Что то", action: () => modalStore.openModal('', 'из пропса клайм инфо будет браться')},]],
+      ['new', [
+        {text: "Взять в работу", action: () => router.push('/claim/1')},
+        {text: "Посмотреть", action: () => modalStore.openModal('info', '')},
+        {text: "Журнал состояний", action: () => modalStore.openModal('journal', '')}
+    ]],
+      ['wip', [{text: "Что то", action: () => modalStore.openModal('', '')},]],
       ['queue', [
-            {text: "Взять в работу", action: () => modalStore.openModal('', 'но они уже уникальные')},
-            {text: "Посмотреть", action: () => modalStore.openModal('info', 'можно будет наверн както переорганиззовать мапу')},
-            {text: "Журнал состояний", action: () => modalStore.openModal('journal', 'чтоб тоже из пропсов бралась')}
+            {text: "Взять в работу", action: () => router.push('/claim/1')},
+            {text: "Посмотреть", action: () => modalStore.openModal('info', '')},
+            {text: "Журнал состояний", action: () => modalStore.openModal('journal', '')}
         ]],
       ['closed', [
-            {text: "Посмотреть", action: () => modalStore.openModal('info', 'хотя хз')},
-            {text: "Журнал состояний", action: () => modalStore.openModal('journal', 'пусть так будет')},
+            {text: "Посмотреть", action: () => modalStore.openModal('info', '')},
+            {text: "Журнал состояний", action: () => modalStore.openModal('journal', '')},
         ]]
     ]);
 

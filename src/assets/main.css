@@ -10,10 +10,9 @@ body{
     flex-direction: column;
     padding: 2rem;
     flex: 1;
-    /*наверное это плохо, потом подумаю*/
     /*необходимо добавить самостоятельно и описать ширину блока для различных разрешений экрана*/
 }
-/*тоже както не так исправь*/
+/*тоже както не так исправь, хотя пойдет*/
 .b-flex{
     justify-content: space-between
 }
@@ -27,13 +26,15 @@ body{
     font-size: small;
     color: #cccccc ;
 }
+
 .ns {
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-  }
-  .claim-id{
+}
+/*это должно сдесь быть?*/
+.claim-id{
     font-size: small;
     padding: 5px;
     width: 6rem;
