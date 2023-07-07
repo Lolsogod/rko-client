@@ -3,12 +3,14 @@ body{
     background-color: #f6f6f4;
 }
 .main-content{
+    /*временно*/
+    height: calc(100vh - 40px);
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     padding: 2rem;
     flex: 1;
     /*наверное это плохо, потом подумаю*/
-    overflow: hidden;
     /*необходимо добавить самостоятельно и описать ширину блока для различных разрешений экрана*/
 }
 /*тоже както не так исправь*/
@@ -18,7 +20,9 @@ body{
 .c-flex{
     align-items: center
 }
-
+.s-flex{
+    align-items: stretch
+}
 .secondary-text{
     font-size: small;
     color: #cccccc ;

@@ -7,6 +7,11 @@ import {
   ListboxOption,
 } from '@headlessui/vue'
 
+defineProps<{
+  label: string
+}>()
+
+//модель както сделать?
 const options = [
   { data: 'Канал 1' },
   { data: 'Канал 2' },
@@ -16,45 +21,60 @@ const options = [
 const selected = ref()
 </script>
 <template>
+    <!--ревльно лейблом сделать както бы-->
     <div>
-      <Listbox v-model="selected">
-        <div class="rel">
-          <ListboxButton class="list">
-            <span class="title" :class="selected?'':'grey'">{{ selected?selected.data:'Выберете сюда из пропса вставлю' }}</span>
-            <span class="icon-cont">
-              <PlIcon color="#a6a6a8" name="ChevronDown24"/>
-            </span>
-          </ListboxButton>
-  
-          <transition
-            enter-active-class="dur"
-            enter-from-class="to"
-            enter-to-class="from"
-            leave-active-class="dur"
-            leave-from-class="from"
-            leave-to-class="to">
-            <ListboxOptions class="options">
-              <ListboxOption
-                v-slot="{ active, selected }"
-                v-for="option in options"
-                :key="option.data"
-                :value="option"
-                as="template">
-                <li :class="[active ? 'active' : '', 'item',]">
-                  <span :class="[selected ? 'bold' : '', 'turn',]">
-                    {{ option.data }}
-                  </span>
-                </li>
-              </ListboxOption>
-            </ListboxOptions>
-          </transition>
-        </div>
-      </Listbox>
+      <div class="label d-flex c-flex">
+        {{ label }}
+      </div>
+      <div>
+        <Listbox v-model="selected">
+          <div class="rel">
+            <ListboxButton class="list-btn">
+              <span class="title" :class="selected?'':'grey'">{{ selected?selected.data:`Выберете ${label}`/*пока без склонений*/ }}</span>
+              <span class="icon-cont">
+                <PlIcon color="#a6a6a8" name="ChevronDown24"/>
+              </span>
+            </ListboxButton>
+    
+            <transition
+              enter-active-class="dur"
+              enter-from-class="to"
+              enter-to-class="from"
+              leave-active-class="dur"
+              leave-from-class="from"
+              leave-to-class="to">
+              <ListboxOptions class="options">
+                <ListboxOption
+                  v-slot="{ active, selected }"
+                  v-for="option in options"
+                  :key="option.data"
+                  :value="option"
+                  as="template">
+                  <li :class="[active ? 'active' : '', 'item',]">
+                    <span :class="[selected ? 'bold' : '', 'turn',]">
+                      {{ option.data }}
+                    </span>
+                  </li>
+                </ListboxOption>
+              </ListboxOptions>
+            </transition>
+          </div>
+        </Listbox>
+      </div>
     </div>
   </template>
   
 <style scoped>
-  .list{
+  .label{
+    height: 28px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 4px;
+    padding-top: 0;
+    color: var(--color-text-icons-secondary);
+  }
+  .list-btn{
+    height: 46px;
     position: relative; 
     padding: .7rem 1rem;
     background-color: #ffffff; 

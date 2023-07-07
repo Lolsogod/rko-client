@@ -25,6 +25,7 @@ const sideControl = () =>{
    .container{
         flex-direction: column;
         height: 100vh;
+        overflow: hidden;
    }
    .m-cont{
     flex-grow: 1
