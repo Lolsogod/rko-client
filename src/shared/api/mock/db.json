@@ -45,16 +45,42 @@
       { "code": "DELIVERY", "text": "Доставка" },
       { "code": "OTHER", "text": "Иное" }
     ],
+    "divisions": [
+      { "code": "SELLPLUS", "text": "Sellplus" },
+      { "code": "KIK", "text": "КИК" },
+      { "code": "GUARANTEE", "text": "ЦБГ" },
+      { "code": "FACTORING", "text": "Факторинг" }
+    ],
     "priority": [
+      { "code": "CRITICAL", "text": "Критический" },
       { "code": "HIGH", "text": "Высокий" },
       { "code": "MEDIUM", "text": "Средний" },
-      { "code": "LOW", "text": "Низкий" }
+      { "code": "LOW", "text": "Низкий" },
+      { "code": "PAUSE", "text": "Приостановлено" }
     ],
-    "claimTypes": [
+    "statuses": [
+      { "code": "DRAFT", "text": "Черновик" },
+      { "code": "NEW", "text": "Новое" },
+      { "code": "PENDING", "text": "В ожидании" },
+      { "code": "IN_PROGRESS", "text": "В процессе" },
+      { "code": "DONE", "text": "Выполнено", "reasons": 
+        [
+          { "code": "DONE", "text": "Закрыто" },
+          { "code": "FORWARDED", "text": "Переведено в другое подразделение" }
+        ]
+      },
+      { "code": "REJECTED", "text": "Отклонено", "reasons":
+        [
+          { "code": "INITIATOR_REJECTED", "text": "Отказ инициатора" },
+          { "code": "WRONG_CREATED", "text": "Ошибочно заведено" },
+          { "code": "DUPLICATE", "text": "Дубликат" }
+        ]
+      }
     ],
-    "claimThemes": [
-    ]
+    "claimTypes": [],
+    "claimThemes": []
   }
+  
 ,
   "claim": [
     {

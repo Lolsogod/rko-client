@@ -1,6 +1,6 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-//example store, delete later
+
 export const useModalrStore = defineStore('modal', () => {
   const type = ref('')
   //и обьеденить их обьектом

@@ -1,27 +1,19 @@
 <script setup lang="ts">
 import ClaimCard from '../../entities/claimEntity/ui/ClaimCard.vue';
+import type { ReferenceData } from '@/interfaces/References';
 const props = defineProps<{
-    claimStatus: string
+    status: ReferenceData
 }>()
-
-//не особо красиво, мб переделать
-const ruStatus = new Map([
-  ['new', 'Новые'],
-  ['wip', 'В работе'],
-  ['queue', 'Очередь'],
-  ['closed', 'Закрытые']
-]);
-
 </script>
 
 <template>
     <div class="d-grid gap-4">
-        <div class="type-badge" :class="`${props.claimStatus}-badge`">
-            {{ruStatus.get(props.claimStatus)}}
+        <div class="type-badge" :class="`${status.code}-badge`">
+            {{status.text}}
         </div>
-        <ClaimCard :claim-status="props.claimStatus"/>
-        <ClaimCard :claim-status="props.claimStatus"/>
-        <ClaimCard :claim-status="props.claimStatus"/>
+        <ClaimCard :status="status"/>
+        <ClaimCard :status="status"/>
+        <ClaimCard :status="status"/>
     </div>
     
 </template>
@@ -34,17 +26,17 @@ const ruStatus = new Map([
         padding: .4rem .6rem;
         width: 8rem;
     }
-    .new-badge{
+    .NEW-badge{
         background-color: #e8ebf4;
     }
 
-    .wip-badge{
+    .PENDING-badge{
         background-color: #f6e7e5;
     }
-    .queue-badge{
+    .IN_PROGRESS-badge{
         background-color: #f7ede3;
     }
-    .closed-badge{
+    .DONE-badge{
         background-color: #ededeb;
     }
 </style>

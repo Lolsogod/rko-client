@@ -14,7 +14,7 @@ const modalStore = useModalrStore()
 <template>
     <div class="d-flex c-flex b-flex mb-6">
       <span class="typography-headline-h3-semi-bold">Мои задачи</span>
-      <!--спросить самому ли делать стрелочку-->
+      <!--сделать стрелочку-->
       <PlButton size="medium" @click="router.push('/claim')">Добавить обращения</PlButton>
     </div>
     <Claims/>

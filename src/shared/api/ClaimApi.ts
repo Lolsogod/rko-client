@@ -1,4 +1,5 @@
 import type { Claim } from '@/interfaces/Claim';
+import type { References } from '@/interfaces/References'
 import axios from 'axios'
 
 const api = axios.create({
@@ -22,7 +23,7 @@ function bearerAuth(token: string) {
 //requests
 
 export const getReferences = async () => {
-    return await api.get('/references')
+    return (await api.get<References>('/references')).data
 }
 
 export const createClaim = async (claim: Claim) => {
