@@ -61,8 +61,8 @@
     "statuses": [
       { "code": "DRAFT", "text": "Черновик" },
       { "code": "NEW", "text": "Новое" },
-      { "code": "PENDING", "text": "В ожидании" },
       { "code": "IN_PROGRESS", "text": "В процессе" },
+      { "code": "PENDING", "text": "В ожидании" },
       { "code": "DONE", "text": "Выполнено", "reasons": 
         [
           { "code": "DONE", "text": "Закрыто" },

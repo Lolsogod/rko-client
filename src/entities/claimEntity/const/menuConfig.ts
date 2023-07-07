@@ -7,18 +7,18 @@ export const useMenuConfig = () =>{
    
     //хз мб херня но пусть так пока
     const items = new Map<string, IMenuItem[]>([
-      ['new', [
+      ['NEW', [
         {text: "Взять в работу", action: () => router.push('/claim/1')},
         {text: "Посмотреть", action: () => modalStore.openModal('info', '')},
         {text: "Журнал состояний", action: () => modalStore.openModal('journal', '')}
     ]],
-      ['wip', [{text: "Что то", action: () => modalStore.openModal('', '')},]],
-      ['queue', [
+      ['IN_PROGRESS', [{text: "Что то", action: () => modalStore.openModal('', '')},]],
+      ['PENDING', [
             {text: "Взять в работу", action: () => router.push('/claim/1')},
             {text: "Посмотреть", action: () => modalStore.openModal('info', '')},
             {text: "Журнал состояний", action: () => modalStore.openModal('journal', '')}
         ]],
-      ['closed', [
+      ['DONE', [
             {text: "Посмотреть", action: () => modalStore.openModal('info', '')},
             {text: "Журнал состояний", action: () => modalStore.openModal('journal', '')},
         ]]
