@@ -1,13 +1,11 @@
 <!--в эту карту в качестве children передавать любой DIV-->
-<script  lang="ts">
-  export default {
-    props:{
+<script setup lang="ts">
+    const props = defineProps({
       width:{
         type:String,
         default:"100%"
       }
-    }
-  }
+    })
 </script>
 
 <template>

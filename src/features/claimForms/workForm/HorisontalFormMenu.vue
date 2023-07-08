@@ -14,25 +14,15 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import IconInCircle from "../../../shared/ui/IconInCircle.vue";
+import {ref} from "vue";
+const menuItems = ref(['SD1', 'SD2', 'SD3', 'SD4']);
+const selectedItem = ref<String | null>(null);
+const selectItem = (item:String) => {
+  selectedItem.value = item;
+}
 
-export default {
-  components: {IconInCircle},
-  data() {
-    return {
-      menuItems: ['SD1', 'SD2', 'SD3', 'SD4'], // Список элементов меню
-      selectedItem: null, //active
-    };
-  },
-  computed: {},
-  methods: {
-    selectItem(item : any) {
-      console.log(item)
-      this.selectedItem = item;
-    },
-  },
-};
 </script>
 
 <style scoped>

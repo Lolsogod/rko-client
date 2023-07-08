@@ -1,9 +1,7 @@
-<script lang="ts">
+<script setup lang="ts">
 
 import SecondaryCard from "@/shared/ui/SecondaryCard.vue";
-export default {
-  components: {SecondaryCard},
-  props:{
+  const props = defineProps({
     document:{
       type:String,
       default:() => "xxxxxxxxxxxxx"
@@ -16,8 +14,7 @@ export default {
       type:String,
       default:() => "ООО XXX"
     },
-  }
-}
+  })
 </script>
 
 <template>

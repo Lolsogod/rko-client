@@ -6,18 +6,21 @@ import {
   ListboxOptions,
   ListboxOption,
 } from '@headlessui/vue'
-
-defineProps<{
-  label: string
-}>()
-
+import {defOptions} from "../const/defOptions"
+import type {DropDownItem, IDropDownProps} from "@/widgets/newDropDown/model/types";
+const props = defineProps({
+  options: {
+    type: Array<DropDownItem>,
+    default: () => defOptions,
+    required: false,
+  },
+  label: {
+    type: String,
+    required: true,
+  },
+});
 //модель както сделать?
-const options = [
-  { data: 'Канал 1' },
-  { data: 'Канал 2' },
-  { data: 'Канал 3' },
-  { data: 'Канал 4' },
-]
+
 const selected = ref()
 </script>
 <template>
@@ -32,7 +35,7 @@ const selected = ref()
             <ListboxButton class="list-btn">
               <span class="title" :class="selected?'':'grey'">{{ selected?selected.data:`Выберете ${label}`/*пока без склонений*/ }}</span>
               <span class="icon-cont">
-                <PlIcon color="#a6a6a8" name="ChevronDown24"/>
+                <PlIcon  color="#a6a6a8" name="ChevronDown24"/>
               </span>
             </ListboxButton>
     
@@ -65,6 +68,9 @@ const selected = ref()
   </template>
   
 <style scoped>
+.list-btn{
+
+}
   .label{
     height: 28px;
     font-weight: 500;
@@ -91,17 +97,23 @@ const selected = ref()
     white-space: nowrap; 
   }
   .icon-cont{
-    display: flex; 
+    transition: .2s all ease;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     position: absolute; 
     top: 0;
     bottom: 0; 
     right: 0; 
     padding-right: 0.5rem; 
-    align-items: center; 
-    pointer-events: none; 
+    pointer-events: none;
   }
+button[aria-expanded="true"] .icon-cont{
+  transition: .2s all ease;
+  transform: rotate(90deg);
+}
   .dur{
-    transition-duration: .2s; 
+    transition-duration: .2s;
   }
   .from{
     opacity: 1; 

@@ -1,8 +1,9 @@
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
+import {ref} from 'vue'
+import {Tab, TabGroup, TabList, TabPanel, TabPanels} from '@headlessui/vue'
 import CallBlockItem from "@/features/CallsBlock/ui/CallBlockItem.vue";
+import {E_CALL_TYPE} from "@/features/CallsBlock/model/types";
 
 const categories = ref({
   "calls": [
@@ -11,7 +12,7 @@ const categories = ref({
       name: 'Олег Юрьевич',
       date: '24.06.23 15:18',
       duration:"50",
-      type:"incoming",
+      type:E_CALL_TYPE.incoming,
       document:"342543534543"
     },
     {
@@ -19,7 +20,7 @@ const categories = ref({
       name: 'Олег Юрьевич2',
       date: '24.06.23 15:19',
       duration:"0",
-      type:"cancelled",
+      type:E_CALL_TYPE.canceled,
       document:"342543534543"
     },
   ],

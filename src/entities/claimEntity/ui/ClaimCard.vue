@@ -15,7 +15,6 @@ const tempClaim = {
 }
 
 const createdDate = computed(() => {
-    console.log()
   const date = new Date(props.claim.createdDate);
   
   const day = String(date.getDate()).padStart(2, '0');
