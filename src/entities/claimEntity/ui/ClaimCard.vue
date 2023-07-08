@@ -3,17 +3,27 @@ import Menu from '@/widgets/menu/Menu.vue';
 import { useMenuConfig} from '../const/menuConfig'
 import type { Claim } from '@/interfaces/Claim';
 import { computed } from 'vue';
+import ClaimInfo from '@/widgets/modal/ClaimInfo.vue';
 //временная штука наверное, когда будут клеймы с сервера отдута браться будет по айди
 const props = defineProps<{
     claim: Claim
 }>()
 
 const menuConf = useMenuConfig()
-//чисто для теста (даже называние не те наверное)
-const tempClaim = {
-    icon: "Chat24" //потом разберусь зачем это вобще
-}
 
+const channelIco = computed(() => {
+    switch (props.claim.channel) {
+        case "CHAT":
+          return("Chat24")
+        case "PHONE":
+            //спросить по поводу иконки телефона(ее нету)
+          return("Bell24")
+        case "EMAIL":
+            return("Mail24")
+        default:
+          return("")
+      }
+  })
 const createdDate = computed(() => {
     console.log()
   const date = new Date(props.claim.createdDate);
@@ -50,7 +60,7 @@ const createdDate = computed(() => {
                 <div class="date">{{ createdDate }}</div>
             </div>
             <div>
-                <PlIcon color="#d5d8e1" :name="tempClaim.icon"/>
+                <PlIcon color="#d5d8e1" :name="channelIco"/>
             </div>
         </div>
     </div>

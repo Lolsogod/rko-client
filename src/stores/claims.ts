@@ -11,5 +11,6 @@ export const useClaimStore = defineStore('claims', () => {
   const getClaimsByStatus = (status: string) =>{
     return calims.value?.filter(claim => claim.status == status); 
   }
+  
   return {calims, fetchClaims, getClaimsByStatus}
 })

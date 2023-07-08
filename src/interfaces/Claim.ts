@@ -24,6 +24,7 @@ export interface Claim {
    //это тоже
    claimTheme: string
    createdDate: Date
+   channel: string
 }
 
 export interface Client {
