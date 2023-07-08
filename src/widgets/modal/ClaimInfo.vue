@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import type { Claim } from '@/interfaces/Claim';
 import TInfo from '../TInfo/TInfo.vue'
+import { useClaimConfig } from '@/entities/claimEntity/const/claimConfig'
 //пока всё захардкожено, потом будет круто
-defineProps<{
+const props = defineProps<{
    claim: Claim
 }>()
+const conf = useClaimConfig(props.claim)
 </script>
 
 <template>
    <div class="container">
       <div class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 1fr 1fr 1fr .75fr"> 
          <TInfo title="Номер">SD-{{ claim.id }}</TInfo>
-         <TInfo title="Дата создания">06.07.23 14:29</TInfo>
-         <TInfo title="Канал обращения">Телефон 1 линия</TInfo>
-         <TInfo title="Инициатор">Верификатор</TInfo>
+         <TInfo title="Дата создания">{{ conf.createdDate.value}}</TInfo>
+         <TInfo title="Канал обращения">{{ conf.channelLine.value }}</TInfo>
+         <TInfo title="Инициатор">{{conf.initiator.value}}</TInfo>
       </div>
       <div  class="d-grid mt-6 mb-10 gap-12" style="grid-template-columns: 3fr .75fr">
          <TInfo title="Клиент">ИНН 999999999999, ИП Александровский Александр Александрович</TInfo>

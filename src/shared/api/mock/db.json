@@ -122,7 +122,9 @@
       "claimType": "Консультация",
       "claimTheme": "Справка о ссудной",
       "createdDate": "2023-10-26T12:05:10+00:00",
-      "channel": "CHAT"
+      "channel": "CHAT",
+      "isFirstLine": false,
+      "initiatorType": "CLIENT"
     },
     {
       "id":"3",
@@ -133,7 +135,9 @@
       "claimType": "Консультация",
       "claimTheme": "Сопровождение",
       "createdDate": "2023-09-20T22:47:57+00:00",
-      "channel": "CHAT"
+      "channel": "CHAT",
+      "isFirstLine": true,
+      "initiatorType": "OTHER"
    },
    {
       "id":"4",
@@ -144,7 +148,9 @@
       "claimType": "Запрос информации",
       "claimTheme": "",
       "createdDate": "2023-08-14T15:10:24+00:00",
-      "channel": "PHONE"
+      "channel": "PHONE",
+      "isFirstLine": true,
+      "initiatorType": "DELIVERY"
    },
    {
       "id":"5",
@@ -155,7 +161,9 @@
       "claimType": "Новая услуга",
       "claimTheme": "",
       "createdDate": "2023-07-08T06:21:59+00:00",
-      "channel": "CHAT"
+      "channel": "CHAT",
+      "isFirstLine": false,
+      "initiatorType": "PRODUCT"
    },
    {
       "id":"6",
@@ -166,7 +174,9 @@
       "claimType": "Запрос информации",
       "claimTheme": "Состояние счёта",
       "createdDate": "2023-06-29T17:42:36+00:00",
-      "channel": "PHONE"
+      "channel": "PHONE",
+      "isFirstLine": true,
+      "initiatorType": "NOT_CLIENT"
    },
    {
       "id":"7",
@@ -177,7 +187,9 @@
       "claimType": "Запрос выписки по счету",
       "claimTheme": "",
       "createdDate": "2023-05-24T10:55:01+00:00",
-      "channel": "CHAT"
+      "channel": "CHAT",
+      "isFirstLine": false,
+      "initiatorType": "CLIENT"
    },
    {
       "id":"8",
@@ -188,7 +200,9 @@
       "claimType": "Консультация",
       "claimTheme": "Отчёт о кредитовании",
       "createdDate": "2023-04-18T20:15:42+00:00",
-      "channel": "EMAIL"
+      "channel": "EMAIL",
+      "isFirstLine": true,
+      "initiatorType": "OTHER"
    },
    {
       "id":"9",
@@ -199,7 +213,9 @@
       "claimType": "Запрос выписки по счету",
       "claimTheme": "Оформление доверенности",
       "createdDate": "2023-03-12T13:37:27+00:00",
-      "channel": "EMAIL"
+      "channel": "EMAIL",
+      "isFirstLine": true,
+      "initiatorType": "DELIVERY"
    },
    {
       "id":"10",
@@ -210,7 +226,9 @@
       "claimType": "Консультация",
       "claimTheme": "Условия нового продукта",
       "createdDate": "2023-02-05T08:30:15+00:00",
-      "channel": "CHAT"
+      "channel": "CHAT",
+      "isFirstLine": false,
+      "initiatorType": "PRODUCT"
    },
    {
       "id":"11",
@@ -221,7 +239,9 @@
       "claimType": "Консультация",
       "claimTheme": "",
       "createdDate": "2023-01-01T00:00:00+00:00",
-      "channel": "CHAT"
+      "channel": "CHAT",
+      "isFirstLine": false,
+      "initiatorType": "NOT_CLIENT"
    },
    {
       "id":"12",
@@ -232,7 +252,9 @@
       "claimType": "Консультация",
       "claimTheme": "Заморозка счёта",
       "createdDate": "2023-03-12T13:37:27+00:00",
-      "channel": "EMAIL"
+      "channel": "EMAIL",
+      "isFirstLine": true,
+      "initiatorType": "CLIENT"
    }
   ],
   "documents": {

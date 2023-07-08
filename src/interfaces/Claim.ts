@@ -25,6 +25,8 @@ export interface Claim {
    claimTheme: string
    createdDate: Date
    channel: string
+   isFirstLine: boolean
+   initiatorType: string
 }
 
 export interface Client {
