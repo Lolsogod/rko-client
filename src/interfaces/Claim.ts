@@ -1,5 +1,7 @@
+/*
+пока для фек бээка будет уменьшеная весия клейма, дорабатыватся будет походу дела
 export interface Claim {
-    category:      string;
+    category?:      string;
     channel?:       string;
     initiatorType?: string;
     isFirstLine?:   boolean;
@@ -9,8 +11,13 @@ export interface Claim {
     serviceCount?:  number;
     priority?:      string;
     assignee?:      string;
-    client:        Client;
-    documents:     Document[];
+    client?:        Client;
+    documents?:     Document[];
+}*/
+
+export interface Claim {
+   id: string,
+   status: string
 }
 
 export interface Client {

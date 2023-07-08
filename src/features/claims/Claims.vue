@@ -1,19 +1,18 @@
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
 import ClaimsCol from './ClaimsCol.vue';
 import {useReferenceStore} from '@/stores/references'
+import {useClaimStore} from '@/stores/claims'
 
-const store = useReferenceStore()
+const rStore = useReferenceStore()
+const cStore = useClaimStore()
 //погуглю как на старте вызывать функцию, а пока пусть так
-console.log(store.fetchReferences)
-store.fetchReferences()
-
-
+rStore.fetchReferences()
+cStore.fetchClaims()
 </script>
 
 <template>
     <div class="d-flex gap-8 claims">
-        <ClaimsCol v-for="status in store.statuses" :key="status.code" :status="status"/>
+        <ClaimsCol v-for="status in rStore.statuses" :key="status.code" :status="status"/>
     </div>
     
 </template>

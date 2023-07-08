@@ -109,8 +109,53 @@
           "name": "Запрос от ООО Ромашка.msg",
           "size": 24532
         }
-      ]
-    }
+      ],
+      "status": "NEW"
+    },
+    {
+      "id": "2", 
+      "status": "DONE"
+    },
+    {
+      "id":"3",
+      "status":"NEW"
+   },
+   {
+      "id":"4",
+      "status":"PENDING"
+   },
+   {
+      "id":"5",
+      "status":"PENDING"
+   },
+   {
+      "id":"6",
+      "status":"DONE"
+   },
+   {
+      "id":"7",
+      "status":"IN_PROGRESS"
+   },
+   {
+      "id":"8",
+      "status":"PENDING"
+   },
+   {
+      "id":"9",
+      "status":"NEW"
+   },
+   {
+      "id":"10",
+      "status":"PENDING"
+   },
+   {
+      "id":"11",
+      "status":"NEW"
+   },
+   {
+      "id":"12",
+      "status":"IN_PROGRESS"
+   }
   ],
   "documents": {
     "id": 1,

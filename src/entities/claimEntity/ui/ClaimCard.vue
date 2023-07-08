@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import Menu from '@/widgets/menu/Menu.vue';
 import { useMenuConfig} from '../const/menuConfig'
-import type { ReferenceData } from '@/interfaces/References';
+import type { Claim } from '@/interfaces/Claim';
 //временная штука наверное, когда будут клеймы с сервера отдута браться будет по айди
 defineProps<{
-    status: ReferenceData
+    claim: Claim
 }>()
 
 const menuConf = useMenuConfig()
@@ -21,12 +21,12 @@ const tempClaim = {
 </script>
 
 <template>
-    <div class="c-card d-grid gap-4" :class="`${status.code}-card`">
+    <div class="c-card d-grid gap-4" :class="`${claim.status}-card`">
         <div class="card-top d-flex b-flex c-flex">
             <div>{{ tempClaim.name }}</div>
             <div class="d-flex c-flex">
-                <div class="claim-id">{{ tempClaim.id }}</div>
-                <Menu :items="menuConf.getItems(status.code)"></Menu>
+                <div class="claim-id">SD-{{ claim.id }}</div>
+                <Menu :items="menuConf.getItems(claim.status)"></Menu>
             </div>
         </div>
         <div class="card-mid d-flex c-flex b-flex">

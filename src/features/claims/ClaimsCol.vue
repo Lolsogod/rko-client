@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import ClaimCard from '../../entities/claimEntity/ui/ClaimCard.vue';
 import type { ReferenceData } from '@/interfaces/References';
-const props = defineProps<{
+import {useClaimStore} from '@/stores/claims'
+defineProps<{
     status: ReferenceData
 }>()
+
+const store = useClaimStore()
 </script>
 
 <template>
@@ -11,9 +14,7 @@ const props = defineProps<{
         <div class="type-badge" :class="`${status.code}-badge`">
             {{status.text}}
         </div>
-        <ClaimCard :status="status"/>
-        <ClaimCard :status="status"/>
-        <ClaimCard :status="status"/>
+        <ClaimCard v-for="claim in store.getClaimsByStatus(status.code)" :key="claim.id" :claim="claim"/>
     </div>
     
 </template>

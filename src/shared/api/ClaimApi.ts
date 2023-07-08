@@ -21,11 +21,16 @@ function bearerAuth(token: string) {
 }
 
 //requests
-
+//работают на фейк бэке
 export const getReferences = async () => {
     return (await api.get<References>('/references')).data
 }
 
+export const getClaims = async () => {
+    return (await api.get<Claim[]>('/claim')).data
+}
+
+//не тестил
 export const createClaim = async (claim: Claim) => {
     return await api.post('/claim', {...claim})
 }
