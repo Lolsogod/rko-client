@@ -115,20 +115,23 @@
     },
     {
       "id": "2", 
-      "status": "DONE",
+      "status": "NEW",
       "client":{
-        "shortName":"ООО \"Ромашка\""
+        "shortName":"ООО \"Экшн\"",
+        "fullName": "Общество с ограниченной ответственностью \"Экшн\"",
+        "inn": "1234567980"
       },
       "claimType": "Консультация",
       "claimTheme": "Справка о ссудной",
       "createdDate": "2023-10-26T12:05:10+00:00",
       "channel": "CHAT",
       "isFirstLine": false,
-      "initiatorType": "CLIENT"
+      "initiatorType": "CLIENT",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nibh ante, facilisis non eleifend et, placerat vel lorem. Aliquam erat volutpat. Suspendisse iaculis orci sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In sed porttitor augue. Ut ut libero quis arcu dapibus faucibus. Phasellus quis tempus libero, nec egestas lorem. In at hendrerit enim, nec accumsan neque. Ut tortor neque, tempus eget dolor malesuada, placerat interdum quam. Proin ligula justo, facilisis a ligula at, hendrerit ornare ante. Maecenas laoreet commodo massa a tempus."
     },
     {
       "id":"3",
-      "status":"NEW",
+      "status":"DONE",
       "client": {
         "shortName": "ООО \"Звездный путь\""
       },

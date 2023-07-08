@@ -67,5 +67,8 @@ export const useClaimConfig = (claim: Claim) =>{
     const initiator = computed(() => {
       return refStore.refernces?.initiatorTypes.find((initiator) => initiator.code == claim.initiatorType)?.text
     })
-    return {menuItems, createdDate, channelIco, channelLine, initiator}
+    const status = computed(() => {
+      return refStore.refernces?.statuses.find((status) => status.code == claim.status)?.text
+    })
+    return {menuItems, createdDate, channelIco, channelLine, initiator, status}
 }

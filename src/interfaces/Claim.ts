@@ -27,6 +27,7 @@ export interface Claim {
    channel: string
    isFirstLine: boolean
    initiatorType: string
+   description: string
 }
 
 export interface Client {
