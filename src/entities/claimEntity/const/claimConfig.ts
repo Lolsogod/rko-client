@@ -4,6 +4,7 @@ import router from '@/router'
 import type { Claim } from '@/interfaces/Claim';
 import {computed} from 'vue'
 import { useReferenceStore } from '@/stores/references';
+import type { ReferenceData, References } from '@/interfaces/References';
 
 export const useClaimConfig = (claim: Claim) =>{
   
@@ -60,15 +61,11 @@ export const useClaimConfig = (claim: Claim) =>{
         }
     })
     //повторяются, придумать функцию?
-    const channelLine = computed(() => {
-      const cName = refStore.refernces?.channels.find((channel) => channel.code == claim.channel)?.text
-      return `${cName}${claim.isFirstLine?' 1 линия':''}`
-    })
-    const initiator = computed(() => {
-      return refStore.refernces?.initiatorTypes.find((initiator) => initiator.code == claim.initiatorType)?.text
-    })
-    const status = computed(() => {
-      return refStore.refernces?.statuses.find((status) => status.code == claim.status)?.text
-    })
+    function getTextByCode(code: string, targetArray: string) {
+      return computed(() => refStore.refernces?.[targetArray as keyof References]!.find((item: ReferenceData) => item.code === code)?.text);
+    }
+    const channelLine = `${getTextByCode(claim.channel, 'channels').value}${claim.isFirstLine?' 1 линия':''}`
+    const initiator = getTextByCode(claim.initiatorType, 'initiatorTypes');
+    const status = getTextByCode(claim.status, 'statuses');
     return {menuItems, createdDate, channelIco, channelLine, initiator, status}
 }

@@ -14,7 +14,7 @@ const conf = useClaimConfig(props.claim)
       <div class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 1fr 1fr 1fr .75fr"> 
          <TInfo title="Номер">SD-{{ claim.id }}</TInfo>
          <TInfo title="Дата создания">{{ conf.createdDate.value}}</TInfo>
-         <TInfo title="Канал обращения">{{ conf.channelLine.value }}</TInfo>
+         <TInfo title="Канал обращения">{{ conf.channelLine }}</TInfo>
          <TInfo title="Инициатор">{{conf.initiator.value}}</TInfo>
       </div>
       <div  class="d-grid mt-6 mb-10 gap-12" style="grid-template-columns: 3fr .75fr">
