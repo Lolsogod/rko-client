@@ -1,27 +1,33 @@
 <script setup lang="ts">
+import type { Claim } from '@/interfaces/Claim';
 import TInfo from '../TInfo/TInfo.vue'
+import { useClaimConfig } from '@/entities/claimEntity/const/claimConfig'
 //пока всё захардкожено, потом будет круто
+const props = defineProps<{
+   claim: Claim
+}>()
+const conf = useClaimConfig(props.claim)
 </script>
 
 <template>
    <div class="container">
       <div class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 1fr 1fr 1fr .75fr"> 
-         <TInfo title="Номер">SD-7802</TInfo>
-         <TInfo title="Дата создания">06.07.23 14:29</TInfo>
-         <TInfo title="Канал обращения">Телефон 1 линия</TInfo>
-         <TInfo title="Инициатор">Верификатор</TInfo>
+         <TInfo title="Номер">SD-{{ claim.id }}</TInfo>
+         <TInfo title="Дата создания">{{ conf.createdDate.value}}</TInfo>
+         <TInfo title="Канал обращения">{{ conf.channelLine.value }}</TInfo>
+         <TInfo title="Инициатор">{{conf.initiator.value}}</TInfo>
       </div>
       <div  class="d-grid mt-6 mb-10 gap-12" style="grid-template-columns: 3fr .75fr">
-         <TInfo title="Клиент">ИНН 999999999999, ИП Александровский Александр Александрович</TInfo>
-         <TInfo title="Статус">Закрыто</TInfo>
+         <TInfo title="Клиент">ИНН {{claim.client.inn}}, {{ claim.client.fullName }}</TInfo>
+         <TInfo title="Статус">{{conf.status.value}}</TInfo>
       </div>
       <div  class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 2fr 2fr">
-         <TInfo title="Тип обращения">Создание п\п с номинального счета</TInfo>
-         <TInfo title="Тема">Не требуется юридическое сопровождение</TInfo>
+         <TInfo title="Тип обращения">{{ claim.claimType }}</TInfo>
+         <TInfo title="Тема">{{claim.claimTheme}}</TInfo>
       </div>
       <div lass="d-grid mt-6 mb-10" style="grid-template-columns: 1fr">
          <TInfo title="Описание обращения">
-            И нет сомнений, что сделанные на базе интернет-аналитики выводы, вне зависимости от их уровня, должны быть призваны к ответу. Банальные, но неопровержимые выводы, а также сторонники тоталитаризма в науке рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Имеется спорная точка зрения, гласящая примерно следующее: непосредственные участники технического прогресса представлены в исключительно положительном свете. Повседневная практика показывает, что дальнейшее развитие
+            {{ claim.description }}
          </TInfo>
       </div>
       <div> -----------здесь будут доки--------------</div>

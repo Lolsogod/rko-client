@@ -19,7 +19,7 @@ const modalStore = useModalrStore()
     </div>
     <Claims/>
     <Modal :is-open="modalStore.isOpen" @close="modalStore.closeModal" :title="modalStore.title">
-      <ClaimInfo v-if="modalStore.type == 'info'"/>
-      <StateJournal v-else-if="modalStore.type == 'journal'"/>
+      <ClaimInfo v-if="modalStore.type == 'info'" :claim="modalStore.claim!"/>
+      <StateJournal v-else-if="modalStore.type == 'journal'" :claim="modalStore.claim!"/>
     </Modal>
 </template>

@@ -1,5 +1,6 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import type { Claim } from '@/interfaces/Claim'
 
 export const useModalrStore = defineStore('modal', () => {
   const type = ref('')
@@ -15,17 +16,17 @@ export const useModalrStore = defineStore('modal', () => {
     }
   })
   //сюда надо как то компонент запихать а хотя мб и ненадо
-  const content = ref('')
+  const claim = ref<Claim>()
 
   const isOpen = ref(false)
   
-  const openModal = (newType: string, newContent: string)=>{
+  const openModal = (newType: string, newClaim: Claim)=>{
     type.value = newType 
-    content.value = newContent
+    claim.value = newClaim
     isOpen.value = true
   }
   function closeModal() {
     isOpen.value = false
   }
-  return { isOpen, openModal, closeModal, content, type, title}
+  return { isOpen, openModal, closeModal, claim: claim, type, title}
 })

@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import type { Claim } from '@/interfaces/Claim';
 import JItem from '../JItem/JItem.vue';
 import type { JournalData } from '../JItem/types'
 //пока всё захардкожено, потом будет круто
+defineProps<{
+   claim: Claim
+}>()
 const states: JournalData[]  = [
     {
         date: "01.07.23 23:17",

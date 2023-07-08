@@ -1,33 +1,16 @@
 <script setup lang="ts">
 import Menu from '@/widgets/menu/Menu.vue';
-import { useMenuConfig} from '../const/menuConfig'
+import { useClaimConfig } from '../const/claimConfig'
 import type { Claim } from '@/interfaces/Claim';
 import { computed } from 'vue';
+import ClaimInfo from '@/widgets/modal/ClaimInfo.vue';
 //временная штука наверное, когда будут клеймы с сервера отдута браться будет по айди
 const props = defineProps<{
     claim: Claim
 }>()
 
-const menuConf = useMenuConfig()
-//чисто для теста (даже называние не те наверное)
-const tempClaim = {
-    icon: "Chat24" //потом разберусь зачем это вобще
-}
+const conf = useClaimConfig(props.claim)
 
-const createdDate = computed(() => {
-  const date = new Date(props.claim.createdDate);
-  
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const year = date.getFullYear();
-
-  const hours = String(date.getHours()).padStart(2, '0');
-  const minutes = String(date.getMinutes()).padStart(2, '0');
-
-  const formattedDate = `${day}.${month}.${year} в ${hours}.${minutes}`;
-
-  return formattedDate;
-})
 </script>
 
 <template>
@@ -36,7 +19,7 @@ const createdDate = computed(() => {
             <div>{{ claim.client.shortName }}</div>
             <div class="d-flex c-flex">
                 <div class="claim-id">SD-{{ claim.id }}</div>
-                <Menu :items="menuConf.getItems(claim.status)"></Menu>
+                <Menu :items="conf.menuItems.value"></Menu>
             </div>
         </div>
         <div class="card-mid d-flex c-flex b-flex">
@@ -46,10 +29,10 @@ const createdDate = computed(() => {
         <div class="d-flex c-flex b-flex">
             <div>
                 <div class="secondary-text mb-2">Дата создания</div>
-                <div class="date">{{ createdDate }}</div>
+                <div class="date">{{ conf.createdDate.value }}</div>
             </div>
             <div>
-                <PlIcon color="#d5d8e1" :name="tempClaim.icon"/>
+                <PlIcon color="#d5d8e1" :name="conf.channelIco.value"/>
             </div>
         </div>
     </div>
@@ -81,4 +64,4 @@ const createdDate = computed(() => {
     .DONE-card{
         border-color: #dcdcdb;
     }
-</style>
+</style>../const/claimConfig

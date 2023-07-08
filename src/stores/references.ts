@@ -12,5 +12,6 @@ export const useReferenceStore = defineStore('references', () => {
     //пока без драфтов и реджектов (не оч понял где их рендерить)
     return refernces.value?.statuses.filter(status => status.code !== "DRAFT" && status.code !== "REJECTED"); 
   })
+  
   return {refernces, fetchReferences, statuses}
 })

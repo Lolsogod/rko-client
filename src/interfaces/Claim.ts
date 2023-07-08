@@ -24,6 +24,10 @@ export interface Claim {
    //это тоже
    claimTheme: string
    createdDate: Date
+   channel: string
+   isFirstLine: boolean
+   initiatorType: string
+   description: string
 }
 
 export interface Client {
