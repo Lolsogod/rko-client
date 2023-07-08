@@ -108,10 +108,11 @@ const selected = ref()
     padding-right: 0.5rem; 
     pointer-events: none;
   }
-button[aria-expanded="true"] .icon-cont{
-  transition: .2s all ease;
-  transform: rotate(90deg);
-}
+  button[aria-expanded="true"] .icon-cont{
+    /**мб убрать анимшку */
+    transition: .1s all ease;
+    transform: scaleY(-1);
+  }
   .dur{
     transition-duration: .2s;
   }
