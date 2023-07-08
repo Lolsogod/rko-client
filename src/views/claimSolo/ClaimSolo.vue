@@ -69,22 +69,19 @@ export default {
 
   }
   .claimSolo{
-    margin-bottom: 60px !important;
-    height: calc(100% - 90px);
+    margin-bottom: 90px !important;
+    height: calc(100% + 300px);
   }
   .main{
   }
   footer{
-    padding: 30px;
     z-index: 2;
-
+    padding: 10px;
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 90px;
     background-color: white;
     width: 100%;
-    margin-top: auto;
   }
 
 
