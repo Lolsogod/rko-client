@@ -1,19 +1,13 @@
-<script  lang="ts">
+<script setup lang="ts">
   import type {Product} from "@/entities/ClientProduct/model/types";
   import SecondaryCard from "@/shared/ui/SecondaryCard.vue";
   import ClientProductsListItem from "@/entities/ClientProduct/ui/ClientProductsListItem.vue";
 
-  export default {
-    components: {ClientProductsListItem, SecondaryCard},
-    props:{
+    const props= defineProps({
       clientDocsInfoArray:{
         type:Array<Product>
       }
-    },
-    data:() => {
-      {}
-    }
-  }
+    })
 </script>
 
 <template>

@@ -1,31 +1,28 @@
-<script lang="ts">
+<script setup lang="ts">
 import ClaimWorkForm from "../../features/claimForms/workForm/ClaimWorkForm.vue";
 import ClientProductsList from "@/entities/ClientProduct/ui/ClientProductsList.vue";
 import CallsBlock from "@/features/CallsBlock/ui/CallsBlock.vue";
 import CallBlockItem from "@/features/CallsBlock/ui/CallBlockItem.vue";
-import {E_CALL_TYPE} from "@/features/CallsBlock/ui/CallBlockItem.vue";
+import {E_CALL_TYPE} from "@/features/CallsBlock/model/types";
 import WorkClaimMiniForm from "../../features/claimForms/workForm/WorkClaimMiniForm.vue";
 import Chat from "@/widgets/chat/Chat.vue";
 import ClaimSoloPult from "@/views/claimSolo/ClaimSoloPult.vue";
 import router from '@/router'
+import type {Product} from "@/entities/ClientProduct/model/types";
+import {onMounted, ref} from "vue";
+import {useRoute} from "vue-router";
+const claimId = ref<String | String[]>('');
+const clientDocsInfoArray =
+    [
+          {company:"Тариф Контракт Плюс", type:"Расчетный", document:"3245635254645"},
+          {company:"Тариф Контракт Плюс", type:"Номинальный", document:"43435446543"},
+          {company:"ООО РОВИ ФАКТОРИНГ ПЛЮС", type:"Расчетный", document:"43242342342344"},
+        ]
 
-export default {
-
-  components: {ClaimSoloPult, Chat, WorkClaimMiniForm, CallBlockItem, CallsBlock, ClientProductsList, ClaimWorkForm},
-  data() {
-    return {
-      claimId: '',
-      clientDocsInfoArray:[
-        {company:"Тариф Контракт Плюс", type:"Расчетный", document:"3245635254645"},
-        {company:"Тариф Контракт Плюс", type:"Номинальный", document:"43435446543"},
-        {company:"ООО РОВИ ФАКТОРИНГ ПЛЮС", type:"Расчетный", document:"43242342342344"},
-      ]
-    };
-  },
-  mounted() {
-    this.claimId = this.$route.params.id;
-  },
-};
+onMounted(() => {
+  const route = useRoute();
+  claimId.value = route.params.id;
+})
 </script>
 
 <template>
@@ -69,22 +66,19 @@ export default {
 
   }
   .claimSolo{
-    margin-bottom: 60px !important;
-    height: calc(100% - 90px);
+    margin-bottom: 90px !important;
+    height: calc(100% + 300px);
   }
   .main{
   }
   footer{
-    padding: 30px;
     z-index: 2;
-
+    padding: 10px;
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 90px;
     background-color: white;
     width: 100%;
-    margin-top: auto;
   }
 
 

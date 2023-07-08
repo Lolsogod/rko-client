@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
-import newDropDown from "@/widgets/newDropDown/newDropDown.vue"
+import newDropDown from "@/widgets/newDropDown/ui/newDropDown.vue"
 const rules = {
   client: [{
     require: true,

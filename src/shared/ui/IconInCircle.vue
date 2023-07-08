@@ -1,3 +1,28 @@
+<script setup  lang="ts">
+
+    import {computed} from "vue";
+
+    const props = defineProps({
+      width: {
+        type: String,
+        default: "40px",
+      },
+      height: {
+        type: String,
+        default: "40px",
+      },
+    });
+
+    const circleStyle = computed(() => ({
+      display: "flex",
+      width: props.width,
+      height: props.height,
+      borderRadius: "50%",
+      justifyContent: "center",
+      alignItems: "center",
+    }));
+
+</script>
 <template>
   <div class="circle" :style="circleStyle">
     <div>
@@ -6,33 +31,7 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  props: {
-    width: {
-      type: String,
-      default: "40px",
-    },
-    height: {
-      type: String,
-      default: "40px",
-    },
-  },
-  computed: {
-    circleStyle() {
-      return {
-        display: "flex",
-        width: this.width,
-        height: this.height,
-        borderRadius: "50%",
-        justifyContent: "center",
-        alignItems: "center",
-      };
-    },
 
-  },
-};
-</script>
 
 <style scoped>
 .circle {
