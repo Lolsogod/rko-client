@@ -1,12 +1,16 @@
 <script setup lang="ts">
+import type { Claim } from '@/interfaces/Claim';
 import TInfo from '../TInfo/TInfo.vue'
 //пока всё захардкожено, потом будет круто
+defineProps<{
+   claim: Claim
+}>()
 </script>
 
 <template>
    <div class="container">
       <div class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 1fr 1fr 1fr .75fr"> 
-         <TInfo title="Номер">SD-7802</TInfo>
+         <TInfo title="Номер">SD-{{ claim.id }}</TInfo>
          <TInfo title="Дата создания">06.07.23 14:29</TInfo>
          <TInfo title="Канал обращения">Телефон 1 линия</TInfo>
          <TInfo title="Инициатор">Верификатор</TInfo>

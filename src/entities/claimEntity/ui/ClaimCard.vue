@@ -9,7 +9,7 @@ const props = defineProps<{
     claim: Claim
 }>()
 
-const menuConf = useMenuConfig()
+const menuConf = useMenuConfig(props.claim)
 
 const channelIco = computed(() => {
     switch (props.claim.channel) {
