@@ -90,8 +90,8 @@
       "assignee": "cocktail",
       "initiatorType": "CLIENT",
       "isFirstLine": true,
-      "claimType": "null",
-      "claimTheme": "null",
+      "claimType": "Консультация",
+      "claimTheme": "Ограничения по счёту",
       "description": "Клиент просит предоставить платежный документ по платежу № 99999",
       "serviceCount": 1,
       "priority": "MEDIUM",
@@ -110,51 +110,118 @@
           "size": 24532
         }
       ],
-      "status": "NEW"
+      "status": "NEW",
+      "createdDate": "2023-01-01T00:00:00+00:00"
     },
     {
       "id": "2", 
-      "status": "DONE"
+      "status": "DONE",
+      "client":{
+        "shortName":"ООО \"Ромашка\""
+      },
+      "claimType": "Консультация",
+      "claimTheme": "Справка о ссудной",
+      "createdDate": "2023-10-26T12:05:10+00:00"
     },
     {
       "id":"3",
-      "status":"NEW"
+      "status":"NEW",
+      "client": {
+        "shortName": "ООО \"Звездный путь\""
+      },
+      "claimType": "Консультация",
+      "claimTheme": "Сопровождение",
+      "createdDate": "2023-09-20T22:47:57+00:00"
    },
    {
       "id":"4",
-      "status":"PENDING"
+      "status":"PENDING",
+      "client": {
+        "shortName": "ООО \"Солнечный бриз\""
+      },
+      "claimType": "Запрос информации",
+      "claimTheme": "",
+      "createdDate": "2023-08-14T15:10:24+00:00"
    },
    {
       "id":"5",
-      "status":"PENDING"
+      "status":"PENDING",
+      "client": {
+        "shortName": "ООО \"Кристалл-Про\""
+      },
+      "claimType": "Новая услуга",
+      "claimTheme": "",
+      "createdDate": "2023-07-08T06:21:59+00:00"
    },
    {
       "id":"6",
-      "status":"DONE"
+      "status":"DONE",
+      "client": {
+        "shortName": "ООО \"Эволюция\""
+      },
+      "claimType": "Запрос информации",
+      "claimTheme": "Состояние счёта",
+      "createdDate": "2023-06-29T17:42:36+00:00"
    },
    {
       "id":"7",
-      "status":"IN_PROGRESS"
+      "status":"IN_PROGRESS",
+      "client": {
+        "shortName": "ООО \"Интеллектуальные решения\""
+      },
+      "claimType": "Запрос выписки по счету",
+      "claimTheme": "",
+      "createdDate": "2023-05-24T10:55:01+00:00"
    },
    {
       "id":"8",
-      "status":"PENDING"
+      "status":"PENDING",
+      "client": {
+        "shortName": "ООО \"АртСтудия\""
+      },
+      "claimType": "Консультация",
+      "claimTheme": "Отчёт о кредитовании",
+      "createdDate": "2023-04-18T20:15:42+00:00"
    },
    {
       "id":"9",
-      "status":"NEW"
+      "status":"NEW",
+      "client": {
+        "shortName": "ООО \"Глобальные возможности\""
+      },
+      "claimType": "Запрос выписки по счету",
+      "claimTheme": "Оформление доверенности",
+      "createdDate": "2023-03-12T13:37:27+00:00"
    },
    {
       "id":"10",
-      "status":"PENDING"
+      "status":"PENDING",
+      "client": {
+        "shortName": "ООО \"Прогресс-Техно\""
+      },
+      "claimType": "Консультация",
+      "claimTheme": "Условия нового продукта",
+      "createdDate": "2023-02-05T08:30:15+00:00"
    },
    {
       "id":"11",
-      "status":"NEW"
+      "status":"NEW",
+      "client": {
+        "shortName": "ООО \"Мегаполис Инкорпорейтед\""
+      },
+      "claimType": "Консультация",
+      "claimTheme": "",
+      "createdDate": "2023-01-01T00:00:00+00:00"
    },
    {
       "id":"12",
-      "status":"IN_PROGRESS"
+      "status":"IN_PROGRESS",
+      "client": {
+        "shortName": "ООО \"Кристалл-Про\""
+      },
+      "claimType": "Консультация",
+      "claimTheme": "Заморозка счёта",
+      "createdDate": "2023-03-12T13:37:27+00:00"
    }
   ],
   "documents": {

@@ -18,11 +18,17 @@ export interface Claim {
 export interface Claim {
    id: string,
    status: string
+   client: Client
+   //это в проработке
+   claimType: string
+   //это тоже
+   claimTheme: string
+   createdDate: Date
 }
 
 export interface Client {
     globalCompanyId?: number | null;//всегда null?, уточнить про обязательность
-    inn?:             string;
+    inn?:            string;
     kpp:             string;
     ogrn:            string;
     fullName:        string;

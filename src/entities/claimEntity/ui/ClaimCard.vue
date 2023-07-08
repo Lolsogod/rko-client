@@ -2,41 +2,52 @@
 import Menu from '@/widgets/menu/Menu.vue';
 import { useMenuConfig} from '../const/menuConfig'
 import type { Claim } from '@/interfaces/Claim';
+import { computed } from 'vue';
 //временная штука наверное, когда будут клеймы с сервера отдута браться будет по айди
-defineProps<{
+const props = defineProps<{
     claim: Claim
 }>()
 
 const menuConf = useMenuConfig()
 //чисто для теста (даже называние не те наверное)
 const tempClaim = {
-    id: "SD-7820",
-    name: "ООО \"Экшен\"",
-    jobType: "Консультация",
-    date: "02.07.2023",
-    time: "18.35",
-    claimType: "Справка об оборотах",
     icon: "Chat24" //потом разберусь зачем это вобще
 }
+
+const createdDate = computed(() => {
+    console.log()
+  const date = new Date(props.claim.createdDate);
+  
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+
+  const formattedDate = `${day}.${month}.${year} в ${hours}.${minutes}`;
+
+  return formattedDate;
+})
 </script>
 
 <template>
     <div class="c-card d-grid gap-4" :class="`${claim.status}-card`">
         <div class="card-top d-flex b-flex c-flex">
-            <div>{{ tempClaim.name }}</div>
+            <div>{{ claim.client.shortName }}</div>
             <div class="d-flex c-flex">
                 <div class="claim-id">SD-{{ claim.id }}</div>
                 <Menu :items="menuConf.getItems(claim.status)"></Menu>
             </div>
         </div>
         <div class="card-mid d-flex c-flex b-flex">
-            <div class="secondary-text">{{ tempClaim.jobType }}</div>
-            <div class="secondary-text">{{ tempClaim.claimType }}</div>
+            <div class="secondary-text">{{ claim.claimType }}</div>
+            <div class="secondary-text">{{ claim.claimTheme }}</div>
         </div>
         <div class="d-flex c-flex b-flex">
             <div>
                 <div class="secondary-text mb-2">Дата создания</div>
-                <div class="date">{{ tempClaim.date }} в {{ tempClaim.time }}</div>
+                <div class="date">{{ createdDate }}</div>
             </div>
             <div>
                 <PlIcon color="#d5d8e1" :name="tempClaim.icon"/>
