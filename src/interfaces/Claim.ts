@@ -1,46 +1,53 @@
-/*
-пока для фек бээка будет уменьшеная весия клейма, дорабатыватся будет походу дела
+// нормальный клейм(надеюсь)
 export interface Claim {
-    category?:      string;
-    channel?:       string;
-    initiatorType?: string;
-    isFirstLine?:   boolean;
-    claimType?:     any;//в проработке
-    claimTheme?:    any;//в проработке
-    description?:   string;
-    serviceCount?:  number;
-    priority?:      string;
-    assignee?:      string;
-    client?:        Client;
-    documents?:     Document[];
-}*/
-
-export interface Claim {
-   id: string,
-   status: string
-   client: Client
-   //это в проработке
-   claimType: string
-   //это тоже
-   claimTheme: string
-   createdDate: Date
-   channel: string
-   isFirstLine: boolean
-   initiatorType: string
-   description: string
-}
-
-export interface Client {
-    globalCompanyId?: number | null;//всегда null?, уточнить про обязательность
-    inn?:            string;
-    kpp:             string;
-    ogrn:            string;
-    fullName:        string;
-    shortName:       string;
-}
-
-export interface Document {
-    id:   string;
+    id: number;
+    created_date: string;
+    updated_date: string;
+    created_by: string;
+    updated_by: string;
+    assignee?: string;
+    status: string;
+    status_reason: string;
+    pause_till?: string;
+    category: string;
+    channel?: string;
+    initiator_type?: string;
+    is_first_line?: boolean;
+    claim_type?: string;
+    claim_theme?: string;
+    service_count?: number;
+    priority?: string;
+    priority_reason?: string;
+    description?: string;
+    comment?: string;
+    client?: Client;
+    documents: Document[];
+    statys_history: StatusHistory
+  }
+  
+  export interface Client {
+    id: bigint;
+    global_company_id?: bigint;
+    inn: string;
+    kpp?: string;
+    ogrn: string;
+    full_name: string;
+    short_name: string;
+  }
+  
+  export interface Document {
+    id: string;
     name: string;
-    size: number;
-}
+    size: bigint;
+  }
+
+  export interface StatusHistory{
+    id: bigint;
+    updated_date: Date;
+    updated_by: string;
+    priority: string;
+    priority_reason?: string;
+    status: string;
+    status_reason?: bigint;
+    comment?: string;
+  }

@@ -2,29 +2,25 @@
 import Menu from '@/widgets/menu/Menu.vue';
 import { useClaimConfig } from '../const/claimConfig'
 import type { Claim } from '@/interfaces/Claim';
-import { computed } from 'vue';
-import ClaimInfo from '@/widgets/modal/ClaimInfo.vue';
-//временная штука наверное, когда будут клеймы с сервера отдута браться будет по айди
 const props = defineProps<{
     claim: Claim
 }>()
 
 const conf = useClaimConfig(props.claim)
-
 </script>
 
 <template>
     <div class="c-card d-grid gap-4" :class="`${claim.status}-card`">
         <div class="card-top d-flex b-flex c-flex">
-            <div>{{ claim.client.shortName }}</div>
+            <div>{{ claim.client?.short_name }}</div>
             <div class="d-flex c-flex">
                 <div class="claim-id">SD-{{ claim.id }}</div>
                 <Menu :items="conf.menuItems.value"></Menu>
             </div>
         </div>
         <div class="card-mid d-flex c-flex b-flex">
-            <div class="secondary-text">{{ claim.claimType }}</div>
-            <div class="secondary-text">{{ claim.claimTheme }}</div>
+            <div class="secondary-text">{{ claim.claim_type }}</div>
+            <div class="secondary-text">{{ claim.claim_theme }}</div>
         </div>
         <div class="d-flex c-flex b-flex">
             <div>

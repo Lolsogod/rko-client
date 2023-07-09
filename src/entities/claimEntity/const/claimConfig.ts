@@ -33,7 +33,7 @@ export const useClaimConfig = (claim: Claim) =>{
         return items.get(claim.status)
     })
     const createdDate = computed(() => {
-      const date = new Date(claim.createdDate);
+      const date = new Date(claim.created_date);
       
       const day = String(date.getDate()).padStart(2, '0');
       const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -62,10 +62,13 @@ export const useClaimConfig = (claim: Claim) =>{
     })
     //повторяются, придумать функцию?
     function getTextByCode(code: string, targetArray: string) {
-      return computed(() => refStore.refernces?.[targetArray as keyof References]!.find((item: ReferenceData) => item.code === code)?.text);
+      return refStore.refernces?.[targetArray as keyof References]!.find((item: ReferenceData) => item.code === code)?.text;
     }
-    const channelLine = `${getTextByCode(claim.channel, 'channels').value}${claim.isFirstLine?' 1 линия':''}`
-    const initiator = getTextByCode(claim.initiatorType, 'initiatorTypes');
-    const status = getTextByCode(claim.status, 'statuses');
-    return {menuItems, createdDate, channelIco, channelLine, initiator, status}
+    const channelLine = `${getTextByCode(claim.channel!, 'channels')}${claim.is_first_line?' 1 линия':''}`
+    const initiator = getTextByCode(claim.initiator_type!, 'initiatorTypes')
+    const status = getTextByCode(claim.status, 'statuses')
+    const priority = getTextByCode(claim.priority!, 'priority')
+    
+    return {menuItems, createdDate, channelIco, channelLine,
+             initiator, status, priority}
 }

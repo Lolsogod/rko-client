@@ -1,0 +1,322 @@
+{
+    "references": {
+        "categories": [
+          { "code": "INCOMING", "text": "Входящее" },
+          { "code": "OUTGOING", "text": "Исходящее" }
+        ],
+        "channels": [
+          { "code": "CHAT", "text": "Чат" },
+          { "code": "PHONE", "text": "Телефон" },
+          { "code": "EMAIL", "text": "E-mail" }
+        ],
+        "initiatorTypes": [
+          { "code": "CLIENT", "text": "Клиент" },
+          { "code": "NOT_CLIENT", "text": "Не Клиент" },
+          { "code": "PRODUCT", "text": "Основной продукт" },
+          { "code": "DELIVERY", "text": "Доставка" },
+          { "code": "OTHER", "text": "Иное" }
+        ],
+        "divisions": [
+          { "code": "SELLPLUS", "text": "Sellplus" },
+          { "code": "KIK", "text": "КИК" },
+          { "code": "GUARANTEE", "text": "ЦБГ" },
+          { "code": "FACTORING", "text": "Факторинг" }
+        ],
+        "priority": [
+          { "code": "CRITICAL", "text": "Критический" },
+          { "code": "HIGH", "text": "Высокий" },
+          { "code": "MEDIUM", "text": "Средний" },
+          { "code": "LOW", "text": "Низкий" },
+          { "code": "PAUSE", "text": "Приостановлено" }
+        ],
+        "statuses": [
+          { "code": "DRAFT", "text": "Черновик" },
+          { "code": "NEW", "text": "Новое" },
+          { "code": "IN_PROGRESS", "text": "В процессе" },
+          { "code": "PENDING", "text": "В ожидании" },
+          { "code": "DONE", "text": "Выполнено", "reasons": 
+            [
+              { "code": "DONE", "text": "Закрыто" },
+              { "code": "FORWARDED", "text": "Переведено в другое подразделение" }
+            ]
+          },
+          { "code": "REJECTED", "text": "Отклонено", "reasons":
+            [
+              { "code": "INITIATOR_REJECTED", "text": "Отказ инициатора" },
+              { "code": "WRONG_CREATED", "text": "Ошибочно заведено" },
+              { "code": "DUPLICATE", "text": "Дубликат" }
+            ]
+          }
+        ],
+        "claimTypes": [],
+        "claimThemes": []
+      },
+      "claim": [
+        {
+            "id": 1,
+            "category": "INCOMING",
+            "channel": "EMAIL",
+            "assignee": "Олег Олегович Олегов",
+            "initiator_type": "CLIENT",
+            "is_first_line": false,
+            "claim_type": "Консультация",
+            "claim_theme": "Ограничения по счёту",
+            "description": "Клиент просит предоставить платежный документ по платежу № 99999",
+            "service_count": 1,
+            "priority": "MEDIUM",
+            "priority_reason": "Важная причина",
+            "client": {
+            "global_company_id": "null",
+            "inn": "1234567980",
+            "kpp": "123456798",
+            "ogrn": "1234567980123",
+            "full_name": "Общество с ограниченной ответственностью \"Ромашка\"",
+            "short_name": "ООО \"Ромашка\""
+            },
+            "documents": [
+            {
+                "id": "24db3c5a-b61c-4743-b953-a9d240b5478d",
+                "name": "Запрос от ООО Ромашка.msg",
+                "size": 24532
+            }
+            ],
+            "status": "NEW",
+            "status_reason": "Важная причина",
+            "created_date": "2023-01-01T00:00:00+00:00"
+        },
+        {
+            "id": 2,
+            "category": "INCOMING",
+            "channel": "PHONE",
+            "assignee": "Anna Petrova",
+            "initiator_type": "NOT_CLIENT",
+            "is_first_line": false,
+            "claim_type": "Возврат средств",
+            "claim_theme": "Дублирование платежа",
+            "description": "Клиент обратил внимание на дублирование платежа и просит вернуть излишне уплаченную сумму.",
+            "service_count": 1,
+            "priority": "HIGH",
+            "priority_reason": "Важная причина",
+            "client": {
+              "global_company_id": "null",
+              "inn": "9876543210",
+              "kpp": "987654321",
+              "ogrn": "9876543210987",
+              "full_name": "Общество с ограниченной ответственностью \"Ромашка\"",
+              "short_name": "ООО \"Ромашка\""
+            },
+            "documents": [],
+            "status": "DONE",
+            "status_reason": "Важная причина",
+            "created_date": "2023-07-09T00:00:00+00:00"
+          },
+          {
+            "id": 3,
+            "category": "INCOMING",
+            "channel": "EMAIL",
+            "assignee": "Ivan Ivanov",
+            "initiator_type": "NOT_CLIENT",
+            "is_first_line": false,
+            "claim_type": "Запрос информации",
+            "claim_theme": "Изменение реквизитов",
+            "description": "Клиент хочет узнать, как изменить свои банковские реквизиты для осуществления платежей.",
+            "service_count": 1,
+            "priority": "LOW",
+            "priority_reason": "Обычная причина",
+            "client": {
+              "global_company_id": "null",
+              "inn": "4567891230",
+              "kpp": "456789123",
+              "ogrn": "4567891230456",
+              "full_name": "ИП Иванов Иван Иванович",
+              "short_name": "ИП Иванов"
+            },
+            "documents": [],
+            "status": "DONE",
+            "status_reason": "Обычная причина",
+            "created_date": "2023-07-09T00:00:00+00:00"
+          },
+          {
+            "id": 4,
+            "category": "INCOMING",
+            "channel": "PHONE",
+            "assignee": "Maria Petrova",
+            "initiator_type": "PRODUCT",
+            "is_first_line": false,
+            "claim_type": "Оплата",
+            "claim_theme": "Неправильная сумма",
+            "description": "Клиент утверждает, что сумма платежа была списана неправильно и просит исправить ошибку.",
+            "service_count": 1,
+            "priority": "MEDIUM",
+            "priority_reason": "Важная причина",
+            "client": {
+              "global_company_id": "null",
+              "inn": "7890123450",
+              "kpp": "789012345",
+              "ogrn": "7890123450678",
+              "full_name": "ООО \"Солнечный\"",
+              "short_name": "ООО \"Солнечный\""
+            },
+            "documents": [],
+            "status": "PENDING",
+            "status_reason": "Важная причина",
+            "created_date": "2023-07-09T00:00:00+00:00"
+          },
+          {
+            "id": 5,
+            "category": "INCOMING",
+            "channel": "CHAT",
+            "assignee": "Elena Sidorova",
+            "initiator_type": "DELIVERY",
+            "is_first_line": true,
+            "claim_type": "Консультация",
+            "claim_theme": "Лимиты на переводы",
+            "description": "Клиент интересуется ограничениями и лимитами на переводы с его счета.",
+            "service_count": 1,
+            "priority": "LOW",
+            "priority_reason": "Обычная причина",
+            "client": {
+              "global_company_id": "null",
+              "inn": "3456789012",
+              "kpp": "345678901",
+              "ogrn": "3456789010234",
+              "full_name": "ОАО \"РосГаз\"",
+              "short_name": "ОАО \"РосГаз\""
+            },
+            "documents": [],
+            "status": "PENDING",
+            "status_reason": "Обычная причина",
+            "created_date": "2023-07-09T00:00:00+00:00"
+          },
+          {
+            "id": 6,
+            "category": "INCOMING",
+            "channel": "CHAT",
+            "assignee": "Sergei Ivanov",
+            "initiator_type": "CLIENT",
+            "is_first_line": true,
+            "claim_type": "Блокировка счета",
+            "claim_theme": "Потеря доверия",
+            "description": "Клиент заявляет о потере доверия к банку и просит заблокировать свой счет.",
+            "service_count": 1,
+            "priority": "Critical",
+            "priority_reason": "Важная причина",
+            "client": {
+              "global_company_id": "null",
+              "inn": "5678901234",
+              "kpp": "567890123",
+              "ogrn": "5678901230567",
+              "full_name": "ИП Сергеев Сергей Сергеевич",
+              "short_name": "ИП Сергеев"
+            },
+            "documents": [],
+            "status": "IN_PROGRESS",
+            "status_reason": "Важная причина",
+            "created_date": "2023-07-09T00:00:00+00:00"
+          },
+          {
+            "id": 7,
+            "category": "INCOMING",
+            "channel": "CHAT",
+            "assignee": "Olga Petrova",
+            "initiator_type": "CLIENT",
+            "is_first_line": true,
+            "claim_type": "Консультация",
+            "claim_theme": "Ограничения по карте",
+            "description": "Клиент хочет узнать о существующих ограничениях и лимитах на использование своей банковской карты.",
+            "service_count": 1,
+            "priority": "LOW",
+            "priority_reason": "Обычная причина",
+            "client": {
+              "global_company_id": "null",
+              "inn": "6789012345",
+              "kpp": "678901234",
+              "ogrn": "6789012340567",
+              "full_name": "ООО \"Крутой Партнер\"",
+              "short_name": "ООО \"Крутой Партнер\""
+            },
+            "documents": [],
+            "status": "IN_PROGRESS",
+            "status_reason": "Обычная причина",
+            "created_date": "2023-07-09T00:00:00+00:00"
+          },
+          {
+            "id": 8,
+            "category": "INCOMING",
+            "channel": "PHONE",
+            "assignee": "Alexei Smirnov",
+            "initiator_type": "OTHER",
+            "is_first_line": true,
+            "claim_type": "Возврат средств",
+            "claim_theme": "Неудовлетворительное качество услуги",
+            "description": "Клиент не удовлетворен качеством предоставленной услуги и требует возврат средств.",
+            "service_count": 1,
+            "priority": "HIGH",
+            "priority_reason": "Важная причина",
+            "client": {
+              "global_company_id": "null",
+              "inn": "7890123456",
+              "kpp": "789012345",
+              "ogrn": "7890123450678",
+              "full_name": "ИП Смирнов Алексей Иванович",
+              "short_name": "ИП Смирнов"
+            },
+            "documents": [],
+            "status": "IN_PROGRESS",
+            "status_reason": "Важная причина",
+            "created_date": "2023-07-09T00:00:00+00:00"
+          },
+          {
+            "id": 9,
+            "category": "INCOMING",
+            "channel": "EMAIL",
+            "assignee": "Natalia Ivanova",
+            "initiator_type": "CLIENT",
+            "is_first_line": true,
+            "claim_type": "Оплата",
+            "claim_theme": "Задержка платежа",
+            "description": "Клиент обращает внимание на задержку платежа и просит прояснить ситуацию.",
+            "service_count": 1,
+            "priority": "MEDIUM",
+            "priority_reason": "Важная причина",
+            "client": {
+              "global_company_id": "null",
+              "inn": "8901234567",
+              "kpp": "890123456",
+              "ogrn": "8901234560789",
+              "full_name": "ООО \"Прогресс\"",
+              "short_name": "ООО \"Прогресс\""
+            },
+            "documents": [],
+            "status": "NEW",
+            "status_reason": "Важная причина",
+            "created_date": "2023-07-09T00:00:00+00:00"
+          },
+          {
+            "id": 10,
+            "category": "INCOMING",
+            "channel": "CHAT",
+            "assignee": "Dmitry Petrov",
+            "initiator_type": "CLIENT",
+            "is_first_line": true,
+            "claim_type": "Заявление",
+            "claim_theme": "Открытие нового счета",
+            "description": "Клиент желает открыть новый банковский счет и просит указать необходимые документы и процедуры.",
+            "service_count": 1,
+            "priority": "LOW",
+            "priority_reason": "Обычная причина",
+            "client": {
+              "global_company_id": "null",
+              "inn": "9012345678",
+              "kpp": "901234567",
+              "ogrn": "9012345670891",
+              "full_name": "ООО \"Крутая компания\"",
+              "short_name": "ООО \"Крутая компания\""
+            },
+            "documents": [],
+            "status": "PENDING",
+            "status_reason": "Обычная причина",
+            "created_date": "2023-07-09T00:00:00+00:00"
+          }
+    ]
+}
