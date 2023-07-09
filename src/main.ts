@@ -1,40 +1,37 @@
 import './assets/main.css'
 //@ts-ignore
+
 import components from '@factoringplus/pl-components-pack-v3';
 import '@factoringplus/pl-components-pack-v3/dist/style.css';
-
-
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 import VueKeyCloak from '@dsb-norge/vue-keycloak-js'
-import App from './App.vue'
-import router from './router'
-import type {VueKeycloakInstance} from "@dsb-norge/vue-keycloak-js/dist/types";
+import type {VueKeycloakInstance, VueKeycloakOptions} from "@dsb-norge/vue-keycloak-js/dist/types";
 
-const keycloakOptions = {
+const keycloakOptions:VueKeycloakOptions = {
     config: {
-        url: 'http://keycloak.yamakassi.ru/auth',
+        url: 'https://keycloak.yamakassi.ru/auth',
         realm: 'claimapi',
-        clientId: 'cocktail',
+        clientId: 'cocktailtest',
 
     },
-    initOptions: {
-        // redirectUri:"http://localhost:5173/",
+    init: {
+        redirectUri:"http://localhost:5173/",
         onLoad: 'login-required',
-        clientId: 'cocktail',
-        // clientSecret: 'yP0hhCKnmtYrczj6eIuIKtvvO51pwbNaG', // Replace with your actual client secret
+
+        pkceMethod:'S256'// Replace with your actual client secret
         // username: 'usersupervisor', // Replace with your actual username
         // password: '1234', // Replace with your actual password
     },
 };
-const app = createApp(App).use(VueKeyCloak, keycloakOptions)
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
+import App from './App.vue'
+import router from './router'
+
+const app = createApp(App)
+app.use(VueKeyCloak, keycloakOptions)
 app.use(createPinia())
 app.use(router)
 app.use(components)
-declare module '@vue/runtime-core' {
-    interface ComponentCustomProperties  {
-        $keycloak: VueKeycloakInstance
-    }
-}
 
 app.mount('#app')
