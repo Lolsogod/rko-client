@@ -35,3 +35,8 @@ app.use(router)
 app.use(components)
 
 app.mount('#app')
+//да, конфига нормального нет, исправим, долго возился с keycloak из-за одной мелочи
+//для запросов на cocktailtest acces type - public, не смог я заставить отправлять secret, да и нет его в определении
+//keycloak instance
+//почитал, вроде теперь разрабы говорит, что не должно требовать secret-client
+//To use the JavaScript adapter you must first create a client for your application in the Keycloak Administration Console. Make sure public is selected for Access Type.
