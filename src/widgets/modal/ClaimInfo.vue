@@ -38,6 +38,7 @@ const conf = useClaimConfig(props.claim)
          <TInfo title="Исполнитель">{{ claim.assignee }}</TInfo>
       </div>
       <hr>
+      <!--пока непонял откуда брать-->
       <div class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 1fr 1fr 1fr">
          <TInfo title="Контрольная дата">22.09.23 10:00</TInfo>
          <TInfo title="Комментарий">Может быть достаточно много текста кого ждем и что </TInfo>

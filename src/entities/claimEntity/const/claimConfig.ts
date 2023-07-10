@@ -1,7 +1,7 @@
 import type { IMenuItem } from '@/interfaces/IMenuItem';
 import {useModalrStore} from '@/stores/modal'
 import router from '@/router'
-import type { Claim } from '@/interfaces/Claim';
+import type { Claim, Status } from '@/interfaces/Claim';
 import {computed} from 'vue'
 import { useReferenceStore } from '@/stores/references';
 import type { ReferenceData, References } from '@/interfaces/References';
@@ -17,7 +17,10 @@ export const useClaimConfig = (claim: Claim) =>{
         {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
         {text: "Журнал состояний", action: () => modalStore.openModal('journal', claim)}
     ]],
-      ['IN_PROGRESS', [{text: "Что то", action: () => modalStore.openModal('', claim)},]],
+      ['IN_PROGRESS', [
+        {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
+        {text: "Журнал состояний", action: () => modalStore.openModal('journal', claim)},
+      ]],
       ['PENDING', [
             {text: "Взять в работу", action: () => router.push('/claim/1')},
             {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
@@ -60,8 +63,8 @@ export const useClaimConfig = (claim: Claim) =>{
             return("")
         }
     })
-    //повторяются, придумать функцию?
-    function getTextByCode(code: string, targetArray: string) {
+ 
+    const getTextByCode = (code: string, targetArray: string) => {
       return refStore.refernces?.[targetArray as keyof References]!.find((item: ReferenceData) => item.code === code)?.text;
     }
     const channelLine = `${getTextByCode(claim.channel!, 'channels')}${claim.is_first_line?' 1 линия':''}`

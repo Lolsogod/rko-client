@@ -82,7 +82,104 @@
             ],
             "status": "NEW",
             "status_reason": "Важная причина",
-            "created_date": "2023-01-01T00:00:00+00:00"
+            "created_date": "2023-01-01T00:00:00+00:00",
+            "status_history": [
+              {
+                "id": 1234567891,
+                "updated_date": "2023-07-10T13:45:21Z",
+                "updated_by": "Александр Александрович",
+                "priority": "MEDIUM",
+                "priority_reason": "Назначена важная задача",
+                "status": "NEW",
+                "status_reason": 9876543211,
+                "comment": "Отличная работа!"
+              },
+              {
+                "id": 1234567892,
+                "updated_date": "2023-07-10T14:57:43Z",
+                "updated_by": "Елена Еленовна",
+                "priority": "LOW",
+                "priority_reason": "Долгосрочный проект",
+                "status": "PENDING",
+                "status_reason": 9876543212
+              },
+              {
+                "id": 1234567893,
+                "updated_date": "2023-07-10T16:02:10Z",
+                "updated_by": "Михаил Михайлович",
+                "priority": "CRITICAL",
+                "priority_reason": "Утечка данных",
+                "status": "DONE",
+                "status_reason": 9876543213,
+                "comment": "Все проблемы решены!"
+              },
+              {
+                "id": 1234567894,
+                "updated_date": "2023-07-10T17:15:37Z",
+                "updated_by": "Наталья Натальевна",
+                "priority": "HIGH",
+                "priority_reason": "Запрос руководства",
+                "status": "IN_PROGRESS",
+                "status_reason": 9876543214,
+                "comment": "Требуется подтверждение от менеджера."
+              },
+              {
+                "id": 1234567895,
+                "updated_date": "2023-07-10T18:21:59Z",
+                "updated_by": "Дмитрий Дмитриевич",
+                "priority": "MEDIUM",
+                "priority_reason": "Завершение срока",
+                "status": "PENDING",
+                "status_reason": 9876543215
+              },
+              {
+                "id": 1234567896,
+                "updated_date": "2023-07-10T19:34:26Z",
+                "updated_by": "Ольга Ольговна",
+                "priority": "LOW",
+                "priority_reason": "Техническая неисправность",
+                "status": "DONE",
+                "status_reason": 9876543216,
+                "comment": "Работает отлично!"
+              },
+              {
+                "id": 1234567897,
+                "updated_date": "2023-07-10T20:45:54Z",
+                "updated_by": "Иван Иванович",
+                "priority": "PAUSE",
+                "priority_reason": "Отпуск",
+                "status": "NEW",
+                "status_reason": 9876543217,
+                "comment": "Вернусь через неделю."
+              },
+              {
+                "id": 1234567898,
+                "updated_date": "2023-07-10T21:53:20Z",
+                "updated_by": "Екатерина Екатериновна",
+                "priority": "MEDIUM",
+                "priority_reason": "Запрос клиента",
+                "status": "IN_PROGRESS",
+                "status_reason": 9876543218
+              },
+              {
+                "id": 1234567899,
+                "updated_date": "2023-07-10T23:01:47Z",
+                "updated_by": "Павел Павлович",
+                "priority": "HIGH",
+                "priority_reason": "Новая функциональность",
+                "status": "PENDING",
+                "status_reason": 9876543219
+              },
+              {
+                "id": 1234567900,
+                "updated_date": "2023-07-11T00:12:14Z",
+                "updated_by": "Светлана Светлановна",
+                "priority": "CRITICAL",
+                "priority_reason": "Системная ошибка",
+                "status": "DONE",
+                "status_reason": 9876543220
+              }
+            ]            
         },
         {
             "id": 2,
@@ -108,7 +205,38 @@
             "documents": [],
             "status": "DONE",
             "status_reason": "Важная причина",
-            "created_date": "2023-07-09T00:00:00+00:00"
+            "created_date": "2023-07-09T00:00:00+00:00",
+            "status_history": [
+              {
+                "id": 9876543210,
+                "updated_date": "2023-07-10T12:34:56Z",
+                "updated_by": "Владик Владикович",
+                "priority": "HIGH",
+                "priority_reason": "Срочное обращение",
+                "status": "PENDING",
+                "status_reason": 1234567890,
+                "comment": "Очень хороший комент"
+              },
+              {
+                "id": 9876543211,
+                "updated_date": "2023-07-10T12:35:01Z",
+                "updated_by": "Мария Мариевна",
+                "priority": "MEDIUM",
+                "priority_reason": "Запрос клиента",
+                "status": "IN_PROGRESS",
+                "status_reason": 1234567891
+              },
+              {
+                "id": 9876543212,
+                "updated_date": "2023-07-10T12:35:07Z",
+                "updated_by": "Игорь Игоревич",
+                "priority": "LOW",
+                "priority_reason": "Малая важность",
+                "status": "DONE",
+                "status_reason": 1234567892,
+                "comment": "Работа выполнена в срок."
+              }
+            ]            
           },
           {
             "id": 3,
@@ -134,7 +262,28 @@
             "documents": [],
             "status": "DONE",
             "status_reason": "Обычная причина",
-            "created_date": "2023-07-09T00:00:00+00:00"
+            "created_date": "2023-07-09T00:00:00+00:00",
+            "status_history": [
+              {
+                "id": 9876543213,
+                "updated_date": "2023-07-10T12:35:14Z",
+                "updated_by": "Елена Еленовна",
+                "priority": "CRITICAL",
+                "priority_reason": "Критическая ситуация",
+                "status": "PENDING",
+                "status_reason": 1234567893,
+                "comment": "Требуется немедленное вмешательство."
+              },
+              {
+                "id": 9876543214,
+                "updated_date": "2023-07-10T12:35:21Z",
+                "updated_by": "Андрей Андреевич",
+                "priority": "HIGH",
+                "priority_reason": "Важный проект",
+                "status": "IN_PROGRESS",
+                "status_reason": 1234567894
+              }
+            ]            
           },
           {
             "id": 4,
@@ -160,7 +309,39 @@
             "documents": [],
             "status": "PENDING",
             "status_reason": "Важная причина",
-            "created_date": "2023-07-09T00:00:00+00:00"
+            "created_date": "2023-07-09T00:00:00+00:00",
+            "status_history": [
+              {
+                "id": 9876543215,
+                "updated_date": "2023-07-10T12:35:28Z",
+                "updated_by": "Ольга Ольговна",
+                "priority": "MEDIUM",
+                "priority_reason": "Запрос руководства",
+                "status": "NEW",
+                "status_reason": 1234567895,
+                "comment": "Требуется согласование с руководством."
+              },
+              {
+                "id": 9876543216,
+                "updated_date": "2023-07-10T12:35:34Z",
+                "updated_by": "Виктор Викторович",
+                "priority": "LOW",
+                "priority_reason": "Рутинная задача",
+                "status": "PENDING",
+                "status_reason": 1234567896,
+                "comment": "Можно выполнить позже."
+              },
+              {
+                "id": 9876543217,
+                "updated_date": "2023-07-10T12:35:40Z",
+                "updated_by": "Марина Мариновна",
+                "priority": "CRITICAL",
+                "priority_reason": "Нарушение безопасности",
+                "status": "DONE",
+                "status_reason": 1234567897
+              }
+            ]
+            
           },
           {
             "id": 5,
@@ -186,7 +367,39 @@
             "documents": [],
             "status": "PENDING",
             "status_reason": "Обычная причина",
-            "created_date": "2023-07-09T00:00:00+00:00"
+            "created_date": "2023-07-09T00:00:00+00:00",
+            "status_history": [
+              {
+                "id": 9876543215,
+                "updated_date": "2023-07-10T12:35:28Z",
+                "updated_by": "Ольга Ольговна",
+                "priority": "MEDIUM",
+                "priority_reason": "Запрос руководства",
+                "status": "NEW",
+                "status_reason": 1234567895,
+                "comment": "Требуется согласование с руководством."
+              },
+              {
+                "id": 9876543216,
+                "updated_date": "2023-07-10T12:35:34Z",
+                "updated_by": "Виктор Викторович",
+                "priority": "LOW",
+                "priority_reason": "Рутинная задача",
+                "status": "PENDING",
+                "status_reason": 1234567896,
+                "comment": "Можно выполнить позже."
+              },
+              {
+                "id": 9876543217,
+                "updated_date": "2023-07-10T12:35:40Z",
+                "updated_by": "Марина Мариновна",
+                "priority": "CRITICAL",
+                "priority_reason": "Нарушение безопасности",
+                "status": "DONE",
+                "status_reason": 1234567897
+              }
+            ]
+            
           },
           {
             "id": 6,
@@ -212,7 +425,39 @@
             "documents": [],
             "status": "IN_PROGRESS",
             "status_reason": "Важная причина",
-            "created_date": "2023-07-09T00:00:00+00:00"
+            "created_date": "2023-07-09T00:00:00+00:00",
+            "status_history": [
+              {
+                "id": 9876543218,
+                "updated_date": "2023-07-10T12:35:47Z",
+                "updated_by": "Павел Павлович",
+                "priority": "MEDIUM",
+                "priority_reason": "Плановое обслуживание",
+                "status": "IN_PROGRESS",
+                "status_reason": 1234567898
+              },
+              {
+                "id": 9876543219,
+                "updated_date": "2023-07-10T12:35:53Z",
+                "updated_by": "Анна Анновна",
+                "priority": "HIGH",
+                "priority_reason": "Запрос клиента",
+                "status": "PENDING",
+                "status_reason": 1234567899,
+                "comment": "Требуется подготовка презентации."
+              },
+              {
+                "id": 9876543220,
+                "updated_date": "2023-07-10T12:35:59Z",
+                "updated_by": "Денис Денисович",
+                "priority": "LOW",
+                "priority_reason": "Малозначительная задача",
+                "status": "DONE",
+                "status_reason": 1234567900,
+                "comment": "Выполнено без проблем."
+              }
+            ]
+            
           },
           {
             "id": 7,
@@ -238,7 +483,48 @@
             "documents": [],
             "status": "IN_PROGRESS",
             "status_reason": "Обычная причина",
-            "created_date": "2023-07-09T00:00:00+00:00"
+            "created_date": "2023-07-09T00:00:00+00:00",
+            "status_history": [
+              {
+                "id": 9876543221,
+                "updated_date": "2023-07-10T12:36:06Z",
+                "updated_by": "Екатерина Екатериновна",
+                "priority": "CRITICAL",
+                "priority_reason": "Важное обновление",
+                "status": "NEW",
+                "status_reason": 1234567901
+              },
+              {
+                "id": 9876543222,
+                "updated_date": "2023-07-10T12:36:12Z",
+                "updated_by": "Михаил Михайлович",
+                "priority": "HIGH",
+                "priority_reason": "Спешный запрос",
+                "status": "IN_PROGRESS",
+                "status_reason": 1234567902,
+                "comment": "Требуется немедленное решение."
+              },
+              {
+                "id": 9876543223,
+                "updated_date": "2023-07-10T12:36:18Z",
+                "updated_by": "Наталья Натальевна",
+                "priority": "MEDIUM",
+                "priority_reason": "Новая функциональность",
+                "status": "PENDING",
+                "status_reason": 1234567903,
+                "comment": "Тестирование необходимо."
+              },
+              {
+                "id": 9876543224,
+                "updated_date": "2023-07-10T12:36:24Z",
+                "updated_by": "Александр Александрович",
+                "priority": "LOW",
+                "priority_reason": "Разработка интерфейса",
+                "status": "DONE",
+                "status_reason": 1234567904,
+                "comment": "Интерфейс успешно реализован."
+              }
+            ]
           },
           {
             "id": 8,
@@ -264,7 +550,19 @@
             "documents": [],
             "status": "IN_PROGRESS",
             "status_reason": "Важная причина",
-            "created_date": "2023-07-09T00:00:00+00:00"
+            "created_date": "2023-07-09T00:00:00+00:00",
+            "status_history": [
+              {
+                "id": 9876543225,
+                "updated_date": "2023-07-10T12:36:31Z",
+                "updated_by": "Анна Анновна",
+                "priority": "MEDIUM",
+                "priority_reason": "Сроки",
+                "status": "IN_PROGRESS",
+                "status_reason": 1234567905,
+                "comment": "Требуется ускорение работы."
+              }
+            ]
           },
           {
             "id": 9,
@@ -290,7 +588,39 @@
             "documents": [],
             "status": "NEW",
             "status_reason": "Важная причина",
-            "created_date": "2023-07-09T00:00:00+00:00"
+            "created_date": "2023-07-09T00:00:00+00:00",
+            "status_history": [
+              {
+                "id": 9876543226,
+                "updated_date": "2023-07-10T12:36:38Z",
+                "updated_by": "Виктор Викторович",
+                "priority": "HIGH",
+                "priority_reason": "Важное совещание",
+                "status": "NEW",
+                "status_reason": 1234567906,
+                "comment": "Прошу учесть в повестке дня."
+              },
+              {
+                "id": 9876543227,
+                "updated_date": "2023-07-10T12:36:44Z",
+                "updated_by": "Дмитрий Дмитриевич",
+                "priority": "LOW",
+                "priority_reason": "Регулярное обновление",
+                "status": "PENDING",
+                "status_reason": 1234567907
+              },
+              {
+                "id": 9876543228,
+                "updated_date": "2023-07-10T12:36:50Z",
+                "updated_by": "Ольга Ольговна",
+                "priority": "CRITICAL",
+                "priority_reason": "Нарушение безопасности",
+                "status": "DONE",
+                "status_reason": 1234567908,
+                "comment": "Все уязвимости устранены."
+              }
+            ]
+            
           },
           {
             "id": 10,
@@ -316,7 +646,38 @@
             "documents": [],
             "status": "PENDING",
             "status_reason": "Обычная причина",
-            "created_date": "2023-07-09T00:00:00+00:00"
+            "created_date": "2023-07-09T00:00:00+00:00",
+            "status_history": [
+              {
+                "id": 9876543226,
+                "updated_date": "2023-07-10T12:36:38Z",
+                "updated_by": "Виктор Викторович",
+                "priority": "HIGH",
+                "priority_reason": "Важное совещание",
+                "status": "NEW",
+                "status_reason": 1234567906,
+                "comment": "Прошу учесть в повестке дня."
+              },
+              {
+                "id": 9876543227,
+                "updated_date": "2023-07-10T12:36:44Z",
+                "updated_by": "Дмитрий Дмитриевич",
+                "priority": "LOW",
+                "priority_reason": "Регулярное обновление",
+                "status": "PENDING",
+                "status_reason": 1234567907
+              },
+              {
+                "id": 9876543228,
+                "updated_date": "2023-07-10T12:36:50Z",
+                "updated_by": "Ольга Ольговна",
+                "priority": "CRITICAL",
+                "priority_reason": "Нарушение безопасности",
+                "status": "DONE",
+                "status_reason": 1234567908,
+                "comment": "Все уязвимости устранены."
+              }
+            ]            
           }
     ]
 }

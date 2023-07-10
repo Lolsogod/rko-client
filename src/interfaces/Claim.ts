@@ -22,7 +22,7 @@ export interface Claim {
     comment?: string;
     client?: Client;
     documents: Document[];
-    statys_history: StatusHistory
+    status_history: Status[]
   }
   
   export interface Client {
@@ -41,7 +41,7 @@ export interface Claim {
     size: bigint;
   }
 
-  export interface StatusHistory{
+  export interface Status{
     id: bigint;
     updated_date: Date;
     updated_by: string;
