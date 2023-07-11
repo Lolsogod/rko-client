@@ -6,6 +6,7 @@ import ClaimFooter from '@/widgets/footer/ClaimFooter.vue'
 </script>
 
 <template>
+
     <div class="mb-6">
         <PlButton type="empty" icon="ArrowLeft24"  @click="$router.push('/')">Вернуться к обращениям</PlButton>
     </div>

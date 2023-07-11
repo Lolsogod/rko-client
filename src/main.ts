@@ -3,38 +3,38 @@ import './assets/main.css'
 
 import components from '@factoringplus/pl-components-pack-v3';
 import '@factoringplus/pl-components-pack-v3/dist/style.css';
-import VueKeyCloak from '@dsb-norge/vue-keycloak-js'
-import type {VueKeycloakInstance, VueKeycloakOptions} from "@dsb-norge/vue-keycloak-js/dist/types";
-
-const keycloakOptions:VueKeycloakOptions = {
-    config: {
-        url: 'https://keycloak.yamakassi.ru/auth',
-        realm: 'claimapi',
-        clientId: 'cocktailtest',
-
-    },
-    init: {
-        redirectUri:"http://localhost:5173/",
-        onLoad: 'login-required',
-
-        pkceMethod:'S256'// Replace with your actual client secret
-        // username: 'usersupervisor', // Replace with your actual username
-        // password: '1234', // Replace with your actual password
-    },
-};
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-
+import {isTokenReady, vueKeycloak} from "@/shared/lib/vue-keycloak/src/vue3-keycloak"
+import {createApp} from 'vue'
+import {createPinia} from 'pinia'
 import App from './App.vue'
 import router from './router'
 
 const app = createApp(App)
-app.use(VueKeyCloak, keycloakOptions)
-app.use(createPinia())
-app.use(router)
-app.use(components)
+app.use(vueKeycloak, {
+    initOptions: {
+        flow: 'standard', // default
+        checkLoginIframe: true, // default
+        onLoad: 'login-required', // default
+    },
+    config: {
+        url: 'https://keycloak.yamakassi.ru/auth',
+        realm: 'claimapi',
+        clientId: 'cocktailtest',
+        onReady: async () => {
+            app
+                .use(router)
+                .use(createPinia())
+                .use(components)
 
-app.mount('#app')
+            await router.isReady();
+            await isTokenReady();
+            console.log("before")
+            app.mount('#app');
+            console.log("after")
+
+        }
+    },
+});
 //да, конфига нормального нет, исправим, долго возился с keycloak из-за одной мелочи
 //для запросов на cocktailtest acces type - public, не смог я заставить отправлять secret, да и нет его в определении
 //keycloak instance

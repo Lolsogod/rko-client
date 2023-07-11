@@ -11,6 +11,7 @@ import router from '@/router'
 import type {Product} from "@/entities/ClientProduct/model/types";
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
+
 const claimId = ref<String | String[]>('');
 const clientDocsInfoArray =
     [
