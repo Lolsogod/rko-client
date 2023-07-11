@@ -1,0 +1,3 @@
+пользователи по названию ролей: `user${role}`:
+usersupervisor,
+usersupport ...

@@ -10,7 +10,6 @@ import  StateJournal from '@/widgets/modal/StateJournal.vue';
 
 const modalStore = useModalStore()
 </script>
-
 <template>
     <div class="d-flex c-flex b-flex mb-6">
       <span class="typography-headline-h3-semi-bold">Мои задачи</span>
