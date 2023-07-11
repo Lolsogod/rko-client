@@ -47,6 +47,7 @@ onMounted(() => {
 
       </div>
     </div>
+    <!--Будет общий футер, поменять потом-->
     <footer class="d-flex align-items-center justify-content-end">
       <ClaimSoloPult/>
     </footer>
@@ -56,20 +57,12 @@ onMounted(() => {
 </template>
 
 <style scoped>
-  .claimWorkFormContainer{
-  }
-
-
   .claimSolo_main{
     height: 100%;
-
-
   }
   .claimSolo{
     margin-bottom: 90px !important;
     height: calc(100% + 300px);
-  }
-  .main{
   }
   footer{
     z-index: 2;
@@ -80,6 +73,4 @@ onMounted(() => {
     background-color: white;
     width: 100%;
   }
-
-
 </style>

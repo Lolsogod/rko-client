@@ -2,6 +2,7 @@
 import NewClaimForm from '@/features/claimForms/newForm/NewClaimForm.vue'
 import ClientInfo from '@/components/ClientInfo.vue'
 import Chat from '@/widgets/chat/Chat.vue'
+import ClaimFooter from '@/widgets/footer/ClaimFooter.vue'
 </script>
 
 <template>
@@ -15,6 +16,7 @@ import Chat from '@/widgets/chat/Chat.vue'
             <Chat/>
         </div>
     </div>
+    <ClaimFooter/>
 </template>
 
 <style scoped>
