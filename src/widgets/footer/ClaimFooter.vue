@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import type { ClaimReq } from '@/interfaces/requests/ClaimReq';
+import { createClaim } from "@/shared/api/ClaimApi"
+const props = defineProps<{
+    req: ClaimReq
+}>()
 
 </script>
 
@@ -7,7 +12,7 @@
         <div class="claimSoloPult d-flex gap-6">
         <PlButton type ="secondary">Отмена</PlButton>
         <PlButton type ="secondary">Зарегистрировать + Новое</PlButton>
-        <PlButton @click="">Зарегистрировать</PlButton>
+        <PlButton @click="createClaim(props.req)">Зарегистрировать</PlButton>
       </div>
     </footer>
 </template>

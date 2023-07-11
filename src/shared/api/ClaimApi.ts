@@ -5,6 +5,7 @@ import type { ForwardReq } from '@/interfaces/requests/ForwardReq'
 import axios from 'axios'
 import type { CloseReq } from '@/interfaces/requests/CloseReq';
 import type { PauseReq } from '@/interfaces/requests/PauseReq';
+import type { ClaimReq } from '@/interfaces/requests/ClaimReq';
 
 const api = axios.create({
     baseURL: "http://localhost:3000" //из енва потом брать
@@ -40,7 +41,7 @@ export const getClaimById = async (id: number) => {
     return (await api.get<Claim>(`/claim/${id}`)).data
 }
 
-export const createClaim = async (claim: Claim) => {
+export const createClaim = async (claim: ClaimReq) => {
     return await api.post('/claim', {...claim})
 }
 

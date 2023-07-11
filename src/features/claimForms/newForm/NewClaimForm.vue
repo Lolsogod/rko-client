@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue";
+import { ref, computed} from "vue";
 import newDropDown from "@/widgets/newDropDown/ui/newDropDown.vue"
 import type { ClaimReq } from "@/interfaces/requests/ClaimReq";
 import { useReferenceStore } from "@/stores/references";
@@ -14,34 +14,22 @@ const rules = {
     require: true,
   }],
 }
-const rStrore = useReferenceStore()
-const ncForm = ref<ClaimReq>({
-  category: 'OUTGOING',
-  channel: '',
-  initiatorType: '',
-  isFirstLine: false,
-  claimType: '',
-  claimTheme: '',
-  description: '',
-  serviceCount: 0,
-  priority: '',
-  priority_reason: '',
-  assignee: '',
-  comment: '',
-  client: {
-    globalCompanyId: 0,
-    plCompanyId: '',
-    inn: '',
-    kpp: '',
-    ogrn: '',
-    fullName: '',
-    shortName: '',
+const props = defineProps<{
+  modelValue: ClaimReq
+}>()
+const emit = defineEmits(["update:modelValue"])
+
+const ncForm = computed({
+  get() {
+    return props.modelValue
   },
-  documents: [],
-});
-const test = ref()
+  set(value) {
+    emit('update:modelValue', value)
+  }
+})
+
+const rStrore = useReferenceStore()
 const formRef = ref(null)
-//вынести чек и радио в отдельные компоненты?
 </script>
 
 <template>

@@ -7,6 +7,7 @@ import VueKeyCloak from '@dsb-norge/vue-keycloak-js'
 import type {VueKeycloakInstance, VueKeycloakOptions} from "@dsb-norge/vue-keycloak-js/dist/types";
 
 const keycloakOptions:VueKeycloakOptions = {
+    /*пока отключен чтоб не релоадил
     config: {
         url: 'https://keycloak.yamakassi.ru/auth',
         realm: 'claimapi',
@@ -20,7 +21,7 @@ const keycloakOptions:VueKeycloakOptions = {
         pkceMethod:'S256'// Replace with your actual client secret
         // username: 'usersupervisor', // Replace with your actual username
         // password: '1234', // Replace with your actual password
-    },
+    },*/
 };
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
