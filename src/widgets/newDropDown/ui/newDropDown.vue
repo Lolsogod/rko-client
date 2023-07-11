@@ -8,9 +8,9 @@ import {
 } from '@headlessui/vue'
 import type { ReferenceData } from '@/interfaces/References';
 const props = defineProps<{
-  options: ReferenceData[]
+  options?: ReferenceData[]
   label: String,
-  modelValue: String
+  modelValue?: String
 }>();
 const emit = defineEmits(['update:modelValue'])
 

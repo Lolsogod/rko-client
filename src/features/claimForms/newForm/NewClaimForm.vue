@@ -46,7 +46,6 @@ const formRef = ref(null)
 
 <template>
     <div class="d-grid gap-2 nc-container">
-      {{ ncForm }}
       <div>
         <PlForm ref="formRef" :model="ncForm" style="max-width: 900px" :rules="rules" class="d-grid gap-10 w-100">
           <div class="d-flex c-flex b-flex">
@@ -60,24 +59,25 @@ const formRef = ref(null)
             </div>
           </div>
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1fr .25fr">
-            <newDropDown v-model="ncForm.channel" label="Канал обращения" :options="rStrore.refernces?.channels" />
-            <newDropDown label="Инициатор" />
+            <newDropDown v-model="ncForm.channel" label="Канал обращения" :options="rStrore.refernces?.channels!" />
+            <newDropDown v-model="ncForm.initiatorType" label="Инициатор" :options="rStrore.refernces?.initiatorTypes!" />
             <label class="check d-flex c-flex gap-2">
-              <input type="checkbox" name="checkbox" />
+              <input v-model="ncForm.isFirstLine" type="checkbox" name="checkbox" />
               1 линия
             </label>
           </div>
           <div class="d-flex gap-4">
             <PlInputPlus 
               class="test"
-              v-model="ncForm.client" 
-              prop="client"
+              v-model="ncForm.client.inn" 
+              prop="client.inn"
               label="Клиент" 
               placeholder="Начните вводить ИНН или наименование и выберите из списка" 
               width="100%"
             />
           </div>
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
+            <!--в проработке-->
             <newDropDown label="Исполнитель" />
             <newDropDown label="Тема" />
           </div>
@@ -90,18 +90,18 @@ const formRef = ref(null)
             width="100%"
           />
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
-            <newDropDown label="Приоритет" />
+            <newDropDown v-model="ncForm.priority" label="Приоритет" :options="rStrore.refernces?.priority!" />
             <PlInputPlus 
               class="test"
               v-model="ncForm.priority_reason" 
-              prop="just"
+              prop="priority_reason"
               label="Обоснование" 
               placeholder="Повышение приоритета" 
               width="100%"
             />
           </div>
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
-            <newDropDown label="Исполнитель" />
+            <newDropDown v-model="ncForm.assignee" label="Исполнитель" />
           </div>
         </PlForm>
       </div>
