@@ -2,7 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import type { Claim } from '@/interfaces/Claim'
 
-export const useModalrStore = defineStore('modal', () => {
+export const useModalStore = defineStore('modal', () => {
   const type = ref('')
   //и обьеденить их обьектом
   const title = computed(()=>{

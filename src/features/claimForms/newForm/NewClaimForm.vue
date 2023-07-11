@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import newDropDown from "@/widgets/newDropDown/ui/newDropDown.vue"
+import type { ClaimReq } from "@/interfaces/requests/ClaimReq";
+import { useReferenceStore } from "@/stores/references";
 const rules = {
   client: [{
     require: true,
@@ -12,38 +14,53 @@ const rules = {
     require: true,
   }],
 }
-
-const ncForm = ref({
-  client: "",
-  descr: "",
-  just: "",
+const rStrore = useReferenceStore()
+const ncForm = ref<ClaimReq>({
+  category: 'OUTGOING',
+  channel: '',
+  initiatorType: '',
+  isFirstLine: false,
+  claimType: '',
+  claimTheme: '',
+  description: '',
+  serviceCount: 0,
+  priority: '',
+  priority_reason: '',
+  assignee: '',
+  comment: '',
+  client: {
+    globalCompanyId: 0,
+    plCompanyId: '',
+    inn: '',
+    kpp: '',
+    ogrn: '',
+    fullName: '',
+    shortName: '',
+  },
+  documents: [],
 });
-
+const test = ref()
 const formRef = ref(null)
 //вынести чек и радио в отдельные компоненты?
 </script>
 
 <template>
     <div class="d-grid gap-2 nc-container">
-      {{ ncForm.client }}
+      {{ ncForm }}
       <div>
         <PlForm ref="formRef" :model="ncForm" style="max-width: 900px" :rules="rules" class="d-grid gap-10 w-100">
           <div class="d-flex c-flex b-flex">
             <h5 class="mt-0 form-title">Новое обращение</h5> 
             <div class="id">SM-1247</div>
             <div class="d-flex gap-12 c-flex">
-              <label class="rad d-flex c-flex gap-2">
-                <input type="radio" name="radio" />
-                  Входящие
-              </label>
-              <label class="rad d-flex c-flex gap-2">
-                <input type="radio" name="radio" />
-                  Исходящие
+              <label v-for="category in rStrore.refernces?.categories" class="rad d-flex c-flex gap-2">
+                <input type="radio" name="radio" :value="category.code" v-model="ncForm.category"/>
+                  {{ category.text }}
               </label>
             </div>
           </div>
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1fr .25fr">
-            <newDropDown label="Канал обращения" />
+            <newDropDown v-model="ncForm.channel" label="Канал обращения" :options="rStrore.refernces?.channels" />
             <newDropDown label="Инициатор" />
             <label class="check d-flex c-flex gap-2">
               <input type="checkbox" name="checkbox" />
@@ -66,7 +83,7 @@ const formRef = ref(null)
           </div>
           <PlInputPlus
             textarea
-            v-model="ncForm.descr"
+            v-model="ncForm.description"
             prop="descr"
             label="Описание обращения" 
             placeholder="Введите описание обращения" 
@@ -76,7 +93,7 @@ const formRef = ref(null)
             <newDropDown label="Приоритет" />
             <PlInputPlus 
               class="test"
-              v-model="ncForm.just" 
+              v-model="ncForm.priority_reason" 
               prop="just"
               label="Обоснование" 
               placeholder="Повышение приоритета" 

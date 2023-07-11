@@ -1,27 +1,32 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import {
   Listbox,
   ListboxButton,
   ListboxOptions,
   ListboxOption,
 } from '@headlessui/vue'
-import {defOptions} from "../const/defOptions"
-import type {DropDownItem, IDropDownProps} from "@/widgets/newDropDown/model/types";
-const props = defineProps({
-  options: {
-    type: Array<DropDownItem>,
-    default: () => defOptions,
-    required: false,
-  },
-  label: {
-    type: String,
-    required: true,
-  },
-});
-//модель както сделать?
+import type { ReferenceData } from '@/interfaces/References';
+const props = defineProps<{
+  options: ReferenceData[]
+  label: String,
+  modelValue: String
+}>();
+const emit = defineEmits(['update:modelValue'])
 
-const selected = ref()
+const selCode = computed({
+  get() {
+    return props.modelValue
+  },
+  set(value) {
+    emit('update:modelValue', value)
+  }
+})
+
+const selected = ref<ReferenceData>()
+watch(selected,()=>{
+  selCode.value = selected.value?.code!
+})
 </script>
 <template>
     <!--ревльно лейблом сделать както бы-->
@@ -33,7 +38,7 @@ const selected = ref()
         <Listbox v-model="selected">
           <div class="rel">
             <ListboxButton class="list-btn">
-              <span class="title" :class="selected?'':'grey'">{{ selected?selected.data:`Выберете ${label}`/*пока без склонений*/ }}</span>
+              <span class="title" :class="selected?'':'grey'">{{ selected?selected.text:`Выберете ${label}`/*пока без склонений*/ }}</span>
               <span class="icon-cont">
                 <PlIcon  color="#a6a6a8" name="ChevronDown24"/>
               </span>
@@ -50,12 +55,12 @@ const selected = ref()
                 <ListboxOption
                   v-slot="{ active, selected }"
                   v-for="option in options"
-                  :key="option.data"
+                  :key="option.code"
                   :value="option"
                   as="template">
                   <li :class="[active ? 'active' : '', 'item',]">
                     <span :class="[selected ? 'bold' : '', 'turn',]">
-                      {{ option.data }}
+                      {{ option.text }}
                     </span>
                   </li>
                 </ListboxOption>

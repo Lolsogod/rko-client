@@ -6,7 +6,6 @@ import {useClaimStore} from '@/stores/claims'
 const rStore = useReferenceStore()
 const cStore = useClaimStore()
 //погуглю как на старте вызывать функцию, а пока пусть так
-rStore.fetchReferences()
 cStore.fetchClaims()
 </script>
 

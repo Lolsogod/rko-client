@@ -1,5 +1,5 @@
 import type { IMenuItem } from '@/interfaces/IMenuItem';
-import {useModalrStore} from '@/stores/modal'
+import {useModalStore} from '@/stores/modal'
 import router from '@/router'
 import type { Claim, Status } from '@/interfaces/Claim';
 import {computed} from 'vue'
@@ -8,7 +8,7 @@ import type { ReferenceData, References } from '@/interfaces/References';
 
 export const useClaimConfig = (claim: Claim) =>{
   
-    const modalStore = useModalrStore()
+    const modalStore = useModalStore()
     const refStore = useReferenceStore()
     //хз мб херня но пусть так пока
     const items = new Map<string, IMenuItem[]>([
