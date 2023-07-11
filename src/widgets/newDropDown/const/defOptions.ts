@@ -1,6 +1,7 @@
-export const defOptions = [
-    { id:1,data: 'Канал 1' },
-    { id:2,data: 'Канал 2' },
-    { id:3,data: 'Канал 3' },
-    { id:4,data: 'Канал 4' },
+import type { ReferenceData } from "@/interfaces/References";
+
+export const defOptions: ReferenceData[] = [
+    { code:"ONE",text: 'Вар 1' },
+    { code:"TWO",text: 'Вар 2' },
+    { code:"THREE",text: 'Вар 3' },
 ]

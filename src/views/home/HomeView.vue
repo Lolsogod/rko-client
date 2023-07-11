@@ -4,11 +4,11 @@ import Claims from '@/features/claims/Claims.vue'
 import router from '@/router'
 import Modal from '@/widgets/modal/Modal.vue';
 
-import {useModalrStore} from '@/stores/modal'
+import {useModalStore} from '@/stores/modal'
 import ClaimInfo from '@/widgets/modal/ClaimInfo.vue';
 import  StateJournal from '@/widgets/modal/StateJournal.vue';
 
-const modalStore = useModalrStore()
+const modalStore = useModalStore()
 </script>
 <template>
     <div class="d-flex c-flex b-flex mb-6">

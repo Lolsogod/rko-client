@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"json-server --watch src\\shared\\api\\mock\\db.json /\" \"vite\"",
+    "dev": "concurrently \"json-server --watch src\\shared\\api\\mock\\new_db.json /\" \"vite\"",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",

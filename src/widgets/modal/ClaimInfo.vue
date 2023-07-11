@@ -14,16 +14,16 @@ const conf = useClaimConfig(props.claim)
       <div class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 1fr 1fr 1fr .75fr"> 
          <TInfo title="Номер">SD-{{ claim.id }}</TInfo>
          <TInfo title="Дата создания">{{ conf.createdDate.value}}</TInfo>
-         <TInfo title="Канал обращения">{{ conf.channelLine.value }}</TInfo>
-         <TInfo title="Инициатор">{{conf.initiator.value}}</TInfo>
+         <TInfo title="Канал обращения">{{ conf.channelLine }}</TInfo>
+         <TInfo title="Инициатор">{{conf.initiator}}</TInfo>
       </div>
       <div  class="d-grid mt-6 mb-10 gap-12" style="grid-template-columns: 3fr .75fr">
-         <TInfo title="Клиент">ИНН {{claim.client.inn}}, {{ claim.client.fullName }}</TInfo>
-         <TInfo title="Статус">{{conf.status.value}}</TInfo>
+         <TInfo title="Клиент">ИНН {{claim.client?.inn}}, {{ claim.client?.full_name }}</TInfo>
+         <TInfo title="Статус">{{conf.status}}</TInfo>
       </div>
       <div  class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 2fr 2fr">
-         <TInfo title="Тип обращения">{{ claim.claimType }}</TInfo>
-         <TInfo title="Тема">{{claim.claimTheme}}</TInfo>
+         <TInfo title="Тип обращения">{{ claim.claim_type }}</TInfo>
+         <TInfo title="Тема">{{claim.claim_theme}}</TInfo>
       </div>
       <div lass="d-grid mt-6 mb-10" style="grid-template-columns: 1fr">
          <TInfo title="Описание обращения">
@@ -33,11 +33,12 @@ const conf = useClaimConfig(props.claim)
       <div> -----------здесь будут доки--------------</div>
       <hr>
       <div class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 1fr 1fr 1fr">
-         <TInfo title="Приоритет">Высокий</TInfo>
-         <TInfo title="Обоснование">Дата сделки ХХ.ХХ.ХХ, потом клиент уезжает на 3 недели</TInfo>
-         <TInfo title="Исполнитель">Александрова Александра</TInfo>
+         <TInfo title="Приоритет">{{ conf.priority }}</TInfo>
+         <TInfo title="Обоснование">{{ claim.priority_reason }}</TInfo>
+         <TInfo title="Исполнитель">{{ claim.assignee }}</TInfo>
       </div>
       <hr>
+      <!--пока непонял откуда брать-->
       <div class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 1fr 1fr 1fr">
          <TInfo title="Контрольная дата">22.09.23 10:00</TInfo>
          <TInfo title="Комментарий">Может быть достаточно много текста кого ждем и что </TInfo>
