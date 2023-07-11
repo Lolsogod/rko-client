@@ -5,7 +5,7 @@ import type {ForwardReq} from '@/interfaces/requests/ForwardReq'
 import axios from 'axios'
 import type {CloseReq} from '@/interfaces/requests/CloseReq';
 import type {PauseReq} from '@/interfaces/requests/PauseReq';
-import {updateToken, useKeycloak} from "@/shared/lib/vue-keycloak/src/vue3-keycloak";
+import {updateToken, useKeycloak} from "@/shared/lib/vue-keycloak/src/vue3-keycloak.js";
 
 const api = axios.create({
     baseURL: "http://localhost:3000" //из енва потом брать

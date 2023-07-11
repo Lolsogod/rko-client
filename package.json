@@ -15,6 +15,7 @@
     "@headlessui/vue": "^1.7.14",
     "@heroicons/vue": "^2.0.18",
     "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
     "jwt-decode": "^3.1.2",
     "keycloak-js": "^20.0.0",
     "pinia": "^2.1.3",

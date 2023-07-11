@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import logo from "../../assets/logo-header.svg"
 //@ts-ignore
-import {useKeycloak} from "@/shared/lib/vue-keycloak/src/vue3-keycloak";
+import {useKeycloak} from "@/shared/lib/vue-keycloak/src/vue3-keycloak.js";
 const {keycloak} = useKeycloak();
 defineEmits(["openSide"])
 
