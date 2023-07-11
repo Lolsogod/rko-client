@@ -3,13 +3,14 @@ import './assets/main.css'
 
 import components from '@factoringplus/pl-components-pack-v3';
 import '@factoringplus/pl-components-pack-v3/dist/style.css';
+//@ts-ignore
 import {isTokenReady, vueKeycloak} from "@/shared/lib/vue-keycloak/src/vue3-keycloak.js"
 import {createApp} from 'vue'
 import {createPinia} from 'pinia'
 import App from './App.vue'
 import router from './router'
-import keycloakConfig from "../public/keycloakConfig";
-import * as process from "process";
+//@ts-ignore
+import keycloakConfig from "./shared/api/keycloak/keycloakConfig";
 
 const {initOptions, config} = keycloakConfig;
 const app = createApp(App)

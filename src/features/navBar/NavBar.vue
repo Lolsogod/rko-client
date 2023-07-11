@@ -15,7 +15,7 @@ defineEmits(["openSide"])
         <!--сюда штуки в зависимости от роута добавить-->
         <div class="d-flex gap-10 mr-6">
             <PlButton size="medium" type="secondary" icon="Chat20">Чат с клиентми</PlButton>
-            <PlButton @click = "keycloak.logout()" size="medium" type="secondary" icon="Exit24"></PlButton>
+          <PlButton @click = "keycloak.logout()" size="medium" type="secondary" icon="Exit24"></PlButton>
         </div>
         
     </nav>

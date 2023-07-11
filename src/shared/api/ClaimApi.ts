@@ -5,6 +5,7 @@ import type {ForwardReq} from '@/interfaces/requests/ForwardReq'
 import axios from 'axios'
 import type {CloseReq} from '@/interfaces/requests/CloseReq';
 import type {PauseReq} from '@/interfaces/requests/PauseReq';
+//@ts-ignore
 import {updateToken, useKeycloak} from "@/shared/lib/vue-keycloak/src/vue3-keycloak.js";
 
 const api = axios.create({
@@ -27,8 +28,8 @@ api.interceptors.request.use(
         let token = null;
         try {
             token = await updateToken(0); // updates token if expired, by default returns the token if it valid
-        } catch (error) {
-            error && console.error("ошибка токена"); // some custom error handler
+        } catch (error:any) {
+            error && console.error(error?.response.status||error); // some custom error handler
 
             if (hasFailed && !isPending) {
                 keycloak.logout();
@@ -39,6 +40,8 @@ api.interceptors.request.use(
         };
         return config;
     }, error => {
+        console.error("axios bearer requst error")
+        console.log(error?.response)
         Promise.reject(error);
     });
 function bearerAuth(token: string) {
