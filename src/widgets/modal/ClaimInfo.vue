@@ -2,7 +2,7 @@
 import type { Claim } from '@/interfaces/Claim';
 import TInfo from '../TInfo/TInfo.vue'
 import { useClaimConfig } from '@/entities/claimEntity/const/claimConfig'
-//пока всё захардкожено, потом будет круто
+
 const props = defineProps<{
    claim: Claim
 }>()

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { ClaimReq } from '@/interfaces/requests/ClaimReq';
 import { createClaim } from "@/shared/api/ClaimApi"
+
 const props = defineProps<{
     req: ClaimReq
 }>()
-
 </script>
 
 <template>

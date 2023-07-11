@@ -2,11 +2,9 @@
 import type { Claim } from '@/interfaces/Claim';
 import JItem from '../JItem/JItem.vue';
 
-//пока всё захардкожено, потом будет круто
 defineProps<{
    claim: Claim
 }>()
-
 </script>
 
 <template>

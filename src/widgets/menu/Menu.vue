@@ -1,9 +1,9 @@
 <script setup lang="ts">
-    import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
-    import type {IMenuItem} from '@/interfaces/IMenuItem'
-    const props =defineProps<{
-        items?: IMenuItem[]
-    }>()
+import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
+import type {IMenuItem} from '@/interfaces/IMenuItem'
+defineProps<{
+    items?: IMenuItem[]
+}>()
 </script>
 
 <template>
@@ -16,8 +16,7 @@
                 enter-to-class="show"
                 leave-active-class="dur"
                 leave-from-class="show"
-                leave-to-class="hide"
-            >
+                leave-to-class="hide">
                 <MenuItems class="m-items">
                     <MenuItem v-for="item in items">
                         <button @click="item.action">{{ item.text }}</button>

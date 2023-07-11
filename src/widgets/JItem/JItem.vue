@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useClaimConfig } from "@/entities/claimEntity/const/claimConfig";
 import type {Status} from "@/interfaces/Claim"
 import { useReferenceStore } from "@/stores/references";
 import { computed } from "vue";

@@ -1,19 +1,14 @@
 <script setup lang="ts">
-defineEmits(['close'])
+import { TransitionRoot,
+  TransitionChild, Dialog,
+  DialogPanel, DialogTitle,
+} from '@headlessui/vue'
+
 defineProps<{
   isOpen: boolean,
   title: string
 }>()
-import {
-  TransitionRoot,
-  TransitionChild,
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-} from '@headlessui/vue'
-
-
-
+defineEmits(['close'])
 </script>
 <template>
     <TransitionRoot appear :show="isOpen" as="div" class="no-d">
