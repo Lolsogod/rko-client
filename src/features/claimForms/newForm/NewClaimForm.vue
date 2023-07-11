@@ -59,8 +59,12 @@ const formRef = ref(null)
             </div>
           </div>
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1fr .25fr">
-            <newDropDown v-model="ncForm.channel" label="Канал обращения" :options="rStrore.refernces?.channels!" />
-            <newDropDown v-model="ncForm.initiatorType" label="Инициатор" :options="rStrore.refernces?.initiatorTypes!" />
+            <newDropDown v-model="ncForm.channel" label="Канал обращения" 
+                        :options="rStrore.refernces?.channels!" 
+                        placeholder="Выберите канал обращения"/>
+            <newDropDown v-model="ncForm.initiatorType" label="Инициатор" 
+                        :options="rStrore.refernces?.initiatorTypes!"
+                         placeholder="Выберите Инициатора"/>
             <label class="check d-flex c-flex gap-2">
               <input v-model="ncForm.isFirstLine" type="checkbox" name="checkbox" />
               1 линия
@@ -79,7 +83,7 @@ const formRef = ref(null)
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
             <!--в проработке-->
             <newDropDown label="Исполнитель" />
-            <newDropDown label="Тема" />
+            <newDropDown label="Тема" placeholder="Выберите тему" />
           </div>
           <PlInputPlus
             textarea
@@ -90,7 +94,7 @@ const formRef = ref(null)
             width="100%"
           />
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
-            <newDropDown v-model="ncForm.priority" label="Приоритет" :options="rStrore.refernces?.priority!" />
+            <newDropDown v-model="ncForm.priority" label="Приоритет" :options="rStrore.refernces?.priority!"  />
             <PlInputPlus 
               class="test"
               v-model="ncForm.priority_reason" 
@@ -101,7 +105,7 @@ const formRef = ref(null)
             />
           </div>
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
-            <newDropDown v-model="ncForm.assignee" label="Исполнитель" />
+            <newDropDown v-model="ncForm.assignee" label="Исполнитель" placeholder="Выберите ответственного" />
           </div>
         </PlForm>
       </div>
