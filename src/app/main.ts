@@ -1,4 +1,4 @@
-import './assets/main.css'
+import '@/assets/main.css'
 //@ts-ignore
 
 import components from '@factoringplus/pl-components-pack-v3';
@@ -27,7 +27,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
-import router from './app/providers/router'
+import router from './providers/router'
 
 const app = createApp(App)
 app.use(VueKeyCloak, keycloakOptions)

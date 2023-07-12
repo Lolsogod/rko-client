@@ -4,7 +4,7 @@ import ClientProductsList from "@/entities/ClientProduct/ui/ClientProductsList.v
 import CallsBlock from "@/features/CallsBlock/ui/CallsBlock.vue";
 import WorkClaimMiniForm from "../../features/claimForms/workForm/WorkClaimMiniForm.vue";
 import Chat from "@/widgets/chat/Chat.vue";
-import ClaimSoloPult from "@/views/claimSolo/ClaimSoloPult.vue";
+import EditClaimPult from "@/pages/editClaim/EditClaimPult.vue";
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 const claimId = ref<String | String[]>('');
@@ -45,7 +45,7 @@ onMounted(() => {
     </div>
     <!--Будет общий футер, поменять потом-->
     <footer class="d-flex align-items-center justify-content-end">
-      <ClaimSoloPult/>
+      <EditClaimPult/>
     </footer>
 
   </div>
