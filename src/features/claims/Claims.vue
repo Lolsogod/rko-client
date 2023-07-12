@@ -2,11 +2,13 @@
 import ClaimsCol from './ClaimsCol.vue';
 import {useReferenceStore} from '@/stores/references'
 import {useClaimStore} from '@/stores/claims'
+import {useAuthApi} from "@/shared/api/auth/authApi";
 
 const rStore = useReferenceStore()
 const cStore = useClaimStore()
 //погуглю как на старте вызывать функцию, а пока пусть так
 cStore.fetchClaims()
+const {} = useAuthApi()
 </script>
 
 <template>

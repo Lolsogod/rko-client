@@ -13,6 +13,7 @@ import router from './router'
 import keycloakConfig from "./shared/api/keycloak/keycloakConfig";
 
 const {initOptions, config} = keycloakConfig;
+const pinia = createPinia();
 const app = createApp(App)
 app.use(vueKeycloak, {
     initOptions,
@@ -21,7 +22,7 @@ app.use(vueKeycloak, {
         onReady: async () => {
             app
                 .use(router)
-                .use(createPinia())
+                .use(pinia)
                 .use(components)
             await router.isReady();
             await isTokenReady();

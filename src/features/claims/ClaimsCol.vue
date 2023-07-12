@@ -2,11 +2,14 @@
 import ClaimCard from '../../entities/claimEntity/ui/ClaimCard.vue';
 import type { ReferenceData } from '@/interfaces/References';
 import {useClaimStore} from '@/stores/claims'
+import {useAuthStore} from "@/stores/auth"
 defineProps<{
     status: ReferenceData
 }>()
 
 const store = useClaimStore()
+const auth = useAuthStore()
+auth.checkLoginStatus()
 </script>
 
 <template>

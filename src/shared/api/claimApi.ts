@@ -9,7 +9,7 @@ import type {PauseReq} from '@/interfaces/requests/PauseReq';
 import {updateToken, useKeycloak} from "@/shared/lib/vue-keycloak/src/vue3-keycloak.js";
 
 const api = axios.create({
-    baseURL: "http://localhost:3000" //из енва потом брать
+    baseURL: import.meta.env.VITE_RKO_SPA_API_URL //из енва потом брать
 })
 
 api.interceptors.response.use(
