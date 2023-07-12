@@ -4,7 +4,7 @@ import { defOptions } from '../const/defOptions'
 import { Listbox,ListboxButton,
           ListboxOptions, ListboxOption,} from '@headlessui/vue'
 import type { ReferenceData } from '@/interfaces/References';
-//добавить серый цвет и полностью удалить старый дропдаун
+
 const props = withDefaults(defineProps<{
   options?: ReferenceData[]
   label?: String,

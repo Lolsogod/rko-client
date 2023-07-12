@@ -9,7 +9,7 @@
 </script>
 
 <template>
-  <div :style="{width:this.width}" class="secondary-card">
+  <div :style="{width:width}" class="secondary-card">
    <slot class="g"></slot>
 
   </div>

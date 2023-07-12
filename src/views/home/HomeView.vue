@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import Layout from '@/layouts/Layout.vue';
 import Claims from '@/features/claims/Claims.vue'
-import router from '@/router'
+import router from '@/app/providers/router'
 import Modal from '@/widgets/modal/Modal.vue';
 
-import {useModalStore} from '@/stores/modal'
+import {useModalStore} from '@/app/providers/stores/modal'
 import ClaimInfo from '@/widgets/modal/ClaimInfo.vue';
 import  StateJournal from '@/widgets/modal/StateJournal.vue';
 

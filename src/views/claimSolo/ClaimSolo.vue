@@ -73,4 +73,4 @@ onMounted(() => {
     background-color: white;
     width: 100%;
   }
-</style>
+</style>@/app/router

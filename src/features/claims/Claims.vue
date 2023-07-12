@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ClaimsCol from './ClaimsCol.vue';
-import {useReferenceStore} from '@/stores/references'
-import {useClaimStore} from '@/stores/claims'
+import {useReferenceStore} from '@/app/providers/stores/references'
+import {useClaimStore} from '@/app/providers/stores/claims'
 
 const rStore = useReferenceStore()
 const cStore = useClaimStore()

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ClaimCard from '../../entities/claimEntity/ui/ClaimCard.vue';
 import type { ReferenceData } from '@/interfaces/References';
-import {useClaimStore} from '@/stores/claims'
+import {useClaimStore} from '@/app/providers/stores/claims'
 defineProps<{
     status: ReferenceData
 }>()
@@ -40,4 +40,4 @@ const store = useClaimStore()
     .DONE-badge{
         background-color: #ededeb;
     }
-</style>
+</style>@/app/providers/stores/claims
