@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed} from "vue";
-import newDropDown from "@/widgets/newDropDown/ui/newDropDown.vue"
+import DropDown from "@/widgets/DropDown/ui/DropDown.vue"
 import type { ClaimReq } from "@/interfaces/requests/ClaimReq";
 import { useReferenceStore } from "@/stores/references";
 const rules = {
@@ -47,10 +47,10 @@ const formRef = ref(null)
             </div>
           </div>
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1fr .25fr">
-            <newDropDown v-model="ncForm.channel" label="Канал обращения" 
+            <DropDown v-model="ncForm.channel" label="Канал обращения" 
                         :options="rStrore.refernces?.channels!" 
                         placeholder="Выберите канал обращения"/>
-            <newDropDown v-model="ncForm.initiatorType" label="Инициатор" 
+            <DropDown v-model="ncForm.initiatorType" label="Инициатор" 
                         :options="rStrore.refernces?.initiatorTypes!"
                          placeholder="Выберите Инициатора"/>
             <label class="check d-flex c-flex gap-2">
@@ -70,8 +70,8 @@ const formRef = ref(null)
           </div>
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
             <!--в проработке-->
-            <newDropDown label="Исполнитель" />
-            <newDropDown label="Тема" placeholder="Выберите тему" />
+            <DropDown label="Исполнитель" />
+            <DropDown label="Тема" placeholder="Выберите тему" />
           </div>
           <PlInputPlus
             textarea
@@ -82,7 +82,7 @@ const formRef = ref(null)
             width="100%"
           />
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
-            <newDropDown v-model="ncForm.priority" label="Приоритет" :options="rStrore.refernces?.priority!"  />
+            <DropDown v-model="ncForm.priority" label="Приоритет" :options="rStrore.refernces?.priority!"  />
             <PlInputPlus 
               class="test"
               v-model="ncForm.priority_reason" 
@@ -93,7 +93,7 @@ const formRef = ref(null)
             />
           </div>
           <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
-            <newDropDown v-model="ncForm.assignee" label="Исполнитель" placeholder="Выберите ответственного" />
+            <DropDown v-model="ncForm.assignee" label="Исполнитель" placeholder="Выберите ответственного" />
           </div>
         </PlForm>
       </div>

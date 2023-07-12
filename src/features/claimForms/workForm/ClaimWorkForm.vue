@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref} from "vue";
 import HorisontalFormMenu from "./HorisontalFormMenu.vue"
-import newDropDown from "@/widgets/newDropDown/ui/newDropDown.vue"
+import DropDown from "@/widgets/DropDown/ui/DropDown.vue"
 const formatter = (value: any) => {
   return value.replace(/D/g, "");
 };
@@ -102,8 +102,8 @@ const create = () => {
       <PlForm ref="formRef" :model="ncForm" style="max-width: 900px" class="d-grid gap-6 w-100" :rules="rules">
 
         <div class="claimWorkForm__item inline">
-          <newDropDown :label="'Канал сообщений'" :options="[{data:'Чат'},{data:'Чат1вывы'}]"/>
-          <newDropDown :label="'Клиент'" :options="[{data:'Клиент'},{data:'Клиент1'}]"/>
+          <DropDown label="Канал сообщений"/>
+          <DropDown label="Клиент" />
           <h6 class="inline__items">Входящие</h6>
         </div>
         <div class="claimWorkForm__item">
@@ -117,11 +117,8 @@ const create = () => {
           />
         </div>
         <div class="claimWorkForm__item inline">
-          <!--          //тут просто добавить проп можно selectedItem - вынести его сюда, хотя лучше в стор-->
-<!--                    <DropDownSelect :menu-items="['Тип1','Тип2']" :title="'Тип сообщения'"/>-->
-<!--                    <DropDownSelect :menu-items="['Тема1','Тема2']" :title="'Тема'"/>-->
-          <newDropDown :label="'Тип сообщения'" :options="[{data:'Тип1'},{data:'Тип2'}]"/>
-          <newDropDown :label="'Тему'" :options="[{data:'Тема1'},{data:'Тема2'}]"/>
+          <DropDown label="Тип сообщения"/>
+          <DropDown label="Тема"/>
         </div>
         <div class="claimWorkForm__item">
           <PlInputPlus
@@ -135,11 +132,7 @@ const create = () => {
           <!---->
         </div>
         <div class="claimWorkForm__item inline">
-          <!--          тут тоже самое-->
-<!--                    <DropDownSelect :menu-items="['низкий','высокий']" :title="'Приоритет'"/>-->
-          <newDropDown :label="'Приоритет'" :options="[{data:'низкий'},{data:'высокий'}]"/>
-
-
+          <DropDown label="Приоритет"/>
           <PlInputPlus
               v-model="ncForm.cause"
               prop="cause"
@@ -149,9 +142,7 @@ const create = () => {
           />
         </div>
         <div class="claimWorkForm__item inline">
-<!--                    <DropDownSelect :menu-items="['Исполнитель1','Исполнитель2']" :title="'Исполнитель'"/>-->
-          <newDropDown :label="'Исполнитель'" :options="[{data:'Исполнитель1'},{data:'Исполнитель2'}]"/>
-
+          <DropDown label="Исполнитель"/>
           <PlInputPlus
               :style="{padding:'5px'}"
               v-model="ncForm.executor"
@@ -159,7 +150,6 @@ const create = () => {
               label="Комментарий"
               placeholder="Опционально"
               width="100%"
-
           />
         </div>
       </PlForm>

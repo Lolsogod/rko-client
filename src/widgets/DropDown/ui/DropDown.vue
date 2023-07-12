@@ -7,9 +7,10 @@ import type { ReferenceData } from '@/interfaces/References';
 //добавить серый цвет и полностью удалить старый дропдаун
 const props = withDefaults(defineProps<{
   options?: ReferenceData[]
-  label: String,
+  label?: String,
   modelValue?: String,
   placeholder?: String
+  grey?: boolean
 }>(), {
   options: ()=> defOptions,
   placeholder: () => "Выберите из списка"
@@ -29,19 +30,20 @@ const selected = ref<ReferenceData>()
 watch(selected,()=>{
   selCode.value = selected.value?.code!
 })
+
 </script>
 <template>
     <!--ревльно лейблом сделать както бы-->
     <div>
-      <div class="label d-flex c-flex">
+      <div v-if="props.label" class="label d-flex c-flex">
         {{ label }}
       </div>
       <div>
         <Listbox v-model="selected">
           <div class="rel">
-            <ListboxButton class="list-btn">
-              <span class="title" :class="selected?'':'grey'">
-                {{ selected?selected.text:placeholder}}
+            <ListboxButton class="list-btn" :class="grey?'bg-grey':''">
+              <span class="title" :class="selected||grey?'':'placeholder'">
+                {{ selected?selected.text:placeholder }}
               </span>
               <span class="icon-cont">
                 <PlIcon  color="#a6a6a8" name="ChevronDown24"/>
@@ -96,6 +98,7 @@ watch(selected,()=>{
     border-radius: .5rem;
     cursor: pointer; 
   }
+  
   .title{
     display: block; 
     overflow: hidden;
@@ -168,7 +171,11 @@ watch(selected,()=>{
     text-overflow: ellipsis;
     white-space: nowrap; 
   }
-  .grey{
+  .placeholder{
     color: #c4c6c6
+  }
+  .bg-grey{
+    background-color: #ededeb;
+    border-color: #ededeb
   }
 </style>
