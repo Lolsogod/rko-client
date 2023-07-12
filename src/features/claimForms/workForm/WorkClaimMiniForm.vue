@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import DropDown from '@/widgets/DropDown/ui/DropDown.vue';
+import DropDown from '@/shared/ui/DropDown/ui/DropDown.vue';
 </script>
 
 <template>

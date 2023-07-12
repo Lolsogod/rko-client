@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Menu from '@/widgets/menu/Menu.vue';
+import Menu from '@/shared/ui/menu/Menu.vue';
 import { useClaimConfig } from '../const/claimConfig'
 import type { Claim } from '@/interfaces/Claim';
 const props = defineProps<{

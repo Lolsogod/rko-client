@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref} from "vue";
 import HorisontalFormMenu from "./HorisontalFormMenu.vue"
-import DropDown from "@/widgets/DropDown/ui/DropDown.vue"
+import DropDown from "@/shared/ui/DropDown/ui/DropDown.vue"
 const formatter = (value: any) => {
   return value.replace(/D/g, "");
 };

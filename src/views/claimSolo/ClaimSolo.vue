@@ -2,13 +2,9 @@
 import ClaimWorkForm from "../../features/claimForms/workForm/ClaimWorkForm.vue";
 import ClientProductsList from "@/entities/ClientProduct/ui/ClientProductsList.vue";
 import CallsBlock from "@/features/CallsBlock/ui/CallsBlock.vue";
-import CallBlockItem from "@/features/CallsBlock/ui/CallBlockItem.vue";
-import {E_CALL_TYPE} from "@/features/CallsBlock/model/types";
 import WorkClaimMiniForm from "../../features/claimForms/workForm/WorkClaimMiniForm.vue";
 import Chat from "@/widgets/chat/Chat.vue";
 import ClaimSoloPult from "@/views/claimSolo/ClaimSoloPult.vue";
-import router from '@/router'
-import type {Product} from "@/entities/ClientProduct/model/types";
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 const claimId = ref<String | String[]>('');
@@ -73,4 +69,4 @@ onMounted(() => {
     background-color: white;
     width: 100%;
   }
-</style>@/app/router
+</style>

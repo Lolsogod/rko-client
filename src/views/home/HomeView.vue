@@ -2,11 +2,11 @@
 import Layout from '@/layouts/Layout.vue';
 import Claims from '@/features/claims/Claims.vue'
 import router from '@/app/providers/router'
-import Modal from '@/widgets/modal/Modal.vue';
+import Modal from '@/shared/ui/modal/Modal.vue';
 
 import {useModalStore} from '@/app/providers/stores/modal'
-import ClaimInfo from '@/widgets/modal/ClaimInfo.vue';
-import  StateJournal from '@/widgets/modal/StateJournal.vue';
+import ClaimInfo from '@/shared/ui/modal/ClaimInfo.vue';
+import  StateJournal from '@/shared/ui/modal/StateJournal.vue';
 
 const modalStore = useModalStore()
 </script>

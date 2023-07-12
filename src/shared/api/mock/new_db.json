@@ -762,6 +762,31 @@
           "comment": "Все уязвимости устранены."
         }
       ]
+    },
+    {
+      "category": "OUTGOING",
+      "channel": "",
+      "initiatorType": "",
+      "isFirstLine": false,
+      "claimType": "",
+      "claimTheme": "",
+      "description": "",
+      "serviceCount": 0,
+      "priority": "",
+      "priority_reason": "",
+      "assignee": "",
+      "comment": "",
+      "client": {
+        "globalCompanyId": 0,
+        "plCompanyId": "",
+        "inn": "",
+        "kpp": "",
+        "ogrn": "",
+        "fullName": "",
+        "shortName": ""
+      },
+      "documents": [],
+      "id": 11
     }
   ]
 }

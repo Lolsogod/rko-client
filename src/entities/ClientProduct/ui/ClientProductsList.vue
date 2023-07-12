@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import type {Product} from "@/entities/ClientProduct/model/types";
-  import SecondaryCard from "@/shared/ui/SecondaryCard.vue";
   import ClientProductsListItem from "@/entities/ClientProduct/ui/ClientProductsListItem.vue";
 
     const props= defineProps({

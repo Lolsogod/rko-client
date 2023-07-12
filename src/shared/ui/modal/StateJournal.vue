@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Claim } from '@/interfaces/Claim';
-import JItem from '../JItem/JItem.vue';
+import JItem from '@/widgets/JItem/JItem.vue';
 
 defineProps<{
    claim: Claim

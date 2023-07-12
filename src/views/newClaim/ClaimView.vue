@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import NewClaimForm from '@/features/claimForms/newForm/NewClaimForm.vue'
-import ClientInfo from '@/components/ClientInfo.vue'
-import Chat from '@/widgets/chat/Chat.vue'
-import ClaimFooter from '@/widgets/footer/ClaimFooter.vue'
+import ClaimFooter from '@/shared/ui/footer/ClaimFooter.vue'
 import type { ClaimReq } from '@/interfaces/requests/ClaimReq';
 import { ref } from 'vue';
 
@@ -40,8 +38,7 @@ const ncForm = ref<ClaimReq>({
     <div class="d-flex gap-6">
         <NewClaimForm v-model="ncForm"/>
         <div class="right-cont">
-            <ClientInfo/>
-            <Chat/>
+            <div></div>
         </div>
     </div>
     <ClaimFooter :req="ncForm"/>
