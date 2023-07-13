@@ -29,7 +29,9 @@
 
 <script setup lang="ts">
 // import { defineProps } from 'vue';
-import type {CallBlockItem, E_CALL_TYPE} from "features/CallsBlock/model/types";
+import { E_CALL_TYPE} from "features/CallsBlock/model/types";
+import type {CallBlockItem} from "features/CallsBlock/model/types"
+
 
 const props = defineProps<
   CallBlockItem
