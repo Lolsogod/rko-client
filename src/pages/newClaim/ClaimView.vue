@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import NewClaimForm from '@/features/claimForms/newForm/NewClaimForm.vue'
-import ClaimFooter from '@/shared/ui/footer/ClaimFooter.vue'
-import type { ClaimReq } from '@/interfaces/requests/ClaimReq';
+import NewClaimForm from 'features/claimForms/newForm/NewClaimForm.vue'
+import ClaimFooter from 'shared/ui/footer/ClaimFooter.vue'
+import type { ClaimReq } from 'interfaces/requests/ClaimReq';
 import { ref } from 'vue';
 
 const ncForm = ref<ClaimReq>({

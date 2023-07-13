@@ -3,7 +3,7 @@ import { computed, ref, watch } from 'vue'
 import { defOptions } from '../const/defOptions'
 import { Listbox,ListboxButton,
           ListboxOptions, ListboxOption,} from '@headlessui/vue'
-import type { ReferenceData } from '@/interfaces/References';
+import type { ReferenceData } from 'interfaces/References';
 
 const props = withDefaults(defineProps<{
   options?: ReferenceData[]

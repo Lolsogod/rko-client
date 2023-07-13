@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import type { References } from '@/interfaces/References'
-import { getReferences } from '@/shared/api/ClaimApi'
+import type { References } from 'interfaces/References'
+import { getReferences } from 'shared/api/ClaimApi'
 
 export const useReferenceStore = defineStore('references', () => {
   const refernces = ref<References>()

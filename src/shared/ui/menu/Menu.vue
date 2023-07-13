@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
-import type {IMenuItem} from '@/interfaces/IMenuItem'
+import type {IMenuItem} from 'interfaces/IMenuItem'
 defineProps<{
     items?: IMenuItem[]
 }>()

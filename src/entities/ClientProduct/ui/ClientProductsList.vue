@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import type {Product} from "@/entities/ClientProduct/model/types";
-  import ClientProductsListItem from "@/entities/ClientProduct/ui/ClientProductsListItem.vue";
+  import type {Product} from "entities/ClientProduct/model/types";
+  import ClientProductsListItem from "entities/ClientProduct/ui/ClientProductsListItem.vue";
 
     const props= defineProps({
       clientDocsInfoArray:{

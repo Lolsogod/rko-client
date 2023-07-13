@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import Layout from '@/layouts/Layout.vue';
-import { useReferenceStore } from '@/app/providers/stores';
+import Layout from 'shared/ui/layout/Layout.vue';
+import { useReferenceStore } from 'app/providers/stores';
 
 const rStore = useReferenceStore()
 rStore.fetchReferences()

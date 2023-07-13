@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type {Status} from "@/interfaces/Claim"
-import { useReferenceStore } from "@/app/providers/stores";
+import type {Status} from "interfaces/Claim"
+import { useReferenceStore } from "app/providers/stores";
 import { computed } from "vue";
 const props = defineProps<{
     status: Status

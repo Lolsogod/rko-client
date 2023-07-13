@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { SLinkInfo } from '@/interfaces/SideLink';
-import {router} from '@/app/providers';
+import type { SLinkInfo } from 'interfaces/SideLink';
+import {router} from 'app/providers';
     const props = defineProps<{
         link: SLinkInfo
     }>()

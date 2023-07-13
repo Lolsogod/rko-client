@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import SideBar from "@/features/sidebar/SideBar.vue";
-import NavBar from "../features/navBar/NavBar.vue"
+import SideBar from "features/sidebar/SideBar.vue";
+import NavBar from "features/navBar/NavBar.vue"
 import { ref } from 'vue';
 
 const sideOpen = ref(false)

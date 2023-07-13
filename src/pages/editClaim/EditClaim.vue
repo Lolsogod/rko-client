@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import ClaimWorkForm from "../../features/claimForms/workForm/ClaimWorkForm.vue";
-import ClientProductsList from "@/entities/ClientProduct/ui/ClientProductsList.vue";
-import CallsBlock from "@/features/CallsBlock/ui/CallsBlock.vue";
+import ClientProductsList from "entities/ClientProduct/ui/ClientProductsList.vue";
+import CallsBlock from "features/CallsBlock/ui/CallsBlock.vue";
 import WorkClaimMiniForm from "../../features/claimForms/workForm/WorkClaimMiniForm.vue";
-import Chat from "@/widgets/chat/Chat.vue";
-import EditClaimPult from "@/pages/editClaim/EditClaimPult.vue";
+import Chat from "widgets/chat/Chat.vue";
+import EditClaimPult from "pages/editClaim/EditClaimPult.vue";
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 const claimId = ref<String | String[]>('');

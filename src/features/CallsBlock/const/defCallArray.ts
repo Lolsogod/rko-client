@@ -1,5 +1,5 @@
-import type {CallBlockItem} from "@/features/CallsBlock/model/types";
-import {E_CALL_TYPE} from "@/features/CallsBlock/model/types";
+import type {CallBlockItem} from "features/CallsBlock/model/types";
+import {E_CALL_TYPE} from "features/CallsBlock/model/types";
 
 export const defCallArray:Array<CallBlockItem> = [
     {
