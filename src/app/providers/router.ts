@@ -1,23 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from 'pages/home/HomeView.vue'
+import ClaimsListPage from 'pages/claims-list'
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'claims-list',
+      component: ClaimsListPage
     },
     {
       path: '/claim',
-      name: 'claim',
-      component: () => import('pages/newClaim/ClaimView.vue')
+      name: 'create-claim',
+      component: () => import('pages/create-claim')
     },
     {
       path:'/claim/:id',
-      name:'claimsolo',
-      component : () => import('pages/editClaim/editClaim.vue')
+      name:'edit-claim',
+      component : () => import('pages/edit-claim')
     }
   ]
 })
