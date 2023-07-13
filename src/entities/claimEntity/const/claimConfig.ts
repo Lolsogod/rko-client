@@ -1,9 +1,8 @@
 import type { IMenuItem } from '@/interfaces/IMenuItem';
-import {useModalStore} from '@/app/providers/stores/modal'
-import router from '@/app/providers/router'
+import {useModalStore, useReferenceStore} from '@/app/providers/stores'
+import { router } from '@/app/providers/'
 import type { Claim, Status } from '@/interfaces/Claim';
 import {computed} from 'vue'
-import { useReferenceStore } from '@/app/providers/stores/references';
 import type { ReferenceData, References } from '@/interfaces/References';
 
 export const useClaimConfig = (claim: Claim) =>{

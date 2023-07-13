@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Layout from '@/layouts/Layout.vue';
-import { useReferenceStore } from '@/app/providers/stores/references';
+import { useReferenceStore } from '@/app/providers/stores';
 
 const rStore = useReferenceStore()
 rStore.fetchReferences()
@@ -13,5 +13,6 @@ rStore.fetchReferences()
   </Layout>
 </template>
 
-<style scoped>
+<style>
+@import "./index.css";
 </style>

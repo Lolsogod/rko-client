@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import logo from "../../assets/logo-header.svg"
+import logo from "../../../public/logo-header.svg"
 defineEmits(["openSide"])
 </script>
 <template>

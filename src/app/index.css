@@ -1,3 +1,4 @@
+/*разбить на стили ?*/
 body{
     margin: 0;
     background-color: #f6f6f4;
@@ -49,4 +50,15 @@ body{
 }
 .pl-textarea__wrapper{
     border: 3px solid #eff0f5 !important;
+}
+/*ты кто*/
+.nc-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white !important;
+    padding: 2rem;
+    border-radius: 1rem;
+    flex-grow: 1;
 }

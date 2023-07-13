@@ -4,7 +4,6 @@ import type { Claim } from '@/interfaces/Claim'
 
 export const useModalStore = defineStore('modal', () => {
   const type = ref('')
-  //и обьеденить их обьектом
   const title = computed(()=>{
     switch (type.value) {
       case "info":
@@ -15,9 +14,8 @@ export const useModalStore = defineStore('modal', () => {
         return("Заголовок")
     }
   })
-  //сюда надо как то компонент запихать а хотя мб и ненадо
-  const claim = ref<Claim>()
 
+  const claim = ref<Claim>()
   const isOpen = ref(false)
   
   const openModal = (newType: string, newClaim: Claim)=>{
@@ -25,8 +23,10 @@ export const useModalStore = defineStore('modal', () => {
     claim.value = newClaim
     isOpen.value = true
   }
+
   function closeModal() {
     isOpen.value = false
   }
-  return { isOpen, openModal, closeModal, claim: claim, type, title}
+
+  return { isOpen, openModal, closeModal, claim, type, title}
 })

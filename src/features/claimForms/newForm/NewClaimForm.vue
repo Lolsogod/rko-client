@@ -2,7 +2,7 @@
 import { ref, computed} from "vue";
 import DropDown from "@/shared/ui/DropDown/ui/DropDown.vue"
 import type { ClaimReq } from "@/interfaces/requests/ClaimReq";
-import { useReferenceStore } from "@/app/providers/stores/references";
+import { useReferenceStore } from "@/app/providers/stores";
 const rules = {
   client: [{
     require: true,
