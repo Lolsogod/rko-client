@@ -3,7 +3,7 @@ import NewClaimForm from 'features/claimForms/newForm/NewClaimForm.vue'
 import ClaimFooter from 'shared/ui/footer/ClaimFooter.vue'
 import type { ClaimReq } from 'interfaces/requests/ClaimReq';
 import { ref } from 'vue';
-
+//мб както вынести? хз пока
 const ncForm = ref<ClaimReq>({
   category: 'OUTGOING',
   channel: '',
@@ -38,7 +38,7 @@ const ncForm = ref<ClaimReq>({
     <div class="d-flex gap-6">
         <NewClaimForm v-model="ncForm"/>
         <div class="right-cont">
-            <div></div>
+            <!--в макете всё замазано, как понял делать ничего тут ненадо-->
         </div>
     </div>
     <ClaimFooter :req="ncForm"/>

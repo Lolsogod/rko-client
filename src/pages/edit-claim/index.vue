@@ -1,4 +1,5 @@
 <script setup lang="ts">
+//нагромаждено всего, это всё зарефачу но потом
 import ClaimWorkForm from "features/claimForms/workForm/ClaimWorkForm.vue";
 import ClientProductsList from "entities/ClientProduct/ui/ClientProductsList.vue";
 import CallsBlock from "features/CallsBlock/ui/CallsBlock.vue";
