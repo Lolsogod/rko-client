@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import ClaimCard from '../../entities/claimEntity/ui/ClaimCard.vue';
-import type { ReferenceData } from '@/interfaces/References';
-import {useClaimStore} from '@/stores/claims'
-import {useAuthStore} from "@/stores/auth"
+import ClaimCard from 'entities/claim/ui/ClaimCard.vue';
+import type { ReferenceData } from 'interfaces/References';
+import { useClaimStore } from 'app/providers/stores'
+import {useAuthStore} from "app/providers/stores"
 defineProps<{
     status: ReferenceData
 }>()

@@ -1,15 +1,6 @@
-<template>
-  <div class="w-full max-w-md px-2 sm:px-0 nc-container chat">
-
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue'
-import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
-import SecondaryCard from "@/shared/ui/SecondaryCard.vue";
-import CallBlockItem from "@/features/CallsBlock/ui/CallBlockItem.vue";
-
+//какойто пустой компонент, убрать мусор
 const categories = ref({
   "calls": [
     {
@@ -48,7 +39,15 @@ const categories = ref({
 
 })
 </script>
-<style>
+
+<template>
+  <div class="w-full max-w-md px-2 sm:px-0 nc-container chat">
+
+  </div>
+</template>
+
+
+<style scoped>
 .d-flex.gap-6{
   margin-bottom: 5px;
 }
@@ -79,6 +78,4 @@ footer.callsFooter{
   margin-top: auto;
   flex: 0 0 auto;
 }
-
-
 </style>

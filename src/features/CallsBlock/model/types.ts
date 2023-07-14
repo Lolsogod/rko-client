@@ -1,3 +1,4 @@
+//это не тип, изза него импорты странноватые
 export const enum E_CALL_TYPE {
     incoming="incoming",
     outcoming="outcoming",

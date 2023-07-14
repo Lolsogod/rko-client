@@ -1,4 +1,4 @@
-import {useKeycloak} from "@/shared/lib/vue-keycloak/src/vue3-keycloak.js";
+import {useKeycloak} from "shared/lib/vue-keycloak/src/vue3-keycloak.js";
 
 export const useAuthApi = ( )  => {
     const {keycloak, resourceRoles, decodedToken} = useKeycloak();

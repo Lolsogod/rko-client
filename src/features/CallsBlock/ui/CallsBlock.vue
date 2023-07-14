@@ -2,8 +2,8 @@
 <script setup lang="ts">
 import {ref} from 'vue'
 import {Tab, TabGroup, TabList, TabPanel, TabPanels} from '@headlessui/vue'
-import CallBlockItem from "@/features/CallsBlock/ui/CallBlockItem.vue";
-import {E_CALL_TYPE} from "@/features/CallsBlock/model/types";
+import CallBlockItem from "features/CallsBlock/ui/CallBlockItem.vue";
+import {E_CALL_TYPE} from "features/CallsBlock/model/types";
 
 const categories = ref({
   "calls": [

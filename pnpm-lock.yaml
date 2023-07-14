@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@dsb-norge/vue-keycloak-js':
+    specifier: ^2.4.0
+    version: 2.4.0(vue@3.3.4)
   '@factoringplus/pl-components-pack-v3':
     specifier: ^0.5.61
     version: 0.5.61(react-dom@18.2.0)(react@18.2.0)(typescript@5.0.4)
@@ -17,12 +20,24 @@ dependencies:
   axios:
     specifier: ^1.4.0
     version: 1.4.0
+  jwt-decode:
+    specifier: ^3.1.2
+    version: 3.1.2
+  keycloak-js:
+    specifier: ^12.0.4
+    version: 12.0.4
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   pinia:
     specifier: ^2.1.3
     version: 2.1.3(typescript@5.0.4)(vue@3.3.4)
   pnpm:
     specifier: ^8.6.6
     version: 8.6.6
+  vite-tsconfig-paths:
+    specifier: ^4.2.0
+    version: 4.2.0(typescript@5.0.4)(vite@4.3.9)
   vue:
     specifier: ^3.3.4
     version: 3.3.4
@@ -104,6 +119,15 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
+  /@dsb-norge/vue-keycloak-js@2.4.0(vue@3.3.4):
+    resolution: {integrity: sha512-hpzFJkBzCk8ttFBLUAUH0CQpuTBIDU8b4N1xWJYAjF9Em9apGHeXI3IqJXwqVOfaPwki3KiXQTBW8kdHA06v1w==}
+    peerDependencies:
+      vue: ^2.6.0 || >=3.0.0-rc.0
+    dependencies:
+      keycloak-js: 21.1.1
+      vue: 3.3.4
+    dev: false
+
   /@element-plus/icons-vue@1.1.4(vue@3.3.4):
     resolution: {integrity: sha512-Iz/nHqdp1sFPmdzRwHkEQQA3lKvoObk8azgABZ81QUOpW9s/lUyQVUSh0tNtEPZXQlKwlSh7SPgoVxzrE0uuVQ==}
     peerDependencies:
@@ -134,7 +158,6 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/android-arm@0.17.19:
@@ -143,7 +166,6 @@ packages:
     cpu: [arm]
     os: [android]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/android-x64@0.17.19:
@@ -152,7 +174,6 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/darwin-arm64@0.17.19:
@@ -161,7 +182,6 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/darwin-x64@0.17.19:
@@ -170,7 +190,6 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/freebsd-arm64@0.17.19:
@@ -179,7 +198,6 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/freebsd-x64@0.17.19:
@@ -188,7 +206,6 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-arm64@0.17.19:
@@ -197,7 +214,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-arm@0.17.19:
@@ -206,7 +222,6 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-ia32@0.17.19:
@@ -215,7 +230,6 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-loong64@0.17.19:
@@ -224,7 +238,6 @@ packages:
     cpu: [loong64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-mips64el@0.17.19:
@@ -233,7 +246,6 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-ppc64@0.17.19:
@@ -242,7 +254,6 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-riscv64@0.17.19:
@@ -251,7 +262,6 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-s390x@0.17.19:
@@ -260,7 +270,6 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/linux-x64@0.17.19:
@@ -269,7 +278,6 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/netbsd-x64@0.17.19:
@@ -278,7 +286,6 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/openbsd-x64@0.17.19:
@@ -287,7 +294,6 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/sunos-x64@0.17.19:
@@ -296,7 +302,6 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/win32-arm64@0.17.19:
@@ -305,7 +310,6 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/win32-ia32@0.17.19:
@@ -314,7 +318,6 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@esbuild/win32-x64@0.17.19:
@@ -323,7 +326,6 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@eslint-community/eslint-utils@4.4.0(eslint@8.44.0):
@@ -1114,6 +1116,10 @@ packages:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
 
+  /base64-js@1.3.1:
+    resolution: {integrity: sha512-mLQ4i2QO1ytvGWFWmcngKO//JXAQueZvwEKtjgQFM4jIK0kU+ytMfplL8j+n5mspOfjHwoAg+9yhb7BwAHm36g==}
+    dev: false
+
   /base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: false
@@ -1492,7 +1498,7 @@ packages:
       supports-color:
         optional: true
     dependencies:
-      ms: 2.1.2
+      ms: 2.1.3
     dev: true
 
   /debug@4.3.4:
@@ -1701,7 +1707,6 @@ packages:
       '@esbuild/win32-arm64': 0.17.19
       '@esbuild/win32-ia32': 0.17.19
       '@esbuild/win32-x64': 0.17.19
-    dev: true
 
   /escalade@3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
@@ -2297,6 +2302,10 @@ packages:
       define-properties: 1.2.0
     dev: true
 
+  /globrex@0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
+    dev: false
+
   /gopd@1.0.1:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
     dependencies:
@@ -2623,6 +2632,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /js-sha256@0.9.0:
+    resolution: {integrity: sha512-sga3MHh9sgQN2+pJ9VYZ+1LPwXOxuBJBA5nrR5/ofPfuiJBE2hnjsaN8se8JznOmGLN2p49Pe5U/ttafcs/apA==}
+    dev: false
+
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -2707,6 +2720,24 @@ packages:
       object.assign: 4.1.4
       object.values: 1.1.6
     dev: true
+
+  /jwt-decode@3.1.2:
+    resolution: {integrity: sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==}
+    dev: false
+
+  /keycloak-js@12.0.4:
+    resolution: {integrity: sha512-O/BHtyiDrZrUnKBrVF8POojqd3gmhuiDw4FiI+FbnB14nu7G5jKFrKYZa9Q0JYKIZXHJOBzSaKQcMp2WUI+zmA==}
+    dependencies:
+      base64-js: 1.3.1
+      js-sha256: 0.9.0
+    dev: false
+
+  /keycloak-js@21.1.1:
+    resolution: {integrity: sha512-Viyhf0SOpu2jM/A33vpigSCFLo8l4yg8lqzaGyxXoZ3nGO9lo68B2LwJBDtgpzqDUh8DK//yCOzdWuR2CT4keA==}
+    dependencies:
+      base64-js: 1.5.1
+      js-sha256: 0.9.0
+    dev: false
 
   /levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
@@ -3538,7 +3569,6 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /run-async@2.4.1:
     resolution: {integrity: sha512-tvVnVv01b8c1RrA6Ep7JkStj85Guv/YrMcwqYQnwjsAS2cTmmPGBBjAjpCW7RrSodNSoE2/qg9O4bceNvUuDgQ==}
@@ -3927,6 +3957,19 @@ packages:
     engines: {node: '>=6.10'}
     dev: false
 
+  /tsconfck@2.1.1(typescript@5.0.4):
+    resolution: {integrity: sha512-ZPCkJBKASZBmBUNqGHmRhdhM8pJYDdOXp4nRgj/O0JwUwsMq50lCDRQP/M5GBNAA0elPrq4gAeu4dkaVCuKWww==}
+    engines: {node: ^14.13.1 || ^16 || >=18}
+    hasBin: true
+    peerDependencies:
+      typescript: ^4.3.5 || ^5.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 5.0.4
+    dev: false
+
   /tsconfig-paths@3.14.2:
     resolution: {integrity: sha512-o/9iXgCYc5L/JxCHPe3Hvh8Q/2xm5Z+p18PESBU6Ff33695QnCHBEjcytY2q19ua7Mbl/DavtBOLq+oG0RCL+g==}
     dependencies:
@@ -4047,6 +4090,23 @@ packages:
     engines: {node: '>=0.10.48'}
     dev: true
 
+  /vite-tsconfig-paths@4.2.0(typescript@5.0.4)(vite@4.3.9):
+    resolution: {integrity: sha512-jGpus0eUy5qbbMVGiTxCL1iB9ZGN6Bd37VGLJU39kTDD6ZfULTTb1bcc5IeTWqWJKiWV5YihCaibeASPiGi8kw==}
+    peerDependencies:
+      vite: '*'
+    peerDependenciesMeta:
+      vite:
+        optional: true
+    dependencies:
+      debug: 4.3.4
+      globrex: 0.1.2
+      tsconfck: 2.1.1(typescript@5.0.4)
+      vite: 4.3.9(@types/node@18.16.19)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: false
+
   /vite@4.3.9(@types/node@18.16.19):
     resolution: {integrity: sha512-qsTNZjO9NoJNW7KnOrgYwczm0WctJ8m/yqYAMAK9Lxt4SoySUfS5S8ia9K7JHpa3KEeMfyF8LoJ3c5NeBJy6pg==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -4078,7 +4138,6 @@ packages:
       rollup: 3.26.0
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /vue-currency-input@2.5.1(vue@3.3.4):
     resolution: {integrity: sha512-H3n+dJPuVC3xsZMCKLk6S7BrmhC1l1UFOnCwHuvprpI2xoYS7mN5FVZQY7REqX4Ct9KdzIz5RAfNOwEIp0cniA==}

@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import ClaimsCol from './ClaimsCol.vue';
-import {useReferenceStore} from '@/stores/references'
-import {useClaimStore} from '@/stores/claims'
-import {useAuthApi} from "@/shared/api/auth/authApi";
+import {useReferenceStore, useClaimStore} from 'app/providers/stores'
+import {useAuthApi} from "shared/api/auth/authApi";
 
 const rStore = useReferenceStore()
 const cStore = useClaimStore()

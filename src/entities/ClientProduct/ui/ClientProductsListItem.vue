@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import SecondaryCard from "@/shared/ui/SecondaryCard.vue";
+import SecondaryCard from "shared/ui/SecondaryCard.vue";
   const props = defineProps({
     document:{
       type:String,

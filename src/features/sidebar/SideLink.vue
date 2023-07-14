@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { SLinkInfo } from '@/interfaces/SideLink';
-import router from '@/router';
+import type { SLinkInfo } from 'interfaces/SideLink';
+import {router} from 'app/providers';
     const props = defineProps<{
         link: SLinkInfo
     }>()
@@ -31,4 +31,4 @@ import router from '@/router';
     .no-cur{
         color: #828284;
     }
-</style>
+</style>@/app/router

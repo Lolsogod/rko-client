@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type {SLinkInfo} from '@/interfaces/SideLink'
+import type {SLinkInfo} from 'interfaces/SideLink'
 import SideLink from './SideLink.vue';
 
 const props = defineProps<{

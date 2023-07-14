@@ -1,12 +1,13 @@
-import type {Claim} from '@/interfaces/Claim';
-import type {References} from '@/interfaces/References'
-import type {UpdateReq} from '@/interfaces/requests/UpdateReq';
-import type {ForwardReq} from '@/interfaces/requests/ForwardReq'
+import type { Claim } from 'interfaces/Claim';
+import type { References } from 'interfaces/References'
+import type { UpdateReq } from 'interfaces/requests/UpdateReq';
+import type { ForwardReq } from 'interfaces/requests/ForwardReq'
 import axios from 'axios'
-import type {CloseReq} from '@/interfaces/requests/CloseReq';
-import type {PauseReq} from '@/interfaces/requests/PauseReq';
+import type { CloseReq } from 'interfaces/requests/CloseReq';
+import type { PauseReq } from 'interfaces/requests/PauseReq';
+import type { ClaimReq } from 'interfaces/requests/ClaimReq';
 //@ts-ignore
-import {updateToken, useKeycloak} from "@/shared/lib/vue-keycloak/src/vue3-keycloak.js";
+import {updateToken, useKeycloak} from "shared/lib/vue-keycloak/src/vue3-keycloak.js";
 
 const api = axios.create({
     baseURL: import.meta.env.VITE_RKO_SPA_API_URL //из енва потом брать
@@ -64,7 +65,7 @@ export const getClaimById = async (id: number) => {
     return (await api.get<Claim>(`/claim/${id}`)).data
 }
 
-export const createClaim = async (claim: Claim) => {
+export const createClaim = async (claim: ClaimReq) => {
     return await api.post('/claim', {...claim})
 }
 
