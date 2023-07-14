@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "types": ["node"]
+    "types": ["node"],
+    "noImplicitAny": false,
+    "allowJs": true
   },
   "files": [],
   "references": [

@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import logo from "../../../public/logo-header.svg"
+//@ts-ignore
+import {useKeycloak} from "shared/lib/vue-keycloak/src/vue3-keycloak.js";
+const {keycloak} = useKeycloak();
 defineEmits(["openSide"])
+
 </script>
 <template>
     <nav class="d-flex justify-content-between ns">
@@ -11,7 +15,7 @@ defineEmits(["openSide"])
         <!--сюда штуки в зависимости от роута добавить-->
         <div class="d-flex gap-10 mr-6">
             <PlButton size="medium" type="secondary" icon="Chat20">Чат с клиентми</PlButton>
-            <PlButton size="medium" type="secondary" icon="Exit24"></PlButton>
+          <PlButton @click = "keycloak.logout()" size="medium" type="secondary" icon="Exit24"></PlButton>
         </div>
         
     </nav>

@@ -8,6 +8,7 @@ import Chat from "widgets/chat/Chat.vue";
 import EditClaimPult from "widgets/EditClaimPult.vue";
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
+
 const claimId = ref<String | String[]>('');
 const clientDocsInfoArray =
     [

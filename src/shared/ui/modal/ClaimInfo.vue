@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Claim } from 'interfaces/Claim';
 import TInfo from '../TInfo/TInfo.vue'
-import { useClaimConfig } from 'entities/claimEntity/const/claimConfig'
+import { useClaimConfig } from 'entities/claim/const/claimConfig'
 
 const props = defineProps<{
    claim: Claim

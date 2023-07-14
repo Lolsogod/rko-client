@@ -6,21 +6,45 @@ import axios from 'axios'
 import type { CloseReq } from 'interfaces/requests/CloseReq';
 import type { PauseReq } from 'interfaces/requests/PauseReq';
 import type { ClaimReq } from 'interfaces/requests/ClaimReq';
+//@ts-ignore
+import {updateToken, useKeycloak} from "shared/lib/vue-keycloak/src/vue3-keycloak.js";
 
 const api = axios.create({
-    baseURL: "http://localhost:3000" //из енва потом брать
+    baseURL: import.meta.env.VITE_RKO_SPA_API_URL //из енва потом брать
 })
 
-api.interceptors.response.use(response => {
+api.interceptors.response.use(
+    response => {
         //response.headers.Authorization =  "later"; подумать когда авториззация будет
         return response;
     }, error => {
         if (error.response.status === 404) {
-            return { status: error.response.status };
+            return {status: error.response.status};
         }
         return Promise.reject(error.response);
     });
+api.interceptors.request.use(
+    async (config:any) => {
+        const {keycloak, hasFailed, isPending} = useKeycloak();
+        let token = null;
+        try {
+            token = await updateToken(0); // updates token if expired, by default returns the token if it valid
+        } catch (error:any) {
+            error && console.error(error?.response.status||error); // some custom error handler
 
+            if (hasFailed && !isPending) {
+                keycloak.logout();
+            }
+        }
+        config.headers = {
+            Authorization: bearerAuth(token), // for example
+        };
+        return config;
+    }, error => {
+        console.error("axios bearer requst error")
+        console.log(error?.response)
+        Promise.reject(error);
+    });
 function bearerAuth(token: string) {
     return `Bearer ${token}`
 }
