@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ClaimsCol from './ClaimsCol.vue';
+import {ClaimsColumn} from 'entities/claim';
 import {useReferenceStore, useClaimStore} from 'app/providers/stores'
 import {useAuthApi} from "shared/api/auth/authApi";
 
@@ -12,7 +12,7 @@ const {} = useAuthApi()
 
 <template>
     <div class="d-flex gap-8 claims">
-        <ClaimsCol v-for="status in rStore.statuses" :key="status.code" :status="status"/>
+        <ClaimsColumn v-for="status in rStore.statuses" :key="status.code" :status="status" />
     </div>
     
 </template>

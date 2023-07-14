@@ -93,7 +93,7 @@ const categories = ref({
       </TabPanels>
       <footer class="callsFooter d-flex ">
           <PlButton  class="callBtn">
-            <img class="callBtn__svg" src="../../../../public/call-out.svg" alt="call" width="20">
+            <img class="callBtn__svg" src="/call-out.svg" alt="call" width="20">
           </PlButton>
 
       </footer>

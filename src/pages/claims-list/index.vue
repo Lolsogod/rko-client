@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Claims from 'features/claims/Claims.vue'
+import {ClaimsTable} from 'entities/claim'
 import { router } from 'app/providers'
 import Modal from 'shared/ui/modal/Modal.vue';
 
@@ -15,7 +15,7 @@ const modalStore = useModalStore()
       <!--сделать стрелочку-->
       <PlButton size="medium" @click="router.push('/claim')">Добавить обращения</PlButton>
     </div>
-    <Claims/>
+    <ClaimsTable/>
     <Modal :is-open="modalStore.isOpen" @close="modalStore.closeModal" :title="modalStore.title">
       <ClaimInfo v-if="modalStore.type == 'info'" :claim="modalStore.claim!"/>
       <StateJournal v-else-if="modalStore.type == 'journal'" :claim="modalStore.claim!"/>

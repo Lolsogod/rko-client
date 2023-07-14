@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ClaimCard from 'entities/claim/ui/ClaimCard.vue';
+import { ClaimCard } from 'entities/claim';
 import type { ReferenceData } from 'interfaces/References';
 import { useClaimStore } from 'app/providers/stores'
 import {useAuthStore} from "app/providers/stores"
