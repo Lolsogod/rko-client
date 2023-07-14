@@ -5,7 +5,7 @@ import {Tab, TabGroup, TabList, TabPanel, TabPanels} from '@headlessui/vue'
 import CallBlockItem from "features/CallsBlock/ui/CallBlockItem.vue";
 import {E_CALL_TYPE} from "features/CallsBlock/model/types";
 
-const categories = ref({
+const categories = ref<any>({
   "calls": [
     {
       id: 1,
@@ -71,7 +71,7 @@ const categories = ref({
 
       <TabPanels class="mt-2">
         <TabPanel
-            v-for="(posts, idx) in Object.values(categories)"
+            v-for="(posts, idx) in Object.values(categories) as any"
             :key="idx"
             :class="[
             'rounded-xl bg-white p-3',
@@ -80,7 +80,7 @@ const categories = ref({
         >
           <div class="flex-column d-flex gap-3 callsblockCommonItem">
 <!--            тут потом сделаю отрисовку писем по условию-->
-            <CallBlockItem v-for="post in posts"
+            <CallBlockItem v-for="post in posts as any"
                 :id="1"
                 :type="post.type"
                 :document="post.document"

@@ -3,7 +3,7 @@
 import logo from "/logo-header.svg"
 //@ts-ignore
 import {useKeycloak} from "shared/lib/vue-keycloak/src/vue3-keycloak.js";
-const {keycloak} = useKeycloak();
+const {keycloak, isAuthenticated} = useKeycloak();
 defineEmits(["openSide"])
 
 </script>

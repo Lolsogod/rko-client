@@ -1,14 +1,14 @@
-const bodyParser = require('body-parser')
+import BodyParser from "body-parser"
 const jsonServer = require('json-server');
 const server = jsonServer.create();
 const router = jsonServer.router('src/api/mock/db.json');
 const middlewares = jsonServer.defaults();
 server.use(middlewares);
-server.use(bodyParser.json());
+server.use(BodyParser.json());
 
 // Обработчик PUT /claim/:id/assign с body {assignee:""}
 //assignee - username пользователя,примитивноЮ на пойдет пока бэка нет, пока не совсем как надо работает, да и не сильно понятно что необходимо сделать, исправлю, методы будут_)
-server.put('/claim/:id/assign', (req, res) => {
+server.put('/claim/:id/assign', (req:any, res:any) => {
     const claimId = parseInt(req.params.id);
     const db = router.db;
     const claim = db.get('claim').find({ id: claimId }).value();

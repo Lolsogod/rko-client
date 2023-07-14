@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ClaimsListPage from 'pages/claims-list'
 
 export const router = createRouter({
+  //@ts-ignore
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {

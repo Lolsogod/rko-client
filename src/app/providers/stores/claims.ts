@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import type { Claim } from 'interfaces/Claim'
-import { getClaims } from 'shared/api/ClaimApi'
+import { getClaims } from 'shared/api/claimApi'
 
 export const useClaimStore = defineStore('claims', () => {
   const calims = ref<Claim[]>()

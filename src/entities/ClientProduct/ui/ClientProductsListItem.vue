@@ -40,7 +40,6 @@ import SecondaryCard from "shared/ui/SecondaryCard.vue";
       </div>
       <div class="load">
         <PlIcon :name = "'Download24'"/>
-
       </div>
     </div>
   </SecondaryCard>

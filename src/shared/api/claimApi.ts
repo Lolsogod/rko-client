@@ -10,6 +10,7 @@ import type { ClaimReq } from 'interfaces/requests/ClaimReq';
 import {updateToken, useKeycloak} from "shared/lib/vue-keycloak/src/vue3-keycloak.js";
 
 const api = axios.create({
+    //@ts-ignore
     baseURL: import.meta.env.VITE_RKO_SPA_API_URL //из енва потом брать
 })
 
@@ -45,7 +46,7 @@ api.interceptors.request.use(
         console.log(error?.response)
         Promise.reject(error);
     });
-function bearerAuth(token: string) {
+function bearerAuth(token: string | null) {
     return `Bearer ${token}`
 }
 

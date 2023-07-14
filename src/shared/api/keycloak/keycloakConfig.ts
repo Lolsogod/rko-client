@@ -2,7 +2,7 @@
 import Keycloak, {KeycloakConfig, KeycloakInitOptions} from "keycloak-js";
 export interface Vue3KeycloakOptions {
     initOptions: KeycloakInitOptions,
-    config: KeycloakConfig | Keycloak
+    config: KeycloakConfig
 }
 
 const keycloakConfig: Vue3KeycloakOptions = {
