@@ -30,3 +30,7 @@ app.use(vueKeycloak, {
         }
     }
 });
+// app.use(router);
+// app.use(pinia);
+// app.use(components);
+// app.mount('#app');
