@@ -1,22 +1,21 @@
 <script setup lang="ts">
 //нагромаждено всего, это всё зарефачу но потом
 import ClaimWorkForm from "features/claimForms/workForm/ClaimWorkForm.vue";
-import ClientProductsList from "entities/ClientProduct/ui/ClientProductsList.vue";
 import CallsBlock from "features/CallsBlock/ui/CallsBlock.vue";
 import WorkClaimMiniForm from "features/claimForms/workForm/WorkClaimMiniForm.vue";
-import Chat from "widgets/chat/Chat.vue";
-import EditClaimPult from "widgets/EditClaimPult.vue";
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
+import ClaimFooter from "shared/ui/footer/ClaimFooter.vue";
+import { ProductList } from "entities/client-product";
+import type { ProductData } from "entities/client-product/model";
 
 const claimId = ref<String | String[]>('');
-const clientDocsInfoArray =
+const clientProds: ProductData[] =
     [
-          {company:"Тариф Контракт Плюс", type:"Расчетный", document:"3245635254645"},
-          {company:"Тариф Контракт Плюс", type:"Номинальный", document:"43435446543"},
-          {company:"ООО РОВИ ФАКТОРИНГ ПЛЮС", type:"Расчетный", document:"43242342342344"},
-        ]
-
+          {name:"Тариф Контракт Плюс", type:"Расчетный", number:3245635254645},
+          {name:"Тариф Контракт Плюс", type:"Номинальный", number:43435446543},
+          {name:"ООО РОВИ ФАКТОРИНГ ПЛЮС", type:"Расчетный", number:43242342342344},
+    ]
 onMounted(() => {
   const route = useRoute();
   claimId.value = route.params.id;
@@ -36,20 +35,15 @@ onMounted(() => {
         <ClaimWorkForm/>
       </div>
       <div class="calls_products d-flex flex-column gap-10">
-        <ClientProductsList :clientDocsInfoArray = "clientDocsInfoArray"/>
+        <ProductList :data="clientProds"/>
         <CallsBlock/>
       </div>
       <div class="chats d-flex flex-column gap-10">
         <WorkClaimMiniForm/>
-        <Chat/>
-
+        <div class="nc-container"></div>
       </div>
     </div>
-    <!--Будет общий футер, поменять потом-->
-    <footer class="d-flex align-items-center justify-content-end">
-      <EditClaimPult/>
-    </footer>
-
+    <ClaimFooter type="edit"/>
   </div>
 
 </template>

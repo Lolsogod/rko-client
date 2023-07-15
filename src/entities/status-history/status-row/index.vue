@@ -21,7 +21,7 @@ const upd_date = computed(() => {
     
       return formattedDate;
 })
-const statusText =computed(() => refStore.refernces?.statuses.find(status => status.code === props.status.status)?.text)
+const statusText = computed(() => refStore.refernces?.statuses.find(status => status.code === props.status.status)?.text)
 </script>
 
 <template>
