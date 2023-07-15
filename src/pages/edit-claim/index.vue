@@ -8,6 +8,7 @@ import Chat from "widgets/chat/Chat.vue";
 import EditClaimPult from "widgets/EditClaimPult.vue";
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
+import ClaimFooter from "shared/ui/footer/ClaimFooter.vue";
 
 const claimId = ref<String | String[]>('');
 const clientDocsInfoArray =
@@ -45,11 +46,7 @@ onMounted(() => {
 
       </div>
     </div>
-    <!--Будет общий футер, поменять потом-->
-    <footer class="d-flex align-items-center justify-content-end">
-      <EditClaimPult/>
-    </footer>
-
+    <ClaimFooter type="edit"/>
   </div>
 
 </template>
