@@ -14,9 +14,11 @@ services:
       - web
   api:
     build:
-      context: ./src/shared/api/mock
-      dockerfile: Dockerfile
-    command: node deployMock
+      context: src/shared/api/mock
+      dockerfile: DockerFile
+    restart: always
+    volumes:
+      - ./dist:/var/www
     ports:
       - 3000:3000
     networks:
