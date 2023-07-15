@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Claim } from 'interfaces/Claim';
-import JItem from 'widgets/JItem/JItem.vue';
+import { StatusRow } from 'entities/status-history';
 
 defineProps<{
    claim: Claim
@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
    <div class="container">
-     <JItem v-for="status in claim.status_history " :status="status"/>
+     <StatusRow v-for="status in claim.status_history " :status="status"/>
    </div>
 </template>
 
