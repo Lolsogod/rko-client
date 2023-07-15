@@ -1,6 +1,6 @@
 import Keycloak from "keycloak-js";
 
-declare module '@/shared/lib/vue-keycloak/src/vue3-keycloak.js' {
+declare module 'shared/lib/vue-keycloak/src/vue3-keycloak.js' {
     export function isTokenReady(): Promise<void>;
     export function vueKeycloak(app: any, options: any): void;
     export function getKeycloak():Keycloak
@@ -14,10 +14,11 @@ declare module '@/shared/lib/vue-keycloak/src/vue3-keycloak.js' {
         decodedToken:string,
         username:string,
         roles:Array<string>,
-        resourceRoles:any,
+        resourceRoles:Array<string>,
         keycloak:Keycloak,
         // Functions
-        hasRoles:Function,
-        hasResourceRoles:Function,
+        hasRoles:boolean,
+        hasResourceRoles:boolean,
     }
+    export default {}
 }

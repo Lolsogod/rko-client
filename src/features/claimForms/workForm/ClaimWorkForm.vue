@@ -2,18 +2,8 @@
 import {ref} from "vue";
 import HorisontalFormMenu from "./HorisontalFormMenu.vue"
 import DropDown from "shared/ui/DropDown/ui/DropDown.vue"
-const formatter = (value: any) => {
-  return value.replace(/D/g, "");
-};
-const checkMaxSum = (rule: any, value: any, callback: any) => {
-  if (value > 11111) {
-    callback(new Error("Сумма превышает доступный лимит"));
-  }
-  if (value === null) {
-    callback(new Error("Обязательно для заполнения"));
-  }
-  callback();
-};
+
+
 
 const rules = {
   channelClaim: [{
@@ -95,6 +85,7 @@ const create = () => {
 
 <template>
   <div class="d-grid gap-2 nc-container claimWorkForm">
+
     <div class="claimWorkForm__header">
       <h4 class="mt-0">Работа с обращениями</h4>
       <HorisontalFormMenu/>

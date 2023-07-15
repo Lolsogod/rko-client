@@ -1,0 +1,12 @@
+FROM node:16.20.1 as Mock
+
+WORKDIR /app
+
+# Копируем все файлы из проекта mock
+COPY . .
+
+# Устанавливаем зависимости
+RUN npm install
+
+# Запускаем mock сервер
+CMD [ "node", "deployMock.js" ]

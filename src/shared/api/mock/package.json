@@ -1,0 +1,12 @@
+{
+  "name": "rko-spa-mock-api",
+  "version": "1.0.0",
+  "description": "simple mock",
+  "scripts": {
+    "start": "node deployMock.js"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0",
+    "clone": "^2.1.2"
+  }
+}
