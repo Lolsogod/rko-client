@@ -5,7 +5,7 @@ import CallsBlock from "features/CallsBlock/ui/CallsBlock.vue";
 import WorkClaimMiniForm from "features/claimForms/workForm/WorkClaimMiniForm.vue";
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
-import ClaimFooter from "shared/ui/footer/ClaimFooter.vue";
+import { CFooter} from "shared/ui/footer";
 import { ProductList } from "entities/client-product";
 import type { ProductData } from "entities/client-product/model";
 
@@ -43,7 +43,7 @@ onMounted(() => {
         <div class="nc-container"></div>
       </div>
     </div>
-    <ClaimFooter type="edit"/>
+    <CFooter type="edit"/>
   </div>
 
 </template>

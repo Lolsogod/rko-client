@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ClaimsTable} from 'entities/claim'
 import { router } from 'app/providers'
-import {Modal} from 'widgets';
+import {Modal} from 'widgets/modal';
 
 import {useModalStore} from 'widgets/modal'
 import {ClaimInfo} from 'entities/claim';

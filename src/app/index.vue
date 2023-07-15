@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import Layout from 'shared/ui/layout/Layout.vue';
+import { Layout } from 'shared/ui/layout';
 import { useReferenceStore } from 'app/providers/stores';
 
 const rStore = useReferenceStore()

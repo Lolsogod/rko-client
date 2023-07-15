@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import NewClaimForm from 'features/claimForms/newForm/NewClaimForm.vue'
-import ClaimFooter from 'shared/ui/footer/ClaimFooter.vue'
+import {CFooter} from 'shared/ui/footer'
 import type { ClaimReq } from 'interfaces/requests/ClaimReq';
 import { ref } from 'vue';
 //мб както вынести? хз пока
@@ -41,7 +41,7 @@ const ncForm = ref<ClaimReq>({
             <!--в макете всё замазано, как понял делать ничего тут ненадо-->
         </div>
     </div>
-    <ClaimFooter type="create" :req="ncForm"/>
+    <CFooter type="create" :req="ncForm"/>
 </template>
 
 <style scoped>

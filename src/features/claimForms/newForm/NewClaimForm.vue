@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed} from "vue";
-import DropDown from "shared/ui/DropDown/ui/DropDown.vue"
+import {DropDown} from "shared/ui/drop-down"
 import type { ClaimReq } from "interfaces/requests/ClaimReq";
 import { useReferenceStore } from "app/providers/stores";
 const rules = {
