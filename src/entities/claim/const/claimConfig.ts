@@ -1,7 +1,8 @@
 import type { IMenuItem } from 'interfaces/IMenuItem';
-import {useModalStore, useReferenceStore} from 'app/providers/stores'
+import { useReferenceStore} from 'app/providers/stores'
 import { router } from 'app/providers'
-import type { Claim, Status } from 'interfaces/Claim';
+import type { Claim } from 'interfaces/Claim';
+import { useModalStore } from 'widgets/modal';
 import {computed} from 'vue'
 import type { ReferenceData, References } from 'interfaces/References';
 

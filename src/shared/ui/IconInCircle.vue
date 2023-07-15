@@ -1,5 +1,5 @@
 <script setup  lang="ts">
-
+//переделаю когда буду делать таб менюшку
     import {computed} from "vue";
 
     const props = defineProps({

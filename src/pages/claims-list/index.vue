@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {ClaimsTable} from 'entities/claim'
 import { router } from 'app/providers'
-import Modal from 'shared/ui/modal/Modal.vue';
+import {Modal} from 'widgets';
 
-import {useModalStore} from 'app/providers/stores'
-import ClaimInfo from 'shared/ui/modal/ClaimInfo.vue';
-import  StateJournal from 'shared/ui/modal/StateJournal.vue';
+import {useModalStore} from 'widgets/modal'
+import {ClaimInfo} from 'entities/claim';
+import  {StatusTable} from 'entities/status-history';
 
 const modalStore = useModalStore()
 </script>
@@ -18,7 +18,7 @@ const modalStore = useModalStore()
     <ClaimsTable/>
     <Modal :is-open="modalStore.isOpen" @close="modalStore.closeModal" :title="modalStore.title">
       <ClaimInfo v-if="modalStore.type == 'info'" :claim="modalStore.claim!"/>
-      <StateJournal v-else-if="modalStore.type == 'journal'" :claim="modalStore.claim!"/>
+      <StatusTable v-else-if="modalStore.type == 'journal'" :claim="modalStore.claim!"/>
     </Modal>
 
 </template>
