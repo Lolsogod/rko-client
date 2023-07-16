@@ -1,144 +1,109 @@
-
 <script setup lang="ts">
-import {ref} from 'vue'
-import {Tab, TabGroup, TabList, TabPanel, TabPanels} from '@headlessui/vue'
-import CallBlockItem from "features/CallsBlock/ui/CallBlockItem.vue";
-import {E_CALL_TYPE} from "features/CallsBlock/model/types";
+import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
+import CallBlockItem from './CallBlockItem.vue';
 
-const categories = ref<any>({
-  "calls": [
-    {
-      id: 1,
-      name: 'Олег Юрьевич',
-      date: '24.06.23 15:18',
-      duration:"50",
-      type:E_CALL_TYPE.incoming,
-      document:"342543534543"
-    },
-    {
-      id: 2,
-      name: 'Олег Юрьевич2',
-      date: '24.06.23 15:19',
-      duration:"0",
-      type:E_CALL_TYPE.canceled,
-      document:"342543534543"
-    },
-  ],
-  "latters": [
-    {
-      id: 1,
-      title: 'Is tech making coffee better or worse?',
-      date: 'Jan 7',
-      commentCount: 29,
-      shareCount: 16,
-    },
-    {
-      id: 2,
-      title: 'The most innovative things happening in coffee',
-      date: 'Mar 19',
-      commentCount: 24,
-      shareCount: 12,
-    },
-  ],
-
-})
+const tabs = ["Звонки", "Письма"]
+//это естествено будут запросы, но пока так
+const getCalls = () =>{
+    return [
+        {
+            id: 1,
+            name: "Олег олегович",
+            date: '24.06.23 15:18', 
+            duration:"50",
+            type: "incoming",
+            number: "89169999999"
+        },
+        {
+            id: 2,
+            name: "Анна (бух)",
+            date: '24.06.23 17:08', 
+            duration:"786",
+            type: "outgoing",
+            number: "89169999999"
+        },
+        {
+            id: 3,
+            name: "Олег олегович",
+            date: '24.06.23 16:11', 
+            duration:"0",
+            type: "canceled",
+            number: "89169915949"
+        }
+    ]
+}
+const getLetters = () =>{
+    return [
+        {
+            id: 1,
+            name: "Олег олегович",
+            date: '24.06.23 15:18', 
+            type: "incoming",
+            number: "89169992655"
+        },
+        {
+            id: 2,
+            name: "Анна (бух)",
+            date: '24.06.23 17:08', 
+            type: "outgoing",
+            number: "89169999465"
+        }
+    ]
+}
 </script>
-
 <template>
-  <div class="w-full max-w-md px-2 sm:px-0 nc-container callsblock">
-    <TabGroup>
-      <TabList class="tablist flex space-x-1 rounded-xl py-16 bg-blue-900/20 p-1 el-date-picker__header--bordered">
-        <Tab
-            v-for="category in Object.keys(categories)"
-            as="template"
-            :key="category"
-            v-slot="{ selected }"
-        >
-
-          <button
-              :class="[
-              'callstab',
-              selected
-                ? 'active'
-                : null,
-
-            ]"
-          >
-            {{ category==='calls'?'Звонки':'Письма' }}
-          </button>
-        </Tab>
-      </TabList>
-
-      <TabPanels class="mt-2">
-        <TabPanel
-            v-for="(posts, idx) in Object.values(categories) as any"
-            :key="idx"
-            :class="[
-            'rounded-xl bg-white p-3',
-            'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
-          ]"
-        >
-          <div class="flex-column d-flex gap-3 callsblockCommonItem">
-<!--            тут потом сделаю отрисовку писем по условию-->
-            <CallBlockItem v-for="post in posts as any"
-                :id="1"
-                :type="post.type"
-                :document="post.document"
-                :date="post.date"
-                :duration="post.duration"
-                :name="post.name"/>
-          </div>
-
-        </TabPanel>
-      </TabPanels>
-      <footer class="callsFooter d-flex ">
-          <PlButton  class="callBtn">
-            <img class="callBtn__svg" src="/call-out.svg" alt="call" width="20">
-          </PlButton>
-
-      </footer>
-    </TabGroup>
-
-  </div>
-</template>
-
-<style>
-.d-flex.gap-6{
-  margin-bottom: 5px;
-}
-.callsblock{
-  height: 100%;
-  padding: 0 !important;
-}
-.tablist{
-  margin: 10px 0 10px 0;
-}
-.callBtn{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px !important;
-  width: 50px !important;
-}
-button.callstab{
-  margin-top: 4px;
-  height: 100%;
-  background-color: transparent;
-
-  border: 0;
-}
-button.callstab.active{
-  border-bottom: 1px solid var(--token-color-border-active);
-
-}
-footer.callsFooter{
-  padding: 15px;
-  justify-content: flex-end;
-  align-items: flex-end;
-  border-top: 2px solid #cccccc;
-  margin-top: auto;
-  flex: 0 0 auto;
-}
-
-
+    <div class="container">
+      <TabGroup>
+        <TabList class="d-flex c-flex b-flex header">
+            <div>
+                <Tab v-for="tab in tabs" as="template"
+                    :key="tab" v-slot="{ selected }">
+                    <button :class="selected? 'active': ''">
+                        {{ tab }}
+                    </button>
+                </Tab>
+            </div>
+            <div class="d-flex c-flex gap-6 pr-6">
+                <PlIcon name="Search24"/>
+                <PlIcon name="Minus24"/>
+            </div>
+        </TabList>
+  
+        <TabPanels class="mt-2">
+          <TabPanel  key="-1">
+              <CallBlockItem v-for="call in getCalls()" :key="call.id" :call="call"/>
+          </TabPanel>
+          <TabPanel  key="0">
+              <div v-for="letter in getLetters()" :key="letter.id">
+                {{ letter.number }} - тут письма будут
+              </div>
+          </TabPanel>
+        </TabPanels>
+      </TabGroup>
+    </div>
+  </template>
+  
+<style scoped>
+    .container{
+        background-color: white;
+        height: 100%;
+        border-radius: 1rem;
+    }
+    button{
+        font-size: medium;
+        transform: translateY(2px);
+        border: 0;
+        border-bottom: 2px solid #dadde7;
+        background-color: transparent;
+        padding: 1.4rem 1.7rem;
+    }
+    .active{
+        border-bottom: 2px solid blue;
+    }
+    .header{
+        position: relative;
+        border-bottom: 2px solid #dadde7;
+    }
 </style>
+
+  

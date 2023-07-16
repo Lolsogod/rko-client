@@ -5,7 +5,6 @@ import CallsBlock from "features/CallsBlock/ui/CallsBlock.vue";
 import WorkClaimMiniForm from "features/claimForms/workForm/WorkClaimMiniForm.vue";
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
-import { CFooter} from "shared/ui/footer";
 import { ProductList } from "entities/client-product";
 import type { ProductData } from "entities/client-product/model";
 
@@ -34,6 +33,7 @@ onMounted(() => {
       <WorkClaimMiniForm/>
     </div>
     <div class="calls-cont">
+      <!--<CallsBlock/>-->
       <CallsBlock/>
     </div>
     <div class="chat-cont">

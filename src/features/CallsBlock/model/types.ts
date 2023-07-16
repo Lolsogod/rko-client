@@ -1,14 +1,8 @@
-//это не тип, изза него импорты странноватые
-export const enum E_CALL_TYPE {
-    incoming="incoming",
-    outcoming="outcoming",
-    canceled="cancelled"
-}
-export interface CallBlockItem{
-    id: number,
-    name: String
-    date: Date|String,
-    duration:String,
-    type:E_CALL_TYPE,
-    document:String
-}
+export interface Call {
+    id: number
+    name: string
+    date: string
+    duration: string
+    type: string
+    number: string
+  }
