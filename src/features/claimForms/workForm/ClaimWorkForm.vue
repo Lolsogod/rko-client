@@ -161,7 +161,13 @@ const create = () => {
   align-self: flex-end;
 }
 .claimWorkForm{
+  width: 900px;
   height: 100%;
+}
+@media screen and (max-width: 1920px) {
+  .claimWorkForm{
+    width: 750px;
+  }
 }
 
 .claimWorkForm__item {

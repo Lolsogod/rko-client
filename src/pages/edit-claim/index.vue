@@ -23,54 +23,39 @@ onMounted(() => {
 </script>
 
 <template>
- 
-  <div class="claimSolo d-flex flex-column b-flex">
-    <div class="mb-6">
-      <PlButton type="empty" icon="ArrowLeft24"  @click="$router.push('/')">Вернуться к обращениям</PlButton>
+  <div class="grid">
+    <div class="form-cont"> 
+      <ClaimWorkForm/>
     </div>
-    <div
-        class="d-grid gap-10 claimSolo_main"
-        style="grid-template-columns: 43% 24.45% auto"
-    >
-      <div class="claimWorkFormContainer">
-        <ClaimWorkForm/>
-      </div>
-      <div class="calls_products d-flex flex-column gap-10">
-        <ProductList :data="clientProds"/>
-        <CallsBlock/>
-      </div>
-      <div class="chats d-flex flex-column gap-10">
-        <WorkClaimMiniForm/>
-        <div class="nc-container"></div>
-      </div>
+    <div class="prod-cont">
+      <ProductList :data="clientProds"/>  
     </div>
-    <CFooter type="edit"/>
+    <div class="mini-form-cont">
+      <WorkClaimMiniForm/>
+    </div>
+    <div class="calls-cont">
+      <CallsBlock/>
+    </div>
+    <div class="chat-cont">
+      <div class="nc-container h-100"></div>  
+    </div>
   </div>
- 
-   <!--<div class="cont">
-    cont
-  </div> -->
 </template>
 
 <style scoped>
-  .cont{
-    background-color: red;
+  /**temp */
+  .grid {
+      display: grid;
+      grid-template-columns: auto 2.5fr 3.5fr;
+      grid-template-rows: auto 2fr;
+      grid-column-gap: 2rem;
+      grid-row-gap: 2rem;
+      min-height: 100%;
   }
- 
-  /**to refactor */
-  .claimSolo_main{
-    height: 100%;
-  }
-  .claimSolo{
-    height: 100%;
-  }
-  footer{
-    z-index: 2;
-    padding: 10px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    background-color: white;
-    width: 100%;
-  }
+  .form-cont { grid-area: 1 / 1 / 3 / 2; }
+  .prod-cont { grid-area: 1 / 2 / 2 / 3; }
+  .mini-form-cont { grid-area: 1 / 3 / 2 / 4; }
+  .calls-cont { grid-area: 2 / 2 / 3 / 3; }
+  .chat-cont { grid-area: 2 / 3 / 3 / 4; }
+
 </style>

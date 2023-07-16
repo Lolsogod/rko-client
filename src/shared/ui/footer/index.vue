@@ -16,7 +16,7 @@ console.log(props.type)
             <PlButton type ="secondary">Зарегистрировать + Новое</PlButton>
             <PlButton @click="createClaim(props.req!)">Зарегистрировать</PlButton>
         </div>
-        <div v-else-if="type=='edit'" class="d-flex gap-6">
+        <div v-else-if="type=='edit-claim'" class="d-flex gap-6">
             <PlButton type ="secondary">Свернуть</PlButton>
             <PlButton type ="secondary">Перевести</PlButton>
             <PlButton type ="secondary">Отложить</PlButton>

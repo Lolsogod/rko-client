@@ -107,7 +107,7 @@ const categories = ref<any>({
   margin-bottom: 5px;
 }
 .callsblock{
-
+  height: 100%;
   padding: 0 !important;
 }
 .tablist{
