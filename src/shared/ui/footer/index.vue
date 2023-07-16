@@ -6,16 +6,17 @@ const props = defineProps<{
     req?: ClaimReq
     type: String
 }>()
+console.log(props.type)
 </script>
 
 <template>
-    <footer class="d-flex align-items-center justify-content-end">
-        <div v-if="props.type=='create'" class="d-flex gap-6">
+    <footer v-if="type!='claims-list'" class="d-flex align-items-center justify-content-end">
+        <div v-if="type=='create-claim'" class="d-flex gap-6">
             <PlButton type ="secondary">Отмена</PlButton>
             <PlButton type ="secondary">Зарегистрировать + Новое</PlButton>
             <PlButton @click="createClaim(props.req!)">Зарегистрировать</PlButton>
         </div>
-        <div v-else-if="props.type=='edit'" class="d-flex gap-6">
+        <div v-else-if="type=='edit'" class="d-flex gap-6">
             <PlButton type ="secondary">Свернуть</PlButton>
             <PlButton type ="secondary">Перевести</PlButton>
             <PlButton type ="secondary">Отложить</PlButton>
@@ -26,12 +27,8 @@ const props = defineProps<{
 
 <style scoped>
     footer{
-        z-index: 2;
-        padding: 10px;
-        position: fixed;
-        left: 0;
-        bottom: 0;
+        padding: 1rem;
+        height: 5rem;
         background-color: white;
-        width: 100%;
     }
 </style>

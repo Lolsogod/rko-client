@@ -1,12 +1,14 @@
-import type { Claim } from 'interfaces/Claim';
+import axios from 'axios'
+
+import type { Claim } from 'entities/claim/model';
 import type { References } from 'interfaces/References'
+
 import type { UpdateReq } from 'interfaces/requests/UpdateReq';
 import type { ForwardReq } from 'interfaces/requests/ForwardReq'
-import axios from 'axios'
 import type { CloseReq } from 'interfaces/requests/CloseReq';
 import type { PauseReq } from 'interfaces/requests/PauseReq';
 import type { ClaimReq } from 'interfaces/requests/ClaimReq';
-//@ts-ignore
+
 import {updateToken, useKeycloak} from "shared/lib/vue-keycloak/src/vue3-keycloak.js";
 
 const api = axios.create({
@@ -16,7 +18,6 @@ const api = axios.create({
 
 api.interceptors.response.use(
     response => {
-        //response.headers.Authorization =  "later"; подумать когда авториззация будет
         return response;
     }, error => {
         if (error.response.status === 404) {

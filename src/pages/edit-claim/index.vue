@@ -23,7 +23,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="claimSolo d-flex flex-column justify-content-between">
+ 
+  <div class="claimSolo d-flex flex-column b-flex">
     <div class="mb-6">
       <PlButton type="empty" icon="ArrowLeft24"  @click="$router.push('/')">Вернуться к обращениям</PlButton>
     </div>
@@ -45,16 +46,23 @@ onMounted(() => {
     </div>
     <CFooter type="edit"/>
   </div>
-
+ 
+   <!--<div class="cont">
+    cont
+  </div> -->
 </template>
 
 <style scoped>
+  .cont{
+    background-color: red;
+  }
+ 
+  /**to refactor */
   .claimSolo_main{
     height: 100%;
   }
   .claimSolo{
-    margin-bottom: 90px !important;
-    height: calc(100% + 300px);
+    height: 100%;
   }
   footer{
     z-index: 2;

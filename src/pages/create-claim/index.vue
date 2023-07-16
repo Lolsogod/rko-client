@@ -41,7 +41,6 @@ const ncForm = ref<ClaimReq>({
             <!--в макете всё замазано, как понял делать ничего тут ненадо-->
         </div>
     </div>
-    <CFooter type="create" :req="ncForm"/>
 </template>
 
 <style scoped>

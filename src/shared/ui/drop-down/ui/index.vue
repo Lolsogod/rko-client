@@ -15,6 +15,7 @@ const props = withDefaults(defineProps<{
   options: ()=> defOptions,
   placeholder: () => "Выберите из списка"
 });
+
 const emit = defineEmits(['update:modelValue'])
 
 const selCode = computed({
@@ -30,10 +31,8 @@ const selected = ref<ReferenceData>()
 watch(selected,()=>{
   selCode.value = selected.value?.code!
 })
-
 </script>
 <template>
-    <!--ревльно лейблом сделать както бы-->
     <div>
       <div v-if="props.label" class="label d-flex c-flex">
         {{ label }}
@@ -118,7 +117,6 @@ watch(selected,()=>{
     pointer-events: none;
   }
   button[aria-expanded="true"] .icon-cont{
-    /**мб убрать анимшку */
     transition: .1s all ease;
     transform: scaleY(-1);
   }
