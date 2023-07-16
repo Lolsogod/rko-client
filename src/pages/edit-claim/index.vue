@@ -46,11 +46,16 @@ onMounted(() => {
   /**temp */
   .grid {
       display: grid;
-      grid-template-columns: auto 2.5fr 3.5fr;
+      grid-template-columns: 6fr 2.5fr 3.5fr;
       grid-template-rows: auto 2fr;
       grid-column-gap: 2rem;
       grid-row-gap: 2rem;
       min-height: 100%;
+  }
+  @media screen and (min-width: 2010px) {
+    .grid{
+      grid-template-columns: 900px 2.5fr 3.5fr;
+    }
   }
   .form-cont { grid-area: 1 / 1 / 3 / 2; }
   .prod-cont { grid-area: 1 / 2 / 2 / 3; }
