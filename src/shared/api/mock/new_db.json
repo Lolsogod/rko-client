@@ -153,7 +153,8 @@
       "service_count": 1,
       "priority": "MEDIUM",
       "priority_reason": "Важная причина",
-      "client": {
+      "client": { 
+        "id": 1,
         "global_company_id": "null",
         "inn": "1234567980",
         "kpp": "123456798",
@@ -282,7 +283,8 @@
       "service_count": 1,
       "priority": "HIGH",
       "priority_reason": "Важная причина",
-      "client": {
+      "client": { 
+        "id": 2,
         "global_company_id": "null",
         "inn": "9876543210",
         "kpp": "987654321",
@@ -340,6 +342,7 @@
       "priority": "LOW",
       "priority_reason": "Обычная причина",
       "client": {
+        "id": 3,
         "global_company_id": "null",
         "inn": "4567891230",
         "kpp": "456789123",
@@ -386,7 +389,8 @@
       "service_count": 1,
       "priority": "MEDIUM",
       "priority_reason": "Важная причина",
-      "client": {
+      "client": { 
+        "id": 4,
         "global_company_id": "null",
         "inn": "7890123450",
         "kpp": "789012345",
@@ -443,7 +447,8 @@
       "service_count": 1,
       "priority": "LOW",
       "priority_reason": "Обычная причина",
-      "client": {
+      "client": {  
+        "id": 4,
         "global_company_id": "null",
         "inn": "3456789012",
         "kpp": "345678901",
@@ -500,7 +505,8 @@
       "service_count": 1,
       "priority": "Critical",
       "priority_reason": "Важная причина",
-      "client": {
+      "client": { 
+        "id": 5,
         "global_company_id": "null",
         "inn": "5678901234",
         "kpp": "567890123",
@@ -557,7 +563,8 @@
       "service_count": 1,
       "priority": "LOW",
       "priority_reason": "Обычная причина",
-      "client": {
+      "client": {  
+        "id": 7,
         "global_company_id": "null",
         "inn": "6789012345",
         "kpp": "678901234",
@@ -624,7 +631,8 @@
       "service_count": 1,
       "priority": "HIGH",
       "priority_reason": "Важная причина",
-      "client": {
+      "client": {  
+        "id": 8,
         "global_company_id": "null",
         "inn": "7890123456",
         "kpp": "789012345",
@@ -662,7 +670,8 @@
       "service_count": 1,
       "priority": "MEDIUM",
       "priority_reason": "Важная причина",
-      "client": {
+      "client": {  
+        "id": 9,
         "global_company_id": "null",
         "inn": "8901234567",
         "kpp": "890123456",
@@ -719,7 +728,8 @@
       "service_count": 1,
       "priority": "LOW",
       "priority_reason": "Обычная причина",
-      "client": {
+      "client": {  
+        "id": 10,
         "global_company_id": "null",
         "inn": "9012345678",
         "kpp": "901234567",
@@ -776,7 +786,8 @@
       "priority_reason": "",
       "assignee": "",
       "comment": "",
-      "client": {
+      "client": {  
+        "id": 11,
         "globalCompanyId": 0,
         "plCompanyId": "",
         "inn": "",
@@ -801,7 +812,8 @@
       "priority_reason": "",
       "assignee": "",
       "comment": "",
-      "client": {
+      "client": {  
+        "id": 12,
         "globalCompanyId": 0,
         "plCompanyId": "",
         "inn": "",

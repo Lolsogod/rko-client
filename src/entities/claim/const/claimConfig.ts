@@ -1,7 +1,7 @@
 import type { IMenuItem } from 'interfaces/IMenuItem';
 import { useReferenceStore} from 'app/providers/stores'
 import { router } from 'app/providers'
-import type { Claim } from 'interfaces/Claim';
+import type { Claim } from 'entities/claim/model';
 import { useModalStore } from 'widgets/modal';
 import {computed} from 'vue'
 import type { ReferenceData, References } from 'interfaces/References';
@@ -13,7 +13,7 @@ export const useClaimConfig = (claim: Claim) =>{
     //хз мб херня но пусть так пока
     const items = new Map<string, IMenuItem[]>([
       ['NEW', [
-        {text: "Взять в работу", action: () => router.push('/claim/1')},
+        {text: "Взять в работу", action: () => router.push(`/client/${claim.client?.id}/${claim.id}`)},
         {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
         {text: "Журнал состояний", action: () => modalStore.openModal('journal', claim)}
     ]],
@@ -22,7 +22,7 @@ export const useClaimConfig = (claim: Claim) =>{
         {text: "Журнал состояний", action: () => modalStore.openModal('journal', claim)},
       ]],
       ['PENDING', [
-            {text: "Взять в работу", action: () => router.push('/claim/1')},
+            {text: "Взять в работу", action: () => router.push(`/client/${claim.client?.id}/${claim.id}`)},
             {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
             {text: "Журнал состояний", action: () => modalStore.openModal('journal', claim)}
         ]],

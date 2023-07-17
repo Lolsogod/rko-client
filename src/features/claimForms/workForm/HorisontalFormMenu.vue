@@ -15,11 +15,13 @@
 </template>
 
 <script setup lang="ts">
+import { router } from "app/providers";
 import IconInCircle from "../../../shared/ui/IconInCircle.vue";
 import {ref} from "vue";
-const menuItems = ref(['SD1', 'SD2', 'SD3', 'SD4']);
+const menuItems = ref(['1', '2', '3', '4']);
 const selectedItem = ref<String | null>(null);
 const selectItem = (item:String) => {
+  router.push(`/client/1/${item}`)
   selectedItem.value = item;
 }
 
