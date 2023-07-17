@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue'
-import CallBlockItem from './CallBlockItem.vue';
-
+import Call from './Call.vue'
 const tabs = ["Звонки", "Письма"]
 //это естествено будут запросы, но пока так
 const getCalls = () =>{
     return [
         {
             id: 1,
-            name: "Олег олегович",
+            name: "Олег Олегович",
             date: '24.06.23 15:18', 
             duration:"50",
             type: "incoming",
@@ -24,7 +23,7 @@ const getCalls = () =>{
         },
         {
             id: 3,
-            name: "Олег олегович",
+            name: "Олег Олегович",
             date: '24.06.23 16:11', 
             duration:"0",
             type: "canceled",
@@ -69,9 +68,9 @@ const getLetters = () =>{
             </div>
         </TabList>
   
-        <TabPanels class="mt-2">
-          <TabPanel  key="-1">
-              <CallBlockItem v-for="call in getCalls()" :key="call.id" :call="call"/>
+        <TabPanels class="p-6 ">
+          <TabPanel  key="-1" class="d-grid gap-4">
+              <Call v-for="call in getCalls()" :key="call.id" :call="call"/>
           </TabPanel>
           <TabPanel  key="0">
               <div v-for="letter in getLetters()" :key="letter.id">
@@ -98,7 +97,7 @@ const getLetters = () =>{
         padding: 1.4rem 1.7rem;
     }
     .active{
-        border-bottom: 2px solid blue;
+        border-bottom: 2px solid #4063eb;
     }
     .header{
         position: relative;
