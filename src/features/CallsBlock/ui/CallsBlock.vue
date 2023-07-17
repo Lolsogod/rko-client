@@ -100,7 +100,6 @@ const getLetters = () =>{
         border-bottom: 2px solid #4063eb;
     }
     .header{
-        position: relative;
         border-bottom: 2px solid #dadde7;
     }
 </style>

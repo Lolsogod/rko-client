@@ -13,7 +13,7 @@ import keycloakConfig from "shared/api/keycloak/keycloakConfig";
 const {initOptions, config} = keycloakConfig;
 const pinia = createPinia();
 const app = createApp(App)
-app.use(vueKeycloak,{ 
+/*app.use(vueKeycloak,{ 
     initOptions,
     config: {
         ...config,
@@ -25,5 +25,9 @@ app.use(vueKeycloak,{
             }
         }
     }
-)
+)*/
 
+app.use(router)
+    .use(pinia)
+    .use(components)
+    .mount('#app') 

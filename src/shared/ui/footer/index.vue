@@ -6,7 +6,6 @@ const props = defineProps<{
     req?: ClaimReq
     type: String
 }>()
-console.log(props.type)
 </script>
 
 <template>
