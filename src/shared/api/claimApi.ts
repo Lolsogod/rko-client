@@ -25,7 +25,7 @@ api.interceptors.response.use(
         }
         return Promise.reject(error.response);
     });
-/* я ничо не трогал, кейклок отвалился
+
 api.interceptors.request.use(
     async (config:any) => {
         const {keycloak, hasFailed, isPending} = useKeycloak();
@@ -51,7 +51,7 @@ api.interceptors.request.use(
 function bearerAuth(token: string | null) {
     return `Bearer ${token}`
 }
-*/
+
 //requests
 //работают на фейк бэке
 export const getReferences = async () => {
