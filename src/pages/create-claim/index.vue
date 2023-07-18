@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import NewClaimForm from 'features/claimForms/newForm/NewClaimForm.vue'
-import {CFooter} from 'shared/ui/footer'
 import type { ClaimReq } from 'interfaces/requests/ClaimReq';
 import { ref } from 'vue';
 //мб както вынести? хз пока
