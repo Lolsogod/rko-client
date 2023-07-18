@@ -1,9 +1,10 @@
 //@ts-ignore пока без рови компонентов
-//import components from '@factoringplus/pl-components-pack-v3'; 
-//import '@factoringplus/pl-components-pack-v3/dist/style.css';
+import components from '@factoringplus/pl-components-pack-v3'
+import '@factoringplus/pl-components-pack-v3/dist/style.css'
 
-import { vueKeycloak} from "shared/lib/vue-keycloak"
 import { createApp } from 'vue'
+//@ts-ignore
+import { vueKeycloak } from "shared/lib/vue-keycloak"
 import { createPinia } from 'pinia'
 import { router } from './providers'
 import App from './index.vue'
@@ -20,7 +21,7 @@ app.use(vueKeycloak,{
         onReady: () => {
             app.use(router)
                .use(pinia)
-               //.use(components)
+               .use(components)
                .mount('#app')
             }
         }

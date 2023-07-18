@@ -10,6 +10,7 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
+    "@factoringplus/pl-components-pack-v3": "0.5.66-pre-07",
     "jwt-decode": "^3.1.2",
     "keycloak-js": "^22.0.1",
     "lodash": "^4.17.21",

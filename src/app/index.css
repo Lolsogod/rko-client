@@ -1,3 +1,4 @@
-.test{
-    color: red
+body{
+    background: var(--background-default, #F6F6F4);
+    margin: 0;
 }
