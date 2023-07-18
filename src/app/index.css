@@ -18,6 +18,12 @@ body{
 .s-flex{
     align-items: stretch
 }
+
+.d-flex-cb{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
 .secondary-text{
     font-size: small;
     color: #cccccc ;

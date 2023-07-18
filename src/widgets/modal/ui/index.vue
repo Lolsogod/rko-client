@@ -11,22 +11,22 @@ defineProps<{
 defineEmits(['close'])
 </script>
 <template>
-    <TransitionRoot appear :show="isOpen" as="div" class="no-d">
+    <TransitionRoot appear :show="isOpen" as="div" class="no-disp">
       <Dialog as="div" @close=" $emit('close')" class=" z-10">
+
         <TransitionChild as="div" 
             enter="dur" enter-from="hide" enter-to="show"
             leave="dur" leave-from="show" leave-to="hide">
-
           <div class="backdrop" ></div>
         </TransitionChild>
 
         <div class="container">
-          <div class="cont-2">
+          <div class="inner-cont">
             <TransitionChild as="div" 
             enter="dur" enter-from="hide" enter-to="show"
             leave="dur" leave-from="show" leave-to="hide">
               <DialogPanel class="panel">
-                <DialogTitle as="h3" class="title d-flex c-flex b-flex gap-10">
+                <DialogTitle as="h3" class="title d-flex-cb gap-10">
                   <div>{{ title }} </div>
                   <PlButton type="secondary" icon="Close24"  @click="$emit('close')"></PlButton>
                 </DialogTitle>
@@ -37,19 +37,14 @@ defineEmits(['close'])
             </TransitionChild>
           </div>
         </div>
+
       </Dialog>
     </TransitionRoot>
   </template>
   
 <style scoped>
-.no-d{
+.no-disp{
   display: none;
-}
-.text-test{
-    color: #6B7280; 
-    font-size: 0.875rem;
-    line-height: 1.25rem; 
-
 }
 .title{
     margin: 0;
@@ -96,9 +91,8 @@ defineEmits(['close'])
     right: 0;
     bottom: 0;
     left: 0; 
-
 }
-.cont-2{
+.inner-cont{
     display: flex; 
     padding: 1rem; 
     text-align: center; 

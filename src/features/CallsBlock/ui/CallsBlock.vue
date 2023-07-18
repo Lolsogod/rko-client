@@ -94,7 +94,7 @@ const getLetters = () =>{
         border: 0;
         border-bottom: 2px solid #dadde7;
         background-color: transparent;
-        padding: 1.4rem 1.7rem;
+        padding: 1.3rem 1.6rem;
     }
     .active{
         border-bottom: 2px solid #4063eb;

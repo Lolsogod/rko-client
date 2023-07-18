@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import type { SLinkInfo } from 'interfaces/SideLink';
+import type { SLinkInfo } from './model';
 import {router} from 'app/providers';
-    const props = defineProps<{
-        link: SLinkInfo
-    }>()
-    const goTo = () =>{
-        router.push(props.link.to)
-    }
+
+const props = defineProps<{
+    link: SLinkInfo
+}>()
+
+const goTo = () =>{
+    router.push(props.link.to)
+}
 </script>
 
 <template>
@@ -31,4 +33,5 @@ import {router} from 'app/providers';
     .no-cur{
         color: #828284;
     }
-</style>@/app/router
+   
+</style>

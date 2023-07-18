@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
-import type {IMenuItem} from 'interfaces/IMenuItem'
+import type {IMenuItem} from './model'
+
 defineProps<{
     items?: IMenuItem[]
 }>()
@@ -11,12 +12,8 @@ defineProps<{
         <Menu >
             <MenuButton><PlIcon name="DotsVertical20"/></MenuButton>
             <transition
-                enter-active-class="dur"
-                enter-from-class="hide"
-                enter-to-class="show"
-                leave-active-class="dur"
-                leave-from-class="show"
-                leave-to-class="hide">
+                enter-active-class="dur" enter-from-class="hide" enter-to-class="show"
+                leave-active-class="dur" leave-from-class="show" leave-to-class="hide">
                 <MenuItems class="m-items">
                     <MenuItem v-for="item in items">
                         <button @click="item.action">{{ item.text }}</button>

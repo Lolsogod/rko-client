@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SideBar from "features/sidebar/SideBar.vue";
+import {SideBar} from "widgets/sidebar";
 import NavBar from "features/navBar/NavBar.vue"
 import { computed, ref } from 'vue';
 import { router } from "app/providers";
@@ -11,6 +11,7 @@ const sideControl = () =>{
 }
 const curRoute = computed(()=>router.currentRoute.value.name?.toString())
 </script>
+
 <template>
     <div class="container d-flex">
         <NavBar @open-side="sideControl"/>
@@ -25,6 +26,7 @@ const curRoute = computed(()=>router.currentRoute.value.name?.toString())
         </div>
     </div>
 </template>
+
 <style scoped>
     .fm-cont{
         height: calc(100vh - 64px);
@@ -33,8 +35,6 @@ const curRoute = computed(()=>router.currentRoute.value.name?.toString())
         flex-direction: column;
         flex: 1;
     }
-   
-    
    .container{
         flex-direction: column;
         height: 100vh;

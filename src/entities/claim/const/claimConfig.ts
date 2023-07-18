@@ -1,4 +1,4 @@
-import type { IMenuItem } from 'interfaces/IMenuItem';
+import type { IMenuItem } from 'shared/ui/menu';
 import { useReferenceStore} from 'app/providers/stores'
 import { router } from 'app/providers'
 import type { Claim } from 'entities/claim/model';
