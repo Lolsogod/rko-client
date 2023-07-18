@@ -44,7 +44,7 @@ body{
     border: 2px solid #e3e3e3;
 }
 
-/*импортант плохо, потом подумаю*/
+/*импортант плохо, потом подумаю и тут поменять*/
 .pl-input__wrapper{
     border: 3px solid #eff0f5 !important;
     padding: 1.25rem 1rem !important;
@@ -62,4 +62,12 @@ body{
     padding: 2rem;
     border-radius: 1rem;
     flex-grow: 1;
+}
+/*попытатся тут также сдвреным*/
+.search>.pl-input>.pl-input__wrapper{
+    border: 3px solid #f4f4f4 !important;
+    background-color: #f4f4f4;
+}
+.search.pl-input__inner{
+    background-color: #f4f4f4;
 }

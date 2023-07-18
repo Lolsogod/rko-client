@@ -90,6 +90,7 @@ watch(selected,()=>{
     height: 46px;
     position: relative; 
     padding: .7rem 1rem;
+    padding-right: 2.5rem;
     background-color: #ffffff; 
     text-align: left; 
     width: 100%; 

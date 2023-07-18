@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {SideBar} from "widgets/sidebar";
-import NavBar from "features/navBar/NavBar.vue"
+import {NavBar} from "widgets/navbar"
 import { computed, ref } from 'vue';
 import { router } from "app/providers";
 import { CFooter } from "../footer";
@@ -14,14 +14,14 @@ const curRoute = computed(()=>router.currentRoute.value.name?.toString())
 
 <template>
     <div class="container d-flex">
-        <NavBar @open-side="sideControl"/>
+        <NavBar @open-side="sideControl" :type="curRoute"/>
         <div class="d-flex m-cont">
             <SideBar :open="sideOpen"/>
             <div class="fm-cont">
                 <main class="main-content additional-class temp">
                     <slot></slot>
                 </main>
-                <CFooter :type="curRoute!"/>
+                <CFooter :type="curRoute"/>
             </div>
         </div>
     </div>

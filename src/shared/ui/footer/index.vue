@@ -4,7 +4,7 @@ import { createClaim } from "shared/api/claimApi"
 
 const props = defineProps<{
     req?: ClaimReq
-    type: String
+    type?: String
 }>()
 </script>
 
