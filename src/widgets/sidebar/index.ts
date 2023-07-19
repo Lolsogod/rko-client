@@ -1,2 +1,2 @@
-import SideBar from './index.vue'
+import SideBar from './ui.vue'
 export {SideBar}

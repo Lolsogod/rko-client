@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { CurClaimCard } from 'entities/claim';
+
 /*
 import {ClaimsTable} from 'entities/claim'
 import { router } from 'app/providers'
@@ -12,7 +14,20 @@ import  {StatusTable} from 'entities/status-history';
 const modalStore = useModalStore()*/
 </script>
 <template>
-    Всё Заново!
+    <main>
+      <h3>Задачи</h3>
+      <div class="d-flex gap-4">
+        <!--это тож в отд компонент-->
+        <button>Мои задачи</button>
+        <button>Все задачи</button>
+        <button>Создать</button>
+      </div>
+      <!--роутер виев сюда потом-->
+      <div>
+        <CurClaimCard/>
+        <!--columns-->
+      </div>
+    </main>
     <!--
     <div class="d-flex c-flex b-flex mb-6">
       <span class="typography-headline-h3-semi-bold">Мои задачи</span>
@@ -26,3 +41,11 @@ const modalStore = useModalStore()*/
     </Modal>-->
 
 </template>
+
+<style scoped>
+  main{
+    margin: auto;
+    margin-top: 1.5rem;
+    width: 84rem;
+  }
+</style>

@@ -1,2 +1,2 @@
-import NavBar from './index.vue'
+import NavBar from './ui.vue'
 export {NavBar}

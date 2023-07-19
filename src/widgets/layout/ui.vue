@@ -20,7 +20,6 @@ const curRoute = computed(()=>router.currentRoute.value.name?.toString())*/
             <NavBar/>
             <slot></slot>
         </div>
-        
     </div>
     
 </template>

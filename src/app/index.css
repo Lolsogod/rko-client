@@ -2,3 +2,13 @@ body{
     background: var(--background-default, #F6F6F4);
     margin: 0;
 }
+h3{
+    color: var(--text-icons-primary, #19191A);
+    /* Headline/H3-Semi Bold */
+    font-family: Inter;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.5rem; /* 125% */
+    letter-spacing: 0.016rem;
+}
