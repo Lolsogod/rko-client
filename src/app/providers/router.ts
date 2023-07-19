@@ -10,7 +10,21 @@ export const router = createRouter({
     {
       path: '/',
       name: 'claims-list',
-      component: ClaimsListPage
+      component: ClaimsListPage,
+      children: [
+        {
+          path: '',
+          name: 'my-claims',
+          component: () => import('pages/claims-list/my-claims'),
+          props: true
+        },
+        {
+          path: 'all',
+          name: 'all-claims',
+          component: () => import('pages/claims-list/all-claims'),
+          props: true
+        }
+      ]
     },
   ]
     /*{

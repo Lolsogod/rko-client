@@ -18,7 +18,9 @@ const curRoute = computed(()=>router.currentRoute.value.name?.toString())*/
         <SideBar/>
         <div class="nm-cont d-flex">
             <NavBar/>
-            <slot></slot>
+            <div class="main-content">
+                <slot></slot>
+            </div>
         </div>
     </div>
     
@@ -26,10 +28,13 @@ const curRoute = computed(()=>router.currentRoute.value.name?.toString())*/
 
 <style scoped>
     .container{
-        min-height: 100vh;
+        height: 100vh;
     }
     .nm-cont{
         flex-direction: column;
         flex-grow: 1;
+    }
+    .main-content{
+        overflow-x: auto;
     }
 </style>

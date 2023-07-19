@@ -6,15 +6,17 @@ import User from '/user.svg'
 import Wallet from '/wallet.svg'
 //@ts-ignore
 import Settings from '/settings.svg'
-
+import type { BtnData } from 'shared/ui/ico-button'
+import { router } from 'app/providers'
 //сюда ещё экшн добавить и интерфейс сделать 
-export const links = {
+
+export const links: {[key: string]: BtnData[]} = {
     top: [
-      {img: Wallet, active: true},
-      {img: Home, active: false},
-      {img: User, active: false}
+      {ico: Wallet, active: true, action: () => router.push('/')},
+      {ico: Home},
+      {ico: User}
     ],
     bot: [
-      {img: Settings, active: false}
+      {ico: Settings}
     ]
   }

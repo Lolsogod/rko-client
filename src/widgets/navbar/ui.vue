@@ -3,14 +3,17 @@ import { IcoBtn } from 'shared/ui/ico-button';
 //@ts-ignore
 import Exit from '/exit.svg'
 import { GradBtn } from 'shared/ui/grad-button';
+//@ts-ignore
+import {useKeycloak} from "shared/lib/vue-keycloak"
+const {keycloak} = useKeycloak();
 </script>
 
 <template>
     <nav>
-        <PlInputPlus class="search" placeholder="Поиск задачи" leftIcon="Search20" width="20rem"/>
+        <PlInputPlus class="search" placeholder="Поиск" leftIcon="Search20" width="20rem"/>
         <div class="d-flex gap-4">
             <GradBtn>KK</GradBtn>
-            <IcoBtn :img="Exit"/>
+            <IcoBtn :data="{ico: Exit, action: () => keycloak.logout()}"/>
         </div>
     </nav>
     <div class="temp"></div>

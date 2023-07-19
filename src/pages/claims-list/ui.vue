@@ -1,20 +1,13 @@
 <script setup lang="ts">
-import { CurClaimCard } from 'entities/claim';
+import {ClaimListNav} from 'widgets/claim-list-nav'
 </script>
 <template>
     <main>
       <h3>Задачи</h3>
       <div class="d-flex gap-4">
-        <!--это тож в отд компонент-->
-        <button>Мои задачи</button>
-        <button>Все задачи</button>
-        <button>Создать</button>
+        <ClaimListNav/>
       </div>
-      <!--роутер виев сюда потом-->
-      <div>
-        <CurClaimCard/>
-        <!--columns-->
-      </div>
+      <RouterView/>
     </main>
 </template>
 

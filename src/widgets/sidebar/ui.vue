@@ -10,11 +10,11 @@ import { links } from './const';
         <div class="items">
             <img :src="Logo" alt="R" id="logo">
             <div class="top-items">
-                <IcoBtn v-for="link in links.top" :img="link.img" :active="link.active" />
+                <IcoBtn v-for="link in links.top" :data="link" />
             </div>
         </div>
         <div class="items mt-4">
-            <IcoBtn v-for="link in links.bot" :img="link.img" :active="link.active" />
+            <IcoBtn v-for="link in links.bot" :data="link"/>
         </div>
     </div>
 </template>

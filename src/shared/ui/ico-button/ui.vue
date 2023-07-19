@@ -1,14 +1,15 @@
 <script setup lang="ts">
+import type { BtnData } from '.';
+
 
 defineProps<{
-    img: string,
-    active?: boolean
+    data: BtnData
 }>()
 </script>
 
 <template>
-    <div class="s-btn" :class="active?'active':''">
-        <img :src="img" alt="ico">
+    <div class="s-btn" :class="data.active?'active':''" @click="data.action">
+        <img :src="data.ico" alt="ico">
     </div>
 </template>
 
