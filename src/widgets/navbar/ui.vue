@@ -1,18 +1,23 @@
 <script setup lang="ts">
-
+import { IcoBtn } from 'shared/ui/ico-button';
+//@ts-ignore
+import Exit from '/exit.svg'
+import { GradBtn } from 'shared/ui/grad-button';
 </script>
 
 <template>
     <nav>
         <PlInputPlus class="search" placeholder="Поиск задачи" leftIcon="Search20" width="20rem"/>
         <div class="d-flex gap-4">
-            <PlButton type="secondary" icon="Cube24"/>
-            <PlButton type="secondary" icon="Cube24"/>
+            <GradBtn>KK</GradBtn>
+            <IcoBtn :img="Exit"/>
         </div>
     </nav>
+    <div class="temp"></div>
 </template>
 
 <style scoped>
+    
     nav{
         border-bottom: 1px solid #EFEFEB;
         height: 5rem;

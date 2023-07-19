@@ -1,20 +1,20 @@
 <script setup lang="ts">
 //@ts-ignore
 import Logo from '/logo.svg'
+import {IcoBtn} from 'shared/ui/ico-button'
+import { links } from './const';
 </script>
 
 <template>
-    <div class="sidebar">
+    <div class="sidebar no-select">
         <div class="items">
             <img :src="Logo" alt="R" id="logo">
             <div class="top-items">
-                <PlButton type="secondary" icon="Cube24"/>
-                <PlButton type="secondary" icon="Cube24"/>
-                <PlButton type="secondary" icon="Cube24"/>
+                <IcoBtn v-for="link in links.top" :img="link.img" :active="link.active" />
             </div>
         </div>
-        <div class="items">
-            <PlButton type="secondary" icon="Cube24"/>
+        <div class="items mt-4">
+            <IcoBtn v-for="link in links.bot" :img="link.img" :active="link.active" />
         </div>
     </div>
 </template>

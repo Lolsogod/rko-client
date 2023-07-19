@@ -26,7 +26,7 @@ const curRoute = computed(()=>router.currentRoute.value.name?.toString())*/
 
 <style scoped>
     .container{
-        height: 100vh;
+        min-height: 100vh;
     }
     .nm-cont{
         flex-direction: column;
