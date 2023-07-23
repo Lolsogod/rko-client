@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { CurClaimCard, ClaimCol } from 'entities/claim';
+import { CurClaimCard, ClaimCol, useClaimStore } from 'entities/claim';
+const claimStore = useClaimStore()
+
 </script>
 <template>
     <div>
-        <CurClaimCard/>
+        <CurClaimCard v-if="claimStore.currentClaim" :claim="claimStore.currentClaim"/>
         <div class="col-cont">
             <ClaimCol/>
             <ClaimCol/>

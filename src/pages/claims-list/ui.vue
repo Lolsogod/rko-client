@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import {ClaimListNav} from 'widgets/claim-list-nav'
+import { useClaimStore } from 'entities/claim'
+
+const store = useClaimStore()
+store.fetchClaims()
 </script>
+
 <template>
     <main>
       <h3>Задачи</h3>

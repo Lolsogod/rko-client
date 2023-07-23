@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import { Layout } from 'widgets/layout';
-//import { useReferenceStore } from 'app/providers/stores';
+import { useReferenceStore } from 'entities/reference';
 
-//const rStore = useReferenceStore()
-//rStore.fetchReferences()
+const rStore = useReferenceStore()
+rStore.fetchReferences()
+
 </script>
 
 <template>

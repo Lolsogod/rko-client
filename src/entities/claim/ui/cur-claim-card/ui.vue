@@ -7,8 +7,18 @@ import Phone from "/phone.svg"
 import Chat from "/chat.svg"
 import { DropDown } from 'shared/ui/drop-down';
 import  Cell from './info-cell.vue'
+import { useClaimConfig, type Claim } from 'entities/claim';
+
+const props = defineProps<{
+    claim: Claim
+}>()
+
 const callBtn: BtnData = {ico: Phone}
 const chatBtn: BtnData = {ico: Chat}
+
+
+const conf = useClaimConfig(props.claim)
+
 </script>
 
 <template>
@@ -16,11 +26,11 @@ const chatBtn: BtnData = {ico: Chat}
         <div class="top">
             <Badge color="rgba(12, 163, 27, 0.08)">🕐 В работе 12:04 минут</Badge>
             <div class="d-flex-cb w-100">
-                <h3>Запрос справок и выписок</h3>
+                <h3>{{ conf.type }}</h3>
                 <div class="d-flex gap-4">
                     <IcoBtn :data="callBtn" size="small"/>
                     <IcoBtn :data="chatBtn" size="small"/>
-                    <!--это по логике теперь менюха а дд, поменю потом пока чисто для вида-->
+                    <!--это по логике теперь менюха а не дд, поменю потом пока чисто для вида-->
                     <DropDown grey placeholder="Действия"/>
                 </div>
             </div>

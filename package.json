@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"json-server --watch src\\shared\\api\\mock\\db.json /\" \"vite\"",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
@@ -12,6 +12,7 @@
   "dependencies": {
     "@factoringplus/pl-components-pack-v3": "0.5.66-pre-07",
     "@headlessui/vue": "^1.7.14",
+    "axios": "^1.4.0",
     "jwt-decode": "^3.1.2",
     "keycloak-js": "^22.0.1",
     "lodash": "^4.17.21",
@@ -25,6 +26,8 @@
     "@types/node": "^18.16.17",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/tsconfig": "^0.4.0",
+    "concurrently": "^8.2.0",
+    "json-server": "^0.17.3",
     "npm-run-all": "^4.1.5",
     "typescript": "~5.0.4",
     "vite": "^4.3.9",
