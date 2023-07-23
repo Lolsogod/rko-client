@@ -1,21 +1,25 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import type { BtnData } from '.';
 
 
-defineProps<{
+const props = defineProps<{
     data: BtnData
+    size?: string
 }>()
+
+const isSmall = computed(()=>props.size=="small")
 </script>
 
 <template>
-    <div class="s-btn" :class="data.active?'active':''" @click="data.action">
+    <div class="btn" :class="{active: data.active, small: isSmall}" @click="data.action">
         <img :src="data.ico" alt="ico">
     </div>
 </template>
 
 <style scoped>
-
-    .s-btn{
+   
+    .btn{
         cursor: pointer;
         display: flex;
         padding: 0.75rem;
@@ -24,14 +28,22 @@ defineProps<{
         border-radius: 0.5rem;
         background: var(--surface-opacity-1, rgba(25, 25, 26, 0.04));
     }
-    .s-btn:hover{
+   
+    .btn:hover{
         background-color: rgba(25, 25, 26, 0.08);
+    }
+
+    div.small{
+        padding: 0.5rem 0.625rem;
+        gap: 0.25rem;/*?*/
+        background: var(--surface-opacity-2, rgba(25, 25, 26, 0.08));
     }
 
     img{
         height: 1.5rem;
         width: 1.5rem;
     }
+ 
     .active {
         background: var(--buttons-alternative, #E8ECFD);
     }

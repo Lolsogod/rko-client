@@ -1,9 +1,11 @@
 <script setup lang="ts">
-
+defineProps<{
+    color?: string
+}>()
 </script>
 
 <template>
-   <div class="badge">
+   <div class="badge" :style="{backgroundColor: color}">
         <slot></slot>
    </div>
 </template>
