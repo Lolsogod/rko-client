@@ -16,7 +16,7 @@ const cStore = useClaimStore()
     <div class="col">
         <div class="d-flex-cb w-100">
             <Badge>{{ title }}</Badge>
-            <Badge>15</Badge>
+            <Badge>{{cStore.sorted[type].length}}</Badge>
         </div>
         <ClaimCard v-for="claim in cStore.sorted[type]" />
     </div>
