@@ -5,12 +5,16 @@ import Exit from '/exit.svg'
 import { GradBtn } from 'shared/ui/grad-button';
 //@ts-ignore
 import {useKeycloak} from "shared/lib/vue-keycloak"
+import { ref } from 'vue';
 const {keycloak} = useKeycloak();
+
+//шоб вуе не ругался
+const search = ref()
 </script>
 
 <template>
     <nav>
-        <PlInputPlus class="search" placeholder="Поиск" leftIcon="Search20" width="20rem"/>
+        <PlInputPlus class="search" placeholder="Поиск" leftIcon="Search20" width="20rem" v-model="search"/>
         <div class="d-flex gap-4">
             <GradBtn>KK</GradBtn>
             <IcoBtn :data="{ico: Exit, action: () => keycloak.logout()}"/>

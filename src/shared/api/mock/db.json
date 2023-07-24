@@ -358,6 +358,7 @@
       "status": "PENDING",
       "status_reason": "Важная причина",
       "created_date": "2023-07-09T00:00:00+00:00",
+      "updated_date": "2023-07-09T00:00:00+00:00",
       "status_history": [
         {
           "id": 9876543215,
@@ -456,10 +457,10 @@
       "initiator_type": "CLIENT",
       "is_first_line": true,
       "claim_type": "INQUIRY",
-      "claim_theme": "Потеря доверия",
+      "claim_theme": "CARD_INDEX_INQUIRY",
       "description": "Клиент заявляет о потере доверия к банку и просит заблокировать свой счет.",
       "service_count": 1,
-      "priority": "Critical",
+      "priority": "CRITICAL",
       "priority_reason": "Важная причина",
       "client": { 
         "id": 5,
@@ -474,6 +475,7 @@
       "status": "IN_PROGRESS",
       "status_reason": "Важная причина",
       "created_date": "2023-07-09T00:00:00+00:00",
+      "updated_date": "2023-07-09T00:00:00+00:00",
       "status_history": [
         {
           "id": 9876543218,

@@ -8,6 +8,8 @@ import Chat from "/chat.svg"
 import { DropDown } from 'shared/ui/drop-down';
 import  Cell from './info-cell.vue'
 import { useClaimConfig, type Claim } from 'entities/claim';
+import { SqBadge } from 'shared/ui/sq-badge';
+import { Divider } from 'shared/ui/divider';
 
 const props = defineProps<{
     claim: Claim
@@ -24,7 +26,7 @@ const conf = useClaimConfig(props.claim)
 <template>
     <div class="cur-card">
         <div class="top">
-            <Badge color="rgba(12, 163, 27, 0.08)">🕐 В работе 12:04 минут</Badge>
+            <Badge color="rgba(12, 163, 27, 0.08)">🕐 В работе {{ conf.inWorkFor() }}</Badge>
             <div class="d-flex-cb w-100">
                 <h3>{{ conf.type }}</h3>
                 <div class="d-flex gap-4">
@@ -36,8 +38,20 @@ const conf = useClaimConfig(props.claim)
             </div>
         </div>
         <div class="d-flex-cb pr-8">
-            <Cell v-for="n in 6" title="Что то">Ещё что-то</Cell>
-            <!--дивайдер попозже-->
+            <!--както бы автоматически его вставлять, ну пока пусть так-->
+            <Cell title="Номер заявки">
+                <SqBadge type="id">rko-{{ claim.id }}</SqBadge>
+            </Cell>
+            <Divider/>
+            <Cell title="Дата создания">{{ conf.createdDate.value }}</Cell>
+            <Divider/>
+            <Cell title="Приоритет">
+                <SqBadge :type="claim.priority!">{{ conf.priority }}</SqBadge>
+            </Cell>
+            <Divider/>
+            <Cell title="Наименование компании">{{ claim.client?.short_name }}</Cell>
+            <Divider/>
+            <Cell title="Тема обращения">{{ conf.theme }}</Cell>
         </div>
     </div>
 </template>

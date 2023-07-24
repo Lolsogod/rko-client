@@ -5,6 +5,7 @@ const claimStore = useClaimStore()
 </script>
 <template>
     <div>
+        <!--тут чо нить лучше в ифа надобы-->
         <CurClaimCard v-if="claimStore.currentClaim" :claim="claimStore.currentClaim"/>
         <div class="col-cont">
             <ClaimCol/>

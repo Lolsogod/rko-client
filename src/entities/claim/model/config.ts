@@ -41,7 +41,7 @@ export const useClaimConfig = (claim: Claim) =>{
       
       const day = String(date.getDate()).padStart(2, '0');
       const month = String(date.getMonth() + 1).padStart(2, '0');
-      const year = date.getFullYear();
+      const year = date.getFullYear().toString().slice(2);
     
       const hours = String(date.getHours()).padStart(2, '0');
       const minutes = String(date.getMinutes()).padStart(2, '0');
@@ -73,7 +73,30 @@ export const useClaimConfig = (claim: Claim) =>{
     const status = getTextByCode(claim.status, 'statuses')
     const priority = getTextByCode(claim.priority!, 'priority')
     const type = getTextByCode(claim.claim_type!, 'claimTypes')
+    const theme = getTextByCode(claim.claim_theme!, 'claimThemes')
     
+     const inWorkFor = () => {
+      //обновлять? да и вобще както неоч, потом поменяю
+      const isoDate = new Date(claim.updated_date);
+      const now = new Date();
+      const timeDifference = now.getTime() - isoDate.getTime();
+      const secondsPassed = Math.floor(timeDifference / 1000);
+      const minutesPassed = Math.floor(secondsPassed / 60);
+      const hoursPassed = Math.floor(minutesPassed / 60);
+      const daysPassed = Math.floor(hoursPassed / 24);
+    
+      if (daysPassed > 0) {
+        return `${daysPassed} д.`;
+      } else if (hoursPassed > 0) {
+        return `${hoursPassed} ч.`;
+      } else if (minutesPassed > 0) {
+        return `${minutesPassed} мин.`;
+      } else {
+        return `${secondsPassed} сек`;
+      }
+    }
+
     return { createdDate, channelIco, channelLine,
-             initiator, status, priority, type}
+             initiator, status, priority, type, 
+             inWorkFor, theme}
 }

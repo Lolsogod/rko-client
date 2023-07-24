@@ -1,8 +1,8 @@
 /*
 верну когда нужно будет
 import type { Status } from "entities/status-history/model";
-import type { Client } from "entities/client/model";
 import type { Document } from "entities/document/model";*/
+import type { Client } from "entities/client/model";
 
 
 export interface Claim {
@@ -26,7 +26,7 @@ export interface Claim {
     priority_reason?: string;
     description?: string;
     comment?: string;
-    //client?: Client;
+    client?: Client;
     //documents: Document[];
     //status_history: Status[]
   }
