@@ -77,22 +77,22 @@ export const useClaimConfig = (claim: Claim) =>{
     
      const inWorkFor = () => {
       //обновлять? да и вобще както неоч, потом поменяю
-      const isoDate = new Date(claim.updated_date);
+      const date = new Date(claim.updated_date);
       const now = new Date();
-      const timeDifference = now.getTime() - isoDate.getTime();
-      const secondsPassed = Math.floor(timeDifference / 1000);
-      const minutesPassed = Math.floor(secondsPassed / 60);
-      const hoursPassed = Math.floor(minutesPassed / 60);
-      const daysPassed = Math.floor(hoursPassed / 24);
+      const timeDiff = now.getTime() - date.getTime();
+      const seconds = Math.floor(timeDiff / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const hours = Math.floor(minutes / 60);
+      const days = Math.floor(hours / 24);
     
-      if (daysPassed > 0) {
-        return `${daysPassed} д.`;
-      } else if (hoursPassed > 0) {
-        return `${hoursPassed} ч.`;
-      } else if (minutesPassed > 0) {
-        return `${minutesPassed} мин.`;
+      if (days > 0) {
+        return `${days} д.`;
+      } else if (hours > 0) {
+        return `${hours} ч.`;
+      } else if (minutes > 0) {
+        return `${minutes} мин.`;
       } else {
-        return `${secondsPassed} сек`;
+        return `${seconds} сек`;
       }
     }
 

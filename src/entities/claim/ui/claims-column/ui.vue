@@ -1,15 +1,24 @@
 <script setup lang="ts">
 import { Badge } from 'shared/ui/badge'
 import { ClaimCard } from '..';
+import { useClaimStore } from 'entities/claim';
+
+defineProps<{
+    title: string,
+    type: string
+}>()
+
+const cStore = useClaimStore()
+
 </script>
 
 <template>
     <div class="col">
         <div class="d-flex-cb w-100">
-            <Badge>🏁 Новые</Badge>
+            <Badge>{{ title }}</Badge>
             <Badge>15</Badge>
         </div>
-        <ClaimCard v-for="n in 5" />
+        <ClaimCard v-for="claim in cStore.sorted[type]" />
     </div>
 </template>
 
@@ -17,7 +26,6 @@ import { ClaimCard } from '..';
     
    .col{
         display: flex;
-        height: 45.9375rem;
         padding: 0.75rem;
         flex-direction: column;
         align-items: flex-start;

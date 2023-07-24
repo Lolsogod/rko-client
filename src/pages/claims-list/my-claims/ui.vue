@@ -8,9 +8,9 @@ const claimStore = useClaimStore()
         <!--тут чо нить лучше в ифа надобы-->
         <CurClaimCard v-if="claimStore.currentClaim" :claim="claimStore.currentClaim"/>
         <div class="col-cont">
-            <ClaimCol/>
-            <ClaimCol/>
-            <ClaimCol/>
+            <ClaimCol title="🏁 Новые" type="new"/>
+            <ClaimCol title="🕐 Сегодня" type="today"/>
+            <ClaimCol title="🙋‍♂ Завтра" type="tomorrow"/>
         </div>
       </div>
 </template>
