@@ -18,7 +18,7 @@ const cStore = useClaimStore()
             <Badge>{{ title }}</Badge>
             <Badge>{{cStore.sorted[type].length}}</Badge>
         </div>
-        <ClaimCard v-for="claim in cStore.sorted[type]" />
+        <ClaimCard v-for="claim in cStore.sorted[type]" :claim="claim" :type="type" />
     </div>
 </template>
 
@@ -31,7 +31,7 @@ const cStore = useClaimStore()
         align-items: flex-start;
         gap: 0.75rem;
         flex-grow: 1;
-
+        width: 27rem;
         border-radius: 1rem;
         background: var(--surface-opacity-2, rgba(25, 25, 26, 0.08));
    }

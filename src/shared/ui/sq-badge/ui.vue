@@ -43,9 +43,12 @@ defineProps<{
         letter-spacing: 0.006rem;
     }
     .CRITICAL{
-        border-radius: 0.375rem;
         background: var(--system-surface-warning, rgba(255, 125, 31, 0.08));
         color: var(--text-icons-warning, #FF7D1F);
+    }
+    .gray{
+        border: 1px solid var(--border-divider, #E3E3E3);
+        background: var(--surface-card, #FFF);
     }
     /**эти потом проработаю */
     .HIGH{

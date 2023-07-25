@@ -1,23 +1,81 @@
 <script setup lang="ts">
+import { useClaimConfig, type Claim } from 'entities/claim';
+import { SqBadge } from 'shared/ui/sq-badge';
+import { Badge } from 'shared/ui/badge';
+import { Menu } from 'shared/ui/menu'
+const props = defineProps<{
+    type: string
+    claim: Claim
+}>()
 
+const conf = useClaimConfig(props.claim)
 </script>
 
 <template>
-    <div class="temp-c">
+    <div class="card d-grid gap-3">
+        <div class="d-flex-cb">
+            <div class="d-flex gap-3">
+                <SqBadge type="id">rko-{{ claim.id }}</SqBadge>
+                <SqBadge v-if="type=='new'" type="gray">Созданно {{ conf.createdDate.value }}</SqBadge>
+            </div>
+            <Menu></Menu>
+        </div>
+        <div>
+            <div class="name">{{ claim.client?.short_name }}</div>
+            <div class="type">{{ conf.type }}</div>
+            <div class="d-flex-cb">
+                 <div class="idk">Нет данных</div>
+                 <Badge v-if="type=='new'" size="small">X мин</Badge>
+            </div>
+        </div>
     </div>
 </template>
 
 <style scoped>
-    .temp-c{
-        height: 9.25rem;
-        display: flex;
+    .card{
+        width: 100%;
         padding: 1rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.375rem;
-        align-self: stretch;
         border-radius: 0.75rem;
         background: var(--background-surface-area, #FFF);
         box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+    }
+    .name{
+        overflow: hidden;
+        color: var(--text-icons-primary, #19191A);
+        text-overflow: ellipsis;
+
+        /* Body/B2-Medium */
+        font-family: Inter;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.5rem; /* 171.429% */
+        letter-spacing: 0.00525rem;
+    }
+    .type{
+        overflow: hidden;
+        color: var(--text-icons-primary, #19191A);
+        text-overflow: ellipsis;
+
+        /* Subtitle/S1-Semi Bold */
+        font-family: Inter;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.5rem; /* 150% */
+        letter-spacing: 0.006rem;
+    }
+    .idk{
+        overflow: hidden;
+        color: var(--text-icons-secondary, #656567);
+        text-overflow: ellipsis;
+
+        /* Body/B2-Medium */
+        font-family: Inter;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.5rem; /* 171.429% */
+        letter-spacing: 0.00525rem;
     }
 </style>
