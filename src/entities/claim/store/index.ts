@@ -29,7 +29,6 @@ export const useClaimStore = defineStore('claims', () => {
       const now = new Date();
       const timeDiff = now.getTime() - date.getTime();
       const minutes = timeDiff / 60000;
-      console.log(`${claim.id} - ${minutes}`)
       return minutes <= 15
   }
   function isToday(claim: Claim) {

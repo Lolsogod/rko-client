@@ -3,12 +3,16 @@ import { useClaimConfig, type Claim } from 'entities/claim';
 import { SqBadge } from 'shared/ui/sq-badge';
 import { Badge } from 'shared/ui/badge';
 import { Menu } from 'shared/ui/menu'
+import { computed } from 'vue';
 const props = defineProps<{
     type: string
     claim: Claim
 }>()
 
 const conf = useClaimConfig(props.claim)
+
+const badgeType = computed(()=>conf.isExpired.value?'red':'gray')
+
 </script>
 
 <template>
@@ -17,15 +21,17 @@ const conf = useClaimConfig(props.claim)
             <div class="d-flex gap-3">
                 <SqBadge type="id">rko-{{ claim.id }}</SqBadge>
                 <SqBadge v-if="type=='new'" type="gray">Созданно {{ conf.createdDate.value }}</SqBadge>
+                <SqBadge v-else :type="badgeType">По плану до {{ conf.pauseTill.value }}</SqBadge>
             </div>
-            <Menu></Menu>
+            <Menu :items="conf.menuItems.value"></Menu>
         </div>
         <div>
             <div class="name">{{ claim.client?.short_name }}</div>
             <div class="type">{{ conf.type }}</div>
             <div class="d-flex-cb">
                  <div class="idk">Нет данных</div>
-                 <Badge v-if="type=='new'" size="small">X мин</Badge>
+                 <Badge v-if="type=='new'" size="small" type="red">X мин</Badge>
+                 <Badge v-if="conf.isExpired.value" size="small" type="expired">Просрочена</Badge>
             </div>
         </div>
     </div>

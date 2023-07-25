@@ -13,6 +13,7 @@ const claimStore = useClaimStore()
             <ClaimCol title="🙋‍♂ Завтра" type="tomorrow"/>
         </div>
       </div>
+      
 </template>
 
 <style scoped>

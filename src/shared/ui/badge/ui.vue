@@ -2,11 +2,12 @@
 defineProps<{
     color?: string
     size?: string
+    type?: string
 }>()
 </script>
 
 <template>
-   <div class="badge" :class="size" :style="{backgroundColor: color}">
+   <div class="badge" :class="size, type" :style="{backgroundColor: color}">
         <slot></slot>
    </div>
 </template>
@@ -35,7 +36,7 @@ defineProps<{
         justify-content: center;
         align-items: center;
         
-        color: var(--text-icons-error, #ED3636);
+        
 
         /* Body/B2-Medium */
         font-family: Inter;
@@ -45,6 +46,14 @@ defineProps<{
         line-height: 1.5rem; /* 171.429% */
         letter-spacing: 0.00525rem;
         border-radius: 0.75rem;
+        
+    }
+    .red{
+        color: var(--text-icons-error, #ED3636);
         background: var(--system-surface-error, rgba(237, 54, 54, 0.08));
+    }
+    .expired{
+        color: white;
+        background: var(--text-icons-error, #ED3636);
     }
 </style>

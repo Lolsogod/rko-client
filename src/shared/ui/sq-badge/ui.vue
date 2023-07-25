@@ -50,6 +50,10 @@ defineProps<{
         border: 1px solid var(--border-divider, #E3E3E3);
         background: var(--surface-card, #FFF);
     }
+    .red{
+        color: var(--text-icons-error, #ED3636);
+        background: var(--system-surface-error, rgba(237, 54, 54, 0.08));
+    }
     /**эти потом проработаю */
     .HIGH{
 

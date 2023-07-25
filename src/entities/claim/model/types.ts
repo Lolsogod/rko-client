@@ -1,9 +1,9 @@
 /*
 верну когда нужно будет
-import type { Status } from "entities/status-history/model";
+
 import type { Document } from "entities/document/model";*/
 import type { Client } from "entities/client/model";
-
+import type { Status } from "entities/status-history/model";
 
 export interface Claim {
     id: number;
@@ -28,5 +28,5 @@ export interface Claim {
     comment?: string;
     client?: Client;
     //documents: Document[];
-    //status_history: Status[]
+    status_history: Status[]
   }

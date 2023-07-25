@@ -10,13 +10,13 @@ defineProps<{
 <template>
     <div class="m-cont">
         <Menu >
-            <MenuButton><PlIcon name="DotsVertical24" color="#b5b5b5"/></MenuButton>
+            <MenuButton class="men"><PlIcon name="DotsVertical24" color="#b5b5b5"/></MenuButton>
             <transition
                 enter-active-class="dur" enter-from-class="hide" enter-to-class="show"
                 leave-active-class="dur" leave-from-class="show" leave-to-class="hide">
                 <MenuItems class="m-items">
                     <MenuItem v-for="item in items">
-                        <button @click="item.action">{{ item.text }}</button>
+                        <button class="item" @click="item.action">{{ item.text }}</button>
                     </MenuItem>
                 </MenuItems>
             </transition>
@@ -38,7 +38,7 @@ defineProps<{
     .m-cont{
         position: relative;
     }
-    button {
+    .men{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -47,12 +47,25 @@ defineProps<{
         border: 1rem;
         border-radius: .5rem;
         width: 1.5rem;
-        height: 1.5rem;
+        height: 2rem;
         font: inherit;
         cursor: pointer;
         outline: inherit;
     }   
-    button:hover{
+    .men:hover{
+        background-color: #f7f7f5;
+    }
+    .item {
+        text-align: left;
+        background: white;
+        border: 1rem;
+        border-radius: .5rem;
+        padding: .5rem;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
+    .item:hover{
         background-color: #f7f7f5;
     }
     .m-items{

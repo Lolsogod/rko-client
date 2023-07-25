@@ -1,18 +1,18 @@
-//import type { IMenuItem } from 'shared/ui/menu';
 import { useReferenceStore} from 'entities/reference'
-//import { router } from 'app/providers'
+import { router } from 'app/providers'
 import type { Claim } from 'entities/claim/model';
-//import { useModalStore } from 'widgets/modal';
+import { useModalStore } from 'widgets/modal';
 import {computed} from 'vue'
 import type { ReferenceData, References } from 'entities/reference';
+import type { IMenuItem } from 'shared/ui/menu';
 
 export const useClaimConfig = (claim: Claim) =>{
   
-    //const modalStore = useModalStore()
+    const modalStore = useModalStore()
     const refStore = useReferenceStore()
 
     //хз мб херня но пусть так пока + неуверн что вобще надо с новым юаем
-    /*const items = new Map<string, IMenuItem[]>([
+    const items = new Map<string, IMenuItem[]>([
       ['NEW', [
         {text: "Взять в работу", action: () => router.push(`/client/${claim.client?.id}/${claim.id}`)},
         {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
@@ -35,9 +35,9 @@ export const useClaimConfig = (claim: Claim) =>{
     //можно ли так компутеды юзать?(почитал нельзя, но я и неюзаю уже, всё закоменчено)
     const menuItems = computed(() =>{
         return items.get(claim.status)
-    })*/
-    const createdDate = computed(() => {
-      const date = new Date(claim.created_date);
+    })
+    const formatDate = (isoDate: string) =>{
+      const date = new Date(isoDate);
       
       const day = String(date.getDate()).padStart(2, '0');
       const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -49,8 +49,14 @@ export const useClaimConfig = (claim: Claim) =>{
       const formattedDate = `${day}.${month}.${year} в ${hours}.${minutes}`;
     
       return formattedDate;
+    }
+    const createdDate = computed(() => {
+      return formatDate(claim.created_date);
     })
-
+    const pauseTill = computed(() => {
+      if (claim.pause_till)
+        return formatDate(claim.pause_till);
+    })
     const channelIco = computed(() => {
       switch (claim.channel) {
           case "CHAT":
@@ -96,7 +102,17 @@ export const useClaimConfig = (claim: Claim) =>{
       }
     }
 
+    const isExpired = computed(() =>{
+      if (claim.pause_till){
+        const date = new Date(claim.pause_till);
+        const now = new Date();
+        return date < now
+      }
+      return false
+    })
+
     return { createdDate, channelIco, channelLine,
              initiator, status, priority, type, 
-             inWorkFor, theme}
+             inWorkFor, theme, pauseTill,
+             isExpired, menuItems}
 }
