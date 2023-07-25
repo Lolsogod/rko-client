@@ -1,2 +1,3 @@
 import CurClaimCard from './ui.vue'
-export {CurClaimCard}
+import EmptyCard from './empty-card.vue'
+export {CurClaimCard, EmptyCard}
