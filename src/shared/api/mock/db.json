@@ -127,7 +127,7 @@
       ],
       "status": "NEW",
       "status_reason": "Важная причина",
-      "created_date": "2023-07-24T18:36:37.989Z",
+      "created_date": "2023-07-25T09:35:10.908Z",
       "status_history": [
         {
           "id": 1234567891,
@@ -239,6 +239,7 @@
       "service_count": 1,
       "priority": "HIGH",
       "priority_reason": "Важная причина",
+      "pause_till":  "2023-07-25T09:35:10.908Z",
       "client": { 
         "id": 2,
         "global_company_id": "null",
@@ -293,6 +294,7 @@
       "is_first_line": false,
       "claim_type": "Запрос информации",
       "claim_theme": "Изменение реквизитов",
+      "pause_till":  "2023-07-25T09:35:10.908Z",
       "description": "Клиент хочет узнать, как изменить свои банковские реквизиты для осуществления платежей.",
       "service_count": 1,
       "priority": "LOW",
@@ -345,6 +347,7 @@
       "service_count": 1,
       "priority": "MEDIUM",
       "priority_reason": "Важная причина",
+      "pause_till":  "2023-07-26T09:35:10.908Z",
       "client": { 
         "id": 4,
         "global_company_id": "null",

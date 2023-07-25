@@ -32,19 +32,39 @@ export const useClaimStore = defineStore('claims', () => {
       console.log(`${claim.id} - ${minutes}`)
       return minutes <= 15
   }
+  function isToday(claim: Claim) {
+    if (claim.pause_till){
+      const date = new Date(claim.pause_till).toISOString().split('T')[0];
+      const currentDate = new Date().toISOString().split('T')[0];
+      return  date == currentDate;
+    }
+    return false
+  }
+  function isTomorrow(claim: Claim) {
+    if (claim.pause_till){
+      const date = new Date(claim.pause_till!).toISOString().split('T')[0];
+      const tomorrowDateTime = new Date();
+      tomorrowDateTime.setDate(tomorrowDateTime.getDate() + 1);
+      const tomorrowDate = tomorrowDateTime.toISOString().split('T')[0];
+      return date == tomorrowDate
+    }
+    return false
+  }
   const sorted = ref<{[key: string]: Claim[]}>({
     new: [],
     today: [],
     tomorrow: []
   })
-  //хз как это на производительности скажется, может лучше просто использовать функцию ис нью напрямую
-  //и не ясно откуда брать крайнюю дату поэтому всё в сегодня что не новое
+  //хз как это на производительности скажется, может лучше просто использовать функции ис нью и тд напрямую
   watch(claims, ()=>{
     if (claims.value){
       claims.value.forEach(claim => {
         if (isNew(claim))
           sorted.value.new.push(claim)
-        else sorted.value.today.push(claim)
+        else if (isToday(claim))
+          sorted.value.today.push(claim)
+        else if (isTomorrow(claim))
+          sorted.value.tomorrow.push(claim)
       });
     }
   })
