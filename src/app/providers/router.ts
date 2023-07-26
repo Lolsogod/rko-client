@@ -26,6 +26,19 @@ export const router = createRouter({
         }
       ]
     },
+    {
+      path:'/client/:clientId',
+      name:'client',
+      component : () => import('pages/edit-claim'),
+      children: [
+        {
+          path: ':claimId',
+          name: 'edit-claim',
+          component: () => import('features/edit-claim/form.vue'),
+          props: true
+        }
+      ]
+    }
   ]
     /*{
       path: '/claim',
