@@ -4,8 +4,7 @@ import type { Claim, UpdateReq,
              CloseReq, ForwardReq, 
              PauseReq, CreateReq } from 'entities/claim/model';
 import type { References } from 'entities/reference'
-//@ts-ignore
-import {updateToken, useKeycloak} from "shared/lib/vue-keycloak/src/vue3-keycloak.js";
+// import {updateToken, useKeycloak} from "shared/lib/vue-keycloak/src/vue3-keycloak.js";
 
 const api = axios.create({
     //@ts-ignore

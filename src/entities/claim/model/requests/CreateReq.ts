@@ -1,5 +1,5 @@
 export interface CreateReq {
-    category: string
+    category: CategoriesEnum
     channel: string
     initiatorType: string
     isFirstLine: boolean
@@ -13,6 +13,10 @@ export interface CreateReq {
     comment: string
     client: CRClient
     documents: CRDocument[]
+  }
+  export enum CategoriesEnum{
+      INCOMING="Входящие",
+      OUTGOING="Исходящее",
   }
   
   export interface CRClient {
