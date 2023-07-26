@@ -1,10 +1,13 @@
+import type {CategoriesEnum} from "../enum";
+import {ChannelsEnum, ClaimThemesEnum, ClaimTypesEnum, InitiatorTypeEnum} from "../enum";
+
 export interface CreateReq {
-    category: string
-    channel: string
-    initiatorType: string
+    category: CategoriesEnum
+    channel: ChannelsEnum
+    initiatorType: InitiatorTypeEnum
     isFirstLine: boolean
-    claimType: string
-    claimTheme: string
+    claimType: ClaimTypesEnum
+    claimTheme: ClaimThemesEnum
     description: string
     serviceCount: number
     priority: string
