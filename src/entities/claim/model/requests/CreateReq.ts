@@ -1,5 +1,5 @@
 export interface CreateReq {
-    category: CategoriesEnum
+    category: string
     channel: string
     initiatorType: string
     isFirstLine: boolean
@@ -13,13 +13,9 @@ export interface CreateReq {
     comment: string
     client: CRClient
     documents: CRDocument[]
-  }
-  export enum CategoriesEnum{
-      INCOMING="Входящие",
-      OUTGOING="Исходящее",
-  }
-  
-  export interface CRClient {
+}
+
+export interface CRClient {
     globalCompanyId: number
     plCompanyId: string
     inn: string
@@ -27,10 +23,10 @@ export interface CreateReq {
     ogrn: string
     fullName: string
     shortName: string
-  }
-  
-  export interface CRDocument {
+}
+
+export interface CRDocument {
     id: string
     name: string
     size: number
-  }
+}
