@@ -7,9 +7,10 @@ import {useClaimService} from "../../../shared/api/commonApi";
 
 export const useClaimStore = defineStore('claims', () => {
   const claims = ref<Claim[]>()
-    const {createClaim, getClaims} = useClaimService();
+    const {createClaim, getClaims,editClaim} = useClaimService();
   const fetchClaims = async () => {
-    claims.value = await getClaims({} as ClaimFilterReq);
+    // claims.value = await editClaim({category:"INCOMING"});
+      await editClaim({category:"OUTCOMING"} as Claim, 1);
   }
   //неуверен надо ли с новым уи, если нет уберу
   const getClaimsByStatus = (status: string) =>{

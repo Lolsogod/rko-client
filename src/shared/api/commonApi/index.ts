@@ -20,11 +20,11 @@ export const useReferenceService = () => {
 }
 export const useClaimService = () => {
     const getClaims = async (claimFilterReq:ClaimFilterReq) : Promise<Claim[]> => {
-        return (await api.get<Claim[]>('/claims', {data : claimFilterReq})).data;
+        return (await api.get<Claim[]>('/claims', {params : claimFilterReq})).data;
     };
 
     const getClaimById = async (id: number) :Promise<Claim>=> {
-        return (await api.get<Claim>(`/claim/${id}`)).data;
+        return (await api.get<Claim>(`/claims/${id}`)).data;
     };
 
     const createClaim = async (claim: CreateReq) :Promise<Claim>=> {
@@ -32,7 +32,7 @@ export const useClaimService = () => {
     };
 
     const editClaim = async (claim: Claim, id: number)=> {
-        return await api.post(`/claims/${id}`, claim)
+        return await api.post(`/claims/${id}`, {data:claim})
     };
 
     const updateClaim = async (req: UpdateReq, id: number) => {
