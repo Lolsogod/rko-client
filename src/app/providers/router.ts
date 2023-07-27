@@ -39,14 +39,13 @@ export const router = createRouter({
           props: true
         }
       ]
-    }
-  ]
-    /*{
+    },
+    {
       path: '/claim',
       name: 'create-claim',
       component: () => import('pages/create-claim')
     }
-  ]*/
+  ]
 })
 
 
