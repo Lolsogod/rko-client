@@ -6,6 +6,8 @@ import type { References } from '../../../entities/reference'
 //@ts-ignore
 import api from "../index";
 import type {ClaimFilterReq} from "../../../entities/claim/model/requests/ClaimFilterReq";
+//@ts-ignore
+import type {ReasignPostRequest} from "../../../entities/claim/model/requests/ReasignPostRequest";
 
 const useCommonApi = () => {
 
@@ -53,10 +55,10 @@ export const useClaimService = () => {
     const pause = async (req: PauseReq, id: number) => {
         return await api.patch(`/claims/${id}/pause`, {...req})
     };
-    const reassign = async (req: PauseReq, id: number) => {
-        return await api.patch(`/claims/${id}/pause`, {...req})
+    const reassign = async (req: ReasignPostRequest, id: number) => {
+        return await api.patch(`/claims/${id}/reassign`, req)
     };
-    return {pause,close,createClaim,forward,assign, updateClaim, editClaim,  getClaimById,getClaims}
+    return {pause,close,createClaim,forward,assign, updateClaim, editClaim,  getClaimById,getClaims, reassign}
 
 
 }
