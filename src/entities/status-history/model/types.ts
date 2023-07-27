@@ -5,6 +5,6 @@ export interface Status{
     priority: string;
     priority_reason?: string;
     status: string;
-    status_reason?: bigint;
+    status_reason?: string;
     comment?: string;
   }

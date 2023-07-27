@@ -1,13 +1,12 @@
-import type {CategoriesEnum} from "../enum";
-import {ChannelsEnum, ClaimThemesEnum, ClaimTypesEnum, InitiatorTypeEnum} from "../enum";
+
 
 export interface CreateReq {
-    category: CategoriesEnum
-    channel: ChannelsEnum
-    initiatorType: InitiatorTypeEnum
+    category: string
+    channel: string
+    initiatorType: string
     isFirstLine: boolean
-    claimType: ClaimTypesEnum
-    claimTheme: ClaimThemesEnum
+    claimType: string
+    claimTheme: string
     description: string
     serviceCount: number
     priority: string
@@ -19,8 +18,8 @@ export interface CreateReq {
 }
 
 export interface CRClient {
-    globalCompanyId: number
-    plCompanyId: string
+    globalCompanyId: number|null//из доки следует, что пока null
+    plCompanyId: string|null//null
     inn: string
     kpp: string
     ogrn: string

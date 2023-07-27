@@ -30,3 +30,10 @@ export interface Claim {
     //documents: Document[];
     status_history: Status[]
   }
+
+export interface ReferenceItem {
+    code: string;
+    text: string;
+}
+
+
