@@ -6,7 +6,7 @@ defineProps<{
     //потом переключалку
 }>()
 const store = useEditClaimStore()
-store.fetchClaim(1)
+
 </script>
 
 <template>

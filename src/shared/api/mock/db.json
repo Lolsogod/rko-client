@@ -241,6 +241,7 @@
       "priority": "HIGH",
       "priority_reason": "Важная причина",
       "pause_till":  "2023-07-27T09:35:10.908Z",
+      "updated_date": "2023-07-15T00:00:00+00:00",
       "client": { 
         "id": 2,
         "global_company_id": "null",
@@ -300,6 +301,7 @@
       "service_count": 1,
       "priority": "LOW",
       "priority_reason": "Обычная причина",
+      "updated_date": "2023-07-16T00:00:00+00:00",
       "client": {
         "id": 3,
         "global_company_id": "null",

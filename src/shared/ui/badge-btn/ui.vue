@@ -5,64 +5,29 @@ defineProps<{
 </script>
 
 <template>
-   <div class="outer" :class="active?'active':''">
-        <div class="inner" :class="active?'active':''">
-            <slot></slot>
-        </div>
-   </div>
+   <button :class="{active: active}">
+        <slot></slot>
+   </button>
 </template>
 
 <style scoped>
-
-.outer{
-    cursor: pointer;
-    display: flex;
-    background: var(--buttons-secondary, #EDEDED);
-    width:7.5rem;
-    height: 2.5rem; 
-    border-radius: 2rem;
-    justify-content: center;
-    align-items: center;
-}
-.inner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 116px;
-    height: 36px; 
-    border-radius: 2rem;
-    background: var(--buttons-secondary, #EDEDED);
-
-    color: var(--text-icons-primary, #19191A);
-    font-family: Inter;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.5rem; /* 150% */
-    letter-spacing: 0.006rem;
-}
-.outer:hover>.inner{
-    background-color: #e7e7e7;
-}
-.outer:hover{
-    background-color: #e7e7e7;
-}
-.outer.active{
-    background-image: radial-gradient(
-        165.232px at 0 41.4286px,
-        #F6B4C6,
-        #CDA4CF 11.25%,
-        #7085E6 36.5548%,
-        #5790D7 50.0209%,
-        #1FB4B4 66.534%,
-        #A4D5D5 90.4167%,
-        rgba(0, 170, 170, 0) 100%
-    );
-}
-.inner.active{
-    background: var(--surface-card, #FFF);
-}
-.outer:hover>.inner.inner.active{
-    background-color: #f6f6f6;
-}
+    button{
+        box-sizing: border-box;
+        display: flex;
+        padding: 0.3125rem 0.75rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        align-self: stretch;
+        border-radius: 3rem;
+        border: 2px solid var(--border-inactive, #DADDE7);
+        background-color: white;
+    }
+    .active{
+        border: 2px solid var(--border-active, #4164EB);
+    }
+    button:hover{
+        background: var(--surface-opacity-1, rgba(25, 25, 26, 0.04));
+    }
+    
 </style>

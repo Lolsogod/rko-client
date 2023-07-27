@@ -1,43 +1,35 @@
 <script setup lang="ts">
 import { router } from "app/providers";
+import { BadgeBtn } from "shared/ui/badge-btn";
 import {computed, ref} from "vue";
+import { useEditClaimStore } from ".";
+
 const ids = ref(['1', '2', '3', '4']);
 const sel = computed(()=>router.currentRoute.value.params.claimId)
+const store = useEditClaimStore()
 
 const select = (item:string) => {
+  store.fetchClaim(parseInt(item))
   router.push(`/client/1/${item}`)
 }
+//@ts-ignore
+store.fetchClaim(parseInt(sel.value))
 
 </script>
 
 <template>
-    <div class="cont d-flex b-flex">
-      <button v-for="id in ids" :key="id"
-       :class="sel==id?'active':''" 
+    <div class="cont d-flex gap-3">
+      <BadgeBtn v-for="id in ids" :key="id"
+       :active="sel==id" 
        @click="select(id)">
         rko-{{ id }}
-      </button>
+      </BadgeBtn>
     </div>
 </template>
 
 
 
 <style scoped>
-  .cont{
-    border-bottom: 2px solid #dadde7;
-  }
-  button{
-    text-align: left;
-    width: 10rem;
-    font-size: medium;
-    transform: translateY(2px);
-    border: 0;
-    border-bottom: 2px solid #dadde7;
-    background-color: transparent;
-    padding: 1rem
-  }
-  .active{
-    color: #4063eb;
-    border-bottom: 2px solid #4063eb;
-  }
+  
+  
 </style>
