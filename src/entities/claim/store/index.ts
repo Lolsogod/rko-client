@@ -1,9 +1,8 @@
 import { ref, computed, watch } from 'vue'
 import { defineStore } from 'pinia'
-import type {Claim, CreateReq, UpdateReq} from '../model'
-import type {ClaimFilterReq} from "../model/requests/ClaimFilterReq";
-import {forward, getClaims} from "../../../shared/api/claim-api";
-import {useClaimService} from "../../../shared/api/commonApi";
+import type {Claim, CreateReq, UpdateReq, ClaimFilterReq} from '../model'
+import {forward, getClaims} from "shared/api/claim-api";
+import {useClaimService} from "shared/api/commonApi";
 
 export const useClaimStore = defineStore('claims', () => {
   const claims = ref<Claim[]>()

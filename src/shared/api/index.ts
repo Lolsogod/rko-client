@@ -1,6 +1,6 @@
 import axios from "axios";
 //@ts-ignore
-import {updateToken, useKeycloak} from "../lib/vue-keycloak/src/vue3-keycloak.js";
+import {updateToken, useKeycloak} from "lib/vue-keycloak";
 
 
 const api = axios.create({
