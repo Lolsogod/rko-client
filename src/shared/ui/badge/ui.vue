@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-   <div class="badge" :class="size, type" :style="{backgroundColor: color}">
+   <div class="badge b3" :class="size, type" :style="{backgroundColor: color}">
         <slot></slot>
    </div>
 </template>
@@ -21,23 +21,13 @@ defineProps<{
         border-radius: 1.25rem;
         background: var(--surface-opacity-2, rgba(25, 25, 26, 0.08));
 
-        /**font */
         color: var(--text-icons-primary, #19191A);
-        /* Body / B3-Semi Bold */
-        font-family: Inter;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 1.5rem; /* 171.429% */
-        letter-spacing: 0.00525rem;
     }
     .small{
         padding: 0rem 0.5rem;
         justify-content: center;
         align-items: center;
         
-        
-
         /* Body/B2-Medium */
         font-family: Inter;
         font-size: 0.875rem;
@@ -46,7 +36,6 @@ defineProps<{
         line-height: 1.5rem; /* 171.429% */
         letter-spacing: 0.00525rem;
         border-radius: 0.75rem;
-        
     }
     .red{
         color: var(--text-icons-error, #ED3636);

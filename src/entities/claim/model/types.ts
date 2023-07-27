@@ -1,7 +1,6 @@
-/*
-верну когда нужно будет
 
-import type { Document } from "entities/document/model";*/
+
+import type { Document } from "entities/document"
 import type { Client } from "entities/client/model";
 import type { Status } from "entities/status-history/model";
 

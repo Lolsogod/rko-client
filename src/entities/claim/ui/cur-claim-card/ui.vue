@@ -10,6 +10,7 @@ import  Cell from './info-cell.vue'
 import { useClaimConfig, type Claim } from 'entities/claim';
 import { SqBadge } from 'shared/ui/sq-badge';
 import { Divider } from 'shared/ui/divider';
+import { Menu } from 'shared/ui/menu';
 
 const props = defineProps<{
     claim: Claim
@@ -29,11 +30,10 @@ const conf = useClaimConfig(props.claim!)
                 <Badge color="rgba(12, 163, 27, 0.08)">🕐 В работе {{ conf.inWorkFor() }}</Badge>
                 <div class="d-flex-cb w-100">
                     <h3>{{ conf.type }}</h3>
-                    <div class="d-flex gap-4">
+                    <div class="d-flex gap-4 no-select">
                         <IcoBtn :data="callBtn" size="small"/>
                         <IcoBtn :data="chatBtn" size="small"/>
-                        <!--это по логике теперь менюха а не дд, поменю потом пока чисто для вида-->
-                        <DropDown grey placeholder="Действия"/>
+                        <Menu type="cur" :items="conf.menuItems()"></Menu>
                     </div>
                 </div>
             </div>

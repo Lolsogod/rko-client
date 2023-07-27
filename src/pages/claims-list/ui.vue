@@ -14,7 +14,7 @@ store.fetchClaims()
 <template>
     <main>
       <h3>Задачи</h3>
-      <div class="d-flex gap-4">
+      <div class="d-flex gap-4 no-select ">
         <ClaimListNav/>
       </div>
       <RouterView/>

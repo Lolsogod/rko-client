@@ -8,6 +8,8 @@ const props = defineProps<{
 const conf = useClaimConfig(props.claim)
 </script>
 
+
+
 <template>
    <div class="container">
       <div class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 1fr 1fr 1fr .75fr"> 
@@ -21,8 +23,8 @@ const conf = useClaimConfig(props.claim)
          <Cell title="Статус">{{conf.status}}</Cell>
       </div>
       <div  class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 2fr 2fr">
-         <Cell title="Тип обращения">{{ claim.claim_type }}</Cell>
-         <Cell title="Тема">{{claim.claim_theme}}</Cell>
+         <Cell title="Тип обращения">{{ conf.type }}</Cell>
+         <Cell title="Тема">{{conf.theme}}</Cell>
       </div>
       <div lass="d-grid mt-6 mb-10" style="grid-template-columns: 1fr">
          <Cell title="Описание обращения">
@@ -39,8 +41,8 @@ const conf = useClaimConfig(props.claim)
       <hr>
       <!--пока непонял откуда брать-->
       <div class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 1fr 1fr 1fr">
-         <Cell title="Контрольная дата">22.09.23 10:00</Cell>
-         <Cell title="Комментарий">Может быть достаточно много текста кого ждем и что </Cell>
+         <Cell title="Контрольная дата">{{ conf.pauseTill.value }}</Cell>
+         <Cell title="Комментарий">{{ claim.comment }} </Cell>
          <Cell title="Участники">Кто зарегистрировал, Работал, Закрывал</Cell>
       </div>
       <hr>

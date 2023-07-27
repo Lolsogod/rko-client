@@ -4,6 +4,9 @@ import { SqBadge } from 'shared/ui/sq-badge';
 import { Badge } from 'shared/ui/badge';
 import { Menu } from 'shared/ui/menu'
 import { computed } from 'vue';
+//@ts-ignore 
+import Alert from '/alert.svg'
+
 const props = defineProps<{
     type: string
     claim: Claim
@@ -23,15 +26,19 @@ const badgeType = computed(()=>conf.isExpired.value?'red':'gray')
                 <SqBadge v-if="type=='new'" type="gray">Созданно {{ conf.createdDate.value }}</SqBadge>
                 <SqBadge v-else :type="badgeType">По плану до {{ conf.pauseTill.value }}</SqBadge>
             </div>
-            <Menu :items="conf.menuItems.value"></Menu>
+            <Menu :items="conf.menuItems()"></Menu>
         </div>
         <div>
-            <div class="name">{{ claim.client?.short_name }}</div>
-            <div class="type">{{ conf.type }}</div>
+            <div class="name b2">{{ claim.client?.short_name }}</div>
+            <div class="type s1">{{ conf.type }}</div>
             <div class="d-flex-cb">
-                 <div class="idk">Нет данных</div>
-                 <Badge v-if="type=='new'" size="small" type="red">X мин</Badge>
-                 <Badge v-if="conf.isExpired.value" size="small" type="expired">Просрочена</Badge>
+                 <div class="theme b2">{{ conf.theme || 'Нет данных' }}</div>
+                 <div class="d-flex gap-2">
+                    <Badge v-if="type=='new'" size="small" type="red">{{ conf.minsFromCreation() }} мин</Badge>
+                    <Badge v-else-if="conf.isExpired.value" size="small" type="expired">Просрочена</Badge>
+                    <img  v-if="claim.priority=='CRITICAL'" :src="Alert"/>
+                 </div>
+                 
             </div>
         </div>
     </div>
@@ -49,39 +56,15 @@ const badgeType = computed(()=>conf.isExpired.value?'red':'gray')
         overflow: hidden;
         color: var(--text-icons-primary, #19191A);
         text-overflow: ellipsis;
-
-        /* Body/B2-Medium */
-        font-family: Inter;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.5rem; /* 171.429% */
-        letter-spacing: 0.00525rem;
     }
     .type{
         overflow: hidden;
         color: var(--text-icons-primary, #19191A);
         text-overflow: ellipsis;
-
-        /* Subtitle/S1-Semi Bold */
-        font-family: Inter;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 1.5rem; /* 150% */
-        letter-spacing: 0.006rem;
     }
-    .idk{
+    .theme{
         overflow: hidden;
         color: var(--text-icons-secondary, #656567);
         text-overflow: ellipsis;
-
-        /* Body/B2-Medium */
-        font-family: Inter;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.5rem; /* 171.429% */
-        letter-spacing: 0.00525rem;
     }
 </style>

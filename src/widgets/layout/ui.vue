@@ -36,5 +36,6 @@ const curRoute = computed(()=>router.currentRoute.value.name?.toString())*/
     }
     .main-content{
         overflow-x: auto;
+        height: 100%;
     }
 </style>

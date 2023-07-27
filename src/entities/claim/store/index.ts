@@ -63,9 +63,10 @@ export const useClaimStore = defineStore('claims', () => {
     today: [],
     tomorrow: []
   })
-  //хз как это на производительности скажется, может лучше просто использовать функции ис нью и тд напрямую
+  //сюда бы фильтр на законченные ещё, но неуверен надо ли
   watch(claims, ()=>{
     if (claims.value){
+      sorted.value = ({new: [],today: [],tomorrow: []})
       claims.value.forEach(claim => {
         if (isNew(claim))
           sorted.value.new.push(claim)

@@ -1,6 +1,6 @@
 export interface IMenuItem{
     text: string,
-    action: Action
+    action?: Action
 }
 interface Action{
     (): any
