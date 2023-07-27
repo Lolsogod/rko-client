@@ -37,7 +37,7 @@ selected.value = props.options.find(option => option.code == selCode.value)
 </script>
 <template>
     <div>
-      <div v-if="props.label" class="label d-flex c-flex">
+      <div v-if="props.label" class="label d-flex-cb btn2">
         {{ label }}
       </div>
       <div>
