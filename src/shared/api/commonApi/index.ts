@@ -4,13 +4,21 @@ import type { Claim, UpdateReq,
     CloseReq, ForwardReq,
     PauseReq, CreateReq } from '../../../entities/claim';
 import type { References } from '../../../entities/reference'
+//@ts-ignore
 import api from "../index";
 
-export const useCommonApi = () => {
-    const getReferences = async () => {
-        return (await api.get<References>('/references'))
-    };
+const useCommonApi = () => {
 
+}
+//requests
+export const useReferenceService = () => {
+    const getReferences = async () => {
+        return (await api.get<References>('/references'));
+    };
+    return {getReferences}
+
+}
+export const useClaimService = () => {
     const getClaims = async () => {
         return (await api.get<Claim[]>('/claims'))
     };
@@ -46,6 +54,7 @@ export const useCommonApi = () => {
     const pause = async (req: PauseReq, id: number) => {
         return await api.patch(`/claims/${id}/pause`, {...req})
     };
-    return {pause,close,createClaim,forward,assign, updateClaim, editClaim,  getClaimById,getClaims, getReferences}
+    return {pause,close,createClaim,forward,assign, updateClaim, editClaim,  getClaimById,getClaims}
+
+
 }
-//requests
