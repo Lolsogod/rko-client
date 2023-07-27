@@ -1,2 +1,4 @@
 import ClaimEditor from './ui.vue'
-export{ClaimEditor}
+import ActionBar from './action-bar.vue'
+export{ClaimEditor, ActionBar}
+export * from './store'

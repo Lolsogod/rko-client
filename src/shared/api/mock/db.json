@@ -109,6 +109,7 @@
       "service_count": 1,
       "priority": "MEDIUM",
       "priority_reason": "Важная причина",
+      "updated_date": "2023-07-09T00:00:00+00:00",
       "client": { 
         "id": 1,
         "global_company_id": "null",
@@ -239,7 +240,7 @@
       "service_count": 1,
       "priority": "HIGH",
       "priority_reason": "Важная причина",
-      "pause_till":  "2023-07-25T09:35:10.908Z",
+      "pause_till":  "2023-07-27T09:35:10.908Z",
       "client": { 
         "id": 2,
         "global_company_id": "null",
@@ -250,7 +251,7 @@
         "short_name": "ООО \"Ромашка\""
       },
       "documents": [],
-      "status": "DONE",
+      "status": "NEW",
       "status_reason": "Важная причина",
       "created_date": "2023-07-09T00:00:00+00:00",
       "status_history": [
