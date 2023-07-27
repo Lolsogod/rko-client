@@ -4,17 +4,30 @@ import type {IMenuItem} from './model'
 
 defineProps<{
     items?: IMenuItem[]
+    type?: string
 }>()
 </script>
 
 <template>
     <div class="m-cont">
         <Menu >
-            <MenuButton class="men"><PlIcon name="DotsVertical24" color="#b5b5b5"/></MenuButton>
+            <MenuButton v-if="type=='cur'" class="cur-men">
+                Действия
+                <span class="icon-cont">
+                    <PlIcon  color="#19191a" name="ChevronDown24"/>
+                </span>
+            </MenuButton>
+            <MenuButton v-else-if="type=='badge'" class="badge-men">
+                Создать
+                <span class="icon-cont">
+                    <PlIcon  color="#656567" name="ChevronDown20"/>
+                </span>
+            </MenuButton>
+            <MenuButton v-else class="men"><PlIcon name="DotsVertical24" color="#b5b5b5"/></MenuButton>
             <transition
                 enter-active-class="dur" enter-from-class="hide" enter-to-class="show"
                 leave-active-class="dur" leave-from-class="show" leave-to-class="hide">
-                <MenuItems class="m-items">
+                <MenuItems class="m-items" :class="type">
                     <MenuItem v-for="item in items">
                         <button class="item" @click="item.action">{{ item.text }}</button>
                     </MenuItem>
@@ -55,6 +68,45 @@ defineProps<{
     .men:hover{
         background-color: #f7f7f5;
     }
+    .cur-men{
+        display: flex;
+        padding: 0.5rem 0.75rem;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+        border-radius: 0.5rem;
+        background: var(--surface-opacity-2, rgba(25, 25, 26, 0.08));
+        border: 0;
+
+        color: var(--text-icons-primary, #19191A);
+        text-align: center;
+
+        /* Button/Button 2 */
+        font-family: Inter;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.5rem; /* 171.429% */
+    }
+    .badge-men{
+        display: flex;
+        padding: 0.5rem 0.75rem;
+        align-items: center;
+        gap: 0.25rem;
+        border-radius: 2rem;
+        background: var(--buttons-secondary, #EDEDED);
+
+        color: var(--text-icons-secondary, #656567);
+
+        /* Subtitle/S2-Medium */
+        font-family: Inter;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.5rem; /* 150% */
+        letter-spacing: 0.006rem;
+        border: 0;
+    }
     .item {
         text-align: left;
         background: white;
@@ -83,5 +135,15 @@ defineProps<{
         -moz-box-shadow: 3px 3px 21px 2px rgba(34, 60, 80, 0.2);
         box-shadow: 3px 3px 21px 2px rgba(34, 60, 80, 0.2);
     }
+    .m-items.cur{
+        width: 15rem;
+        top: 3rem;
+        left: -7.5rem;
+    }
+    .m-items.badge{
+        width: 12rem;
+        top: 1.75rem;
+        left: 5.5rem;
+    }    
 </style>
   

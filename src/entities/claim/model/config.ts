@@ -5,37 +5,41 @@ import { useModalStore } from 'widgets/modal';
 import {computed} from 'vue'
 import type { ReferenceData, References } from 'entities/reference';
 import type { IMenuItem } from 'shared/ui/menu';
+import { assign } from 'shared/api/claim-api';
 
+//перегруженная штука получилась, разделить врят ли успею
 export const useClaimConfig = (claim: Claim) =>{
   
     const modalStore = useModalStore()
     const refStore = useReferenceStore()
 
-    //хз мб херня но пусть так пока + неуверн что вобще надо с новым юаем
+    const take = () => {
+      //ругается пока так как нету бэка
+      assign(claim.id)
+      router.push(`/client/${claim.client?.id}/${claim.id}`)
+    }
+    //это бы лучше сделать но потом
+    const takeMenu = [
+      {text: "Взять в работу", action: () => take()},
+      {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
+      {text: "Журнал состояний", action: () => modalStore.openModal('journal', claim)}
+    ]
+    const edMenu =  [
+      {text: "Редактировать", action: () => router.push(`/client/${claim.client?.id}/${claim.id}`)},
+      {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
+      {text: "Журнал состояний", action: () => modalStore.openModal('journal', claim)},
+    ]
+    
     const items = new Map<string, IMenuItem[]>([
-      ['NEW', [
-        {text: "Взять в работу", action: () => router.push(`/client/${claim.client?.id}/${claim.id}`)},
-        {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
-        {text: "Журнал состояний", action: () => modalStore.openModal('journal', claim)}
-    ]],
-      ['IN_PROGRESS', [
-        {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
-        {text: "Журнал состояний", action: () => modalStore.openModal('journal', claim)},
-      ]],
-      ['PENDING', [
-        {text: "Взять в работу", action: () => router.push(`/client/${claim.client?.id}/${claim.id}`)},
-        {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
-        {text: "Журнал состояний", action: () => modalStore.openModal('journal', claim)}
-      ]],
-      ['DONE', [
-        {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
-        {text: "Журнал состояний", action: () => modalStore.openModal('journal', claim)},
-      ]]
+      ['NEW', takeMenu],
+      ['IN_PROGRESS', edMenu],
+      ['PENDING', takeMenu],
+      ['DONE', edMenu]
     ]);
-    //можно ли так компутеды юзать?(почитал нельзя, но я и неюзаю уже, всё закоменчено)
-    const menuItems = computed(() =>{
+    
+    const menuItems = () =>{
         return items.get(claim.status)
-    })
+    }
     const formatDate = (isoDate: string) =>{
       const date = new Date(isoDate);
       
@@ -57,19 +61,13 @@ export const useClaimConfig = (claim: Claim) =>{
       if (claim.pause_till)
         return formatDate(claim.pause_till);
     })
-    const channelIco = computed(() => {
-      switch (claim.channel) {
-          case "CHAT":
-            return("Chat24")
-          case "PHONE":
-              //спросить по поводу иконки телефона(ее нету)
-            return("Bell24")
-          case "EMAIL":
-              return("Mail24")
-          default:
-            return("")
-        }
-    })
+ 
+    const minsFromCreation = () =>{
+      const date = new Date(claim.created_date);
+      const now = new Date();
+      const timeDiff = now.getTime() - date.getTime();
+      return Math.floor(timeDiff / 60000);
+    }
  
     const getTextByCode = (code: string, targetArray: string) => {
       return refStore.refernces?.[targetArray as keyof References]!.find((item: ReferenceData) => item.code === code)?.text;
@@ -111,8 +109,8 @@ export const useClaimConfig = (claim: Claim) =>{
       return false
     })
 
-    return { createdDate, channelIco, channelLine,
-             initiator, status, priority, type, 
-             inWorkFor, theme, pauseTill,
-             isExpired, menuItems}
+    return { createdDate, channelLine,initiator, 
+             status, priority, type, inWorkFor,
+             theme, pauseTill,isExpired, menuItems,
+             minsFromCreation}
 }

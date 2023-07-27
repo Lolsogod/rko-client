@@ -23,15 +23,15 @@ const badgeType = computed(()=>conf.isExpired.value?'red':'gray')
                 <SqBadge v-if="type=='new'" type="gray">Созданно {{ conf.createdDate.value }}</SqBadge>
                 <SqBadge v-else :type="badgeType">По плану до {{ conf.pauseTill.value }}</SqBadge>
             </div>
-            <Menu :items="conf.menuItems.value"></Menu>
+            <Menu :items="conf.menuItems()"></Menu>
         </div>
         <div>
             <div class="name">{{ claim.client?.short_name }}</div>
             <div class="type">{{ conf.type }}</div>
             <div class="d-flex-cb">
                  <div class="idk">Нет данных</div>
-                 <Badge v-if="type=='new'" size="small" type="red">X мин</Badge>
-                 <Badge v-if="conf.isExpired.value" size="small" type="expired">Просрочена</Badge>
+                 <Badge v-if="type=='new'" size="small" type="red">{{ conf.minsFromCreation() }} мин</Badge>
+                 <Badge v-else-if="conf.isExpired.value" size="small" type="expired">Просрочена</Badge>
             </div>
         </div>
     </div>

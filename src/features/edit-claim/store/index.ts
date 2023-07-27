@@ -1,7 +1,8 @@
 import { ref, computed, watch } from 'vue'
 import { defineStore } from 'pinia'
 import type { Claim } from 'entities/claim'
-import { getClaimById } from 'shared/api/claim-api'
+import { editClaim, getClaimById } from 'shared/api/claim-api'
+import { claimtoReq } from '../request'
 
 export const useEditClaimStore = defineStore('editClaim', () => {
   const claim = ref<Claim>()
@@ -9,5 +10,9 @@ export const useEditClaimStore = defineStore('editClaim', () => {
     claim.value = await getClaimById(id)
   } 
 
-  return {claim, fetchClaim }
+  const edit = () =>{
+     const req = claimtoReq(claim.value!)
+     editClaim(req, claim.value!.id)
+  }
+  return {claim, fetchClaim, edit}
 })

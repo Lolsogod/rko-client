@@ -4,7 +4,8 @@ import { BadgeBtn } from "shared/ui/badge-btn";
 import {computed, ref} from "vue";
 import { useEditClaimStore } from ".";
 
-const ids = ref(['1', '2', '3', '4']);
+//список айди всех клаймов клиента, но пока не с бэка
+const ids = ref(['1', '2', '3', '4','5','6','7']);
 const sel = computed(()=>router.currentRoute.value.params.claimId)
 const store = useEditClaimStore()
 

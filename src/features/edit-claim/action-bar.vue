@@ -2,11 +2,13 @@
 import { useClaimConfig, type Claim } from 'entities/claim';
 import { computed, ref } from 'vue';
 import { Badge } from 'shared/ui/badge';
+import { useEditClaimStore } from '.';
 const props = defineProps<{
     claim: Claim
 }>()
 const conf = computed(() => useClaimConfig(props.claim))
 
+const {edit} = useEditClaimStore()
 
 </script>
 
@@ -22,6 +24,7 @@ const conf = computed(() => useClaimConfig(props.claim))
         <div class="btns">
             <PlButton size="medium" type="alternative">Отложить</PlButton>
             <PlButton size="medium" type="alternative">Перевести</PlButton>
+            <PlButton size="medium" type="alternative" @click="edit">Сохранить изменения</PlButton>
             <PlButton size="medium">Закрыть обращение</PlButton>
         </div>
     </div>

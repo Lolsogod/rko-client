@@ -17,7 +17,6 @@ const formRef = ref(null);
 
 <template>
     <PlForm  v-if="claim" :key="claim.id" ref="formRef" :model="claim"  class="d-grid gap-6 w-100" :rules="rules">
-
         <div class="d-grid gap-4" style="grid-template-columns: 1fr 1fr .25fr">
             <DropDown label="Канал сообщений" 
             :options="refernces?.channels!" 

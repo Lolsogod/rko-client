@@ -1,4 +1,4 @@
-export interface CreateReq {
+export interface ClaimReq {
     category: string
     channel: string
     initiatorType: string
