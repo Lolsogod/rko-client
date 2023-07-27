@@ -33,7 +33,7 @@ const conf = useClaimConfig(props.claim!)
                         <IcoBtn :data="callBtn" size="small"/>
                         <IcoBtn :data="chatBtn" size="small"/>
                         <!--это по логике теперь менюха а не дд, поменю потом пока чисто для вида-->
-                        <DropDown grey placeholder="Действия"/>
+                        <!--<DropDown grey placeholder="Действия"/>-->
                     </div>
                 </div>
             </div>

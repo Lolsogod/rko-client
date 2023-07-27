@@ -1,88 +1,96 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { DropDown } from "shared/ui/drop-down"
-defineProps(['claimId'])
-
+import { useEditClaimStore } from '.';
+import { useReferenceStore, type ReferenceData } from 'entities/reference';
+import { storeToRefs } from 'pinia';
+import { useClaimConfig } from 'entities/claim';
+defineProps(['claimId', 'clientId'])
+const {claim} = storeToRefs(useEditClaimStore())
+const {refernces} = useReferenceStore()
 const rules = {}
-const ecForm = ref({
-  channelClaim: "",
-  initiator: "",
-  clientInfo: "",
-  themeClaim: "",
-  descrClaim: "",
-  pririority: "",
-  cause: "",
-  executor: "",
-  comment: ""
-});
+const category = computed(()=>{
+    return refernces!.categories.find((item: ReferenceData) => item.code == claim.value!.category)!.text
+})
 const formRef = ref(null);
 </script>
 
 <template>
-    <PlForm ref="formRef" :model="ecForm" style="max-width: 900px" class="d-grid gap-6 w-100" :rules="rules">
-        <div class="claimWorkForm__item inline">
-            <DropDown label="Канал сообщений"/>
-            <DropDown label="Клиент" />
-            <h6 class="inline__items">Входящие</h6>
+    <PlForm  v-if="claim" :key="claim.id" ref="formRef" :model="claim"  class="d-grid gap-6 w-100" :rules="rules">
+
+        <div class="d-grid gap-4" style="grid-template-columns: 1fr 1fr .25fr">
+            <DropDown label="Канал сообщений" 
+            :options="refernces?.channels!" 
+            v-model="claim.channel"/>
+            <DropDown label="Инициатор" 
+            :options="refernces?.initiatorTypes!" 
+            v-model="claim.initiator_type"/>
+            <div class="d-flex dir-container">
+                <div class="d-flex-cb direction">
+                    <h6>{{category}}</h6>
+                </div>
+            </div>
         </div>
-        <div class="claimWorkForm__item">
+        <div class="d-flex gap-4">
             <PlInputPlus
-                v-model="ecForm.clientInfo"
+                v-model="claim.client!.inn"
                 prop="clientInfo"
                 label="Клиент"
                 placeholder="ИНН 1234 Дмитрий А"
                 width="100%"
             />
         </div>
-        <div class="claimWorkForm__item inline">
-            <DropDown label="Тип сообщения"/>
-            <DropDown label="Тема"/>
+        <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
+            <DropDown label="Тип сообщения"
+            :options="refernces?.claimTypes!" 
+            v-model="claim.claim_type"
+            />
+            <DropDown label="Тема"
+            :options="refernces?.claimThemes!" 
+            v-model="claim.claim_theme"
+            />
         </div>
-        <div class="claimWorkForm__item">
-            <PlInputPlus
+        <PlInputPlus
                 textarea
-                v-model="ecForm.descrClaim"
+                v-model="claim.description"
                 prop="descrClaim"
                 label="Описание обращения"
                 placeholder="Введите описание обращения"
                 width="100%"
             />
-        </div>
-        <div class="claimWorkForm__item inline">
-            <DropDown label="Приоритет"/>
+        <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
+            <DropDown label="Приоритет"
+            :options="refernces?.priority!" 
+            v-model="claim.priority"/>
             <PlInputPlus
-                v-model="ecForm.cause"
-                prop="cause"
+                v-model="claim.priority_reason"
+                prop="priority_reason"
                 label="Обоснование"
                 placeholder="Повышение приоритета"
                 width="100%"
             />
         </div>
-        <div class="claimWorkForm__item inline">
+        <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
+            <!--потом-->
             <DropDown label="Исполнитель"/>
             <PlInputPlus
                 :style="{padding:'5px'}"
-                v-model="ecForm.executor"
-                prop="executor"
+                v-model="claim.comment"
+                prop="comment"
                 label="Комментарий"
                 placeholder="Опционально"
                 width="100%"
             />
         </div>
-    </PlForm>
+      </PlForm>
+      <div v-else>Не найдено</div>
 </template>
 
 <style scoped>
-    .claimWorkForm__item.inline {
-  display: grid;
-  gap: 40px;
-  grid-auto-flow: column;
-}
-
-.claimWorkForm__item.inline .inline__items {
-  align-self: flex-end;
-}
-.claimWorkForm__item {
-  margin-top: 20px;
-}
+    .direction{
+        height: 40px;
+    }
+    .dir-container{
+        align-items: flex-end;
+    }
 </style>

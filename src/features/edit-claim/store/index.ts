@@ -8,6 +8,6 @@ export const useEditClaimStore = defineStore('editClaim', () => {
   const fetchClaim = async (id: number) => {
     claim.value = await getClaimById(id)
   } 
-  
+
   return {claim, fetchClaim }
 })
