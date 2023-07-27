@@ -1,4 +1,5 @@
-import axios from 'axios'
+//@ts-ignore
+import axios, {AxiosResponse} from 'axios'
 import type { Claim, UpdateReq,
     CloseReq, ForwardReq,
     PauseReq, CreateReq } from '../../../entities/claim';
@@ -21,7 +22,7 @@ export const useReferenceService = () => {
 
 }
 export const useClaimService = () => {
-    const getClaims = async (claimFilterReq:ClaimFilterReq) : Promise<Claim[]> => {
+    const getClaims = async (claimFilterReq:ClaimFilterReq|{} = {}) : Promise<Claim[]> => {
         return (await api.get<Claim[]>('/claims', {params : claimFilterReq})).data;
     };
 
@@ -44,19 +45,19 @@ export const useClaimService = () => {
     const assign = async (id: number) => {
         return await api.patch(`/claims/${id}/assign`)
     };
-
+//
     const forward = async (req: ForwardReq, id: number) => {
-        return await api.patch(`/claims/${id}/forward`, {...req})
+        return (await api.patch(`/claims/${id}/forward`, req))?.data
     };
 
-    const close = async (req: CloseReq, id: number) => {
-        return await api.patch(`/claims/${id}/close`, {...req})
+    const close = async (req: CloseReq, id: number) :Promise<Claim>=> {
+        return (await api.patch(`/claims/${id}/close`, req))?.data;
     };
-    const pause = async (req: PauseReq, id: number) => {
-        return await api.patch(`/claims/${id}/pause`, {...req})
+    const pause = async (req: PauseReq, id: number):Promise<Claim> => {
+        return (await api.patch<Claim>(`/claims/${id}/pause`, req))?.data;
     };
-    const reassign = async (req: ReasignPostRequest, id: number) => {
-        return await api.patch(`/claims/${id}/reassign`, req)
+    const reassign = async (req: ReasignPostRequest, id: number) :Promise<Claim>=> {
+        return (await api.patch<Claim>(`/claims/${id}/reassign`, req))?.data;
     };
     return {pause,close,createClaim,forward,assign, updateClaim, editClaim,  getClaimById,getClaims, reassign}
 

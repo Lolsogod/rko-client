@@ -77,13 +77,13 @@ export const assign = async (id: number) => {
 }
 
 export const forward = async (req: ForwardReq, id: number) => {
-    return await api.patch(`/claims/${id}/forward`, {...req})
+    return await api.patch(`/claims/${id}/forward`, req)
 }
 
 export const close = async (req: CloseReq, id: number) => {
-    return await api.patch(`/claims/${id}/close`, {...req})
+    return await api.patch(`/claims/${id}/close`, req)
 }
 
 export const pause = async (req: PauseReq, id: number) => {
-    return await api.patch(`/claims/${id}/pause`, {...req})
+    return await api.patch(`/claims/${id}/pause`, req)
 }

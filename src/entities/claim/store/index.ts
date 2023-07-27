@@ -2,14 +2,13 @@ import { ref, computed, watch } from 'vue'
 import { defineStore } from 'pinia'
 import type {Claim, CreateReq, UpdateReq} from '../model'
 import type {ClaimFilterReq} from "../model/requests/ClaimFilterReq";
-import {getClaims} from "../../../shared/api/claim-api";
+import {forward, getClaims} from "../../../shared/api/claim-api";
 import {useClaimService} from "../../../shared/api/commonApi";
 
 export const useClaimStore = defineStore('claims', () => {
   const claims = ref<Claim[]>()
-    const {createClaim, getClaims,editClaim,updateClaim} = useClaimService();
   const fetchClaims = async () => {
-    // claims.value = await editClaim({category:"INCOMING"});
+    claims.value = await getClaims();
     //   await updateClaim({
     //     "priority_reason": "OUTGOING",
     //     "priority": "MEDIUM",
