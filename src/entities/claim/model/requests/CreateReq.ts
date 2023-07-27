@@ -2,6 +2,22 @@
 
 export interface CreateReq {
     category: string
+    channel?: string
+    initiatorType?: string
+    isFirstLine?: boolean
+    claimType?: string
+    claimTheme?: string
+    description?: string
+    serviceCount?: number
+    priority: string
+    priority_reason?: string
+    assignee?: string
+    comment?: string
+    client?: CRClient
+    documents?: CRDocument[]
+}
+export interface PostClaimReq {
+    category: string
     channel: string
     initiatorType: string
     isFirstLine: boolean
@@ -16,7 +32,6 @@ export interface CreateReq {
     client: CRClient
     documents: CRDocument[]
 }
-
 export interface CRClient {
     globalCompanyId: number|null//из доки следует, что пока null
     plCompanyId: string|null//null

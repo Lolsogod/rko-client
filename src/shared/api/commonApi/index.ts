@@ -31,12 +31,12 @@ export const useClaimService = () => {
         return await api.post('/claims', claim);
     };
 
-    const editClaim = async (claim: Claim, id: number)=> {
-        return await api.post(`/claims/${id}`, {data:claim})
+    const editClaim = async (claim: CreateReq, id: number) :Promise<Claim>=> {
+        return await api.post(`/claims/${id}`, claim)
     };
 
     const updateClaim = async (req: UpdateReq, id: number) => {
-        return await api.patch(`/claims/${id}/update`, {...req})
+        return await api.patch(`/claims/${id}/update`, req)
     };
 
     const assign = async (id: number) => {
@@ -50,8 +50,10 @@ export const useClaimService = () => {
     const close = async (req: CloseReq, id: number) => {
         return await api.patch(`/claims/${id}/close`, {...req})
     };
-
     const pause = async (req: PauseReq, id: number) => {
+        return await api.patch(`/claims/${id}/pause`, {...req})
+    };
+    const reassign = async (req: PauseReq, id: number) => {
         return await api.patch(`/claims/${id}/pause`, {...req})
     };
     return {pause,close,createClaim,forward,assign, updateClaim, editClaim,  getClaimById,getClaims}
