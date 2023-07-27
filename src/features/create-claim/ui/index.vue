@@ -97,7 +97,7 @@ const formRef = ref(null)
     </div>
   </template>
 
-<style scopraded>
+<style scoped>
     .form-container{
       display: flex;
       flex-direction: column;
