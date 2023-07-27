@@ -1,4 +1,4 @@
 export interface IPagenation {
-    "pageNum": number|null,
-    "pageSize": number|null,
+    "pageNum": Number,
+    "pageSize": Number,
 }

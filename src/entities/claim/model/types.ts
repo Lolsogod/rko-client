@@ -27,13 +27,9 @@ export interface Claim {
     description?: string;
     comment?: string;
     client?: Client;
-    //documents: Document[];
+    documents: Document[];
     status_history: Status[]
   }
 
-export interface ReferenceItem {
-    code: string;
-    text: string;
-}
 
 

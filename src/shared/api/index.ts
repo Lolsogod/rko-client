@@ -5,7 +5,7 @@ import {updateToken, useKeycloak} from "../lib/vue-keycloak/src/vue3-keycloak.js
 
 const api = axios.create({
     //@ts-ignore
-    baseURL: import.meta.env.VITE_RKO_SPA_REAL_API_URL
+    baseURL: import.meta.env.VITE_RKO_SPA_REAL_API_URL,
 });
 
 api.interceptors.response.use(

@@ -1,11 +1,11 @@
 import axios from 'axios'
-
 import type { Claim, UpdateReq,
     CloseReq, ForwardReq,
     PauseReq, CreateReq } from '../../../entities/claim';
 import type { References } from '../../../entities/reference'
 //@ts-ignore
 import api from "../index";
+import type {ClaimFilterReq} from "../../../entities/claim/model/requests/ClaimFilterReq";
 
 const useCommonApi = () => {
 
@@ -19,24 +19,24 @@ export const useReferenceService = () => {
 
 }
 export const useClaimService = () => {
-    const getClaims = async () => {
-        return (await api.get<Claim[]>('/claims'))
+    const getClaims = async (claimFilterReq:ClaimFilterReq) : Promise<Claim[]> => {
+        return (await api.get<Claim[]>('/claims', {data : claimFilterReq})).data;
     };
 
-    const getClaimById = async (id: number) => {
-        return (await api.get<Claim>(`/claim/${id}`))
+    const getClaimById = async (id: number) :Promise<Claim>=> {
+        return (await api.get<Claim>(`/claim/${id}`)).data;
     };
 
-    const createClaim = async (claim: CreateReq) => {
-        return await api.post('/claim', claim)
+    const createClaim = async (claim: CreateReq) :Promise<Claim>=> {
+        return await api.post('/claims', claim);
     };
 
     const editClaim = async (claim: Claim, id: number)=> {
-        return await api.post(`/claim/${id}`, claim)
+        return await api.post(`/claims/${id}`, claim)
     };
 
     const updateClaim = async (req: UpdateReq, id: number) => {
-        return await api.patch(`/claim/${id}/update`, {...req})
+        return await api.patch(`/claims/${id}/update`, {...req})
     };
 
     const assign = async (id: number) => {

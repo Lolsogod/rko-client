@@ -1,13 +1,16 @@
 import { ref, computed, watch } from 'vue'
 import { defineStore } from 'pinia'
-import type { Claim } from '../model'
-import { getClaims } from 'shared/api/claim-api'
+import type {Claim, CreateReq} from '../model'
+import type {ClaimFilterReq} from "../model/requests/ClaimFilterReq";
+import {getClaims} from "../../../shared/api/claim-api";
+import {useClaimService} from "../../../shared/api/commonApi";
 
 export const useClaimStore = defineStore('claims', () => {
   const claims = ref<Claim[]>()
+    const {createClaim, getClaims} = useClaimService();
   const fetchClaims = async () => {
-    claims.value = await getClaims()
-  } 
+    claims.value = await getClaims({} as ClaimFilterReq);
+  }
   //неуверен надо ли с новым уи, если нет уберу
   const getClaimsByStatus = (status: string) =>{
     return claims.value?.filter(claim => claim.status == status); 

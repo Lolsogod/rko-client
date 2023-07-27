@@ -15,7 +15,7 @@ api.interceptors.response.use(
     response => {
         return response;
     }, error => {
-        if (error.response.status === 404) {
+        if (error?.response?.status === 404) {
             return {status: error.response.status};
         }
         return Promise.reject(error.response);
