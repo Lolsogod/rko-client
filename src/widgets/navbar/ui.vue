@@ -13,7 +13,7 @@ const search = ref()
 </script>
 
 <template>
-    <nav>
+    <nav class="no-select ">
         <PlInputPlus class="search" placeholder="Поиск" leftIcon="Search20" width="20rem" v-model="search"/>
         <div class="d-flex gap-4">
             <GradBtn>KK</GradBtn>

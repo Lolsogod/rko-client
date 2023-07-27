@@ -26,10 +26,10 @@ const badgeType = computed(()=>conf.isExpired.value?'red':'gray')
             <Menu :items="conf.menuItems()"></Menu>
         </div>
         <div>
-            <div class="name">{{ claim.client?.short_name }}</div>
-            <div class="type">{{ conf.type }}</div>
+            <div class="name b2">{{ claim.client?.short_name }}</div>
+            <div class="type s1">{{ conf.type }}</div>
             <div class="d-flex-cb">
-                 <div class="idk">Нет данных</div>
+                 <div class="theme b2">{{ conf.theme || 'Нет данных' }}</div>
                  <Badge v-if="type=='new'" size="small" type="red">{{ conf.minsFromCreation() }} мин</Badge>
                  <Badge v-else-if="conf.isExpired.value" size="small" type="expired">Просрочена</Badge>
             </div>
@@ -49,39 +49,15 @@ const badgeType = computed(()=>conf.isExpired.value?'red':'gray')
         overflow: hidden;
         color: var(--text-icons-primary, #19191A);
         text-overflow: ellipsis;
-
-        /* Body/B2-Medium */
-        font-family: Inter;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.5rem; /* 171.429% */
-        letter-spacing: 0.00525rem;
     }
     .type{
         overflow: hidden;
         color: var(--text-icons-primary, #19191A);
         text-overflow: ellipsis;
-
-        /* Subtitle/S1-Semi Bold */
-        font-family: Inter;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 1.5rem; /* 150% */
-        letter-spacing: 0.006rem;
     }
-    .idk{
+    .theme{
         overflow: hidden;
         color: var(--text-icons-secondary, #656567);
         text-overflow: ellipsis;
-
-        /* Body/B2-Medium */
-        font-family: Inter;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.5rem; /* 171.429% */
-        letter-spacing: 0.00525rem;
     }
 </style>

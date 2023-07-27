@@ -2,11 +2,11 @@
 //нагромаждено всего, это всё зарефачу но потом
 import { useClaimStore, type Claim } from "entities/claim";
 import {ActionBar, ClaimEditor, useEditClaimStore} from "features/edit-claim";
-defineProps<{
-    //потом переключалку
-}>()
+import { watch } from "vue";
+const props = defineProps(['clientId', 'claimId'])
 const store = useEditClaimStore()
-
+watch(props, () => store.fetchClaim(props.claimId))
+//store.fetchClaim(props.claimId)
 </script>
 
 <template>
@@ -22,10 +22,8 @@ const store = useEditClaimStore()
             
         </div>
         <div class="chat">
-
         </div>
     </div>
-    
 </template>
 
 <style scoped>

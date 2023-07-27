@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
    <div class="outer" :class="active?'active':''">
-        <div class="inner" :class="active?'active':''">
+        <div class="inner s2" :class="active?'active':''">
             <slot></slot>
         </div>
    </div>
@@ -34,12 +34,6 @@ defineProps<{
     background: var(--buttons-secondary, #EDEDED);
 
     color: var(--text-icons-primary, #19191A);
-    font-family: Inter;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.5rem; /* 150% */
-    letter-spacing: 0.006rem;
 }
 .outer:hover>.inner{
     background-color: #e7e7e7;

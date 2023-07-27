@@ -17,8 +17,8 @@ const {edit} = useEditClaimStore()
         <div class="content">
             <Badge color="rgba(12, 163, 27, 0.08)">🕐 В работе {{ conf.inWorkFor() }}</Badge>
             <div>
-                <span class="id">RKO-{{ claim.id }} / </span>
-                <span class="type">{{ conf.type }}</span>
+                <span class="id t1">RKO-{{ claim.id }} / </span>
+                <span class="type t1">{{ conf.type }}</span>
             </div>
         </div>
         <div class="btns">
@@ -50,25 +50,9 @@ const {edit} = useEditClaimStore()
     }
     .id{
         color: var(--text-icons-tertiary, #B5B5B5);
-
-        /* Title/T1-Semi Bold */
-        font-family: Inter;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 2rem; /* 160% */
-        letter-spacing: 0.01rem;
     }
     .type{
         color: var(--text-icons-primary, #19191A);
-
-        /* Title/T1-Semi Bold */
-        font-family: Inter;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 2rem;
-        letter-spacing: 0.01rem;
     }
     .btns{
         display: flex;

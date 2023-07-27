@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-   <div class="ci-badge" :class="type">
+   <div class="ci-badge b2" :class="type">
         <slot></slot>
    </div>
 </template>
@@ -18,15 +18,6 @@ defineProps<{
         align-items: center;
         gap: 0.25rem;
         border-radius: 0.375rem;
-        
-        
-        /* Body/B2-Medium */
-        font-family: Inter;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.5rem; /* 171.429% */
-        letter-spacing: 0.00525rem;
     }
     .id{
         padding: 0rem 0.5rem;

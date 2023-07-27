@@ -44,7 +44,7 @@ selected.value = props.options.find(option => option.code == selCode.value)
         <Listbox v-model="selected">
           <div class="rel">
             <ListboxButton class="list-btn" :class="grey?'bg-grey':''">
-              <span class="title" :class="selected||grey?'':'placeholder'">
+              <span class="title b2" :class="selected||grey?'':'placeholder'">
                 {{ selected?selected.text:placeholder }}
               </span>
               <span class="icon-cont">
@@ -114,14 +114,6 @@ selected.value = props.options.find(option => option.code == selCode.value)
     white-space: nowrap; 
 
     color: var(--text-icons-primary, #19191A);
-
-    /* Body/B2-Medium */
-    font-family: Inter;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.5rem; /* 171.429% */
-    letter-spacing: 0.00525rem;
   }
   .icon-cont{
     transition: .2s all ease;

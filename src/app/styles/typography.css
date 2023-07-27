@@ -1,0 +1,73 @@
+h3{
+    color: var(--text-icons-primary, #19191A);
+    /* Headline/H3-Semi Bold */
+    font-family: Inter;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.5rem; /* 125% */
+    letter-spacing: 0.016rem;
+}
+h4{
+    /* Headline / H4-Semi Bold */
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2rem; /* 133.333% */
+    letter-spacing: 0.012rem;
+}
+.b2{
+    /* Body/B2-Medium */
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem; /* 171.429% */
+    letter-spacing: 0.00525rem;
+}
+.b3{
+    /* Body / B3-Semi Bold */
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5rem; /* 171.429% */
+    letter-spacing: 0.00525rem;
+}
+.btn2{
+    /* Button/Button 2 */
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem; /* 171.429% */
+}
+.s1{
+    /* Subtitle/S1-Semi Bold */
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5rem; /* 150% */
+    letter-spacing: 0.006rem;
+}
+.s2{
+     /* Subtitle/S2-Medium */
+     font-family: Inter;
+     font-size: 1rem;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 1.5rem; /* 150% */
+     letter-spacing: 0.006rem;
+     border: 0;
+}
+.t1{
+    /* Title/T1-Semi Bold */
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2rem; /* 160% */
+    letter-spacing: 0.01rem;
+}

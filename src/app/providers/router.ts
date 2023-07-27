@@ -30,6 +30,7 @@ export const router = createRouter({
       path:'/client/:clientId',
       name:'client',
       component : () => import('pages/edit-claim'),
+      props: true,
       children: [
         {
           path: ':claimId',
@@ -44,19 +45,6 @@ export const router = createRouter({
       path: '/claim',
       name: 'create-claim',
       component: () => import('pages/create-claim')
-    },
-    {
-      path:'/client/:clientId',
-      name:'client',
-      component : () => import('pages/edit-claim'),
-      children: [
-        {
-          path: ':claimId',
-          name: 'edit-claim',
-          component: () => import('features/claimForms/workForm/EditClaimForm.vue'),
-          props: true
-        }
-      ]
     }
   ]*/
 })

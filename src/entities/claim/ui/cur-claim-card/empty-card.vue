@@ -9,7 +9,7 @@ import Austro from '/astronaut.svg'
        <img :src="Austro" alt="">
        <div class="bot">
             <h4>Нет задач в работе</h4>
-            <span>Выберите задачу и из списка ниже</span>
+            <span class="s2">Выберите задачу и из списка ниже</span>
        </div>
     </div>
 </template>
@@ -42,24 +42,9 @@ import Austro from '/astronaut.svg'
         color: var(--text-icons-primary, #19191A);
         text-align: center;
         margin: 0;
-        /* Headline / H4-Semi Bold */
-        font-family: Inter;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 2rem; /* 133.333% */
-        letter-spacing: 0.012rem;
     }
     span{
         color: var(--text-icons-secondary, #656567);
         text-align: center;
-
-        /* Subtitle/S2-Medium */
-        font-family: Inter;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.5rem; /* 150% */
-        letter-spacing: 0.006rem;
     }
 </style>

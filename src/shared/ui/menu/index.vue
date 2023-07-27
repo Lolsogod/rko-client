@@ -11,13 +11,13 @@ defineProps<{
 <template>
     <div class="m-cont">
         <Menu >
-            <MenuButton v-if="type=='cur'" class="cur-men">
+            <MenuButton v-if="type=='cur'" class="cur-men btn2">
                 Действия
                 <span class="icon-cont">
                     <PlIcon  color="#19191a" name="ChevronDown24"/>
                 </span>
             </MenuButton>
-            <MenuButton v-else-if="type=='badge'" class="badge-men">
+            <MenuButton v-else-if="type=='badge'" class="badge-men s2">
                 Создать
                 <span class="icon-cont">
                     <PlIcon  color="#656567" name="ChevronDown20"/>
@@ -80,13 +80,6 @@ defineProps<{
 
         color: var(--text-icons-primary, #19191A);
         text-align: center;
-
-        /* Button/Button 2 */
-        font-family: Inter;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.5rem; /* 171.429% */
     }
     .badge-men{
         display: flex;
@@ -97,15 +90,6 @@ defineProps<{
         background: var(--buttons-secondary, #EDEDED);
 
         color: var(--text-icons-secondary, #656567);
-
-        /* Subtitle/S2-Medium */
-        font-family: Inter;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 1.5rem; /* 150% */
-        letter-spacing: 0.006rem;
-        border: 0;
     }
     .item {
         text-align: left;
