@@ -129,6 +129,7 @@
       "status": "NEW",
       "status_reason": "Важная причина",
       "created_date": "2023-07-25T10:26:09.940Z",
+      "pause_till":  "2023-07-27T09:35:10.908Z",
       "status_history": [
         {
           "id": 1234567891,
@@ -423,6 +424,8 @@
       "status": "PENDING",
       "status_reason": "Обычная причина",
       "created_date": "2023-07-09T00:00:00+00:00",
+      "updated_date": "2023-07-09T00:00:00+00:00",
+      "pause_till":  "2023-07-27T09:35:10.908Z",
       "status_history": [
         {
           "id": 9876543215,
@@ -482,6 +485,7 @@
       "status_reason": "Важная причина",
       "created_date": "2023-07-09T00:00:00+00:00",
       "updated_date": "2023-07-09T00:00:00+00:00",
+      "pause_till":  "2023-07-27T09:35:10.908Z",
       "status_history": [
         {
           "id": 9876543218,
@@ -540,6 +544,8 @@
       "status": "IN_PROGRESS",
       "status_reason": "Обычная причина",
       "created_date": "2023-07-09T00:00:00+00:00",
+      "updated_date": "2023-07-09T00:00:00+00:00",
+      "pause_till":  "2023-07-27T09:35:10.908Z",
       "status_history": [
         {
           "id": 9876543221,
@@ -608,6 +614,8 @@
       "status": "IN_PROGRESS",
       "status_reason": "Важная причина",
       "created_date": "2023-07-09T00:00:00+00:00",
+      "updated_date": "2023-07-09T00:00:00+00:00",
+      "pause_till":  "2023-07-27T09:35:10.908Z",
       "status_history": [
         {
           "id": 9876543225,
@@ -647,6 +655,8 @@
       "status": "NEW",
       "status_reason": "Важная причина",
       "created_date": "2023-07-09T00:00:00+00:00",
+      "updated_date": "2023-07-09T00:00:00+00:00",
+      "pause_till":  "2023-07-27T09:35:10.908Z",
       "status_history": [
         {
           "id": 9876543226,
@@ -705,6 +715,8 @@
       "status": "PENDING",
       "status_reason": "Обычная причина",
       "created_date": "2023-07-09T00:00:00+00:00",
+      "updated_date": "2023-07-09T00:00:00+00:00",
+      "pause_till":  "2023-07-27T09:35:10.908Z",
       "status_history": [
         {
           "id": 9876543226,
