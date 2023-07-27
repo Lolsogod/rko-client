@@ -4,8 +4,7 @@ import type { Claim, UpdateReq,
              CloseReq, ForwardReq, 
              PauseReq, ClaimReq } from 'entities/claim/model';
 import type { References } from 'entities/reference'
-//@ts-ignore
-import {updateToken, useKeycloak} from "shared/lib/vue-keycloak/src/vue3-keycloak.js";
+// import {updateToken, useKeycloak} from "shared/lib/vue-keycloak/src/vue3-keycloak.js";
 
 const api = axios.create({
     //@ts-ignore
@@ -16,7 +15,7 @@ api.interceptors.response.use(
     response => {
         return response;
     }, error => {
-        if (error.response.status === 404) {
+        if (error?.response?.status === 404) {
             return {status: error.response.status};
         }
         return Promise.reject(error.response);
@@ -78,13 +77,13 @@ export const assign = async (id: number) => {
 }
 
 export const forward = async (req: ForwardReq, id: number) => {
-    return await api.patch(`/claims/${id}/forward`, {...req})
+    return await api.patch(`/claims/${id}/forward`, req)
 }
 
 export const close = async (req: CloseReq, id: number) => {
-    return await api.patch(`/claims/${id}/close`, {...req})
+    return await api.patch(`/claims/${id}/close`, req)
 }
 
 export const pause = async (req: PauseReq, id: number) => {
-    return await api.patch(`/claims/${id}/pause`, {...req})
+    return await api.patch(`/claims/${id}/pause`, req)
 }

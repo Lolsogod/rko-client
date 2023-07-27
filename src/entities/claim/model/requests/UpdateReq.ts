@@ -1,4 +1,3 @@
-import type { Document } from "../Claim"
 
 export interface UpdateReq {
     priority: string
