@@ -61,6 +61,10 @@ export const useClaimConfig = (claim: Claim) =>{
       if (claim.pause_till)
         return formatDate(claim.pause_till);
     })
+    const updDate = computed(() => {
+      if (claim.pause_till)
+        return formatDate(claim.updated_date);
+    })
  
     const minsFromCreation = () =>{
       const date = new Date(claim.created_date);
@@ -112,5 +116,5 @@ export const useClaimConfig = (claim: Claim) =>{
     return { createdDate, channelLine,initiator, 
              status, priority, type, inWorkFor,
              theme, pauseTill,isExpired, menuItems,
-             minsFromCreation}
+             minsFromCreation, updDate}
 }

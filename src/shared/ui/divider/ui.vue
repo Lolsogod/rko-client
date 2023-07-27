@@ -4,7 +4,7 @@ import  DividerSvg  from '/divider.svg';
 </script>
 
 <template>
-    <img :src="DividerSvg" alt="|">
+    <img :src="DividerSvg" alt="|" class="no-select">
 </template>
 
 <style scoped>

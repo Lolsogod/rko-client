@@ -14,7 +14,7 @@ const cStore = useClaimStore()
 
 <template>
     <div class="col">
-        <div class="d-flex-cb w-100">
+        <div class="d-flex-cb w-100 no-select">
             <Badge>{{ title }}</Badge>
             <Badge>{{cStore.sorted[type].length}}</Badge>
         </div>

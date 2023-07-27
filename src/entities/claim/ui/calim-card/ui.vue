@@ -4,6 +4,9 @@ import { SqBadge } from 'shared/ui/sq-badge';
 import { Badge } from 'shared/ui/badge';
 import { Menu } from 'shared/ui/menu'
 import { computed } from 'vue';
+//@ts-ignore 
+import Alert from '/alert.svg'
+
 const props = defineProps<{
     type: string
     claim: Claim
@@ -30,8 +33,12 @@ const badgeType = computed(()=>conf.isExpired.value?'red':'gray')
             <div class="type s1">{{ conf.type }}</div>
             <div class="d-flex-cb">
                  <div class="theme b2">{{ conf.theme || 'Нет данных' }}</div>
-                 <Badge v-if="type=='new'" size="small" type="red">{{ conf.minsFromCreation() }} мин</Badge>
-                 <Badge v-else-if="conf.isExpired.value" size="small" type="expired">Просрочена</Badge>
+                 <div class="d-flex gap-2">
+                    <Badge v-if="type=='new'" size="small" type="red">{{ conf.minsFromCreation() }} мин</Badge>
+                    <Badge v-else-if="conf.isExpired.value" size="small" type="expired">Просрочена</Badge>
+                    <img  v-if="claim.priority=='CRITICAL'" :src="Alert"/>
+                 </div>
+                 
             </div>
         </div>
     </div>

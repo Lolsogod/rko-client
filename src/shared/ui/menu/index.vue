@@ -69,6 +69,7 @@ defineProps<{
         background-color: #f7f7f5;
     }
     .cur-men{
+        cursor: pointer;
         display: flex;
         padding: 0.5rem 0.75rem;
         justify-content: center;
@@ -82,6 +83,7 @@ defineProps<{
         text-align: center;
     }
     .badge-men{
+        cursor: pointer;
         display: flex;
         padding: 0.5rem 0.75rem;
         align-items: center;
