@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import {useClaimConfig, type Claim} from 'entities/claim';
-import type {RealClaim} from 'entities/claim';
+import type {Claim} from 'entities/claim';
 import { SqBadge } from 'shared/ui/sq-badge';
 import { computed } from 'vue';
 
 
 const props = defineProps<{
-    claim:RealClaim
+    claim:Claim
 }>()
 
 const conf = useClaimConfig(props.claim)

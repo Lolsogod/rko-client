@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {useClaimConfig} from 'entities/claim';
-import type {ClaimReq, Claim, RealClaim} from 'entities/claim';
+import type {Claim} from 'entities/claim';
 import { SqBadge } from 'shared/ui/sq-badge';
 import { Badge } from 'shared/ui/badge';
 import { Menu } from 'shared/ui/menu'
@@ -9,7 +9,7 @@ import {computed} from "vue";
 
 const props = defineProps<{
     type: string
-    claim: RealClaim
+    claim: Claim
 }>()
 
 const conf = useClaimConfig(props.claim)

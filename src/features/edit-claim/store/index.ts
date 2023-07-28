@@ -1,24 +1,27 @@
 import {ref} from 'vue'
 import {defineStore} from 'pinia'
-import type {ClaimReq, RealClaim} from 'entities/claim'
+import type {ClaimReq, Claim} from 'entities/claim'
 import {useClaimService} from "../../../shared/api/commonApi";
 
 export const useEditClaimStore = defineStore('editClaim', () => {
-    const claim = ref<RealClaim>()
+    const claim = ref<Claim>()
     const claimids = ref<Array<string>>()
     const {getClaimById, editClaim, getClaims} = useClaimService();
     const fetchClaim = async (id: number) => {
         claim.value = await getClaimById(id)
     }
+    const closeClaim = async () => {
+
+    }
     const fetchClaimIdsByClientInn = async () => {
-        let claims :Array<RealClaim>= [];
+        let claims :Array<Claim>= [];
         try{
             claims = await getClaims();
 
         }catch (e){
             claims = [];
         }
-        claimids.value = claims.map((claim: RealClaim) => {
+        claimids.value = claims.map((claim: Claim) => {
             return claim.id + "";
         });
 

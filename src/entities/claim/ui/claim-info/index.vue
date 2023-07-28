@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Cell from './info-cell.vue'
-import { useClaimConfig, type Claim } from 'entities/claim'
+import {useClaimConfig, type Claim} from 'entities/claim'
 
 const props = defineProps<{
    claim: Claim

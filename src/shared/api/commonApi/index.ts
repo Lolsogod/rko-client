@@ -1,7 +1,7 @@
 import type {
     Claim, UpdateReq,
     CloseReq, ForwardReq, ReasignPostRequest,
-    PauseReq, ClaimReq, ClaimFilterReq, RealClaim,
+    PauseReq, ClaimReq, ClaimFilterReq, Claim,
 } from 'entities/claim';
 import type { References } from 'entities/reference'
 import api from "../index";
@@ -16,16 +16,20 @@ export const useReferenceService = () => {
 
 }
 export const useClaimService = () => {
-    const getClaims = async (claimFilterReq?:ClaimFilterReq|{}):Promise<RealClaim[]> => {
+    const getClaims = async (claimFilterReq?:ClaimFilterReq|{}):Promise<Claim[]> => {
         if(claimFilterReq) claimFilterReq = {};
         return (await api.get('/claims', {params : claimFilterReq}));
     };
 
-    const getClaimById = async (id: number):Promise<RealClaim> => {
-        return (await api.get(`/claims/${id}`));
+    const getClaimById = async (id: number):Promise<Claim> => {
+        try{
+            return (await api.get(`/claims/${id}`));
+        }catch (e){
+            throw e;
+        }
     };
 
-    const createClaim = async (claim: ClaimReq) :Promise<RealClaim>=> {
+    const createClaim = async (claim: ClaimReq) :Promise<Claim>=> {
         try{
             return await api.post('/claims', claim);
         }catch (e){
@@ -33,7 +37,7 @@ export const useClaimService = () => {
         }
     };
 
-    const editClaim = async (claim: ClaimReq, id: number) :Promise<RealClaim>=> {
+    const editClaim = async (claim: ClaimReq, id: number) :Promise<Claim>=> {
         return await api.post(`/claims/${id}`, claim)
     };
 

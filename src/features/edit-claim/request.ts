@@ -1,4 +1,4 @@
-import type { CRClient, Claim, ClaimReq } from "entities/claim";
+import type {CRClient, Claim, ClaimReq, Claim} from "entities/claim";
 import type { Client } from "entities/client/model";
 
 

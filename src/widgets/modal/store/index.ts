@@ -1,6 +1,6 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import type { Claim } from 'entities/claim/model'
+import type {Claim} from 'entities/claim/model'
 
 export const useModalStore = defineStore('modal', () => {
   const type = ref('')
