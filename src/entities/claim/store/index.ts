@@ -1,12 +1,13 @@
 import {ref, computed, watch} from 'vue'
 import {defineStore} from 'pinia'
-import type {ClaimReq, UpdateReq, ClaimFilterReq, Claim} from '../model'
+import type {ClaimReq, UpdateReq, ClaimFilterReq, Claim, CloseReq} from '../model'
 import {useClaimService} from "shared/api/commonApi";
 import {getClaims} from "../../../shared/api/claim-api";
+import {useEditClaimStore} from "../../../features/edit-claim";
 
 export const useClaimStore = defineStore('claims', () => {
     const claims = ref<Claim[]>()
-    const {createClaim, getClaims} = useClaimService();
+    const {createClaim, getClaims,close} = useClaimService();
     const fetchClaims = async (claimReq?: ClaimFilterReq) => {
         claims.value = await getClaims(claimReq);
     }
@@ -58,6 +59,12 @@ export const useClaimStore = defineStore('claims', () => {
         today: [],
         tomorrow: []
     })
+    const closePost = async (closeReq : CloseReq, id:number) => {
+        await close(closeReq,id);
+        const {fetchClaimIdsByClientInn} = useEditClaimStore();
+        await fetchClaimIdsByClientInn();
+        claims.value = await getClaims();
+    }
     //сюда бы фильтр на законченные ещё, но неуверен надо ли
     watch(claims, () => {
         if (claims.value) {
@@ -72,5 +79,5 @@ export const useClaimStore = defineStore('claims', () => {
             });
         }
     })
-    return {claims, fetchClaims, currentClaim, sorted, postCreateClaim}
+    return {claims, fetchClaims, currentClaim, sorted, postCreateClaim,closePost}
 })

@@ -17,6 +17,7 @@ const ncForm = ref<ClaimReq>({
   priority: '',
   priority_reason: '',
   assignee: '',
+  status:'',
   comment: '',
   client: {
     globalCompanyId: null,

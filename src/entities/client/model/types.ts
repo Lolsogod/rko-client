@@ -1,6 +1,6 @@
 export interface Client {
-    id: bigint;
-    globalCompanyId?: bigint;
+    id: number;
+    globalCompanyId?: number;
     inn: string;
     kpp?: string;
     ogrn: string;

@@ -8,11 +8,10 @@ export const useEditClaimStore = defineStore('editClaim', () => {
     const claimids = ref<Array<string>>()
     const {getClaimById, editClaim, getClaims} = useClaimService();
     const fetchClaim = async (id: number) => {
-        claim.value = await getClaimById(id)
+        const res =  await getClaimById(id);
+        claim.value = res;
     }
-    const closeClaim = async () => {
 
-    }
     const fetchClaimIdsByClientInn = async () => {
         let claims :Array<Claim>= [];
         try{
@@ -26,8 +25,13 @@ export const useEditClaimStore = defineStore('editClaim', () => {
         });
 
     };
+    const wasDeleted = () => {
+        if(claim.value){
+            claim.value = undefined;
+        }
+    }
     const edit = () => {
         editClaim(claim.value as ClaimReq, claim.value!.id)
     }
-    return {claim, claimids,fetchClaim, edit,fetchClaimIdsByClientInn}
+    return {claim, claimids,fetchClaim, edit,fetchClaimIdsByClientInn,wasDeleted}
 })

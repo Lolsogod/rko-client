@@ -8,7 +8,6 @@ import {useClaimStore} from "entities/claim/index";
 //список айди всех клаймов клиента, но пока не с бэка
 const sel = computed(()=>router.currentRoute.value.params.claimId)
 const store = useEditClaimStore()
-const storeClaims = useClaimStore()
 store.fetchClaimIdsByClientInn();
 const select = (item:string) => {
   store.fetchClaim(parseInt(item))

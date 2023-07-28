@@ -15,7 +15,9 @@ api.interceptors.response.use(
         // const {keycloak} = useKeycloak();
         if (error?.response?.status === 404) {
             return {status: error.response.status};
+
         }else if(!error?.response){
+            console.error(error)
             console.error("ОШИБКА БЕЗ РЕСПОНСА");
         }else{
             console.error("ошибка при запросе", error?.response?.data??error);
