@@ -5,7 +5,11 @@ import { NavBar } from "widgets/navbar"
 import { computed } from "vue";
 import { router } from "app/providers";
 
-const curRoute = computed(()=>router.currentRoute.value.matched[0].name?.toString())
+const curRoute = computed(()=>{
+    if(router.currentRoute.value.matched[0])
+        return router.currentRoute.value.matched[0].name?.toString()
+    else return ''
+})
 
 </script>
 
