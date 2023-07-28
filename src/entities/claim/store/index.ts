@@ -69,5 +69,5 @@ export const useClaimStore = defineStore('claims', () => {
       });
     }
   })
-  return {claims, fetchClaims, currentClaim, sorted}
+  return {claims, fetchClaims, currentClaim, sorted, postCreateClaim}
 })

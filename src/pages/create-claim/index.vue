@@ -4,6 +4,7 @@ import type { ClaimReq } from 'entities/claim';
 import ActionBar from './action-bar.vue';
 import { ref } from 'vue';
 import {useClaimService} from "../../shared/api/commonApi";
+import {useClaimStore} from "entities/claim";
 //мб както вынести? хз пока
 const ncForm = ref<ClaimReq>({
   category: 'OUTGOING',
@@ -28,18 +29,21 @@ const ncForm = ref<ClaimReq>({
   },
   documents: [],
 });
-const {createClaim} = useClaimService();
+const {postCreateClaim} = useClaimStore();
+const formRef = ref(null);
 const create = () => {
-    createClaim(ncForm.value)
+  formRef?.value?.validate(valid => {
+    console.log(valid)
+  })
+  postCreateClaim(ncForm.value)
 }
-
 
 </script>
 
 <template>
     <ActionBar @create="create"/>
     <div class="d-flex gap-6 container">
-        <CreateClaimForm v-model="ncForm"/>
+        <CreateClaimForm :formRef = "formRef" v-model="ncForm"/>
         <div class="right-cont">
         </div>
     </div>

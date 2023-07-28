@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed} from "vue";
+import {ref, computed, Ref} from "vue";
 import {DropDown} from "shared/ui/drop-down"
 import type { ClaimReq } from "entities/claim";
 import { useReferenceStore } from "entities/reference";
@@ -18,6 +18,7 @@ const rules = {
 }
 const props = defineProps<{
   modelValue: ClaimReq
+  formRef:Ref
 }>()
 const emit = defineEmits(["update:modelValue"])
 
@@ -31,7 +32,6 @@ const ncForm = computed({
 })
 
 const rStrore = useReferenceStore()
-const formRef = ref(null)
 </script>
 
 <template>
