@@ -14,8 +14,9 @@ export const useReferenceService = () => {
 
 }
 export const useClaimService = () => {
-    const getClaims = async (claimFilterReq:ClaimFilterReq|{} = {}) => {
-        return (await api.get<Claim[]>('/claims', {params : claimFilterReq}));
+    const getClaims = async (claimFilterReq?:ClaimFilterReq|{}):Promise<Claim[]> => {
+        if(claimFilterReq) claimFilterReq = {};
+        return (await api.get('/claims', {params : claimFilterReq}));
     };
 
     const getClaimById = async (id: number) => {

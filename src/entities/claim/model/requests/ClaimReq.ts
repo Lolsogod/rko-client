@@ -1,4 +1,5 @@
 export interface ClaimReq {
+    status:string,
     category: string
     channel?: string
     initiatorType?: string
@@ -16,6 +17,7 @@ export interface ClaimReq {
 }
 export interface PostClaimReq {
     category: string
+    status:string,
     channel: string
     initiatorType: string
     isFirstLine: boolean
