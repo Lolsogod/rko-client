@@ -1,6 +1,6 @@
 import axios from "axios";
 //@ts-ignore
-import {updateToken, useKeycloak} from "lib/vue-keycloak";
+import {updateToken, useKeycloak} from "../lib/vue-keycloak";
 
 
 const api = axios.create({
@@ -10,10 +10,15 @@ const api = axios.create({
 
 api.interceptors.response.use(
     response => {
-        return response;
+        return response.data;
     }, error => {
-        if (error.response.status === 404) {
+        // const {keycloak} = useKeycloak();
+        if (error?.response?.status === 404) {
             return {status: error.response.status};
+        }else if(!error?.response){
+            console.error("ОШИБКА БЕЗ РЕСПОНСА");
+        }else{
+            console.error("ошибка при запросе", error);
         }
         return Promise.reject(error.response);
     });
@@ -24,7 +29,8 @@ api.interceptors.request.use(
         try {
             token = await updateToken(0);
         } catch (error:any) {
-            error && console.error(error?.response.status||error);
+            console.log(error)
+            error && console.error(error?.response?.status||error);
 
             if (hasFailed && !isPending) {
                 keycloak.logout();

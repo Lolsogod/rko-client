@@ -8,8 +8,7 @@ export const useEditClaimStore = defineStore('editClaim', () => {
   const claim = ref<Claim>()
   const fetchClaim = async (id: number) => {
     claim.value = await getClaimById(id)
-  } 
-
+  }
   const edit = () =>{
      const req = claimtoReq(claim.value!)
      editClaim(req, claim.value!.id)

@@ -3,7 +3,8 @@ import {CreateClaimForm} from 'features/create-claim'
 import type { ClaimReq } from 'entities/claim';
 import ActionBar from './action-bar.vue';
 import { ref } from 'vue';
-import { createClaim } from 'shared/api/claim-api';
+import {createClaim} from 'shared/api/claim-api';
+import {useClaimService} from "../../shared/api/commonApi";
 //мб както вынести? хз пока
 const ncForm = ref<ClaimReq>({
   category: 'OUTGOING',
@@ -29,9 +30,12 @@ const ncForm = ref<ClaimReq>({
   },
   documents: [],
 });
+const {createClaim} = useClaimService();
 const create = () => {
     createClaim(ncForm.value)
 }
+
+
 </script>
 
 <template>

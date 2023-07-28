@@ -3,6 +3,7 @@ import type { Claim, UpdateReq,
     PauseReq, ClaimReq ,ClaimFilterReq, } from 'entities/claim';
 import type { References } from 'entities/reference'
 import api from "../index";
+import type {AxiosResponse} from "axios";
 
 //requests
 export const useReferenceService = () => {
@@ -17,12 +18,21 @@ export const useClaimService = () => {
         return (await api.get<Claim[]>('/claims', {params : claimFilterReq})).data;
     };
 
-    const getClaimById = async (id: number) :Promise<Claim>=> {
-        return (await api.get<Claim>(`/claims/${id}`)).data;
+    const getClaimById = async (id: number) => {
+        try{
+            return (await api.get<Claim>(`/claims/${id}`));
+
+        }catch (e){
+            throw e;
+        }
     };
 
     const createClaim = async (claim: ClaimReq) :Promise<Claim>=> {
-        return await api.post('/claims', claim);
+        try{
+            return await api.post('/claims', claim);
+        }catch (e){
+            throw e;
+        }
     };
 
     const editClaim = async (claim: ClaimReq, id: number) :Promise<Claim>=> {

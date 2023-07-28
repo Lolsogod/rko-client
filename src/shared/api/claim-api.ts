@@ -21,32 +21,32 @@ api.interceptors.response.use(
         return Promise.reject(error.response);
     });
 /*кейклок медленный и кривой, пока отключил
-api.interceptors.request.use(
-    async (config:any) => {
-        const {keycloak, hasFailed, isPending} = useKeycloak();
-        let token = null;
-        try {
-            token = await updateToken(0);
-        } catch (error:any) {
-            error && console.error(error?.response.status||error);
-
-            if (hasFailed && !isPending) {
-                keycloak.logout();
-            }
-        }
-        config.headers = {
-            Authorization: bearerAuth(token), 
-        };
-        return config;
-    }, error => {
-        console.error("axios bearer requst error")
-        console.log(error?.response)
-        Promise.reject(error);
-    });
-function bearerAuth(token: string | null) {
-    return `Bearer ${token}`
-}
-*/
+// api.interceptors.request.use(
+//     async (config:any) => {
+//         const {keycloak, hasFailed, isPending} = useKeycloak();
+//         let token = null;
+//         try {
+//             token = await updateToken(0);
+//         } catch (error:any) {
+//             error && console.error(error?.response.status||error);
+//
+//             if (hasFailed && !isPending) {
+//                 keycloak.logout();
+//             }
+//         }
+//         config.headers = {
+//             Authorization: bearerAuth(token),
+//         };
+//         return config;
+//     }, error => {
+//         console.error("axios bearer requst error")
+//         console.log(error?.response)
+//         Promise.reject(error);
+//     });
+// function bearerAuth(token: string | null) {
+//     return `Bearer ${token}`
+// }
+// */
 //requests
 export const getReferences = async () => {
     return (await api.get<References>('/references')).data

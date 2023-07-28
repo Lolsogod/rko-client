@@ -2,8 +2,12 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { createClaim } from 'shared/api/claim-api'
 import type { ClaimReq } from 'entities/claim'
+import {useClaimService} from "../../../shared/api/commonApi";
 //а может и ненужен он, наверное нет, удалю
 export const useCreateClaimStore = defineStore('createClaim', () => {
+  const {getClaimById} = useClaimService();
+
+
   const claim = ref<ClaimReq>({
     category: 'OUTGOING',
     channel: '',
