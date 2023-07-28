@@ -141,6 +141,5 @@ export const useClaimConfig = (claim: RealClaim) => {
         updDate,
         createdDateOnly,
         createdTimeOnly,
-
     }
 }

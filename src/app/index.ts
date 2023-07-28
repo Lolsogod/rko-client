@@ -14,6 +14,7 @@ import { keycloakConfig } from "./providers";
 const {initOptions, config} = keycloakConfig;
 const pinia = createPinia();
 const app = createApp(App)
+app.use(pinia)
 // кейклок медленный и кривой, пока отключил
 app.use(vueKeycloak,{
     initOptions,
@@ -21,13 +22,14 @@ app.use(vueKeycloak,{
         ...config,
         onReady: () => {
             app.use(router)
-               .use(pinia)
                .use(components)
                .mount('#app')
             }
         }
     }
 )
+app.use(pinia)
+
 /*
 app.use(router)
     .use(pinia)

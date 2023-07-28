@@ -13,13 +13,12 @@ const conf = useClaimConfig(props.claim)
 
 const inProgress = computed(()=>props.claim.status=='IN_PROGRESS')
 const workDate = computed(()=>inProgress.value?`В работе с ${conf.updDate.value}`:conf.pauseTill?.value?`По плану до ${conf.pauseTill.value}`:`Появилось ${conf.createdDate.value}`)
-
 </script>
 
 <template>
     <div class="d-grid item gap-6" style="grid-template-columns: 2fr 1fr 1fr 2fr 2fr 1fr 1fr">
         <div class="type">
-            <router-link class="b2" :to="`/client/${claim.client?.id}/${claim.id}`">{{conf.type}}</router-link>
+            <router-link class="b2" :to="`/client/${claim.client?.id}/${claim.id}`">{{conf.type ?? "Не определено"}}</router-link>
         </div>
         <div class="cell">
             <div class="b2">Обращение</div>

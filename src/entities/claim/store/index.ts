@@ -7,7 +7,7 @@ import {getClaims} from "../../../shared/api/claim-api";
 export const useClaimStore = defineStore('claims', () => {
   const claims = ref<Claim[]>()
   const {createClaim,getClaims} = useClaimService();
-  const fetchClaims = async (claimReq : ClaimFilterReq) => {
+  const fetchClaims = async (claimReq? : ClaimFilterReq) => {
       claims.value = await getClaims(claimReq) ;
   }
   const postCreateClaim = async (claimReq:ClaimReq) => {

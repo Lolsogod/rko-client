@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { useClaimConfig, type Claim } from 'entities/claim';
+import {useClaimConfig} from 'entities/claim';
+import type {ClaimReq, Claim, RealClaim} from 'entities/claim';
 import { SqBadge } from 'shared/ui/sq-badge';
 import { Badge } from 'shared/ui/badge';
 import { Menu } from 'shared/ui/menu'
-import { computed } from 'vue';
 import { Alert } from 'app/providers/icons';
+import {computed} from "vue";
 
 const props = defineProps<{
     type: string
-    claim: Claim
+    claim: RealClaim
 }>()
 
 const conf = useClaimConfig(props.claim)
@@ -28,7 +29,7 @@ const badgeType = computed(()=>conf.isExpired.value?'red':'gray')
             <Menu :items="conf.menuItems()"></Menu>
         </div>
         <div>
-            <div class="name b2">{{ claim.client?.short_name }}</div>
+            <div class="name b2">{{ claim.client?.shortName }}</div>
             <div class="type s1">{{ conf.type }}</div>
             <div class="d-flex-cb">
                  <div class="theme b2">{{ conf.theme || 'Нет данных' }}</div>

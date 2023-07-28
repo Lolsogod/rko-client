@@ -1,6 +1,8 @@
+
 <script setup lang="ts">
+//section edit-claim-page
 //нагромаждено всего, это всё зарефачу но потом
-import { useClaimStore, type Claim } from "entities/claim";
+
 import {ActionBar, ClaimEditor, useEditClaimStore} from "features/edit-claim";
 import { watch } from "vue";
 const props = defineProps(['clientId', 'claimId'])

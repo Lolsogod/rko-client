@@ -19,11 +19,11 @@ const formRef = ref(null);
     <PlForm  v-if="claim" :key="claim.id" ref="formRef" :model="claim"  class="d-grid gap-6 w-100" :rules="rules">
         <div class="d-grid gap-4" style="grid-template-columns: 1fr 1fr .25fr">
             <DropDown label="Канал сообщений" 
-            :options="refernces?.channels!" 
+            :options="refernces?.channels!"
             v-model="claim.channel"/>
             <DropDown label="Инициатор" 
             :options="refernces?.initiatorTypes!" 
-            v-model="claim.initiator_type"/>
+            v-model="claim.initiatorType"/>
             <div class="d-flex dir-container">
                 <div class="d-flex-cb direction">
                     <h6>{{category}}</h6>
@@ -41,12 +41,12 @@ const formRef = ref(null);
         </div>
         <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
             <DropDown label="Тип сообщения"
-            :options="refernces?.claimTypes!" 
-            v-model="claim.claim_type"
+            :options="refernces.claimTypes!"
+            v-model="claim.claimType"
             />
             <DropDown label="Тема"
-            :options="refernces?.claimThemes!" 
-            v-model="claim.claim_theme"
+            :options="refernces.claimThemes!"
+            v-model="claim.claimTheme"
             />
         </div>
         <PlInputPlus
@@ -62,7 +62,7 @@ const formRef = ref(null);
             :options="refernces?.priority!" 
             v-model="claim.priority"/>
             <PlInputPlus
-                v-model="claim.priority_reason"
+                v-model="claim.priorityReason"
                 prop="priority_reason"
                 label="Обоснование"
                 placeholder="Повышение приоритета"

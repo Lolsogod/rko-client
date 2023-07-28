@@ -3,13 +3,13 @@ import { Badge } from 'shared/ui/badge';
 import { IcoBtn, type BtnData } from 'shared/ui/ico-button';
 import { Phone, Chat } from 'app/providers/icons';
 import  Cell from './info-cell.vue'
-import { useClaimConfig, type Claim } from 'entities/claim';
+import {useClaimConfig, type Claim, type RealClaim} from 'entities/claim';
 import { SqBadge } from 'shared/ui/sq-badge';
 import { Divider } from 'shared/ui/divider';
 import { Menu } from 'shared/ui/menu';
 
 const props = defineProps<{
-    claim: Claim
+    claim: RealClaim
 }>()
 
 const callBtn: BtnData = {ico: Phone}
@@ -45,7 +45,7 @@ const conf = useClaimConfig(props.claim!)
                     <SqBadge :type="claim.priority!">{{ conf.priority }}</SqBadge>
                 </Cell>
                 <Divider/>
-                <Cell title="Наименование компании">{{ claim.client?.short_name }}</Cell>
+                <Cell title="Наименование компании">{{ claim.client?.shortName }}</Cell>
                 <Divider/>
                 <Cell title="Тема обращения">{{ conf.theme }}</Cell>
             </div>
