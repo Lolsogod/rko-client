@@ -19,7 +19,7 @@ const conf = useClaimConfig(props.claim)
          <Cell title="Инициатор">{{conf.initiator}}</Cell>
       </div>
       <div  class="d-grid mt-6 mb-10 gap-12" style="grid-template-columns: 3fr .75fr">
-         <Cell title="Клиент">ИНН {{claim.client?.inn}}, {{ claim.client?.full_name }}</Cell>
+         <Cell title="Клиент">ИНН {{claim.client?.inn}}, {{ claim.client?.fullName }}</Cell>
          <Cell title="Статус">{{conf.status}}</Cell>
       </div>
       <div  class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 2fr 2fr">
@@ -35,7 +35,7 @@ const conf = useClaimConfig(props.claim)
       <hr>
       <div class="d-grid mt-6 mb-10 gap-4" style="grid-template-columns: 1fr 1fr 1fr">
          <Cell title="Приоритет">{{ conf.priority }}</Cell>
-         <Cell title="Обоснование">{{ claim.priority_reason }}</Cell>
+         <Cell title="Обоснование">{{ claim.priorityReason }}</Cell>
          <Cell title="Исполнитель">{{ claim.assignee }}</Cell>
       </div>
       <hr>
