@@ -2,6 +2,8 @@
 import { IcoBtn } from 'shared/ui/ico-button';
 //@ts-ignore
 import Exit from '/exit.svg'
+//@ts-ignore
+import Search from '/search.svg'
 import { GradBtn } from 'shared/ui/grad-button';
 //@ts-ignore
 import {useKeycloak} from "shared/lib/vue-keycloak"
@@ -24,8 +26,9 @@ const search = ref()
             <span class="b2 cur-page" v-if="type=='create-claim'">Создание обращения</span>
         </div>
         <div class="d-flex gap-4">
+            <IcoBtn v-if="type!='claims-list'" :data="{ico: Search}"/>
             <GradBtn>KK</GradBtn>
-            <IcoBtn :data="{ico: Exit, action: () => keycloak.logout()}"/>
+            <IcoBtn v-if="type=='claims-list'" :data="{ico: Exit, action: () => keycloak.logout()}"/>
         </div>
     </nav>
 </template>
