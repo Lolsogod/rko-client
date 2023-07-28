@@ -6,7 +6,7 @@ import Wallet from '/wallet.svg'
 import Settings from '/settings.svg'
 import Exit from '/exit.svg'
 import Search from '/search.svg'
-import  DividerSvg  from '/divider.svg';
+import DividerSvg  from '/divider.svg';
 import Sort from '/sort.svg'
 import Phone from "/phone.svg"
 import Chat from "/chat.svg"
