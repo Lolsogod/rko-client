@@ -30,11 +30,8 @@ const ncForm = ref<ClaimReq>({
   documents: [],
 });
 const {postCreateClaim} = useClaimStore();
-const formRef = ref(null);
 const create = () => {
-  formRef?.value?.validate(valid => {
-    console.log(valid)
-  })
+
   postCreateClaim(ncForm.value)
 }
 
@@ -43,7 +40,7 @@ const create = () => {
 <template>
     <ActionBar @create="create"/>
     <div class="d-flex gap-6 container">
-        <CreateClaimForm :formRef = "formRef" v-model="ncForm"/>
+        <CreateClaimForm  v-model="ncForm"/>
         <div class="right-cont">
         </div>
     </div>

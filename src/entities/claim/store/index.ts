@@ -2,12 +2,14 @@ import { ref, computed, watch } from 'vue'
 import { defineStore } from 'pinia'
 import type {Claim, ClaimReq, UpdateReq, ClaimFilterReq} from '../model'
 import {useClaimService} from "shared/api/commonApi";
+import {getClaims} from "../../../shared/api/claim-api";
 
 export const useClaimStore = defineStore('claims', () => {
   const claims = ref<Claim[]>()
-  const {getClaims, createClaim} = useClaimService();
-  const fetchClaims = async () => {
-    claims.value = await getClaims();
+  const {createClaim} = useClaimService();
+  const fetchClaims = async (claimReq : ClaimFilterReq) => {
+    //@ts-ignore
+      claims.value = await getClaims(claimReq) ;
   }
   const postCreateClaim = async (claimReq:ClaimReq) => {
     const newClaim = await createClaim(claimReq);

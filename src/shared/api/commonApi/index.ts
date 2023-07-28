@@ -14,8 +14,8 @@ export const useReferenceService = () => {
 
 }
 export const useClaimService = () => {
-    const getClaims = async (claimFilterReq:ClaimFilterReq|{} = {}) : Promise<Claim[]> => {
-        return (await api.get<Claim[]>('/claims', {params : claimFilterReq})).data;
+    const getClaims = async (claimFilterReq:ClaimFilterReq|{} = {}) => {
+        return (await api.get<Claim[]>('/claims', {params : claimFilterReq}));
     };
 
     const getClaimById = async (id: number) => {
@@ -44,21 +44,21 @@ export const useClaimService = () => {
     };
 
     const assign = async (id: number) => {
-        return await api.patch(`/claims/${id}/assign`)
+        return await api.patch<Claim>(`/claims/${id}/assign`)
     };
 //
     const forward = async (req: ForwardReq, id: number) => {
-        return (await api.patch(`/claims/${id}/forward`, req))?.data
+        return (await api.patch<Claim>(`/claims/${id}/forward`, req))
     };
 
-    const close = async (req: CloseReq, id: number) :Promise<Claim>=> {
-        return (await api.patch(`/claims/${id}/close`, req))?.data;
+    const close = async (req: CloseReq, id: number) => {
+        return (await api.patch<Claim>(`/claims/${id}/close`, req));
     };
-    const pause = async (req: PauseReq, id: number):Promise<Claim> => {
-        return (await api.patch<Claim>(`/claims/${id}/pause`, req))?.data;
+    const pause = async (req: PauseReq, id: number) => {
+        return (await api.patch<Claim>(`/claims/${id}/pause`, req));
     };
-    const reassign = async (req: ReasignPostRequest, id: number) :Promise<Claim>=> {
-        return (await api.patch<Claim>(`/claims/${id}/reassign`, req))?.data;
+    const reassign = async (req: ReasignPostRequest, id: number) => {
+        return (await api.patch<Claim>(`/claims/${id}/reassign`, req));
     };
     return {pause,close,createClaim,forward,assign, updateClaim, editClaim,  getClaimById,getClaims, reassign}
 

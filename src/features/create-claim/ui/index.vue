@@ -18,7 +18,6 @@ const rules = {
 }
 const props = defineProps<{
   modelValue: ClaimReq
-  formRef:Ref
 }>()
 const emit = defineEmits(["update:modelValue"])
 
@@ -30,8 +29,9 @@ const ncForm = computed({
     emit('update:modelValue', value)
   }
 })
-
 const rStrore = useReferenceStore()
+
+const formRef = ref(null);
 </script>
 
 <template>
@@ -101,6 +101,7 @@ const rStrore = useReferenceStore()
           <DropDown :options="[{code:'support', text:'support'}]" v-model="ncForm.assignee" label="Исполнитель" placeholder="Выберите ответственного" />
         </div>
       </PlForm>
+
     </div>
   </template>
 
