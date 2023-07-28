@@ -91,8 +91,8 @@ selected.value = props.options.find(option => option.code == selCode.value)
   }
   .list-btn{
     border-radius: 0.5rem;
-    border: 1px solid var(--border-inactive, #DADDE7);
-    background: var(--background-surface-area, #FFF);
+    border: 1px solid var(--border-inactive);
+    background: var(--background-surface-area);
 
     padding: 0.4rem 1rem;
     align-items: center;
@@ -108,7 +108,7 @@ selected.value = props.options.find(option => option.code == selCode.value)
     border-color: var(--color-border-hover);
   }
   .list-btn.bg-grey:hover{
-    border: 1px solid var(--border-inactive, #DADDE7);
+    border: 1px solid var(--border-inactive);
   }
   .title{
     display: block; 
@@ -116,7 +116,7 @@ selected.value = props.options.find(option => option.code == selCode.value)
     text-overflow: ellipsis;
     white-space: nowrap; 
 
-    color: var(--text-icons-primary, #19191A);
+    color: var(--text-icons-primary);
   }
   .icon-cont{
     transition: .2s all ease;

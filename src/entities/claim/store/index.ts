@@ -28,7 +28,7 @@ export const useClaimStore = defineStore('claims', () => {
       const minutes = timeDiff / 60000;
       return minutes <= 15
   }
-  function isToday(claim: Claim) {
+  const isToday = (claim: Claim) => {
     if (claim.pause_till){
       const date = new Date(claim.pause_till).toISOString().split('T')[0];
       const currentDate = new Date().toISOString().split('T')[0];
@@ -36,7 +36,7 @@ export const useClaimStore = defineStore('claims', () => {
     }
     return false
   }
-  function isTomorrow(claim: Claim) {
+  const isTomorrow = (claim: Claim) => {
     if (claim.pause_till){
       const date = new Date(claim.pause_till!).toISOString().split('T')[0];
       const tomorrowDateTime = new Date();

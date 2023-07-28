@@ -145,8 +145,8 @@ const formRef = ref(null)
       display: grid;
       place-content: center;
       border-radius: 0.375rem;
-      border: 2px solid var(--surface-fill-3, #E8E8E3);
-      background: var(--background-surface-area, #FFF);
+      border: 2px solid var(--surface-fill-3);
+      background: var(--background-surface-area);
     }
 
     input[type="checkbox"]::before {
@@ -157,8 +157,7 @@ const formRef = ref(null)
       transform: scale(0);
       transform-origin: bottom left;
       transition: 120ms transform ease-in-out;
-      box-shadow: inset 1em 1em var(--form-control-color);
-      background-color: #4164EB;
+      background-color: var(--border-active);
     }
 
     input[type="checkbox"]:checked::before {
@@ -177,7 +176,7 @@ const formRef = ref(null)
       font: inherit;
       width: 1.2rem;
       height: 1.2rem;
-      border: 2px solid var(--surface-fill-3, #E8E8E3);
+      border: 2px solid var(--surface-fill-3);
       border-radius: 50%;
       display: grid;
       place-content: center;
@@ -189,7 +188,7 @@ const formRef = ref(null)
       border-radius: 50%;
       transform: scale(0);
       transition: 120ms transform ease-in-out;
-      box-shadow: inset 1em 1em #4164eb;
+      box-shadow: inset 1em 1em var(--border-active);
     }
     input[type="radio"]:checked::before {
       transform: scale(1);

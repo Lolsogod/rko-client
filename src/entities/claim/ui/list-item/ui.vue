@@ -44,7 +44,7 @@ const workDate = computed(()=>inProgress.value?`В работе с ${conf.updDat
 
 <style scoped>
     .item{
-        color: var(--text-icons-secondary, #656567);
+        color: var(--text-icons-secondary);
     }
    .item{
         margin: 1rem 0;
@@ -55,6 +55,6 @@ const workDate = computed(()=>inProgress.value?`В работе с ${conf.updDat
         align-items: flex-start;
    }
    .inn{
-        color: var(--text-icons-secondary, #656567);
+        color: var(--text-icons-secondary);
    }
 </style>

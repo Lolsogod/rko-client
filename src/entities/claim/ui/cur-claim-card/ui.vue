@@ -66,6 +66,6 @@ const conf = useClaimConfig(props.claim!)
         flex-direction: column;
         gap: 3rem;
         border-radius: 1.25rem;
-        background: var(--surface-opacity-1, rgba(25, 25, 26, 0.04));
+        background: var(--surface-opacity-1);
     }
 </style>

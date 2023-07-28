@@ -40,7 +40,7 @@ api.interceptors.request.use(
         Promise.reject(error);
     });
 
-function bearerAuth(token: string | null) {
+const bearerAuth = (token: string | null) => {
     return `Bearer ${token}`
 }
 export default api;

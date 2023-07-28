@@ -26,7 +26,7 @@ const isSmall = computed(()=>props.size=="small")
         justify-content: center;
         align-items: center;
         border-radius: 0.5rem;
-        background: var(--surface-opacity-1, rgba(25, 25, 26, 0.04));
+        background: var(--surface-opacity-1);
     }
    
     .btn:hover{
@@ -36,7 +36,7 @@ const isSmall = computed(()=>props.size=="small")
     div.small{
         padding: 0.5rem 0.625rem;
         gap: 0.25rem;/*?*/
-        background: var(--surface-opacity-2, rgba(25, 25, 26, 0.08));
+        background: var(--surface-opacity-2);
     }
 
     img{
@@ -45,7 +45,7 @@ const isSmall = computed(()=>props.size=="small")
     }
     
     .active, .active.small {
-        background: var(--buttons-alternative, #E8ECFD);
+        background: var(--buttons-alternative);
     }
     .active:hover, .active.small:hover{
         background: #dbe1fa

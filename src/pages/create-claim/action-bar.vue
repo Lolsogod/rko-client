@@ -26,9 +26,9 @@ defineEmits(['create'])
         align-items: center;
         gap: 1rem;
 
-        border-right: 1px solid var(--surface-fill-2, #EFEFEB);
-        border-bottom: 1px solid var(--surface-fill-2, #EFEFEB);
-        background: var(--background-surface-area, #FFF);
+        border-right: 1px solid var(--surface-fill-2);
+        border-bottom: 1px solid var(--surface-fill-2);
+        background: var(--background-surface-area);
     }
     .content{
         display: flex;
@@ -37,10 +37,10 @@ defineEmits(['create'])
         align-items: start
     }
     .id{
-        color: var(--text-icons-tertiary, #B5B5B5);
+        color: var(--text-icons-tertiary);
     }
     .type{
-        color: var(--text-icons-primary, #19191A);
+        color: var(--text-icons-primary);
     }
     .btns{
         display: flex;
