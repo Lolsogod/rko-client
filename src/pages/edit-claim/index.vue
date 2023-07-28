@@ -1,6 +1,4 @@
 <script setup lang="ts">
-//нагромаждено всего, это всё зарефачу но потом
-import { useClaimStore, type Claim } from "entities/claim";
 import {ActionBar, ClaimEditor, useEditClaimStore} from "features/edit-claim";
 import { watch } from "vue";
 const props = defineProps(['clientId', 'claimId'])
@@ -19,7 +17,6 @@ watch(props, () => store.fetchClaim(props.claimId))
                     <div class="client"></div>
                 </div>
             </div>
-            
         </div>
         <div class="chat">
         </div>

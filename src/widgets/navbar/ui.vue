@@ -2,23 +2,24 @@
 import { IcoBtn } from 'shared/ui/ico-button';
 import { Search, Exit } from 'app/providers/icons'
 import { GradBtn } from 'shared/ui/grad-button';
-//@ts-ignore
-import {useKeycloak} from "shared/lib/vue-keycloak"
+import { useKeycloak } from "shared/lib/vue-keycloak"
 import { ref } from 'vue';
+
 const {keycloak} = useKeycloak();
 defineProps<{
     type?: string
 }>()
-//шоб вуе не ругался
+//шоб вуе не ругался 
 const search = ref()
 </script>
 
 <template>
     <nav class="no-select">
-        <PlInputPlus v-if="type=='claims-list'" class="search" placeholder="Поиск" leftIcon="Search20" width="20rem" v-model="search"/>
-        <div v-else class="d-flex gap-2">
+        <PlInputPlus v-if="type=='claims-list'" class="search" placeholder="Поиск"
+              leftIcon="Search20" width="20rem" v-model="search"/>
+        <div v-else class="d-flex-cb gap-2">
             <router-link to="/" class="b2 main">Главная</router-link>
-            <span class="b2 main">></span>
+            <PlIcon color="#656567" name="ChevronRight20"/>
             <span class="b2 cur-page" v-if="type=='client'">Обращение</span>
             <span class="b2 cur-page" v-if="type=='create-claim'">Создание обращения</span>
         </div>

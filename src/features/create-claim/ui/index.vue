@@ -3,16 +3,11 @@ import { ref, computed} from "vue";
 import {DropDown} from "shared/ui/drop-down"
 import type { ClaimReq } from "entities/claim";
 import { useReferenceStore } from "entities/reference";
+
 const rules = {
-  client: [{
-    require: true,
-  }],
-  descr: [{
-    require: true,
-  }],
-  just: [{
-    require: true,
-  }],
+  client: [{require: true}],
+  descr: [{require: true}],
+  just: [{require: true}],
 }
 const props = defineProps<{
   modelValue: ClaimReq
