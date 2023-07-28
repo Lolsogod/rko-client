@@ -35,7 +35,7 @@ const search = ref()
         gap: 2.5rem;
 
         border-radius: 1rem;
-        border: 1px solid var(--border-divider, #E3E3E3);
-        background: var(--background-surface-area, #FFF);
+        border: 1px solid var(--border-divider);
+        background: var(--background-surface-area);
     }
 </style>

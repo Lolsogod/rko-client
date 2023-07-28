@@ -35,7 +35,7 @@ const search = ref()
         border-bottom: 1px solid #EFEFEB;
         height: 5rem;
         flex-shrink: 0;
-        background: var(--background-surface-area, #FFF);
+        background: var(--background-surface-area);
         display: flex;
         padding-left: 3rem;
         padding-right: 2.5rem;
@@ -44,10 +44,10 @@ const search = ref()
     }
     .main{
         text-decoration: none;
-        color: var(--text-icons-secondary, #656567);
+        color: var(--text-icons-secondary);
     }
     .cur-page{
         cursor: pointer;
-        color: var(--text-icons-interactive, #4164EB);
+        color: var(--text-icons-interactive);
     }
 </style>

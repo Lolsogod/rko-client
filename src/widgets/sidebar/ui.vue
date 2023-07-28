@@ -26,9 +26,8 @@ import { links } from './const';
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        flex-shrink: 0;
-        border-right: 1px solid var(--surface-fill-2, #EFEFEB);
-        background: var(--background-surface-area, #FFF);
+        border-right: 1px solid var(--surface-fill-2);
+        background: var(--background-surface-area);
     }
     .items{
         width: 3rem;

@@ -49,22 +49,22 @@ const badgeType = computed(()=>conf.isExpired.value?'red':'gray')
         width: 100%;
         padding: 1rem;
         border-radius: 0.75rem;
-        background: var(--background-surface-area, #FFF);
+        background: var(--background-surface-area);
         box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
     }
     .name{
         overflow: hidden;
-        color: var(--text-icons-primary, #19191A);
+        color: var(--text-icons-primary);
         text-overflow: ellipsis;
     }
     .type{
         overflow: hidden;
-        color: var(--text-icons-primary, #19191A);
+        color: var(--text-icons-primary);
         text-overflow: ellipsis;
     }
     .theme{
         overflow: hidden;
-        color: var(--text-icons-secondary, #656567);
+        color: var(--text-icons-secondary);
         text-overflow: ellipsis;
     }
 </style>

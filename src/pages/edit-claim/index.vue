@@ -40,7 +40,7 @@ watch(props, () => store.fetchClaim(props.claimId))
         width: 100%;
         height: 40rem;
         border-radius: 0.75rem;
-        background: var(--surface-card, #FFF);
+        background: var(--surface-card);
     }
     .container{
         height: 100%;
