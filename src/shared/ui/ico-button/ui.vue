@@ -43,11 +43,11 @@ const isSmall = computed(()=>props.size=="small")
         height: 1.5rem;
         width: 1.5rem;
     }
- 
-    .active {
+    
+    .active, .active.small {
         background: var(--buttons-alternative, #E8ECFD);
     }
-    .active:hover{
+    .active:hover, .active.small:hover{
         background: #dbe1fa
     }
     .active>img{

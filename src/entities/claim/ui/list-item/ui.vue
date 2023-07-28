@@ -37,12 +37,15 @@ const workDate = computed(()=>inProgress.value?`В работе с ${conf.updDat
         <div  class="cell b2">{{ claim.assignee }}</div>
         <div  class="cell b2">
             <div>{{ conf.createdDateOnly.value }}</div>
-            <div class="cap">{{ conf.createdTimeOnly.value }}</div>
+            <div class="cap time">{{ conf.createdTimeOnly.value }}</div>
         </div>
     </div>
 </template>
 
 <style scoped>
+    .item{
+        color: var(--text-icons-secondary, #656567);
+    }
    .item{
         margin: 1rem 0;
    }

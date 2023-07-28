@@ -107,6 +107,9 @@ selected.value = props.options.find(option => option.code == selCode.value)
   .list-btn:hover{
     border-color: var(--color-border-hover);
   }
+  .list-btn.bg-grey:hover{
+    border: 1px solid var(--border-inactive, #DADDE7);
+  }
   .title{
     display: block; 
     overflow: hidden;

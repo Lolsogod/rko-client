@@ -129,7 +129,7 @@
       "status": "NEW",
       "status_reason": "Важная причина",
       "created_date": "2023-07-25T10:26:09.940Z",
-      "pause_till":  "2023-07-27T09:35:10.908Z",
+      "pause_till":  "2023-07-28T09:35:10.908Z",
       "status_history": [
         {
           "id": 1234567891,
@@ -241,7 +241,7 @@
       "service_count": 1,
       "priority": "HIGH",
       "priority_reason": "Важная причина",
-      "pause_till":  "2023-07-27T09:35:10.908Z",
+      "pause_till":  "2023-07-28T09:35:10.908Z",
       "updated_date": "2023-07-15T00:00:00+00:00",
       "client": { 
         "id": 2,
@@ -351,7 +351,7 @@
       "service_count": 1,
       "priority": "MEDIUM",
       "priority_reason": "Важная причина",
-      "pause_till":  "2023-07-26T09:35:10.908Z",
+      "pause_till":  "2023-07-29T09:35:10.908Z",
       "client": { 
         "id": 4,
         "global_company_id": "null",
@@ -425,7 +425,7 @@
       "status_reason": "Обычная причина",
       "created_date": "2023-07-09T00:00:00+00:00",
       "updated_date": "2023-07-09T00:00:00+00:00",
-      "pause_till":  "2023-07-27T09:35:10.908Z",
+      "pause_till":  "2023-07-29T09:35:10.908Z",
       "status_history": [
         {
           "id": 9876543215,
@@ -484,8 +484,8 @@
       "status": "IN_PROGRESS",
       "status_reason": "Важная причина",
       "created_date": "2023-07-09T00:00:00+00:00",
-      "updated_date": "2023-07-09T00:00:00+00:00",
-      "pause_till":  "2023-07-27T09:35:10.908Z",
+      "updated_date": "2023-07-29T00:00:00+00:00",
+      "pause_till":  "2023-07-29T09:35:10.908Z",
       "status_history": [
         {
           "id": 9876543218,
