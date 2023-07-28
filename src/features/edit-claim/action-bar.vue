@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {useClaimConfig, type Claim} from 'entities/claim';
-import { computed, ref } from 'vue';
 import { Badge } from 'shared/ui/badge';
 import { useEditClaimStore } from '.';
+import {computed} from "vue";
 const props = defineProps<{
     claim: Claim
 }>()

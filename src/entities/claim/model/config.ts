@@ -29,7 +29,9 @@ export const useClaimConfig = (claim: Claim) => {
         {text: "Посмотреть", action: () => modalStore.openModal('info', claim)},
         {text: "Журнал состояний", action: () => modalStore.openModal('journal', claim)},
     ]
+    const closeMenu = [
 
+    ];
     const items = new Map<string, IMenuItem[]>([
         ['NEW', takeMenu],
         ['IN_PROGRESS', edMenu],
