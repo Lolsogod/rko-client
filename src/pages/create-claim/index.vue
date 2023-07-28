@@ -3,7 +3,6 @@ import {CreateClaimForm} from 'features/create-claim'
 import type { ClaimReq } from 'entities/claim';
 import ActionBar from './action-bar.vue';
 import { ref } from 'vue';
-import {createClaim} from 'shared/api/claim-api';
 import {useClaimService} from "../../shared/api/commonApi";
 //мб както вынести? хз пока
 const ncForm = ref<ClaimReq>({
@@ -14,7 +13,6 @@ const ncForm = ref<ClaimReq>({
   claimType: '',
   claimTheme: '',
   description: '',
-  serviceCount: 0,
   priority: '',
   priority_reason: '',
   assignee: '',

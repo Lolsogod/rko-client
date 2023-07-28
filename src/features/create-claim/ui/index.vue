@@ -4,9 +4,11 @@ import {DropDown} from "shared/ui/drop-down"
 import type { ClaimReq } from "entities/claim";
 import { useReferenceStore } from "entities/reference";
 const rules = {
-  client: [{
-    require: true,
-  }],
+  client: {
+    required: true,
+    message: "Обязательное поле",
+    trigger: "blur",
+  },
   descr: [{
     require: true,
   }],
@@ -86,7 +88,7 @@ const formRef = ref(null)
         <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
           <DropDown v-model="ncForm.priority" label="Приоритет"
            :options="rStrore.refernces?.priority!"/> 
-          <PlInputPlus 
+          <PlInputPlus
             class="test"
             v-model="ncForm.priority_reason" 
             prop="priority_reason"

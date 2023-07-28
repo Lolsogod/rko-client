@@ -1,13 +1,17 @@
 import { ref, computed, watch } from 'vue'
 import { defineStore } from 'pinia'
 import type {Claim, ClaimReq, UpdateReq, ClaimFilterReq} from '../model'
-import {forward, getClaims} from "shared/api/claim-api";
 import {useClaimService} from "shared/api/commonApi";
 
 export const useClaimStore = defineStore('claims', () => {
   const claims = ref<Claim[]>()
+  const {getClaims, createClaim} = useClaimService();
   const fetchClaims = async () => {
     claims.value = await getClaims();
+  }
+  const postCreateClaim = async (claimReq:ClaimReq) => {
+    const newClaim = await createClaim(claimReq);
+    claims.value = [...claims?.value??[], newClaim];
   }
 
   //неуверен как определять текущее обращение пусть берётся первая со статусом ин прогрес
