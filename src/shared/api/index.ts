@@ -18,7 +18,7 @@ api.interceptors.response.use(
         }else if(!error?.response){
             console.error("ОШИБКА БЕЗ РЕСПОНСА");
         }else{
-            console.error("ошибка при запросе", error);
+            console.error("ошибка при запросе", error?.response?.data??error);
         }
         return Promise.reject(error.response);
     });

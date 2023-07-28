@@ -96,7 +96,7 @@ const formRef = ref(null)
           />
         </div>
         <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
-          <DropDown v-model="ncForm.assignee" label="Исполнитель" placeholder="Выберите ответственного" />
+          <DropDown :options="[{code:'support', text:'support'}]" v-model="ncForm.assignee" label="Исполнитель" placeholder="Выберите ответственного" />
         </div>
       </PlForm>
     </div>
