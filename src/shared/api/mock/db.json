@@ -695,7 +695,7 @@
         "short_name": "ИП Сергеев"
       },
       "documents": [],
-      "status": "IN_PROGRESS",
+      "status": "NEW",
       "status_reason": "Важная причина",
       "created_date": "2023-07-09T00:00:00+00:00",
       "updated_date": "2023-07-29T00:00:00+00:00",
@@ -743,7 +743,7 @@
       "claim_theme": "BANK_SUPPORT_OF_CONTRACT",
       "description": "Клиент хочет узнать о существующих ограничениях и лимитах на использование своей банковской карты.",
       "service_count": 1,
-      "priority": "LOW",
+      "priority": "CRITICAL",
       "priority_reason": "Обычная причина",
       "client": {
         "id": 7,

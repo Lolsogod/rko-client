@@ -28,7 +28,8 @@ app.use(vueKeycloak,{
         }
     }
 )
-// app.use(router)
-// .use(pinia)
-// .use(components)
-// .mount('#app')
+/*
+app.use(router)
+    .use(pinia)
+    .use(components)
+    .mount('#app')*/

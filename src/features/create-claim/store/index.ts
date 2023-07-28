@@ -1,8 +1,8 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { createClaim } from 'shared/api/claim-api'
-import type { ClaimReq } from '..'
-//а может и ненужен он
+import type { ClaimReq } from 'entities/claim'
+//а может и ненужен он, наверное нет, удалю
 export const useCreateClaimStore = defineStore('createClaim', () => {
   const claim = ref<ClaimReq>({
     category: 'OUTGOING',
@@ -30,7 +30,7 @@ export const useCreateClaimStore = defineStore('createClaim', () => {
   })
 
   const create = () =>{
-     createClaim(claim)
+     createClaim(claim.value)
   }
   return {claim, create}
 })
