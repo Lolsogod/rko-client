@@ -1,2 +1,2 @@
-import EditClaimPage from "./index.vue"
+import EditClaimPage from "./ui.vue"
 export default EditClaimPage

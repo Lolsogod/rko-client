@@ -5,8 +5,13 @@
 
 import {ActionBar, ClaimEditor, useEditClaimStore} from "features/edit-claim";
 import { watch } from "vue";
+import {ClaimInfo} from "../../entities/claim";
+import {StatusTable} from "../../entities/status-history";
+import {Modal, useModalStore} from "../../widgets/modal";
+import {CloseForm} from "features/close-claim";
 const props = defineProps(['clientId', 'claimId'])
 const store = useEditClaimStore()
+const modalStore = useModalStore();
 watch(props, () => store.fetchClaim(props.claimId))
 //store.fetchClaim(props.claimId)
 </script>
@@ -25,7 +30,11 @@ watch(props, () => store.fetchClaim(props.claimId))
         </div>
         <div class="chat">
         </div>
+      <Modal :is-open="modalStore.isOpen" @close="modalStore.closeModal" :title="modalStore.title">
+        <CloseForm v-if="modalStore.type == 'close'" :claim="modalStore.claim!"/>
+      </Modal>
     </div>
+
 </template>
 
 <style scoped>

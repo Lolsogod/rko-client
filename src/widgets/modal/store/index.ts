@@ -10,6 +10,8 @@ export const useModalStore = defineStore('modal', () => {
         return("Просмотр обращения")
       case "journal":
         return("Журнал состояний")
+      case "close":
+        return "Закрытие заявки"
       default:
         return("Заголовок")
     }

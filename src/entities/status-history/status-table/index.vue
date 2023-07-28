@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
    <div class="container">
-     <StatusRow v-for="status in claim.status_history " :status="status"/>
+     <StatusRow v-for="status in claim.statusHistory" :status="status"/>
    </div>
 </template>
 

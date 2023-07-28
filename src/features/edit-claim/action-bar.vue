@@ -3,13 +3,14 @@ import {useClaimConfig, type Claim} from 'entities/claim';
 import { Badge } from 'shared/ui/badge';
 import { useEditClaimStore } from '.';
 import {computed} from "vue";
+import {useModalStore} from "../../widgets/modal";
 const props = defineProps<{
     claim: Claim
 }>()
 const conf = computed(() => useClaimConfig(props.claim))
 
 const {edit} = useEditClaimStore()
-
+const modalStore = useModalStore();
 </script>
 
 <template>
@@ -25,7 +26,7 @@ const {edit} = useEditClaimStore()
             <PlButton size="medium" type="alternative">Отложить</PlButton>
             <PlButton size="medium" type="alternative">Перевести</PlButton>
             <PlButton size="medium" type="alternative" @click="edit">Сохранить изменения</PlButton>
-            <PlButton size="medium">Закрыть обращение</PlButton>
+            <PlButton size="medium" @click="modalStore.openModal('close', claim)">Закрыть обращение</PlButton>
         </div>
     </div>
 </template>
