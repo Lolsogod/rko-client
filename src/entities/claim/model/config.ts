@@ -1,15 +1,15 @@
 import {useReferenceStore} from 'entities/reference'
 import {router} from 'app/providers'
-import type {Claim} from 'entities/claim/model';
 import {useModalStore} from 'widgets/modal';
 import {computed} from 'vue'
 import type {ReferenceData, References} from 'entities/reference';
 import type {IMenuItem} from 'shared/ui/menu';
-import {assign} from 'shared/api/claim-api';
+import type {Claim} from "./types";
+import {useClaimService} from "../../../shared/api/commonApi";
 
 //перегруженная штука получилась, разделить врят ли успею
 export const useClaimConfig = (claim: Claim) => {
-
+    const {assign} = useClaimService();
     const modalStore = useModalStore()
     const refStore = useReferenceStore()
 

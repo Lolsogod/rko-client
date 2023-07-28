@@ -20,6 +20,7 @@ export const useClaimStore = defineStore('claims', () => {
     const currentClaim = computed(() => {
         if (claims.value) {
             for (const claim of claims.value!) {
+                console.log(claim.status)
                 if (claim.status == "IN_PROGRESS")
                     return claim;
             }
@@ -31,11 +32,11 @@ export const useClaimStore = defineStore('claims', () => {
         const now = new Date();
         const timeDiff = now.getTime() - date.getTime();
         const minutes = timeDiff / 60000;
-        return minutes <= 15
+        return minutes <= 99999999
     }
 
     function isToday(claim: Claim) {
-        if (claim.pause_till) {
+        if (claim.pauseTill) {
             const date = new Date(claim.pauseTill!).toISOString().split('T')[0];
             const currentDate = new Date().toISOString().split('T')[0];
             return date == currentDate;
@@ -43,7 +44,7 @@ export const useClaimStore = defineStore('claims', () => {
         return false
     }
     function isTomorrow(claim: Claim) {
-        if (claim.pause_till) {
+        if (claim.pauseTill) {
             const date = new Date(claim.pauseTill!).toISOString().split('T')[0];
             const tomorrowDateTime = new Date();
             tomorrowDateTime.setDate(tomorrowDateTime.getDate() + 1);

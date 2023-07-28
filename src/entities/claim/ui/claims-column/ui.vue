@@ -9,7 +9,6 @@ defineProps<{
 }>()
 
 const cStore = useClaimStore()
-
 </script>
 
 <template>
