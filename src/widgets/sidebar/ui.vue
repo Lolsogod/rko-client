@@ -1,6 +1,5 @@
 <script setup lang="ts">
-//@ts-ignore
-import Logo from '/logo.svg'
+import {Logo} from 'app/providers/icons'
 import {IcoBtn} from 'shared/ui/ico-button'
 import { links } from './const';
 </script>

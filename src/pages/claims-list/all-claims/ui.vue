@@ -4,8 +4,7 @@ import { ListItem } from 'entities/claim/ui/list-item';
 import { DropDown } from 'shared/ui/drop-down';
 import { ref } from 'vue';
 import { IcoBtn } from 'shared/ui/ico-button';
-//@ts-ignore
-import Sort from '/sort.svg'
+import { Sort } from 'app/providers/icons'
 const store = useClaimStore()
 const sortBtn = {ico: Sort, active: true}
 const search = ref()

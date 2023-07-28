@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { IcoBtn } from 'shared/ui/ico-button';
-//@ts-ignore
-import Exit from '/exit.svg'
-//@ts-ignore
-import Search from '/search.svg'
+import { Search, Exit } from 'app/providers/icons'
 import { GradBtn } from 'shared/ui/grad-button';
 //@ts-ignore
 import {useKeycloak} from "shared/lib/vue-keycloak"

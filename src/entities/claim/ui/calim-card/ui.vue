@@ -4,8 +4,7 @@ import { SqBadge } from 'shared/ui/sq-badge';
 import { Badge } from 'shared/ui/badge';
 import { Menu } from 'shared/ui/menu'
 import { computed } from 'vue';
-//@ts-ignore 
-import Alert from '/alert.svg'
+import { Alert } from 'app/providers/icons';
 
 const props = defineProps<{
     type: string

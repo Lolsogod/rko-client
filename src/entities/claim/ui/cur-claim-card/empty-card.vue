@@ -1,6 +1,5 @@
 <script setup lang="ts">
-//@ts-ignore
-import Austro from '/astronaut.svg'
+import { Austro } from 'app/providers/icons';
 
 </script>
 

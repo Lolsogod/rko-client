@@ -1,4 +1,4 @@
-//@ts-ignore пока без рови компонентов
+//@ts-ignore 
 import components from '@factoringplus/pl-components-pack-v3'
 import '@factoringplus/pl-components-pack-v3/dist/style.css'
 
