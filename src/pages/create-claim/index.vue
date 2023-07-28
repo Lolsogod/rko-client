@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import {CreateClaimForm, type ClaimReq} from 'features/create-claim'
+import {CreateClaimForm} from 'features/create-claim'
+import type { ClaimReq } from 'entities/claim';
 import ActionBar from './action-bar.vue';
 import { ref } from 'vue';
+import { createClaim } from 'shared/api/claim-api';
 //мб както вынести? хз пока
 const ncForm = ref<ClaimReq>({
   category: 'OUTGOING',
@@ -17,8 +19,8 @@ const ncForm = ref<ClaimReq>({
   assignee: '',
   comment: '',
   client: {
-    globalCompanyId: 0,
-    plCompanyId: '',
+    globalCompanyId: null,
+    plCompanyId: null,
     inn: '',
     kpp: '',
     ogrn: '',
@@ -27,11 +29,13 @@ const ncForm = ref<ClaimReq>({
   },
   documents: [],
 });
-
+const create = () => {
+    createClaim(ncForm.value)
+}
 </script>
 
 <template>
-    <ActionBar/>
+    <ActionBar @create="create"/>
     <div class="d-flex gap-6 container">
         <CreateClaimForm v-model="ncForm"/>
         <div class="right-cont">
@@ -44,6 +48,6 @@ const ncForm = ref<ClaimReq>({
         flex-grow: 1;
     }
     .container{
-        margin: 3rem 2rem;
+        margin: 2rem 13rem;
     }
 </style>

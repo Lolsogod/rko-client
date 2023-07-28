@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import { Badge } from 'shared/ui/badge';
-//import { useEditClaimStore } from '.';
-
-//const conf = computed(() => useClaimConfig(props.claim))
-
-//const {edit} = useEditClaimStore()
-
+defineEmits(['create'])
 </script>
 
 <template>
@@ -18,7 +12,7 @@ import { Badge } from 'shared/ui/badge';
         <div class="btns">
             <PlButton size="medium" type="alternative">Отмена</PlButton>
             <PlButton size="medium" type="alternative">Зарегестрировать + Новое</PlButton>
-            <PlButton size="medium">Зарегестрировать</PlButton>
+            <PlButton size="medium" @click="$emit('create')">Зарегестрировать</PlButton>
         </div>
     </div>
 </template>
@@ -27,7 +21,7 @@ import { Badge } from 'shared/ui/badge';
     .a-bar{
         display: flex;
         width: 100%;
-        padding: 1rem 3rem;
+        padding: 1rem 18rem 1rem 13rem;
         justify-content: space-between;
         align-items: center;
         gap: 1rem;

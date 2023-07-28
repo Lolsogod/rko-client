@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed} from "vue";
 import {DropDown} from "shared/ui/drop-down"
-import type { ClaimReq } from "../model";
+import type { ClaimReq } from "entities/claim";
 import { useReferenceStore } from "entities/reference";
 const rules = {
   client: [{
@@ -59,7 +59,7 @@ const formRef = ref(null)
         <div class="d-flex gap-4">
           <PlInputPlus 
             class="test"
-            v-model="ncForm.client.inn" 
+            v-model="ncForm.client!.inn" 
             prop="client.inn"
             label="Клиент" 
             placeholder="Начните вводить ИНН или наименование и выберите из списка" 
@@ -68,8 +68,12 @@ const formRef = ref(null)
         </div>
         <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
           <!--в проработке-->
-          <DropDown label="Исполнитель" />
-          <DropDown label="Тема" placeholder="Выберите тему" />
+          <DropDown label="Исполнитель"
+            :options="rStrore.refernces?.initiatorTypes"
+            v-model="ncForm.initiatorType" />
+          <DropDown label="Тема" placeholder="Выберите тему"
+            :options="rStrore.refernces?.claimThemes"
+            v-model="ncForm.claimTheme" />
         </div>
         <PlInputPlus
           textarea
@@ -80,7 +84,8 @@ const formRef = ref(null)
           width="100%"
         />
         <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
-          <DropDown v-model="ncForm.priority" label="Приоритет" :options="rStrore.refernces?.priority!"  />
+          <DropDown v-model="ncForm.priority" label="Приоритет"
+           :options="rStrore.refernces?.priority!"/> 
           <PlInputPlus 
             class="test"
             v-model="ncForm.priority_reason" 
