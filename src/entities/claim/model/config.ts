@@ -53,7 +53,6 @@ export const useClaimConfig = (claim: RealClaim) => {
         const formattedDate = `${day}.${month}.${year} в ${hours}.${minutes}`;
         const dateOnly = `${day}.${month}.${year}`;
         const timeOnly = `${hours}.${minutes}`;
-        console.log(formattedDate,dateOnly,timeOnly)
         return {formattedDate, dateOnly, timeOnly};
     }
     const createdDate = computed(() => {
@@ -74,7 +73,7 @@ export const useClaimConfig = (claim: RealClaim) => {
     })
 
     const updDate = computed(() => {
-        if (claim.updated_date)
+        if (claim.updatedDate)
             return formatDate(claim.updatedDate).formattedDate;
     })
 

@@ -29,7 +29,6 @@ api.interceptors.request.use(
         try {
             token = await updateToken(0);
         } catch (error:any) {
-            console.log(error)
             error && console.error(error?.response?.status||error);
 
             if (hasFailed && !isPending) {

@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import { useClaimConfig, type Claim } from 'entities/claim';
+import {useClaimConfig, type Claim} from 'entities/claim';
+import type {RealClaim} from 'entities/claim';
 import { SqBadge } from 'shared/ui/sq-badge';
 import { computed } from 'vue';
 
 
 const props = defineProps<{
-    claim: Claim
+    claim:RealClaim
 }>()
 
 const conf = useClaimConfig(props.claim)
 
 const inProgress = computed(()=>props.claim.status=='IN_PROGRESS')
-const workDate = computed(()=>inProgress.value?`В работе с ${conf.updDate.value}`:`По плану до ${conf.pauseTill.value}`)
+const workDate = computed(()=>inProgress.value?`В работе с ${conf.updDate.value}`:conf.pauseTill?.value?`По плану до ${conf.pauseTill.value}`:`Появилось ${conf.createdDate.value}`)
+
 </script>
 
 <template>
