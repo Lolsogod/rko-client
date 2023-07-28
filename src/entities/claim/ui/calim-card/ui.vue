@@ -36,7 +36,7 @@ const badgeType = computed(()=>conf.isExpired.value?'red':'gray')
                  <div class="d-flex gap-2">
                     <Badge v-if="type=='new'" size="small" type="red">{{ conf.minsFromCreation() }} мин</Badge>
                     <Badge v-else-if="conf.isExpired.value" size="small" type="expired">Просрочена</Badge>
-                    <img  v-if="claim.priority=='CRITICAL'" :src="Alert"/>
+                    <img  v-if="claim.priority=='CRITICAL'" :src="Alert" alt="!"/>
                  </div>
                  
             </div>

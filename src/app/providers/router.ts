@@ -44,7 +44,12 @@ export const router = createRouter({
       path: '/claim',
       name: 'create-claim',
       component: () => import('pages/create-claim')
-    }
+    },
+    {
+      path: "/:catchAll(.*)",
+      name: "NotFound",
+      component: () => import('pages/not-found'),
+  }
   ]
 })
 
