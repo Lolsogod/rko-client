@@ -37,6 +37,7 @@ const disabled = ref(true);
 const rStrore = useReferenceStore()
 
 watch(ncForm, () => {
+  //@ts-ignore
   formRef?.value?.validate((v) => {
     console.log(v)
     disabled.value = !v;
@@ -114,9 +115,6 @@ watch(ncForm, () => {
         <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
           <DropDown :options="[{code:'support', text:'support'}]" v-model="ncForm.assignee" label="Исполнитель" placeholder="Выберите ответственного" />
         </div>
-        <button :disabled="disabled">
-          1
-        </button>
       </PlForm>
 
     </div>

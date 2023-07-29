@@ -43,11 +43,11 @@ const formRef = ref(null);
         </div>
         <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
             <DropDown label="Тип сообщения"
-            :options="refernces.claimTypes!"
+            :options="refernces!.claimTypes"
             v-model="claim.claimType"
             />
             <DropDown label="Тема"
-            :options="refernces.claimThemes!"
+            :options="refernces!.claimThemes"
             v-model="claim.claimTheme"
             />
         </div>

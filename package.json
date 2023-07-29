@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "concurrently \"json-server --watch src\\shared\\api\\mock\\db.json /\" \"vite\"",
     "build": "run-p type-check build-only",
-    "GIGABUILD": "tsc --noEmitOnError && vite build",
+    "dockerize": "vite build && docker-compose -f docker-compose.develop.yml up --build -d",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"

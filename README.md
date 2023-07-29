@@ -2,27 +2,31 @@
 
 # comands
 ```sh
-pnpm install
+npm install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
-pnpm dev
+npm run dev
 ```
 
 ### Type-Check, Compile and Minify for Production
 
 ```sh
-pnpm build
+npm run build
+```
+### Run Production build
+
+```sh
+npm run preview
 ```
 
-
 #### Для запуска проекта через Docker:
-### `npm run GIGABUILD`
+### `npm run dockerize`
 ### или
 ```sh 
-pnpm run build
+npm run build
 ```
 ### `docker-compose -f docker-compose.develop.yml up --build -d`
 
