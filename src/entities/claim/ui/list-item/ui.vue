@@ -28,7 +28,7 @@ const workDate = computed(()=>inProgress.value?`В работе с ${conf.updDat
             <SqBadge :type="claim.status" small>{{ conf.status }}</SqBadge>
         </div>
         <div class="cell">
-            <div class="b2">{{ claim.client?.short_name }}</div>
+            <div class="b2">{{ claim.client?.shortName }}</div>
             <div class="inn cap">ИНН: {{ claim.client?.inn }}</div>
         </div>
         <div class="cell">

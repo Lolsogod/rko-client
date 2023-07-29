@@ -5,6 +5,8 @@ import ActionBar from './action-bar.vue';
 import { ref } from 'vue';
 import {useClaimService} from "../../shared/api/commonApi";
 import {useClaimStore} from "entities/claim";
+import {useRoute} from "vue-router";
+import {router} from "../../app/providers";
 //мб както вынести? хз пока
 const ncForm = ref<ClaimReq>({
   category: 'OUTGOING',
@@ -34,6 +36,7 @@ const {postCreateClaim} = useClaimStore();
 const create = () => {
   if(ncForm.value.category !== "" && (ncForm.value?.client?.inn.length === 10 || ncForm.value?.client?.inn.length === 12) ){
     postCreateClaim(ncForm.value)
+    router.push("/")
   }else{
     console.error("create error validation")
   }

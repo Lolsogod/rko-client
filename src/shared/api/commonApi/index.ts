@@ -1,7 +1,7 @@
 import type {
     Claim, UpdateReq,
     CloseReq, ForwardReq, ReasignPostRequest,
-    PauseReq, ClaimReq, ClaimFilterReq, Claim,
+    PauseReq, ClaimReq, ClaimFilterReq
 } from 'entities/claim';
 import type { References } from 'entities/reference'
 import api from "../index";
