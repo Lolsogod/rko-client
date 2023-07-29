@@ -23,12 +23,14 @@ npm run preview
 ```
 
 #### Для запуска проекта через Docker:
-### `npm run dockerize`
+```sh
+npm run dockerize
+```
 ### или
 ```sh 
 npm run build
+docker-compose -f docker-compose.develop.yml up --build -d
 ```
-### `docker-compose -f docker-compose.develop.yml up --build -d`
 
-### `запускается по-умолчанию на порту 5173`
+### запускается по-умолчанию на порту 5173
 
