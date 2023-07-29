@@ -1,21 +1,24 @@
 <script setup lang="ts">
-import {ref, computed} from "vue";
+import {ref, computed, watch} from "vue";
 import {DropDown} from "shared/ui/drop-down"
 import type { ClaimReq } from "entities/claim";
 import { useReferenceStore } from "entities/reference";
-const rules = {
-  client: {
+import type {Client} from "../../../entities/client/model";
+const formRef = ref<{validate:(v:any) => void} | null>(null);
+const checkInn = (rule, value, callback) => {
+  if (value && value?.inn && value.inn.length < 10) {
+    callback(new Error("некорректный inn"));
+  }
+  // callback();
+};
+const rules = ref({
+  client: [{
+    validator:checkInn,
+  }],
+  priority: [{
     required: true,
-    message: "Обязательное поле",
-    trigger: "blur",
-  },
-  descr: [{
-    require: true,
   }],
-  just: [{
-    require: true,
-  }],
-}
+});
 const props = defineProps<{
   modelValue: ClaimReq
 }>()
@@ -29,9 +32,16 @@ const ncForm = computed({
     emit('update:modelValue', value)
   }
 })
+const disabled = ref(true);
 const rStrore = useReferenceStore()
 
-const formRef = ref(null);
+watch(ncForm, () => {
+  formRef?.value?.validate((v) => {
+    console.log(v)
+    disabled.value = !v;
+  })
+}, {deep:true})
+
 </script>
 
 <template>
@@ -58,12 +68,14 @@ const formRef = ref(null);
             1 линия
           </label>
         </div>
+<!--        helpertext="обяательное поле, инн должно быть от 10 до 12 символов"-->
+
         <div class="d-flex gap-4">
-          <PlInputPlus 
+          <PlInputPlus
             class="test"
-            v-model="ncForm.client!.inn" 
+            v-model="ncForm.client!.inn"
             prop="client.inn"
-            label="Клиент" 
+            label="Клиент"
             placeholder="Начните вводить ИНН или наименование и выберите из списка" 
             width="100%"
           />
@@ -100,6 +112,9 @@ const formRef = ref(null);
         <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
           <DropDown :options="[{code:'support', text:'support'}]" v-model="ncForm.assignee" label="Исполнитель" placeholder="Выберите ответственного" />
         </div>
+        <button :disabled="disabled">
+          1
+        </button>
       </PlForm>
 
     </div>

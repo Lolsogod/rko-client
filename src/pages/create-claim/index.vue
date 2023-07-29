@@ -30,6 +30,7 @@ const ncForm = ref<ClaimReq>({
   },
   documents: [],
 });
+
 const {postCreateClaim} = useClaimStore();
 const create = () => {
 
