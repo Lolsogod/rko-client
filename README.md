@@ -19,7 +19,7 @@ pnpm build
 
 
 #### Для запуска проекта через Docker:
-### `npm run build`
+### `npm run GIGABUILD`
 ### или
 ```sh 
 pnpm run build
