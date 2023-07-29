@@ -6,10 +6,10 @@ import { useReferenceStore } from "entities/reference";
 import type {Client} from "../../../entities/client/model";
 const formRef = ref<{validate:(v:any) => void} | null>(null);
 const checkInn = (rule, value, callback) => {
-  if (value && value?.inn && value.inn.length < 10) {
+  if (value && value?.inn && (value.inn.length !== 10 && value.inn.length !== 12) ) {
     callback(new Error("некорректный inn"));
   }
-  // callback();
+  callback();
 };
 const rules = ref({
   client: [{
@@ -78,6 +78,7 @@ watch(ncForm, () => {
             label="Клиент"
             placeholder="Начните вводить ИНН или наименование и выберите из списка" 
             width="100%"
+            helpertext="ИНН:10 или 12"
           />
         </div>
         <div class="d-grid gap-4" style="grid-template-columns: 1fr 1.25fr">
