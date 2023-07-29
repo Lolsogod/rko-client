@@ -30,11 +30,13 @@ const ncForm = ref<ClaimReq>({
   },
   documents: [],
 });
-
 const {postCreateClaim} = useClaimStore();
 const create = () => {
-
-  postCreateClaim(ncForm.value)
+  if(ncForm.value.category !== "" && (ncForm.value?.client?.inn.length === 10 || ncForm.value?.client?.inn.length === 12) ){
+    postCreateClaim(ncForm.value)
+  }else{
+    console.error("create error validation")
+  }
 }
 
 </script>
@@ -42,7 +44,7 @@ const create = () => {
 <template>
     <ActionBar @create="create"/>
     <div class="d-flex gap-6 container">
-        <CreateClaimForm  v-model="ncForm"/>
+        <CreateClaimForm v-model="ncForm"/>
         <div class="right-cont">
         </div>
     </div>

@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import {ref, computed, watch} from "vue";
+import {ref, computed, watch, type Ref, type UnwrapRef} from "vue";
 import {DropDown} from "shared/ui/drop-down"
 import type { ClaimReq } from "entities/claim";
 import { useReferenceStore } from "entities/reference";
 import type {Client} from "../../../entities/client/model";
-const formRef = ref<{validate:(v:any) => void} | null>(null);
 const checkInn = (rule, value, callback) => {
   if (value && value?.inn && (value.inn.length !== 10 && value.inn.length !== 12) ) {
     callback(new Error("некорректный inn"));
   }
   callback();
 };
+
 const rules = ref({
   client: [{
     validator:checkInn,
@@ -20,10 +20,11 @@ const rules = ref({
   }],
 });
 const props = defineProps<{
-  modelValue: ClaimReq
+  modelValue: ClaimReq,
 }>()
-const emit = defineEmits(["update:modelValue"])
 
+const emit = defineEmits(["update:modelValue"])
+const formRef = ref(null);
 const ncForm = computed({
   get() {
     return props.modelValue
