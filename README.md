@@ -14,7 +14,7 @@ npm run dev
 ### Type-Check, Compile and Minify for Production
 
 ```sh
-npm run build
+npm run GIGABUILD
 ```
 ### Run Production build
 
@@ -28,7 +28,7 @@ npm run dockerize
 ```
 ### или
 ```sh 
-npm run build
+npm run GIGABUILD
 docker-compose -f docker-compose.develop.yml up --build -d
 ```
 
